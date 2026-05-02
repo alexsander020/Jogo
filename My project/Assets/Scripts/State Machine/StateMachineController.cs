@@ -17,10 +17,13 @@ public class StateMachineController : MonoBehaviour
 
     public Transform selector;
     [Header("ChooseActionState")]
+
     public List<Image> ChooseActionButton;
+    internal object ChooseActionSelection;
 
     public Image chaooseActionSelected;
-    internal object ChooseActionSelection;
+    public PanelPositioner ChooseActionPanel;
+    
 
     void Awake()
     {

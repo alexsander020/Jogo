@@ -14,8 +14,10 @@ public class ChooseActionState : State
     {
         base.Enter();
         index = 0;
+        ChangeSelector();
         inputs.OnMove += OnMove;
         inputs.OnFire += OnFire;
+        machine.ChooseActionPanel.MoveTo("Show");
     }
 
     public override void Exit()
@@ -23,6 +25,7 @@ public class ChooseActionState : State
         base.Exit();
         inputs.OnMove -= OnMove;
         inputs.OnFire -= OnFire;
+        machine.ChooseActionPanel.MoveTo("Hide");
     }
 
     void OnMove(object sender, object args) {
@@ -58,8 +61,8 @@ public class ChooseActionState : State
         else if (index == machine.ChooseActionButton.Count) {
             index = 0;
         }
-        machine.ChooseActionSelection.transform.localPosition =
-        machine.ChooseActionButton[index].transform.localPosition;
+        //machine.ChooseActionSelection.transform.localPosition =
+        //machine.ChooseActionButton[index].transform.localPosition;
     }
 
     void ActionButton()
