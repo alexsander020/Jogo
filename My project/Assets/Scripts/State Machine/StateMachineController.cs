@@ -42,14 +42,12 @@ public class StateMachineController : MonoBehaviour
         if (_current != state) { ChangeState(state); }
     }
 
-    public  T GetState <T>() where T : State
+    public T GetState <T>() where T : State
     {
         T target = GetComponent<T>();
 
-        if (target == null)
-        {
-            target = gameObject.AddComponent<T>();
-        }
+        if (target == null) { target = gameObject.AddComponent<T>();}
+        
         return target;
     }
 

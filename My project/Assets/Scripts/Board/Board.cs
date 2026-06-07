@@ -48,7 +48,8 @@ public class Board : MonoBehaviour
         Vector3 worldPos = grid.CellToWorld(pos);
         worldPos.y += (floor.tilemap.tileAnchor.y / 2) - 0.5f;
         TileLogic tile = new TileLogic(pos, worldPos, floor);
-        tiles.Add(pos, tile);
+        tiles.Add(pos, tile); //tileLogic
+
     }
 
 

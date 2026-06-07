@@ -86,16 +86,15 @@ public class Movement : MonoBehaviour
             .setLoopPingPong(1).setEase(LeanTweenType.easeInOutQuad);
 
         float timerOrderUpdate = MoveSpeed;
-        if (tileAtual.floor.tilemap.tileAnchor.y > to.floor.tilemap.tileAnchor.y)
-        {
-            timerOrderUpdate *= 0.85f;
-        }
-        else
-        {
-            timerOrderUpdate *= 0.2f;
-        }
+        
+        if (tileAtual.floor.tilemap.tileAnchor.y > to.floor.tilemap.tileAnchor.y) {timerOrderUpdate *= 0.85f;}
+        
+        else {timerOrderUpdate *= 0.2f;}
+
         yield return new WaitForSeconds(timerOrderUpdate);
+        
         tileAtual = to;
+
         SR.sortingOrder = to.contentOrder;
 
         while (LeanTween.descr(id1) != null)

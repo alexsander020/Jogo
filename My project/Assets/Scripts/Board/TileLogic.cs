@@ -17,7 +17,7 @@ public class TileLogic
     public TileLogic(Vector3Int cellPos, Vector3 worldPosition, Floor tempFloor)
     {
         pos = cellPos;
-        worldPos = Vector3Int.FloorToInt(worldPosition); // Corrigido: converte Vector3 para Vector3Int
+        worldPos = Vector3Int.FloorToInt(worldPosition);
         floor = tempFloor;
         contentOrder = tempFloor.contentOrder;
     }
