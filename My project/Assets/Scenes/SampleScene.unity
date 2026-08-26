@@ -220,7 +220,7 @@ MonoBehaviour:
   - {fileID: 282860635}
   - {fileID: 340072162}
   chaooseActionSelected: {fileID: 1790584318}
-  ChooseActionPanel: {fileID: 0}
+  ChooseActionPanel: {fileID: 398025687}
 --- !u!4 &43001885
 Transform:
   m_ObjectHideFlags: 0

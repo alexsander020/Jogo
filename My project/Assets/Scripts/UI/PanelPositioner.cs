@@ -1,33 +1,40 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class PanelPositioner : MonoBehaviour
 {
     public List<PanelPosition> positions;
-
     RectTransform rect;
 
-    void Awake() {
+    void Awake()
+    {
         rect = GetComponent<RectTransform>();
     }
 
-    public void MoveTo(string positionName) {
-        StopAllCoroutines();
-        LeanTween.cancel(this.gameObject);
+    public void MoveTo(string positionName)
+    {
+        if (rect == null) rect = GetComponent<RectTransform>();
+        if (positions == null || positions.Count == 0) return;
+
         PanelPosition pos = positions.Find(x => x.name == positionName);
-        StartCoroutine(Move(pos));
+        if (pos == null) return;
 
-        IEnumerator Move(PanelPosition panelPosition) {
-            rect.anchorMax = panelPosition.anchorMax;
-            rect.anchorMin = panelPosition.anchorMin;
-            int id = LeanTween.move(rect,panelPosition.position, 0.5f).id;
+        StopAllCoroutines();
+        LeanTween.cancel(gameObject);
 
-            while (LeanTween.descr(id) != null) {
-                yield return null;
-            }
+        // Só atualiza anchors se foram customizados
+        if (pos.anchorMin != Vector2.zero || pos.anchorMax != Vector2.zero)
+        {
+            rect.anchorMin = pos.anchorMin;
+            rect.anchorMax = pos.anchorMax;
         }
+
+        // Move suavemente a anchoredPosition da UI
+        Vector2 targetPos = new Vector2(pos.position.x, pos.position.y);
+        LeanTween.value(gameObject, (Vector2 val) => {
+            if (rect != null) rect.anchoredPosition = val;
+        }, rect.anchoredPosition, targetPos, 0.25f).setEase(LeanTweenType.easeOutQuad);
     }
 }

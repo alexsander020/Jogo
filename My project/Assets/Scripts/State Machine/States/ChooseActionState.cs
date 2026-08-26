@@ -1,15 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using UnityEngine.Windows;
 
 public class ChooseActionState : State
 {
     int index;
+
     public override void Enter()
     {
         base.Enter();
@@ -17,7 +15,21 @@ public class ChooseActionState : State
         ChangeSelector();
         inputs.OnMove += OnMove;
         inputs.OnFire += OnFire;
-        machine.ChooseActionPanel.MoveTo("Show");
+
+        if (machine.ChooseActionPanel != null)
+        {
+            machine.ChooseActionPanel.MoveTo("Show");
+        }
+
+        if (BattleHUD.Instance != null)
+        {
+            BattleHUD.Instance.UpdateControlsPrompt(
+                "MENU DE AÇÕES", 
+                "• [◄ / ► ou A / D] : Navegar Opções (Mover, Atacar, Deck, Esperar)\n• [ESPAÇO / ENTER / Z] : Confirmar Ação\n• [X / ESC] : Navegação Livre no Grid"
+            );
+        }
+
+        Debug.Log($"[ChooseActionState] Menu de Ações aberto para {currentUnit?.unitName}.");
     }
 
     public override void Exit()
@@ -25,23 +37,30 @@ public class ChooseActionState : State
         base.Exit();
         inputs.OnMove -= OnMove;
         inputs.OnFire -= OnFire;
-        machine.ChooseActionPanel.MoveTo("Hide");
+
+        if (machine.ChooseActionPanel != null)
+        {
+            machine.ChooseActionPanel.MoveTo("Hide");
+        }
     }
 
-    void OnMove(object sender, object args) {
-
+    void OnMove(object sender, object args)
+    {
         Vector3Int button = (Vector3Int)args;
-        if (button == Vector3Int.left) {
+        if (button == Vector3Int.left || button == Vector3Int.up)
+        {
             index--;
             ChangeSelector();
-        } else if (button == Vector3Int.right) {
+        }
+        else if (button == Vector3Int.right || button == Vector3Int.down)
+        {
             index++;
             ChangeSelector();
         }
     }
 
-    void OnFire(object sender, object args) {
-
+    void OnFire(object sender, object args)
+    {
         int button = (int)args;
 
         if (button == 1)
@@ -50,38 +69,48 @@ public class ChooseActionState : State
         }
         else if (button == 2)
         {
-            machine.Change<RoamState>();
+            // Voltar para navegação livre
+            machine.ChangeTo<RoamState>();
         }
     }
 
-    void ChangeSelector() {
-        if (index == -1) {
+    void ChangeSelector()
+    {
+        if (machine.ChooseActionButton == null || machine.ChooseActionButton.Count == 0) return;
+
+        if (index < 0)
+        {
             index = machine.ChooseActionButton.Count - 1;
-        } 
-        else if (index == machine.ChooseActionButton.Count) {
+        }
+        else if (index >= machine.ChooseActionButton.Count)
+        {
             index = 0;
         }
-        //machine.ChooseActionSelection.transform.localPosition =
-        //machine.ChooseActionButton[index].transform.localPosition;
+
+        if (machine.chaooseActionSelected != null && machine.ChooseActionButton.Count > index)
+        {
+            machine.chaooseActionSelected.transform.position = machine.ChooseActionButton[index].transform.position;
+        }
     }
 
     void ActionButton()
     {
-        Debug.Log(index);
+        Debug.Log($"[ChooseActionState] Ação selecionada: {index}");
 
         switch (index)
         {
             case 0:
-                //machine.ChangeTo<MoveTargetState>();
+                Debug.Log("[Ação] Opção Mover selecionada.");
                 break;
             case 1:
-                //machine.ChangeTo<ActionSelectState>();
+                Debug.Log("[Ação] Opção Atacar selecionada.");
                 break;
             case 2:
-                //machine.ChangeTo<ItemSelectState>();
+                Debug.Log("[Ação] Opção NetFusion / Deck selecionada.");
                 break;
             case 3:
-                //machine.ChangeTo<WaitState>();
+                Debug.Log("[Ação] Opção Esperar selecionada. Escolha a direção...");
+                machine.ChangeTo<SelectFacingState>();
                 break;
         }
     }

@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class State : MonoBehaviour
 {
-    protected InputController inputs { get { return InputController.Instance; } }
-    protected StateMachineController machine { get { return StateMachineController.Instance; } }
+    protected InputController inputs => InputController.Instance;
+    protected StateMachineController machine => StateMachineController.Instance;
+    protected BattleController battle => BattleController.Instance;
+    protected Unit currentUnit => battle != null ? battle.currentUnit : null;
 
     public virtual void Enter()
     {
-
     }
 
     public virtual void Exit()
     {
-
     }
 }

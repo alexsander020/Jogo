@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "path": "",
+  "mcpServers": {
+    "unity-mcp": {
+      "type": "stdio",
+      "command": "C:\\Users\\20010480\\.unity/relay\\relay_win.exe",
+      "args": [
+        "--mcp"
+      ]
+    }
+  }
+}

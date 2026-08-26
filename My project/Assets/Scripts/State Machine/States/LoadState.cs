@@ -5,24 +5,32 @@ using UnityEngine;
 
 public class LoadState : State
 {
-
     public override void Enter()
     {
-      StartCoroutine(LoadSequence());
+        StartCoroutine(LoadSequence());
     }
-
 
     IEnumerator LoadSequence()
     {
+        // 1. Inicializa o tabuleiro e pisos
         yield return StartCoroutine(Board.instance.InitSequence(this));
         yield return null;
-        MapLoader.instance.CriaUnidades();
+
+        // 2. Instancia as unidades 2v2 no tabuleiro
+        if (MapLoader.instance != null)
+        {
+            MapLoader.instance.CriaUnidades();
+        }
         yield return null;
 
-        StateMachineController.Instance.Change<ChooseActionState>();
+        // 3. Inicializa o controlador de batalha e a fila de turnos
+        if (battle != null)
+        {
+            battle.InitBattle();
+        }
+        yield return null;
 
+        // 4. Inicia o primeiro turno de combate
+        machine.ChangeTo<TurnStartState>();
     }
-
-
-    
 }
