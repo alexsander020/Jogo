@@ -65,11 +65,11 @@ public class Movement : MonoBehaviour
 
             if (tileAtual != null && to.floor != null && tileAtual.floor != null && tileAtual.floor != to.floor)
             {
-                yield return StartCoroutine(Jump(to));
+                yield return Jump(to);
             }
             else
             {
-                yield return StartCoroutine(Walk(to));
+                yield return Walk(to);
             }
         }
 
@@ -82,52 +82,72 @@ public class Movement : MonoBehaviour
 
     IEnumerator Walk(TileLogic to)
     {
-        int id = LeanTween.move(gameObject, to.worldPos, MoveSpeed).id;
+        Vector3 startPos = transform.position;
+        Vector3 endPos = to.worldPos;
+        float elapsed = 0f;
+
         tileAtual = to;
 
-        yield return new WaitForSeconds(MoveSpeed * 0.5f);
+        while (elapsed < MoveSpeed)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / MoveSpeed);
+            transform.position = Vector3.Lerp(startPos, endPos, t);
+
+            if (t >= 0.5f && SR != null)
+            {
+                SR.sortingOrder = to.contentOrder;
+            }
+
+            yield return null;
+        }
+
+        transform.position = endPos;
         if (SR != null)
         {
             SR.sortingOrder = to.contentOrder;
-        }
-
-        while (LeanTween.descr(id) != null)
-        {
-            yield return null;
         }
         to.content = this.gameObject;
     }
 
     IEnumerator Jump(TileLogic to)
     {
-        int id1 = LeanTween.move(gameObject, to.worldPos, MoveSpeed).id;
-        if (jumper != null)
-        {
-            LeanTween.moveLocalY(jumper.gameObject, jumpHeight, MoveSpeed * 0.5f)
-                .setLoopPingPong(1).setEase(LeanTweenType.easeInOutQuad);
-        }
-
-        float timerOrderUpdate = MoveSpeed;
-        if (tileAtual.floor != null && to.floor != null && tileAtual.floor.tilemap.tileAnchor.y > to.floor.tilemap.tileAnchor.y)
-        {
-            timerOrderUpdate *= 0.85f;
-        }
-        else
-        {
-            timerOrderUpdate *= 0.2f;
-        }
-
-        yield return new WaitForSeconds(timerOrderUpdate);
+        Vector3 startPos = transform.position;
+        Vector3 endPos = to.worldPos;
+        float elapsed = 0f;
 
         tileAtual = to;
+
+        Vector3 jumperStartLocalPos = jumper != null && jumper != transform ? jumper.localPosition : Vector3.zero;
+
+        while (elapsed < MoveSpeed)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / MoveSpeed);
+            transform.position = Vector3.Lerp(startPos, endPos, t);
+
+            if (jumper != null && jumper != transform)
+            {
+                float arc = Mathf.Sin(t * Mathf.PI) * jumpHeight;
+                jumper.localPosition = jumperStartLocalPos + new Vector3(0, arc, 0);
+            }
+
+            if (t >= 0.5f && SR != null)
+            {
+                SR.sortingOrder = to.contentOrder;
+            }
+
+            yield return null;
+        }
+
+        transform.position = endPos;
+        if (jumper != null && jumper != transform)
+        {
+            jumper.localPosition = jumperStartLocalPos;
+        }
         if (SR != null)
         {
             SR.sortingOrder = to.contentOrder;
-        }
-
-        while (LeanTween.descr(id1) != null)
-        {
-            yield return null;
         }
         to.content = this.gameObject;
     }

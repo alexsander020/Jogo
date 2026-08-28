@@ -37,6 +37,11 @@ public class StateMachineController : MonoBehaviour
             ChooseActionPanel = FindFirstObjectByType<PanelPositioner>();
         }
 
+        if (ChooseActionPanel != null)
+        {
+            ChooseActionPanel.gameObject.SetActive(false);
+        }
+
         // Inicializa o BattleHUD automaticamente se não existir na cena
         if (FindFirstObjectByType<BattleHUD>() == null)
         {
@@ -46,6 +51,10 @@ public class StateMachineController : MonoBehaviour
 
     void Start()
     {
+        if (ChooseActionPanel != null)
+        {
+            ChooseActionPanel.gameObject.SetActive(false);
+        }
         ChangeTo<LoadState>();
     }
 

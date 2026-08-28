@@ -30,7 +30,20 @@ public class LoadState : State
         }
         yield return null;
 
-        // 4. Inicia o primeiro turno de combate
+        // 4. Centraliza a câmera perfeitamente no tabuleiro
+        Camera mainCam = Camera.main;
+        if (mainCam != null && mainCam.GetComponent<TacticalCameraController>() == null)
+        {
+            mainCam.gameObject.AddComponent<TacticalCameraController>();
+        }
+
+        if (TacticalCameraController.Instance != null)
+        {
+            TacticalCameraController.Instance.CenterOnBoard();
+        }
+        yield return null;
+
+        // 5. Inicia o primeiro turno de combate
         machine.ChangeTo<TurnStartState>();
     }
 }

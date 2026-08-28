@@ -1,5 +1,8 @@
 using System;
 using System.Collections.Generic;
+using TacticalBattle.Core;
+using TacticalBattle.Evolution;
+using TacticalBattle.Integration;
 using UnityEngine;
 
 public class BattleController : MonoBehaviour
@@ -11,6 +14,8 @@ public class BattleController : MonoBehaviour
     public Unit currentUnit;
     public int roundCount = 0;
 
+    public TacticalBattleController tacticalController;
+
     public event Action<Unit> OnTurnStart;
     public event Action<Unit> OnTurnEnd;
     public event Action<Team> OnBattleEnd;
@@ -18,6 +23,7 @@ public class BattleController : MonoBehaviour
     void Awake()
     {
         Instance = this;
+        tacticalController = new TacticalBattleController();
     }
 
     public void RegisterUnit(Unit unit)
@@ -84,8 +90,16 @@ public class BattleController : MonoBehaviour
     {
         if (currentUnit == null) return;
 
+        // Converte para UnitState, resolve SP/Devolução e sincroniza de volta
+        UnitState state = UnitAdapter.CreateUnitStateFromMono(currentUnit);
+        if (state != null)
+        {
+            EvolutionModule.OnUnitTurnStart(state);
+            UnitAdapter.SyncBackToMono(state, currentUnit);
+        }
+
         currentUnit.StartTurn();
-        Debug.Log($"[NetShift Battle] Turno de: {currentUnit.unitName} (Time: {currentUnit.team}, Cat: {currentUnit.category}, Protocol: {currentUnit.protocol})");
+        Debug.Log($"[NetShift Battle] Turno de: {currentUnit.unitName} (Time: {currentUnit.team}, Protocol: {currentUnit.protocol}, Rank: {currentUnit.rank})");
         OnTurnStart?.Invoke(currentUnit);
     }
 

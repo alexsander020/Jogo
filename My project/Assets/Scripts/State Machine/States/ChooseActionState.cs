@@ -12,23 +12,21 @@ public class ChooseActionState : State
     {
         base.Enter();
         index = 0;
-        ChangeSelector();
         inputs.OnMove += OnMove;
         inputs.OnFire += OnFire;
 
-        if (machine.ChooseActionPanel != null)
-        {
-            machine.ChooseActionPanel.MoveTo("Show");
-        }
-
         if (BattleHUD.Instance != null)
         {
+            BattleHUD.Instance.ShowActionMenu(true);
+            BattleHUD.Instance.UpdateActionMenuSelection(index, currentUnit);
+            BattleHUD.Instance.UpdateTurnBanner(currentUnit);
             BattleHUD.Instance.UpdateControlsPrompt(
                 "MENU DE AÇÕES", 
-                "• [◄ / ► ou A / D] : Navegar Opções (Mover, Atacar, Deck, Esperar)\n• [ESPAÇO / ENTER / Z] : Confirmar Ação\n• [X / ESC] : Navegação Livre no Grid"
+                "• [W / S ou SETAS] : Navegar Opções    [ESPAÇO / ENTER / Z] : Confirmar    [X / ESC] : Modo Livre"
             );
         }
 
+        ChangeSelector();
         Debug.Log($"[ChooseActionState] Menu de Ações aberto para {currentUnit?.unitName}.");
     }
 
@@ -38,23 +36,25 @@ public class ChooseActionState : State
         inputs.OnMove -= OnMove;
         inputs.OnFire -= OnFire;
 
-        if (machine.ChooseActionPanel != null)
+        if (BattleHUD.Instance != null)
         {
-            machine.ChooseActionPanel.MoveTo("Hide");
+            BattleHUD.Instance.ShowActionMenu(false);
         }
     }
 
     void OnMove(object sender, object args)
     {
         Vector3Int button = (Vector3Int)args;
-        if (button == Vector3Int.left || button == Vector3Int.up)
+        if (button == Vector3Int.up || button == Vector3Int.left)
         {
             index--;
+            if (index < 0) index = 5;
             ChangeSelector();
         }
-        else if (button == Vector3Int.right || button == Vector3Int.down)
+        else if (button == Vector3Int.down || button == Vector3Int.right)
         {
             index++;
+            if (index > 5) index = 0;
             ChangeSelector();
         }
     }
@@ -69,27 +69,24 @@ public class ChooseActionState : State
         }
         else if (button == 2)
         {
-            // Voltar para navegação livre
+            // Voltar para navegação livre no grid
             machine.ChangeTo<RoamState>();
         }
     }
 
     void ChangeSelector()
     {
-        if (machine.ChooseActionButton == null || machine.ChooseActionButton.Count == 0) return;
-
-        if (index < 0)
+        if (BattleHUD.Instance != null)
         {
-            index = machine.ChooseActionButton.Count - 1;
-        }
-        else if (index >= machine.ChooseActionButton.Count)
-        {
-            index = 0;
+            BattleHUD.Instance.UpdateActionMenuSelection(index, currentUnit);
         }
 
-        if (machine.chaooseActionSelected != null && machine.ChooseActionButton.Count > index)
+        if (machine.ChooseActionButton != null && machine.ChooseActionButton.Count > 0)
         {
-            machine.chaooseActionSelected.transform.position = machine.ChooseActionButton[index].transform.position;
+            if (index >= 0 && index < machine.ChooseActionButton.Count && machine.chaooseActionSelected != null)
+            {
+                machine.chaooseActionSelected.transform.position = machine.ChooseActionButton[index].transform.position;
+            }
         }
     }
 
@@ -99,17 +96,43 @@ public class ChooseActionState : State
 
         switch (index)
         {
-            case 0:
-                Debug.Log("[Ação] Opção Mover selecionada.");
+            case 0: // Mover
+                if (currentUnit != null && currentUnit.CanMove())
+                {
+                    Debug.Log("[Ação] Opção Mover selecionada.");
+                    machine.ChangeTo<MoveTargetState>();
+                }
+                else
+                {
+                    Debug.LogWarning("[Ação] Esta unidade já realizou seu movimento neste turno!");
+                    if (BattleHUD.Instance != null)
+                    {
+                        BattleHUD.Instance.UpdateControlsPrompt(
+                            "MOVIMENTO JÁ REALIZADO", 
+                            "• A unidade atual já se moveu neste turno. Escolha Atacar, Item, Evolução ou Encerrar."
+                        );
+                    }
+                }
                 break;
-            case 1:
+
+            case 1: // Atacar
                 Debug.Log("[Ação] Opção Atacar selecionada.");
                 break;
-            case 2:
-                Debug.Log("[Ação] Opção NetFusion / Deck selecionada.");
+
+            case 2: // Item
+                Debug.Log("[Ação] Opção Item selecionada.");
                 break;
-            case 3:
-                Debug.Log("[Ação] Opção Esperar selecionada. Escolha a direção...");
+
+            case 3: // Evolução
+                Debug.Log("[Ação] Opção Evolução / NetFusion selecionada.");
+                break;
+
+            case 4: // Falar / Talk
+                Debug.Log("[Ação] Opção Falar selecionada.");
+                break;
+
+            case 5: // Encerrar Turno
+                Debug.Log("[Ação] Opção Encerrar Turno selecionada. Escolha a direção de término...");
                 machine.ChangeTo<SelectFacingState>();
                 break;
         }

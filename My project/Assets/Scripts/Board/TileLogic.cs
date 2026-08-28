@@ -5,7 +5,7 @@ using UnityEngine;
 public class TileLogic
 {
     public Vector3Int pos;
-    public Vector3Int worldPos;
+    public Vector3 worldPos;
     public GameObject content;
     public Floor floor;
     public int contentOrder;
@@ -17,7 +17,7 @@ public class TileLogic
     public TileLogic(Vector3Int cellPos, Vector3 worldPosition, Floor tempFloor)
     {
         pos = cellPos;
-        worldPos = Vector3Int.FloorToInt(worldPosition);
+        worldPos = worldPosition;
         floor = tempFloor;
         contentOrder = tempFloor.contentOrder;
     }

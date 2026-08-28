@@ -11,6 +11,7 @@ public class Unit : MonoBehaviour
     public FunctionalCategory category = FunctionalCategory.System;
     public ProtocolTrinity protocol = ProtocolTrinity.Firewall;
     public EvolutionRank rank = EvolutionRank.Standard;
+    public bool isEvolved => rank != EvolutionRank.Standard;
 
     [Header("Posicionamento e Orientação")]
     public FacingDirection facing = FacingDirection.South;

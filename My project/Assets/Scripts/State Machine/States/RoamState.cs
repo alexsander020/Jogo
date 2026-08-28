@@ -36,6 +36,10 @@ public class RoamState : State
         if (t != null)
         {
             machine.MoveSelectorTo(t);
+            if (TacticalCameraController.Instance != null && Selector.Instance != null)
+            {
+                TacticalCameraController.Instance.FocusOn(Selector.Instance.transform);
+            }
         }
     }
 
