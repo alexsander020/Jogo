@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\assets\\scripts\\board\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|c:\\users\\lorddrakkon\\documents\\github\\jogo\\my project\\assets\\scripts\\board\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\board\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -35,7 +35,7 @@
       "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\panelposition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|c:\\users\\lorddrakkon\\documents\\github\\jogo\\my project\\assets\\scripts\\ui\\panelpositioner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\assets\\scripts\\ui\\panelpositioner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\panelpositioner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -94,8 +94,7 @@
               "RelativeToolTip": "Assets\\Scripts\\State Machine\\StateMachineController.cs",
               "ViewState": "AgIAADEAAAAAAAAAAAAcwEUAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-01T20:05:20.632Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-01T20:05:20.632Z"
             },
             {
               "$type": "Document",
@@ -131,8 +130,7 @@
               "RelativeToolTip": "Assets\\Scripts\\UI\\PanelPosition.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-02T13:25:01.861Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-02T13:25:01.861Z"
             },
             {
               "$type": "Document",
@@ -144,8 +142,7 @@
               "RelativeToolTip": "Assets\\Scripts\\UI\\PanelPositioner.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-02T13:43:26.341Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-02T13:43:26.341Z"
             },
             {
               "$type": "Document",
@@ -169,8 +166,7 @@
               "RelativeToolTip": "Assets\\Scripts\\State Machine\\States\\LoadState.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-01T20:21:07.7Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-01T20:21:07.7Z"
             },
             {
               "$type": "Document",
@@ -254,8 +250,7 @@
               "RelativeToolTip": "Assets\\Scripts\\State Machine\\State.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-01T20:01:54.041Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-01T20:01:54.041Z"
             },
             {
               "$type": "Document",
@@ -267,8 +262,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Movement\\Movement.cs",
               "ViewState": "AgIAACMAAAAAAAAAAAA9wDMAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-01T18:05:19.17Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-01T18:05:19.17Z"
             },
             {
               "$type": "Document",
@@ -278,7 +272,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Board\\Board.cs",
               "ToolTip": "C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\Assets\\Scripts\\Board\\Board.cs",
               "RelativeToolTip": "Assets\\Scripts\\Board\\Board.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEQAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwB0AAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-01T14:38:20.597Z",
               "EditorCaption": ""
@@ -293,8 +287,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Board\\TileLogic.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAQwBcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-01T14:29:12.82Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-01T14:29:12.82Z"
             },
             {
               "$type": "Document",
@@ -306,8 +299,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Board\\Floor.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAgwAsAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-01T14:12:25.743Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-01T14:12:25.743Z"
             }
           ]
         }

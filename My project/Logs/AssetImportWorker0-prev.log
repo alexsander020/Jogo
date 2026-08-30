@@ -1,37 +1,37 @@
 [Licensing::Module] Trying to connect to existing licensing client channel...
 Built from '6000.3/respin/6000.3.6f1-732c1ec89f18' branch; Version is '6000.3.6f1 (bbb010bdb8a3) revision 12300304'; Using compiler version '194234433'; Build Type 'Release'
-OS: 'Windows 11  (10.0.26100) Professional' Language: 'pt' Physical Memory: 7973 MB
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-LordDrakkon" at "2026-08-30T14:17:35.021671Z"
+OS: 'Windows 10  (10.0.19045) 64bit Professional' Language: 'pt' Physical Memory: 32638 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-20010480" at "2026-08-28T17:26:55.3683107Z"
 System  architecture: x64
 Process architecture: x64
-Date: 2026-08-28T17:26:55Z
+Date: 2026-08-30T14:17:35Z
 
 COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity 6000.3.6f1\Editor\Unity.exe
+C:\Program Files\Unity\Hub\Editor\6000.3.6f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-C:/Users/20010480/Documents/GitHub/Jogo/My project
+C:/Users/LordDrakkon/Documents/GitHub/Jogo/My project
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-58776
+49280
 -licensingIpc
-LicenseClient-20010480
+LicenseClient-LordDrakkon
 -job-worker-count
-2
+5
 -background-job-worker-count
 8
 -gc-helper-count
 1
 -name
 AssetImport
-Successfully changed project path to: C:/Users/20010480/Documents/GitHub/Jogo/My project
-C:/Users/20010480/Documents/GitHub/Jogo/My project
+Successfully changed project path to: C:/Users/LordDrakkon/Documents/GitHub/Jogo/My project
+C:/Users/LordDrakkon/Documents/GitHub/Jogo/My project
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
     "memorysetup-temp-allocator-size-audio-worker=65536"
@@ -67,15 +67,13 @@ C:/Users/20010480/Documents/GitHub/Jogo/My project
     "memorysetup-job-temp-allocator-block-size-background=1048576"
     "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
     "memorysetup-temp-allocator-size-cloud-worker=32768"
-Player connection [20468]  Target information:
+Player connection [19464]  Target information:
 
-Player connection [20468]  * "[IP] 10.1.33.188 [Port] 0 [Flags] 2 [Guid] 2868632514 [EditorId] 2868632514 [Version] 1048832 [Id] WindowsEditor(7,307-29) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [19464]  * "[IP] 192.168.1.113 [Port] 0 [Flags] 2 [Guid] 3385435978 [EditorId] 3385435978 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-V0Q8PJ4) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [20468]  * "[IP] 192.168.56.1 [Port] 0 [Flags] 2 [Guid] 2868632514 [EditorId] 2868632514 [Version] 1048832 [Id] WindowsEditor(7,307-29) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
-
-Player connection [20468] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [20468] Host joined alternative multi-casting on [225.0.0.222:34997]...
-JobSystem: Creating JobQueue using job-worker-count value 2
+Player connection [19464] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [19464] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 5
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
 [Physics::Module] Id: 0xdecafbad
@@ -86,78 +84,80 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 93.27 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 15.06 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.3.6f1 (bbb010bdb8a3)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity 6000.3.6f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/20010480/Documents/GitHub/Jogo/My project/Assets
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/LordDrakkon/Documents/GitHub/Jogo/My project/Assets
 GfxDevice: creating device client; kGfxThreadingModeNonThreaded
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: Intel(R) UHD Graphics 630 (ID=0x3e92)
-    Vendor:   Intel
-    VRAM:     3986 MB
-    Driver:   31.0.101.2141
+    Renderer: Radeon RX550/550 Series (ID=0x699f)
+    Vendor:   ATI
+    VRAM:     4075 MB
+    Driver:   31.0.21923.1000
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity 6000.3.6f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity 6000.3.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
-Mono config path = 'C:/Program Files/Unity 6000.3.6f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56464
-[Licensing::Client] Handshaking with LicensingClient:
-  Version:                 1.17.4+4293ba1
-  Session Id:              5c5887c5f2bd46cda8cc9e259739f3ba
-  Correlation Id:          26f8cd5de56cd886f6117664ff5db09f
-  External correlation Id: 8065701105583693264
-  Machine Id:              KHPjjKXc3m3Pysmhk8qSziAJNgM=
-[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-20010480" (connect: 0.00s, validation: 0.02s, handshake: 2.52s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-20010480-notifications" at "2026-08-28T17:26:57.9123625Z"
-[Licensing::Module] Licensing Background thread has ended after 2.55s
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56888
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity 6000.3.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+[Licensing::Module] Licensing is not yet initialized.
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.17.4+4293ba1
+  Session Id:              0292144aaa1243f6a47f98167fc3e47f
+  Correlation Id:          7e07a18a38ea693c54da77ee6d3dcf57
+  External correlation Id: 5702482374992899814
+  Machine Id:              rz7OFoUSL7MgzTyJRWH9cIttXHE=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-LordDrakkon" (connect: 0.00s, validation: 0.00s, handshake: 2.06s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-LordDrakkon-notifications" at "2026-08-30T14:17:37.0807364Z"
+[Licensing::Module] Licensing Background thread has ended after 2.06s
+[Licensing::Module] Licensing is initialized (took 0.94s).
 [Licensing::Client] Successfully resolved entitlement details
 [Licensing::Module] License group:
-  Id: E4-QACR-PCJC-RJZY-FAD9-XXXX
-  Product: Unity Education
-  Type: ULF
-  Expiration: 2027-09-15T17:06:36Z
-Register platform support module: C:/Program Files/Unity 6000.3.6f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
-Registered in 0.133008 seconds.
-- Loaded All Assemblies, in  1.654 seconds
+  Id: 4674060662707-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Registered in 0.941623 seconds.
+- Loaded All Assemblies, in  1.697 seconds
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 816 ms
+Android Extension - Scanning For ADB Devices 289 ms
 Native extension for WindowsStandalone target not found
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  2.042 seconds
-Domain Reload Profiling: 3692ms
-	BeginReloadAssembly (855ms)
+- Finished resetting the current domain, in  1.010 seconds
+Domain Reload Profiling: 2702ms
+	BeginReloadAssembly (301ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (3ms)
-	RebuildCommonClasses (70ms)
-	RebuildNativeTypeToScriptingClass (23ms)
-	initialDomainReloadingComplete (257ms)
-	LoadAllAssembliesAndSetupDomain (444ms)
-		LoadAssemblies (844ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (60ms)
+	RebuildNativeTypeToScriptingClass (28ms)
+	initialDomainReloadingComplete (1016ms)
+	LoadAllAssembliesAndSetupDomain (287ms)
+		LoadAssemblies (296ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (437ms)
-			TypeCache.Refresh (426ms)
-				TypeCache.ScanAssembly (379ms)
-			BuildScriptInfoCaches (1ms)
-			ResolveRequiredComponents (3ms)
-	FinalizeReload (2044ms)
+		AnalyzeDomain (281ms)
+			TypeCache.Refresh (278ms)
+				TypeCache.ScanAssembly (252ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (1010ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1945ms)
+		SetupLoadedEditorAssemblies (940ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (1090ms)
-			SetLoadedEditorAssemblies (7ms)
-			BeforeProcessingInitializeOnLoad (315ms)
-			ProcessInitializeOnLoadAttributes (402ms)
-			ProcessInitializeOnLoadMethodAttributes (131ms)
+			InitializePlatformSupportModulesInManaged (419ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (159ms)
+			ProcessInitializeOnLoadAttributes (256ms)
+			ProcessInitializeOnLoadMethodAttributes (100ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -168,11 +168,11 @@ Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
 [Licensing::Client] Successfully resolved entitlement details
 Symbol file LoadedFromMemory is not a mono symbol file
-- Loaded All Assemblies, in  3.911 seconds
-Refreshing native plugins compatible for Editor in 4.88 ms, found 4 plugins.
+- Loaded All Assemblies, in  1.762 seconds
+Refreshing native plugins compatible for Editor in 1.81 ms, found 4 plugins.
 Native extension for Android target not found
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 5.05 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 1.99 ms, found 4 plugins.
 Package Manager log level set to [2]
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
@@ -180,304 +180,582 @@ Package Manager log level set to [2]
 [Licensing::Client] Error: Code 404 while processing request (status: Found 0 entitlement groups and 0 free entitlements matching requested entitlement ids)
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  5.067 seconds
-Domain Reload Profiling: 8942ms
-	BeginReloadAssembly (296ms)
+- Finished resetting the current domain, in  2.495 seconds
+Domain Reload Profiling: 4249ms
+	BeginReloadAssembly (274ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (8ms)
+		DisableScriptedObjects (11ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (52ms)
-	RebuildCommonClasses (53ms)
-	RebuildNativeTypeToScriptingClass (19ms)
-	initialDomainReloadingComplete (100ms)
-	LoadAllAssembliesAndSetupDomain (3407ms)
-		LoadAssemblies (2249ms)
+		CreateAndSetChildDomain (42ms)
+	RebuildCommonClasses (50ms)
+	RebuildNativeTypeToScriptingClass (26ms)
+	initialDomainReloadingComplete (92ms)
+	LoadAllAssembliesAndSetupDomain (1310ms)
+		LoadAssemblies (660ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (1301ms)
-			TypeCache.Refresh (1102ms)
-				TypeCache.ScanAssembly (1051ms)
-			BuildScriptInfoCaches (173ms)
-			ResolveRequiredComponents (16ms)
-	FinalizeReload (5069ms)
+		AnalyzeDomain (798ms)
+			TypeCache.Refresh (624ms)
+				TypeCache.ScanAssembly (589ms)
+			BuildScriptInfoCaches (147ms)
+			ResolveRequiredComponents (21ms)
+	FinalizeReload (2495ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (4633ms)
+		SetupLoadedEditorAssemblies (2265ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (15ms)
+			InitializePlatformSupportModulesInManaged (14ms)
 			SetLoadedEditorAssemblies (6ms)
-			BeforeProcessingInitializeOnLoad (527ms)
-			ProcessInitializeOnLoadAttributes (2610ms)
-			ProcessInitializeOnLoadMethodAttributes (1465ms)
-			AfterProcessingInitializeOnLoad (10ms)
-			EditorAssembliesLoaded (1ms)
+			BeforeProcessingInitializeOnLoad (287ms)
+			ProcessInitializeOnLoadAttributes (1483ms)
+			ProcessInitializeOnLoadMethodAttributes (466ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (12ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
-Refreshing native plugins compatible for Editor in 2.68 ms, found 4 plugins.
+		AwakeInstancesAfterBackupRestoration (8ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Refreshing native plugins compatible for Editor in 1.85 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 17 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 8997 unused Assets / (5.2 MB). Loaded Objects now: 9815.
-Memory consumption went from 168.2 MB to 162.9 MB.
-Total: 169.424400 ms (FindLiveObjects: 49.090200 ms CreateObjectMapping: 3.009000 ms MarkObjects: 88.199600 ms  DeleteObjects: 29.123100 ms)
+Unloading 9023 unused Assets / (4.9 MB). Loaded Objects now: 9842.
+Memory consumption went from 174.0 MB to 169.1 MB.
+Total: 25.639500 ms (FindLiveObjects: 1.112400 ms CreateObjectMapping: 2.035900 ms MarkObjects: 18.694900 ms  DeleteObjects: 3.795100 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 28622.189804 seconds.
-  path: Assets/Scripts/State Machine/States/ChooseActionState.cs
-  artifactKey: Guid(1eb724a813b22634f8892c43d7af56cc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Scripts/State Machine/States/ChooseActionState.cs using Guid(1eb724a813b22634f8892c43d7af56cc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '003c2bfe7e68f524daa785d7b2eb526b') in 0.2828749 seconds
+  Time since last request: 571043.759121 seconds.
+  path: Assets/Scripts/Board/GridHighlighter.cs
+  artifactKey: Guid(72c67057fcc01ea48a74c8e8df66dbd8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Board/GridHighlighter.cs using Guid(72c67057fcc01ea48a74c8e8df66dbd8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1135a011533a2a3cb31567ebc7f35a46') in 0.1247892 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000673 seconds.
-  path: Assets/Scripts/IO/InputController.cs
-  artifactKey: Guid(f65267ee218d76946b990b24282e1a78) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Scripts/IO/InputController.cs using Guid(f65267ee218d76946b990b24282e1a78) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '33bc37338f7c488a4bc171fb05987887') in 0.014512 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Scripts/State Machine/States/TurnStartState.cs
-  artifactKey: Guid(976dd6b763125f54a82e303d22cbae2e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Scripts/State Machine/States/TurnStartState.cs using Guid(976dd6b763125f54a82e303d22cbae2e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b8ede1ea7e572daafb5e4233db6a2631') in 0.0077657 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 1.83 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 17 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 9011 unused Assets / (4.3 MB). Loaded Objects now: 9839.
-Memory consumption went from 165.2 MB to 160.8 MB.
-Total: 737.012200 ms (FindLiveObjects: 2.601100 ms CreateObjectMapping: 1.888400 ms MarkObjects: 726.691700 ms  DeleteObjects: 5.828800 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Import Request.
-  Time since last request: 649.584007 seconds.
-  path: Assets/Scripts/TacticalBattle/Tests/StandaloneRunner/obj/Debug/net8.0/StandaloneRunner.AssemblyInfoInputs.cache
-  artifactKey: Guid(750c0f3673c4172439af62bd051b5abf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Scripts/TacticalBattle/Tests/StandaloneRunner/obj/Debug/net8.0/StandaloneRunner.AssemblyInfoInputs.cache using Guid(750c0f3673c4172439af62bd051b5abf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f28c174297bcbc3fa267f24cdfe47652') in 0.1173478 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000040 seconds.
-  path: Assets/Scripts/TacticalBattle/Tests/StandaloneRunner/bin/Debug/net8.0/StandaloneRunner.pdb
-  artifactKey: Guid(ecbed74859e2fca4cad49ed35bc68f57) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Scripts/TacticalBattle/Tests/StandaloneRunner/bin/Debug/net8.0/StandaloneRunner.pdb using Guid(ecbed74859e2fca4cad49ed35bc68f57) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd8f4408e3c54b0641177fb99431b4fec') in 0.0179143 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/Scripts/TacticalBattle/Talk/TalkModule.cs
-  artifactKey: Guid(3bcfc18df72d34d4580e3df07c7c1bb3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Scripts/TacticalBattle/Talk/TalkModule.cs using Guid(3bcfc18df72d34d4580e3df07c7c1bb3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'eca737474089a315730a0177a2e9ee33') in 0.0386173 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/Scripts/TacticalBattle/Tests/StandaloneRunner/obj/Debug/net8.0/StandaloneRunner.sourcelink.json
-  artifactKey: Guid(18246a2d8dbe8ff488778d265069fbcc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Scripts/TacticalBattle/Tests/StandaloneRunner/obj/Debug/net8.0/StandaloneRunner.sourcelink.json using Guid(18246a2d8dbe8ff488778d265069fbcc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '74c5d990510f9a4a2cdbad49290225a6') in 0.0118973 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000093 seconds.
-  path: Assets/Scripts/TacticalBattle/Tests/StandaloneRunner/obj/Debug/net8.0/refint/StandaloneRunner.dll
-  artifactKey: Guid(7cef08e9b59983248b9b2850b721ec1a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Scripts/TacticalBattle/Tests/StandaloneRunner/obj/Debug/net8.0/refint/StandaloneRunner.dll using Guid(7cef08e9b59983248b9b2850b721ec1a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a3f8a688cdb35935fa778d09a9529d1a') in 0.1568318 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/Scripts/TacticalBattle/Grid/PathfindingService.cs
-  artifactKey: Guid(2dc48cc1d7f36f648b0819a1e0415966) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Scripts/TacticalBattle/Grid/PathfindingService.cs using Guid(2dc48cc1d7f36f648b0819a1e0415966) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6aa907c4b4c5108b1bcaad9134963c51') in 0.0083022 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000054 seconds.
-  path: Assets/Scripts/TacticalBattle/Attribute
-  artifactKey: Guid(2c28ad3a7e2426a49af5c7ebc1d09b4d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Scripts/TacticalBattle/Attribute using Guid(2c28ad3a7e2426a49af5c7ebc1d09b4d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '13c9d1e19fabe8bac96f857e60259e2b') in 0.0057951 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/Scripts/TacticalBattle/Tests/StandaloneRunner/obj/Debug
-  artifactKey: Guid(261bb0e56914698438d7991f510d9926) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Scripts/TacticalBattle/Tests/StandaloneRunner/obj/Debug using Guid(261bb0e56914698438d7991f510d9926) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a23d1ab3caf69cde43f0cc110c0b4106') in 0.0068483 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000020 seconds.
-  path: Assets/Scripts/TacticalBattle/Integration
-  artifactKey: Guid(a1b474e82d714bf46934803f337c5a70) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Scripts/TacticalBattle/Integration using Guid(a1b474e82d714bf46934803f337c5a70) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '64a860432db743b637346c78e19d5c57') in 0.0062793 seconds
+  path: Assets/Palette/Tiles/Tile_Cyber_Circuit_3.asset
+  artifactKey: Guid(1e349b64f0284f6b82e9857e5cf2ecad) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles/Tile_Cyber_Circuit_3.asset using Guid(1e349b64f0284f6b82e9857e5cf2ecad) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'bfc35f795f816f779eb7bc725ba1dce2') in 0.0603437 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/Scripts/TacticalBattle/Tests/StandaloneRunner/bin/Debug/net8.0/StandaloneRunner.dll
-  artifactKey: Guid(c9e92e581c3b7d247a56668cb7d0efa1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Scripts/TacticalBattle/Tests/StandaloneRunner/bin/Debug/net8.0/StandaloneRunner.dll using Guid(c9e92e581c3b7d247a56668cb7d0efa1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3f3aad21f7b3de87495d164f204ecb74') in 0.015139 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/Scripts/TacticalBattle/Tests/StandaloneRunner/bin/Debug/net8.0/StandaloneRunner.deps.json
-  artifactKey: Guid(7b950568bd6c58443ae6c4a55e52b6bb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Scripts/TacticalBattle/Tests/StandaloneRunner/bin/Debug/net8.0/StandaloneRunner.deps.json using Guid(7b950568bd6c58443ae6c4a55e52b6bb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e6031e435b5bc20205d90f055982e427') in 0.0081913 seconds
+  Time since last request: 0.000030 seconds.
+  path: Assets/Palette/Tiles/Tile_Natural_Boulder_1.asset
+  artifactKey: Guid(4a8dcc5e30b04ddda00698235546120d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles/Tile_Natural_Boulder_1.asset using Guid(4a8dcc5e30b04ddda00698235546120d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b371d93b26cff91069d00d96a7175844') in 0.0145585 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/Scripts/TacticalBattle/Tests/StandaloneRunner/StandaloneRunner.csproj
-  artifactKey: Guid(a2fcfefdba0a6af4b99341e81a8f5bba) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Scripts/TacticalBattle/Tests/StandaloneRunner/StandaloneRunner.csproj using Guid(a2fcfefdba0a6af4b99341e81a8f5bba) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2e3354461ad43285c0c10fa6c12fc60a') in 0.0051318 seconds
+  Time since last request: 0.000023 seconds.
+  path: Assets/Palette/Tiles/Tile_Cyber_Circuit_1.asset
+  artifactKey: Guid(ba33bec137ba4bf1814124ae18af71e2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles/Tile_Cyber_Circuit_1.asset using Guid(ba33bec137ba4bf1814124ae18af71e2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f5ae12381c5d4ba68f4ae7683b40f03e') in 0.0201011 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Scripts/TacticalBattle/Talk/AllyTalkService.cs
-  artifactKey: Guid(7b1d23ed5fa6d0740b7f218f4284edde) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Scripts/TacticalBattle/Talk/AllyTalkService.cs using Guid(7b1d23ed5fa6d0740b7f218f4284edde) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f23c046a65e32c1b9162d201dc53ce33') in 0.0075284 seconds
+  Time since last request: 0.000022 seconds.
+  path: Assets/Scripts/Unit/Unit.cs
+  artifactKey: Guid(8351dca389edf4d4899176eb40109b4f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Unit/Unit.cs using Guid(8351dca389edf4d4899176eb40109b4f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'ac1d67aa6020fc04d5c749484cd612de') in 0.0146229 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Scripts/TacticalBattle/Evolution
-  artifactKey: Guid(00f21796ff5344a4088e2afaac8e0440) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Scripts/TacticalBattle/Evolution using Guid(00f21796ff5344a4088e2afaac8e0440) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b300a19e54433ec26d401007b7bd7871') in 0.0062036 seconds
+  Time since last request: 0.000022 seconds.
+  path: Assets/Palette/Tiles/Tile_Natural_Boulder_5.asset
+  artifactKey: Guid(596c986a13964f2088abb00404e2a657) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles/Tile_Natural_Boulder_5.asset using Guid(596c986a13964f2088abb00404e2a657) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '09f4700c3f7dc48de1baa6157c5e67ca') in 0.0480509 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Scripts/TacticalBattle/Evolution/EvolutionModule.cs
-  artifactKey: Guid(a10e2d7836ca9d94ebcc98bcd549e3a3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Scripts/TacticalBattle/Evolution/EvolutionModule.cs using Guid(a10e2d7836ca9d94ebcc98bcd549e3a3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'dd905a9ad9a3c40a485a828d2b70fde8') in 0.0049299 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Scripts/TacticalBattle/Integration/TacticalBattleController.cs
-  artifactKey: Guid(e7b1d0300257c1d4cb59bc2a635d6b16) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Scripts/TacticalBattle/Integration/TacticalBattleController.cs using Guid(e7b1d0300257c1d4cb59bc2a635d6b16) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '937a736332365f005c7f8796f5bfcbcf') in 0.0060098 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000028 seconds.
-  path: Assets/Scripts/TacticalBattle/Tests/StandaloneRunner/obj/Debug/net8.0/StandaloneRunner.assets.cache
-  artifactKey: Guid(03a2c81abaa955d428cd4f13eacaa085) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Scripts/TacticalBattle/Tests/StandaloneRunner/obj/Debug/net8.0/StandaloneRunner.assets.cache using Guid(03a2c81abaa955d428cd4f13eacaa085) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'dd9872ea13ffe16309a95b8c7343c047') in 0.0044566 seconds
+  path: Assets/Palette/Tiles/Tile_Natural_Grass_2.asset
+  artifactKey: Guid(ef6e14a35a8b4370b09352171396bda5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles/Tile_Natural_Grass_2.asset using Guid(ef6e14a35a8b4370b09352171396bda5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '56d5d89eb6b49a1300ceab1d0c467509') in 0.0177037 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Scripts/TacticalBattle/Grid/AttackRangeService.cs
-  artifactKey: Guid(80d8189629b4ebe43bf19e0c5a16d711) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Scripts/TacticalBattle/Grid/AttackRangeService.cs using Guid(80d8189629b4ebe43bf19e0c5a16d711) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '40ad501a555e06c90a543ecaf2709482') in 0.0056306 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Scripts/TacticalBattle/Tests/TacticalBattleTestSuite.cs
-  artifactKey: Guid(ec1916920a82d1d4b84f63ac5bde2cf2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Scripts/TacticalBattle/Tests/TacticalBattleTestSuite.cs using Guid(ec1916920a82d1d4b84f63ac5bde2cf2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '597ee4295c8422b002eb0f60c31c3588') in 0.0056819 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+  Time since last request: 0.000018 seconds.
+  path: Assets/Palette/Tiles/Tile_Natural_Boulder_2.asset
+  artifactKey: Guid(1cc6acf8c72a4177bff33243ce494c59) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles/Tile_Natural_Boulder_2.asset using Guid(1cc6acf8c72a4177bff33243ce494c59) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '4eed29e8870065c8d1a8e07187541d03') in 0.0137543 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000018 seconds.
-  path: Assets/Scripts/TacticalBattle/Grid
-  artifactKey: Guid(db0fb4cabc7d0664c83d5e34849211e6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Scripts/TacticalBattle/Grid using Guid(db0fb4cabc7d0664c83d5e34849211e6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd3f6ebb9d458d8bc573608ece01a0211') in 0.0055473 seconds
+  path: Assets/Palette/Tiles/Tile_Cyber_Barricade_2.asset
+  artifactKey: Guid(0fa34062828348fda904e2343c7d8a63) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles/Tile_Cyber_Barricade_2.asset using Guid(0fa34062828348fda904e2343c7d8a63) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e0f2618a224ee4e48f4d143636f3a8ab') in 0.0129222 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Palette/Tiles/Tile_Cyber_Barrels_2.asset
+  artifactKey: Guid(f0689cefd5614bb79bc28eeb385364ae) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles/Tile_Cyber_Barrels_2.asset using Guid(f0689cefd5614bb79bc28eeb385364ae) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '681d1c30acde3310a2eec25ec1d85703') in 0.0144365 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Scripts/Board/TacticalMapDefinition.cs
+  artifactKey: Guid(3340adc43374e6646ac412c3f8a5c689) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Board/TacticalMapDefinition.cs using Guid(3340adc43374e6646ac412c3f8a5c689) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '60cbd5df3e76b90921a211a024b021bc') in 0.0129502 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Palette/Tiles/Tile_Natural_Boulder_3.asset
+  artifactKey: Guid(467a7eb7a473496ba6164cb7c892a0da) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles/Tile_Natural_Boulder_3.asset using Guid(467a7eb7a473496ba6164cb7c892a0da) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'ebdd91f2ae773abde96854417b03f0d2') in 0.0178696 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000029 seconds.
-  path: Assets/Scripts/Combat/BattleController.cs
-  artifactKey: Guid(5f4e4c9bb09a1dd468327336ba2d2ee4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Scripts/Combat/BattleController.cs using Guid(5f4e4c9bb09a1dd468327336ba2d2ee4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a0e8bd1fc5b62df98c9a96fa4a8702b8') in 0.0050874 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/Scripts/TacticalBattle/Talk
-  artifactKey: Guid(22e14d7017a55184a818aa59e09b0b3b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Scripts/TacticalBattle/Talk using Guid(22e14d7017a55184a818aa59e09b0b3b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9dd356e4204a65119004043aa6ed6398') in 0.0052275 seconds
+  path: Assets/Palette/Tiles/Tile_Cyber_Corrupted_2.asset
+  artifactKey: Guid(6d6c678487a24f548514c4653df54cff) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles/Tile_Cyber_Corrupted_2.asset using Guid(6d6c678487a24f548514c4653df54cff) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '78a370ec6cb12442b50748f30e35306f') in 0.0178644 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/Scripts/TacticalBattle/Tests/StandaloneRunner/obj/Debug/net8.0/StandaloneRunner.pdb
-  artifactKey: Guid(55c33526dc06def4ba856491ab0d07e3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Scripts/TacticalBattle/Tests/StandaloneRunner/obj/Debug/net8.0/StandaloneRunner.pdb using Guid(55c33526dc06def4ba856491ab0d07e3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '469f66fc95f13b6a3c31b0c53e213d26') in 0.0055209 seconds
+  Time since last request: 0.000029 seconds.
+  path: Assets/Palette/Tiles/Tile_Natural_Dirt_1.asset
+  artifactKey: Guid(a4d2e16d3e3b445da0ebc88fcdab1312) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles/Tile_Natural_Dirt_1.asset using Guid(a4d2e16d3e3b445da0ebc88fcdab1312) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '94c4fea6ac1b119fc3141d19e968353e') in 0.0180668 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000024 seconds.
-  path: Assets/Scripts/TacticalBattle/Attribute/KarmaModule.cs
-  artifactKey: Guid(0cac08c6e2177f0418e7d02926bade43) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Scripts/TacticalBattle/Attribute/KarmaModule.cs using Guid(0cac08c6e2177f0418e7d02926bade43) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a43126b4dae3270faf5d3de94938208b') in 0.0049129 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/Scripts/TacticalBattle/Core/EventSystem
-  artifactKey: Guid(0ce8efee3cbabaa4bb7635a24db77f00) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Scripts/TacticalBattle/Core/EventSystem using Guid(0ce8efee3cbabaa4bb7635a24db77f00) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c2880f67aa84975070a55ba2ec403255') in 0.0066553 seconds
+  path: Assets/Palette/Tiles/Tile_Cyber_Corrupted_3.asset
+  artifactKey: Guid(e4345739aca9492bb152b67181597d3d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles/Tile_Cyber_Corrupted_3.asset using Guid(e4345739aca9492bb152b67181597d3d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f58d3165fa3e7a60aeedc123631bbf31') in 0.0131336 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000029 seconds.
-  path: Assets/Scripts/TacticalBattle/Tests/StandaloneRunner/obj/Debug/net8.0/StandaloneRunner.GeneratedMSBuildEditorConfig.editorconfig
-  artifactKey: Guid(d84cfd6d9e53822458680f0350a50463) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Scripts/TacticalBattle/Tests/StandaloneRunner/obj/Debug/net8.0/StandaloneRunner.GeneratedMSBuildEditorConfig.editorconfig using Guid(d84cfd6d9e53822458680f0350a50463) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6863506c07080f5d85c6954b5315f4f3') in 0.0076537 seconds
+  path: Assets/Palette/Tiles/Tile_Natural_Bush_2.asset
+  artifactKey: Guid(6a3033c9d6664ef88c515632abf03c22) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles/Tile_Natural_Bush_2.asset using Guid(6a3033c9d6664ef88c515632abf03c22) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'ed7cddb8b1fc9ce1f2070c83aec14947') in 0.0157584 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Palette/Tiles/Tile_Cyber_Concrete_2.asset
+  artifactKey: Guid(85f9e32d59ec4cfe8f24cb18871ff1ea) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles/Tile_Cyber_Concrete_2.asset using Guid(85f9e32d59ec4cfe8f24cb18871ff1ea) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '8700af1cffab834791da616f8bda8da6') in 0.0143429 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Palette/Tiles/Tile_Natural_Cliff_3.asset
+  artifactKey: Guid(e94ecd2dfc0c4c57be5b68ea5adbed41) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles/Tile_Natural_Cliff_3.asset using Guid(e94ecd2dfc0c4c57be5b68ea5adbed41) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '531986511886b506beaff7fffbf17a4a') in 0.0137095 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Palette/Tiles/Tile_Natural_Grass_3.asset
+  artifactKey: Guid(03cd9721fa5e4e23bec4c4dc40d3a27f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles/Tile_Natural_Grass_3.asset using Guid(03cd9721fa5e4e23bec4c4dc40d3a27f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f4a881766a4988e3278d131954aceab2') in 0.014161 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Palette/Tiles/Tile_Natural_Boulder_4.asset
+  artifactKey: Guid(1e82a3af058942a7b85ba9c869cb54fb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles/Tile_Natural_Boulder_4.asset using Guid(1e82a3af058942a7b85ba9c869cb54fb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '84dcd8fb40adc5381e516db1e2993113') in 0.016729 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000031 seconds.
-  path: Assets/Scripts/TacticalBattle/Tests/StandaloneRunner/obj/Debug/net8.0/refint
-  artifactKey: Guid(345ff5279a686b346ba2ea670f95f5e1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Scripts/TacticalBattle/Tests/StandaloneRunner/obj/Debug/net8.0/refint using Guid(345ff5279a686b346ba2ea670f95f5e1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f62a76af5f9241394ed87a6521d4d6e0') in 0.0051351 seconds
+  path: Assets/Scripts/Board/ProceduralGridTileFactory.cs
+  artifactKey: Guid(dec5ccd1b7cae564abeea6223b25fad1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Board/ProceduralGridTileFactory.cs using Guid(dec5ccd1b7cae564abeea6223b25fad1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '78b4252e2858013a9960481d29a23591') in 0.0116446 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Palette/Tiles
+  artifactKey: Guid(e5aa78171c6f2514ca290c9fae255227) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles using Guid(e5aa78171c6f2514ca290c9fae255227) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9f2f2e08849ce1197bc4a77e3859558b') in 0.0121774 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000068 seconds.
-  path: Assets/Scripts/TacticalBattle/Tests/StandaloneRunner/obj/project.nuget.cache
-  artifactKey: Guid(41b3dec51a63ca84681770366d7974a6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Scripts/TacticalBattle/Tests/StandaloneRunner/obj/project.nuget.cache using Guid(41b3dec51a63ca84681770366d7974a6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3d363309e063ba2dc40be8851881ce55') in 0.0087127 seconds
+  Time since last request: 0.000017 seconds.
+  path: Assets/Palette/Tiles/Tile_Cyber_Corrupted_4.asset
+  artifactKey: Guid(293e18dd52554219a8518115c76027c2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles/Tile_Cyber_Corrupted_4.asset using Guid(293e18dd52554219a8518115c76027c2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd6faacca16cc10ca272f5b577d7f931e') in 0.0125599 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Palette/Tiles/Tile_Natural_Cliff_4.asset
+  artifactKey: Guid(7e1a0ab2752e4e27892ecd5937683474) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles/Tile_Natural_Cliff_4.asset using Guid(7e1a0ab2752e4e27892ecd5937683474) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3fa739e69a51e1d7414b3d9002b4e4ad') in 0.0141997 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 773.090334 seconds.
+  path: Assets/Palette/Tiles/Tile_Cyber_Barrels_2.asset
+  artifactKey: Guid(f0689cefd5614bb79bc28eeb385364ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Palette/Tiles/Tile_Cyber_Barrels_2.asset using Guid(f0689cefd5614bb79bc28eeb385364ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7a04a285f9fbffd9fb9a0eaeab1f508c') in 0.0823044 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Palette/Tiles/Tile_Natural_Bush_3.asset
+  artifactKey: Guid(dbcdb00daa73438eb4613e2ba9190f94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Palette/Tiles/Tile_Natural_Bush_3.asset using Guid(dbcdb00daa73438eb4613e2ba9190f94) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a7a10fc71bcadd4b75153d5f31c6b60f') in 0.0155096 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Palette/Tiles/Tile_Natural_Dirt_2.asset
+  artifactKey: Guid(7e5a70d1179b470086720932d457d1da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Palette/Tiles/Tile_Natural_Dirt_2.asset using Guid(7e5a70d1179b470086720932d457d1da) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3048857a5cea7a4e33bccd0e0d720082') in 0.0213312 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Palette/Tiles/Tile_Cyber_Concrete_4.asset
+  artifactKey: Guid(97323896d42648ce9db729f2c27948de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Palette/Tiles/Tile_Cyber_Concrete_4.asset using Guid(97323896d42648ce9db729f2c27948de) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f044d1a30243bcdce6268f84d89becd2') in 0.0192765 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Palette/Tiles/Tile_Natural_Bush_2.asset
+  artifactKey: Guid(6a3033c9d6664ef88c515632abf03c22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Palette/Tiles/Tile_Natural_Bush_2.asset using Guid(6a3033c9d6664ef88c515632abf03c22) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b0371f48f09db2a9646181867bb42846') in 0.0154557 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Palette/Tiles/Tile_Natural_Cliff_2.asset
+  artifactKey: Guid(932a473ca154486a9dde784adc68559c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Palette/Tiles/Tile_Natural_Cliff_2.asset using Guid(932a473ca154486a9dde784adc68559c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3bd452b2debecd3d3893122506345ccb') in 0.0144556 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Palette/Tiles/Tile_Natural_Boulder_1.asset
+  artifactKey: Guid(4a8dcc5e30b04ddda00698235546120d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Palette/Tiles/Tile_Natural_Boulder_1.asset using Guid(4a8dcc5e30b04ddda00698235546120d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3ad67a9460ec473efcfbf7334d3b8587') in 0.014182 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Palette/Tiles/Tile_Natural_Cliff_5.asset
+  artifactKey: Guid(354e1417f5c24b88973c93a52098fccd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Palette/Tiles/Tile_Natural_Cliff_5.asset using Guid(354e1417f5c24b88973c93a52098fccd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1731f54b7c8001ccfa23085b32f82698') in 0.0191861 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Palette/Tiles/Tile_Natural_Grass_3.asset
+  artifactKey: Guid(03cd9721fa5e4e23bec4c4dc40d3a27f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Palette/Tiles/Tile_Natural_Grass_3.asset using Guid(03cd9721fa5e4e23bec4c4dc40d3a27f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5ca9455b804ca94be18613e4ec6d5713') in 0.0169197 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Palette/Tiles/Tile_Natural_Boulder_2.asset
+  artifactKey: Guid(1cc6acf8c72a4177bff33243ce494c59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Palette/Tiles/Tile_Natural_Boulder_2.asset using Guid(1cc6acf8c72a4177bff33243ce494c59) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6f7f496a5defa665cc111bd4b7ffaa0f') in 0.0165045 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Palette/Tiles/Tile_Cyber_Circuit_3.asset
+  artifactKey: Guid(1e349b64f0284f6b82e9857e5cf2ecad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Palette/Tiles/Tile_Cyber_Circuit_3.asset using Guid(1e349b64f0284f6b82e9857e5cf2ecad) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3bc4845cc67e37ef5f89032bd025fb08') in 0.0148478 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Palette/Tiles/Tile_Natural_Grass_4.asset
+  artifactKey: Guid(cc8aaa5c22a843c0b8dd61f05d91fd25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Palette/Tiles/Tile_Natural_Grass_4.asset using Guid(cc8aaa5c22a843c0b8dd61f05d91fd25) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7c4da99c03403bc4268db9d8ff98f9c3') in 0.0134928 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Palette/Tiles/Tile_Natural_Boulder_5.asset
+  artifactKey: Guid(596c986a13964f2088abb00404e2a657) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Palette/Tiles/Tile_Natural_Boulder_5.asset using Guid(596c986a13964f2088abb00404e2a657) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '181fa180cb7cdea8fe53db09d92ff712') in 0.0148608 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Palette/Tiles/Tile_Cyber_Corrupted_4.asset
+  artifactKey: Guid(293e18dd52554219a8518115c76027c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Palette/Tiles/Tile_Cyber_Corrupted_4.asset using Guid(293e18dd52554219a8518115c76027c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6d60bc9027effde6505a9573acb935fd') in 0.0149664 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Palette/Tiles/Tile_Cyber_Circuit_4.asset
+  artifactKey: Guid(e748eed0cbca4df28936a0d0da3303d0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles/Tile_Cyber_Circuit_4.asset using Guid(e748eed0cbca4df28936a0d0da3303d0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c182c093546db1dbfe15ebee3bc002a2') in 0.013735 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Palette/Tiles/Tile_Cyber_Circuit_3.asset
+  artifactKey: Guid(1e349b64f0284f6b82e9857e5cf2ecad) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles/Tile_Cyber_Circuit_3.asset using Guid(1e349b64f0284f6b82e9857e5cf2ecad) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b36035a9bcda8e93b33551237c921f39') in 0.0156019 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Palette/Tiles/Tile_Natural_Boulder_1.asset
+  artifactKey: Guid(4a8dcc5e30b04ddda00698235546120d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles/Tile_Natural_Boulder_1.asset using Guid(4a8dcc5e30b04ddda00698235546120d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c4bdd627e72707bb4694c65d920a3609') in 0.0173026 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Palette/Tiles/Tile_Cyber_Barrels_1.asset
+  artifactKey: Guid(a6bba0ec6f0046409036e29bada599aa) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles/Tile_Cyber_Barrels_1.asset using Guid(a6bba0ec6f0046409036e29bada599aa) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2082a36d307c4ee1a99a07532efcd710') in 0.0161157 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Palette/Tiles/Tile_Natural_Cliff_5.asset
+  artifactKey: Guid(354e1417f5c24b88973c93a52098fccd) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles/Tile_Natural_Cliff_5.asset using Guid(354e1417f5c24b88973c93a52098fccd) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '590919adf6900062ac27e1a958830044') in 0.0128667 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Palette/Tiles/Tile_Natural_Bush_3.asset
+  artifactKey: Guid(dbcdb00daa73438eb4613e2ba9190f94) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles/Tile_Natural_Bush_3.asset using Guid(dbcdb00daa73438eb4613e2ba9190f94) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '349fd42ea97d4a64487cb99a085c6cca') in 0.0182697 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Palette/Tiles/Tile_Natural_Grass_2.asset
+  artifactKey: Guid(ef6e14a35a8b4370b09352171396bda5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles/Tile_Natural_Grass_2.asset using Guid(ef6e14a35a8b4370b09352171396bda5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '718e3ebddb1b122e08b462097bf6c2e7') in 0.0335794 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Palette/Tiles/Tile_Natural_Dirt_5.asset
+  artifactKey: Guid(70fff80d8b2d44099fd1f68abb0a7a27) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles/Tile_Natural_Dirt_5.asset using Guid(70fff80d8b2d44099fd1f68abb0a7a27) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '44ee2ae8796277f7050df33c9d18b880') in 0.0153293 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Palette/Tiles/Tile_Natural_Grass_4.asset
+  artifactKey: Guid(cc8aaa5c22a843c0b8dd61f05d91fd25) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles/Tile_Natural_Grass_4.asset using Guid(cc8aaa5c22a843c0b8dd61f05d91fd25) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c31877513ce6bb1fb1206ebc090a0384') in 0.0163532 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Palette/Tiles/Tile_Cyber_Barricade_2.asset
+  artifactKey: Guid(0fa34062828348fda904e2343c7d8a63) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles/Tile_Cyber_Barricade_2.asset using Guid(0fa34062828348fda904e2343c7d8a63) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e6cd39869b8ba521b3ceb8b26722bb1d') in 0.0137039 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Palette/Tiles/Tile_Cyber_Barrels_2.asset
+  artifactKey: Guid(f0689cefd5614bb79bc28eeb385364ae) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles/Tile_Cyber_Barrels_2.asset using Guid(f0689cefd5614bb79bc28eeb385364ae) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'fbfcdb4aa4f2318c76df0952bb7cbdb9') in 0.0120428 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Palette/Tiles/Tile_Cyber_Corrupted_1.asset
+  artifactKey: Guid(43a727bc19be4d3f9c18e412f6542fcb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles/Tile_Cyber_Corrupted_1.asset using Guid(43a727bc19be4d3f9c18e412f6542fcb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '14fbce3297bbedb518c53b9b53b2b77e') in 0.014148 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Palette/Tiles/Tile_Cyber_Corrupted_1.asset
+  artifactKey: Guid(43a727bc19be4d3f9c18e412f6542fcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Palette/Tiles/Tile_Cyber_Corrupted_1.asset using Guid(43a727bc19be4d3f9c18e412f6542fcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'cb90588beb793b670d96976233259cce') in 0.0177376 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Palette/Tiles/Tile_Cyber_Corrupted_2.asset
+  artifactKey: Guid(6d6c678487a24f548514c4653df54cff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Palette/Tiles/Tile_Cyber_Corrupted_2.asset using Guid(6d6c678487a24f548514c4653df54cff) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '352af4dfbed4f8814a4dbeb2de1d0471') in 0.0184174 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Palette/Tiles/Tile_Cyber_Corrupted_2.asset
+  artifactKey: Guid(6d6c678487a24f548514c4653df54cff) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles/Tile_Cyber_Corrupted_2.asset using Guid(6d6c678487a24f548514c4653df54cff) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e44336700a7a42657937a64116fb2b1d') in 0.0171523 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Palette/Tiles/Tile_Natural_Cliff_1.asset
+  artifactKey: Guid(841754589f644dbcb2b8c46e402dfdd0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles/Tile_Natural_Cliff_1.asset using Guid(841754589f644dbcb2b8c46e402dfdd0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'df2cba1de6fcc973b1551f789f8d92dd') in 0.0120684 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Palette/Tiles/Tile_Natural_Dirt_6.asset
+  artifactKey: Guid(c40a87a1382e46e6b31c9a1ae2b82a71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Palette/Tiles/Tile_Natural_Dirt_6.asset using Guid(c40a87a1382e46e6b31c9a1ae2b82a71) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '10ba4e250ef6fbbc692453dea83914d8') in 0.0148493 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Palette/Tiles/Tile_Cyber_Circuit_2.asset
+  artifactKey: Guid(a9b3257dea3f4e80b4b0593eb38db674) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Palette/Tiles/Tile_Cyber_Circuit_2.asset using Guid(a9b3257dea3f4e80b4b0593eb38db674) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'abacd6d3e4410e7c3c46deaeb544af71') in 0.013299 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Palette/Tiles/Tile_Natural_Grass_1.asset
+  artifactKey: Guid(30887ba92aed44dfb7067fd8846bac4a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles/Tile_Natural_Grass_1.asset using Guid(30887ba92aed44dfb7067fd8846bac4a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2e01d97b01d52a92db5479cd9e08db6f') in 0.0143604 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Palette/Tiles/Tile_Natural_Cliff_4.asset
+  artifactKey: Guid(7e1a0ab2752e4e27892ecd5937683474) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Palette/Tiles/Tile_Natural_Cliff_4.asset using Guid(7e1a0ab2752e4e27892ecd5937683474) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0f3eca417539a206f33f984c5180cc09') in 0.0175024 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Palette/Tiles/Tile_Cyber_Concrete_2.asset
+  artifactKey: Guid(85f9e32d59ec4cfe8f24cb18871ff1ea) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles/Tile_Cyber_Concrete_2.asset using Guid(85f9e32d59ec4cfe8f24cb18871ff1ea) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c7fb9ce4f59ea97aee5cf2d0f258d271') in 0.0152874 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Palette/Tiles/Tile_Natural_Cliff_3.asset
+  artifactKey: Guid(e94ecd2dfc0c4c57be5b68ea5adbed41) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles/Tile_Natural_Cliff_3.asset using Guid(e94ecd2dfc0c4c57be5b68ea5adbed41) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'abaeb9e6fe01f8d8029df73d453b51be') in 0.0164912 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Palette/Tiles/Tile_Natural_Grass_3.asset
+  artifactKey: Guid(03cd9721fa5e4e23bec4c4dc40d3a27f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles/Tile_Natural_Grass_3.asset using Guid(03cd9721fa5e4e23bec4c4dc40d3a27f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd955e2cf923c73516b36a21120b47e7e') in 0.0144146 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Palette/Tiles/Tile_Natural_Dirt_4.asset
+  artifactKey: Guid(6f016b25e2a14bbfa62a1df20bc21d0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Palette/Tiles/Tile_Natural_Dirt_4.asset using Guid(6f016b25e2a14bbfa62a1df20bc21d0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '468bd963ba0fea420c9b80a184a7ffc0') in 0.0157198 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Palette/Tiles/Tile_Cyber_Circuit_4.asset
+  artifactKey: Guid(e748eed0cbca4df28936a0d0da3303d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Palette/Tiles/Tile_Cyber_Circuit_4.asset using Guid(e748eed0cbca4df28936a0d0da3303d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a1fe29ecabcdbe312906772e1226d962') in 0.0154638 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Palette/Tiles/Tile_Natural_Bush_5.asset
+  artifactKey: Guid(c809717dabff4679bb71ec9d043539db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Palette/Tiles/Tile_Natural_Bush_5.asset using Guid(c809717dabff4679bb71ec9d043539db) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '05724cbd6503c3d5188caebbe15f8255') in 0.0176303 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Palette/Tiles/Tile_Natural_Grass_6.asset
+  artifactKey: Guid(8e74371ab4f84e7899684ae05687e7c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Palette/Tiles/Tile_Natural_Grass_6.asset using Guid(8e74371ab4f84e7899684ae05687e7c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b7317bd837a864bb7420e13393653287') in 0.0166422 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Palette/Tiles/Tile_Cyber_Concrete_3.asset
+  artifactKey: Guid(616401bb5a3b43a695b8e21a7c0c4890) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Palette/Tiles/Tile_Cyber_Concrete_3.asset using Guid(616401bb5a3b43a695b8e21a7c0c4890) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b96fe8589c9dfd03b0338f9ecc4e7d49') in 0.013819 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Palette/Tiles/Tile_Natural_Cliff_4.asset
+  artifactKey: Guid(7e1a0ab2752e4e27892ecd5937683474) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Palette/Tiles/Tile_Natural_Cliff_4.asset using Guid(7e1a0ab2752e4e27892ecd5937683474) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'ac58fabaa3e0aa319cc8fce5db1c1dad') in 0.0139158 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AssetImportWorker is now disconnected from the server

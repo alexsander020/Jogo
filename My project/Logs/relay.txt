@@ -1162,3 +1162,1169 @@ O sistema não pode encontrar o caminho especificado. | Duration: 50ms
 [2026-08-30T00:21:45.934Z] [INFO] log Shutdown request received from client editor-2244-id2g3n
 [2026-08-30T00:21:45.934Z] [INFO] log Unity client requested immediate shutdown - shutting down now, reason: Shutdown requested by client
 [2026-08-30T00:21:45.935Z] [INFO] log Shutdown: Initiating graceful shutdown: Shutdown requested by client
+[2026-08-30T14:17:34.199Z] [INFO] relay.startup port=9001 mcpClientPort=9002 editorPid=17292
+[2026-08-30T14:17:34.202Z] [INFO] log === RELAY SERVER STARTED === (unity-ai-relay v1.0.12-build.97)
+[2026-08-30T14:17:34.203Z] [INFO] log Starting relay server...
+[2026-08-30T14:17:34.203Z] [INFO] log Command line arguments: ["bun","B:/~BUN/root/relay_win.exe","--relay","--port","9001","--mcp-client-port","9002","--editor-pid","17292","--shutdown-delay","180","--log-dir","C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\Logs"]
+[2026-08-30T14:17:34.203Z] [INFO] log Parsed config: {"port":9001,"mcpClientPort":9002,"editorPid":"17292","shutdownDelaySeconds":180}
+[2026-08-30T14:17:34.204Z] [INFO] log Initializing relay components...
+[2026-08-30T14:17:34.205Z] [INFO] log Creating RelayEditor...
+[2026-08-30T14:17:34.226Z] [INFO] log WebSocket server started
+[2026-08-30T14:17:34.227Z] [INFO] log Relay server initialization completed
+[2026-08-30T14:17:34.227Z] [INFO] log MCP Client initialized at port: 9002
+[2026-08-30T14:17:34.242Z] [WARN] log [shell-env] Shell environment did not contain a PATH variable
+[2026-08-30T14:17:34.268Z] [INFO] log Unity MCP Relay server started | Port: 9002 | Endpoints: /mcp/start-server, /mcp/stop-server, /mcp/server-status, /mcp/call-tool
+[2026-08-30T14:17:34.418Z] [INFO] log Unity client connected with ID: editor-17292-tt0few (relay 1.0.12-build.97)
+[2026-08-30T14:17:34.418Z] [INFO] connection.established clientId=editor-17292-tt0few port=9001
+[2026-08-30T14:17:34.760Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T14:17:34.761Z] [INFO] log Server status check | Server: unity-mcp | Running: no
+[2026-08-30T14:17:34.772Z] [INFO] log HTTP request | POST /mcp/start-server
+[2026-08-30T14:17:34.772Z] [INFO] log Starting MCP server | Name: unity-mcp | Transport: stdio | Command: C:\Users\LordDrakkon\.unity/relay\relay_win.exe
+[2026-08-30T14:17:34.773Z] [INFO] log Starting MCP server | Name: unity-mcp | ID: mcp-1
+[2026-08-30T14:17:34.774Z] [INFO] log Creating stdio transport | Command: C:\Users\LordDrakkon\.unity/relay\relay_win.exe
+[2026-08-30T14:17:34.774Z] [INFO] log Stdio transport config | Command: C:\Users\LordDrakkon\.unity/relay\relay_win.exe --mcp | Env vars: 1
+[2026-08-30T14:17:34.775Z] [INFO] log Stdio transport ready | Command: C:\Users\LordDrakkon\.unity/relay\relay_win.exe | Args: 1 | Env: 44 vars
+[2026-08-30T14:17:35.023Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] mcp.startup workingDir=C:\Users\LordDrakkon\Documents\GitHub\Jogo\My project
+[2026-08-30T14:17:35.024Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log === MCP SERVER STARTED ===
+[INFO ] [Unity Mcp Server] log PID=12588 execPath=C:\Users\LordDrakkon\.unity\relay\relay_win.exe
+[INFO ] [Unity Mcp Server] log argv: ["bun","B:/~BUN/root/relay_win.exe","--mcp"]
+[INFO ] [Unity Mcp Server] log Working directory: C:\Users\LordDrakkon\Documents\GitHub\Jogo\My project
+[INFO ] [Unity Mcp Server] log Approval token: {"fromEnv":false}
+[INFO ] [Unity Mcp Server] log Project path: (not specified)
+[INFO ] [Unity Mcp Server] log Instance ID: (not specified)
+[INFO ] [Unity Mcp Server] log MCP server initializing...
+[INFO ] [Unity Mcp Server] log Initializing unity-mcp-server v1.0.0
+[2026-08-30T14:17:35.037Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Unity MCP Server started
+[2026-08-30T14:17:35.085Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Client connected: unity-relay-client 1.0.0
+[2026-08-30T14:17:35.108Z] [INFO] log MCP server connected | Name: unity-mcp
+[2026-08-30T14:17:35.252Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-17292
+[2026-08-30T14:17:35.256Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T14:17:35.274Z] [INFO] log MCP server initialized | Name: unity-mcp | Tools: 7
+[2026-08-30T14:17:35.275Z] [INFO] log MCP server started successfully | Server: mcp-1 | Tools: 7 | Duration: 502ms
+[2026-08-30T14:34:24.729Z] [INFO] log Domain reload signal received from client editor-17292-tt0few
+[2026-08-30T14:34:24.730Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T14:34:24.730Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T14:34:25.399Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T14:34:25.400Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T14:34:25.400Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T14:34:25.401Z] [WARN] connection.lost clientId=null
+[2026-08-30T14:34:25.402Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T14:34:25.402Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T14:34:32.315Z] [INFO] log Unity client connected with ID: editor-17292-vu2htc (relay 1.0.12-build.97)
+[2026-08-30T14:34:32.315Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T14:34:32.315Z] [INFO] connection.established clientId=editor-17292-vu2htc port=9001
+[2026-08-30T14:34:32.465Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T14:34:32.465Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T14:34:32.778Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-17292
+[2026-08-30T14:34:32.782Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T14:43:14.366Z] [INFO] log Domain reload signal received from client editor-17292-vu2htc
+[2026-08-30T14:43:14.367Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T14:43:14.367Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T14:43:15.035Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T14:43:15.036Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T14:43:15.036Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T14:43:15.036Z] [WARN] connection.lost clientId=null
+[2026-08-30T14:43:15.037Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T14:43:15.038Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T14:43:22.068Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T14:43:22.069Z] [INFO] log Unity client connected with ID: editor-17292-dadtj5 (relay 1.0.12-build.97)
+[2026-08-30T14:43:22.069Z] [INFO] connection.established clientId=editor-17292-dadtj5 port=9001
+[2026-08-30T14:43:22.166Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T14:43:22.167Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T14:43:22.416Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-17292
+[2026-08-30T14:43:22.418Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T14:43:33.315Z] [INFO] log Domain reload signal received from client editor-17292-dadtj5
+[2026-08-30T14:43:33.315Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T14:43:33.315Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T14:43:33.972Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T14:43:33.973Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T14:43:33.974Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T14:43:33.974Z] [WARN] connection.lost clientId=null
+[2026-08-30T14:43:33.974Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T14:43:33.975Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T14:43:41.052Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T14:43:41.053Z] [INFO] log Unity client connected with ID: editor-17292-m5cl4z (relay 1.0.12-build.97)
+[2026-08-30T14:43:41.053Z] [INFO] connection.established clientId=editor-17292-m5cl4z port=9001
+[2026-08-30T14:43:41.172Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T14:43:41.173Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T14:43:41.339Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-17292
+[INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[2026-08-30T14:43:41.344Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T14:52:17.988Z] [INFO] log Domain reload signal received from client editor-17292-m5cl4z
+[2026-08-30T14:52:17.988Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T14:52:17.988Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T14:52:18.879Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T14:52:18.880Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T14:52:18.880Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T14:52:18.881Z] [WARN] connection.lost clientId=null
+[2026-08-30T14:52:18.881Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T14:52:18.881Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T14:52:24.827Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T14:52:24.828Z] [INFO] log Unity client connected with ID: editor-17292-f9sd25 (relay 1.0.12-build.97)
+[2026-08-30T14:52:24.828Z] [INFO] connection.established clientId=editor-17292-f9sd25 port=9001
+[2026-08-30T14:52:24.978Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-17292
+[2026-08-30T14:52:24.979Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T14:52:26.822Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T14:52:26.822Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T14:52:30.302Z] [INFO] log Domain reload signal received from client editor-17292-f9sd25
+[2026-08-30T14:52:30.303Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T14:52:30.303Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T14:52:31.261Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T14:52:31.262Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T14:52:31.263Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T14:52:31.267Z] [WARN] connection.lost clientId=null
+[2026-08-30T14:52:31.270Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T14:52:31.271Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T14:52:37.321Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T14:52:37.321Z] [INFO] log Unity client connected with ID: editor-17292-s0asus (relay 1.0.12-build.97)
+[2026-08-30T14:52:37.322Z] [INFO] connection.established clientId=editor-17292-s0asus port=9001
+[2026-08-30T14:52:37.856Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-17292
+[2026-08-30T14:52:37.861Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T14:52:39.235Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T14:52:39.235Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T14:53:13.138Z] [INFO] log Domain reload signal received from client editor-17292-s0asus
+[2026-08-30T14:53:13.139Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T14:53:13.139Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T14:53:13.905Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T14:53:13.906Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T14:53:13.906Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T14:53:13.906Z] [WARN] connection.lost clientId=null
+[2026-08-30T14:53:13.908Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T14:53:13.909Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T14:53:20.568Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T14:53:20.568Z] [INFO] log Unity client connected with ID: editor-17292-6slnu1 (relay 1.0.12-build.97)
+[2026-08-30T14:53:20.569Z] [INFO] connection.established clientId=editor-17292-6slnu1 port=9001
+[2026-08-30T14:53:20.655Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T14:53:20.656Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T14:53:20.671Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-17292
+[2026-08-30T14:53:20.672Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T15:00:11.015Z] [INFO] log Domain reload signal received from client editor-17292-6slnu1
+[2026-08-30T15:00:11.016Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T15:00:11.017Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T15:00:12.019Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T15:00:12.019Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T15:00:12.020Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T15:00:12.020Z] [WARN] connection.lost clientId=null
+[2026-08-30T15:00:12.021Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T15:00:12.022Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T15:00:20.734Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T15:00:20.735Z] [INFO] log Unity client connected with ID: editor-17292-g1krab (relay 1.0.12-build.97)
+[2026-08-30T15:00:20.735Z] [INFO] connection.established clientId=editor-17292-g1krab port=9001
+[2026-08-30T15:00:21.028Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-17292
+[2026-08-30T15:00:21.029Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T15:00:22.314Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T15:00:22.314Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T15:04:05.959Z] [INFO] log Domain reload signal received from client editor-17292-g1krab
+[2026-08-30T15:04:05.959Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T15:04:05.960Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T15:04:06.945Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T15:04:06.946Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T15:04:06.947Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T15:04:06.948Z] [WARN] connection.lost clientId=null
+[2026-08-30T15:04:06.948Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T15:04:06.949Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T15:04:12.997Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T15:04:12.997Z] [INFO] log Unity client connected with ID: editor-17292-sq6heq (relay 1.0.12-build.97)
+[2026-08-30T15:04:12.997Z] [INFO] connection.established clientId=editor-17292-sq6heq port=9001
+[2026-08-30T15:04:13.460Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-17292
+[2026-08-30T15:04:13.462Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T15:04:14.325Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T15:04:14.326Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T15:10:32.605Z] [INFO] log Domain reload signal received from client editor-17292-sq6heq
+[2026-08-30T15:10:32.606Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T15:10:32.606Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T15:10:33.763Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T15:10:33.764Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T15:10:33.765Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T15:10:33.770Z] [WARN] connection.lost clientId=null
+[2026-08-30T15:10:33.777Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T15:10:33.778Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T15:10:39.590Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-17292
+[2026-08-30T15:10:39.591Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T15:10:39.721Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T15:10:39.721Z] [INFO] log Unity client connected with ID: editor-17292-8tv2fx (relay 1.0.12-build.97)
+[2026-08-30T15:10:39.721Z] [INFO] connection.established clientId=editor-17292-8tv2fx port=9001
+[2026-08-30T15:10:40.838Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T15:10:40.839Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T15:21:08.848Z] [INFO] log Domain reload signal received from client editor-17292-8tv2fx
+[2026-08-30T15:21:08.849Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T15:21:08.849Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T15:21:09.845Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T15:21:09.846Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T15:21:09.848Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T15:21:09.848Z] [WARN] connection.lost clientId=null
+[2026-08-30T15:21:09.848Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T15:21:09.849Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T15:21:17.634Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T15:21:17.634Z] [INFO] log Unity client connected with ID: editor-17292-1bnghb (relay 1.0.12-build.97)
+[2026-08-30T15:21:17.635Z] [INFO] connection.established clientId=editor-17292-1bnghb port=9001
+[2026-08-30T15:21:17.904Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-17292
+[2026-08-30T15:21:17.905Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T15:21:19.063Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T15:21:19.063Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T15:23:50.161Z] [INFO] log Domain reload signal received from client editor-17292-1bnghb
+[2026-08-30T15:23:50.162Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T15:23:50.162Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T15:23:51.079Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T15:23:51.080Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T15:23:51.082Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T15:23:51.082Z] [WARN] connection.lost clientId=null
+[2026-08-30T15:23:51.083Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T15:23:51.084Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T15:23:56.894Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T15:23:56.895Z] [INFO] log Unity client connected with ID: editor-17292-q7oc6n (relay 1.0.12-build.97)
+[2026-08-30T15:23:56.895Z] [INFO] connection.established clientId=editor-17292-q7oc6n port=9001
+[2026-08-30T15:23:57.172Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-17292
+[2026-08-30T15:23:57.173Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T15:23:58.361Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T15:23:58.362Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T15:25:21.549Z] [INFO] log Domain reload signal received from client editor-17292-q7oc6n
+[2026-08-30T15:25:21.549Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T15:25:21.549Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T15:25:22.450Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T15:25:22.450Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T15:25:22.451Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T15:25:22.451Z] [WARN] connection.lost clientId=null
+[2026-08-30T15:25:22.452Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T15:25:22.453Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T15:25:28.192Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T15:25:28.193Z] [INFO] log Unity client connected with ID: editor-17292-lfutqm (relay 1.0.12-build.97)
+[2026-08-30T15:25:28.193Z] [INFO] connection.established clientId=editor-17292-lfutqm port=9001
+[2026-08-30T15:25:28.552Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-17292
+[2026-08-30T15:25:28.554Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T15:25:29.647Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T15:25:29.648Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T15:25:36.304Z] [INFO] log Domain reload signal received from client editor-17292-lfutqm
+[2026-08-30T15:25:36.304Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T15:25:36.305Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T15:25:37.214Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T15:25:37.214Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T15:25:37.215Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T15:25:37.215Z] [WARN] connection.lost clientId=null
+[2026-08-30T15:25:37.215Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T15:25:37.216Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T15:25:42.948Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T15:25:42.948Z] [INFO] log Unity client connected with ID: editor-17292-x588yl (relay 1.0.12-build.97)
+[2026-08-30T15:25:42.948Z] [INFO] connection.established clientId=editor-17292-x588yl port=9001
+[2026-08-30T15:25:43.279Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-17292
+[2026-08-30T15:25:43.280Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T15:25:44.377Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T15:25:44.378Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T15:55:14.155Z] [INFO] log Domain reload signal received from client editor-17292-x588yl
+[2026-08-30T15:55:14.156Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T15:55:14.157Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T15:55:15.025Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T15:55:15.025Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T15:55:15.026Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T15:55:15.027Z] [WARN] connection.lost clientId=null
+[2026-08-30T15:55:15.029Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T15:55:15.027Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T15:55:20.979Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T15:55:20.980Z] [INFO] log Unity client connected with ID: editor-17292-sskizf (relay 1.0.12-build.97)
+[2026-08-30T15:55:20.980Z] [INFO] connection.established clientId=editor-17292-sskizf port=9001
+[2026-08-30T15:55:21.150Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-17292
+[2026-08-30T15:55:21.150Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[2026-08-30T15:55:21.154Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T15:55:22.449Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T15:55:22.449Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T15:55:30.648Z] [INFO] log Domain reload signal received from client editor-17292-sskizf
+[2026-08-30T15:55:30.648Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T15:55:30.649Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T15:55:31.369Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T15:55:31.369Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T15:55:31.370Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T15:55:31.370Z] [WARN] connection.lost clientId=null
+[2026-08-30T15:55:31.371Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T15:55:31.371Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T15:55:38.735Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T15:55:38.735Z] [INFO] log Unity client connected with ID: editor-17292-l6anrv (relay 1.0.12-build.97)
+[2026-08-30T15:55:38.736Z] [INFO] connection.established clientId=editor-17292-l6anrv port=9001
+[2026-08-30T15:55:38.869Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T15:55:38.869Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T15:55:39.159Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-17292
+[2026-08-30T15:55:39.160Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T16:09:00.771Z] [INFO] log Domain reload signal received from client editor-17292-l6anrv
+[2026-08-30T16:09:00.772Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T16:09:00.772Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T16:09:01.731Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T16:09:01.732Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T16:09:01.732Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T16:09:01.733Z] [WARN] connection.lost clientId=null
+[2026-08-30T16:09:01.734Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T16:09:01.735Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T16:09:07.642Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T16:09:07.643Z] [INFO] log Unity client connected with ID: editor-17292-s8xmw6 (relay 1.0.12-build.97)
+[2026-08-30T16:09:07.643Z] [INFO] connection.established clientId=editor-17292-s8xmw6 port=9001
+[2026-08-30T16:09:07.746Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-17292
+[2026-08-30T16:09:07.747Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T16:09:09.195Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T16:09:09.196Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T16:10:26.421Z] [INFO] log Domain reload signal received from client editor-17292-s8xmw6
+[2026-08-30T16:10:26.422Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T16:10:26.422Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T16:10:27.093Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T16:10:27.093Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T16:10:27.093Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T16:10:27.094Z] [WARN] connection.lost clientId=null
+[2026-08-30T16:10:27.094Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T16:10:27.094Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T16:10:34.622Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T16:10:34.622Z] [INFO] log Unity client connected with ID: editor-17292-ob99ya (relay 1.0.12-build.97)
+[2026-08-30T16:10:34.623Z] [INFO] connection.established clientId=editor-17292-ob99ya port=9001
+[2026-08-30T16:10:34.724Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T16:10:34.724Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T16:10:34.897Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-17292
+[2026-08-30T16:10:34.898Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T16:13:52.763Z] [INFO] log Domain reload signal received from client editor-17292-ob99ya
+[2026-08-30T16:13:52.764Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T16:13:52.764Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T16:13:53.419Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T16:13:53.420Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T16:13:53.420Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T16:13:53.421Z] [WARN] connection.lost clientId=null
+[2026-08-30T16:13:53.421Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T16:13:53.422Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T16:14:00.741Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T16:14:00.741Z] [INFO] log Unity client connected with ID: editor-17292-06lzsu (relay 1.0.12-build.97)
+[2026-08-30T16:14:00.742Z] [INFO] connection.established clientId=editor-17292-06lzsu port=9001
+[2026-08-30T16:14:00.823Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-17292
+[2026-08-30T16:14:00.825Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T16:14:00.861Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T16:14:00.861Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T16:17:46.518Z] [INFO] log Domain reload signal received from client editor-17292-06lzsu
+[2026-08-30T16:17:46.518Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T16:17:46.519Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T16:17:47.244Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T16:17:47.245Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T16:17:47.245Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T16:17:47.246Z] [WARN] connection.lost clientId=null
+[2026-08-30T16:17:47.246Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T16:17:47.246Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T16:17:54.607Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T16:17:54.607Z] [INFO] log Unity client connected with ID: editor-17292-j0p4k8 (relay 1.0.12-build.97)
+[2026-08-30T16:17:54.607Z] [INFO] connection.established clientId=editor-17292-j0p4k8 port=9001
+[2026-08-30T16:17:54.714Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T16:17:54.714Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T16:17:55.050Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-17292
+[2026-08-30T16:17:55.051Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T16:34:24.822Z] [INFO] relay.startup port=9001 mcpClientPort=9002 editorPid=11892
+[2026-08-30T16:34:24.824Z] [INFO] log === RELAY SERVER STARTED === (unity-ai-relay v1.0.12-build.97)
+[2026-08-30T16:34:24.824Z] [INFO] log Starting relay server...
+[2026-08-30T16:34:24.824Z] [INFO] log Command line arguments: ["bun","B:/~BUN/root/relay_win.exe","--relay","--port","9001","--mcp-client-port","9002","--editor-pid","11892","--shutdown-delay","180","--log-dir","C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\Logs"]
+[2026-08-30T16:34:24.825Z] [INFO] log Parsed config: {"port":9001,"mcpClientPort":9002,"editorPid":"11892","shutdownDelaySeconds":180}
+[2026-08-30T16:34:24.826Z] [INFO] log Initializing relay components...
+[2026-08-30T16:34:24.826Z] [INFO] log Creating RelayEditor...
+[2026-08-30T16:34:24.835Z] [INFO] log WebSocket server started
+[2026-08-30T16:34:24.836Z] [INFO] log Relay server initialization completed
+[2026-08-30T16:34:24.837Z] [INFO] log MCP Client initialized at port: 9002
+[2026-08-30T16:34:24.853Z] [WARN] log [shell-env] Shell environment did not contain a PATH variable
+[2026-08-30T16:34:24.881Z] [INFO] log Unity MCP Relay server started | Port: 9002 | Endpoints: /mcp/start-server, /mcp/stop-server, /mcp/server-status, /mcp/call-tool
+[2026-08-30T16:34:25.268Z] [INFO] log Unity client connected with ID: editor-11892-qciqen (relay 1.0.12-build.97)
+[2026-08-30T16:34:25.269Z] [INFO] connection.established clientId=editor-11892-qciqen port=9001
+[2026-08-30T16:34:25.564Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T16:34:25.566Z] [INFO] log Server status check | Server: unity-mcp | Running: no
+[2026-08-30T16:34:25.580Z] [INFO] log HTTP request | POST /mcp/start-server
+[2026-08-30T16:34:25.581Z] [INFO] log Starting MCP server | Name: unity-mcp | Transport: stdio | Command: C:\Users\LordDrakkon\.unity/relay\relay_win.exe
+[2026-08-30T16:34:25.582Z] [INFO] log Starting MCP server | Name: unity-mcp | ID: mcp-1
+[2026-08-30T16:34:25.583Z] [INFO] log Creating stdio transport | Command: C:\Users\LordDrakkon\.unity/relay\relay_win.exe
+[2026-08-30T16:34:25.583Z] [INFO] log Stdio transport config | Command: C:\Users\LordDrakkon\.unity/relay\relay_win.exe --mcp | Env vars: 1
+[2026-08-30T16:34:25.583Z] [INFO] log Stdio transport ready | Command: C:\Users\LordDrakkon\.unity/relay\relay_win.exe | Args: 1 | Env: 44 vars
+[2026-08-30T16:34:25.807Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] mcp.startup workingDir=C:\Users\LordDrakkon\Documents\GitHub\Jogo\My project
+[2026-08-30T16:34:25.808Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log === MCP SERVER STARTED ===
+[INFO ] [Unity Mcp Server] log PID=100 execPath=C:\Users\LordDrakkon\.unity\relay\relay_win.exe
+[INFO ] [Unity Mcp Server] log argv: ["bun","B:/~BUN/root/relay_win.exe","--mcp"]
+[INFO ] [Unity Mcp Server] log Working directory: C:\Users\LordDrakkon\Documents\GitHub\Jogo\My project
+[INFO ] [Unity Mcp Server] log Approval token: {"fromEnv":false}
+[INFO ] [Unity Mcp Server] log Project path: (not specified)
+[INFO ] [Unity Mcp Server] log Instance ID: (not specified)
+[INFO ] [Unity Mcp Server] log MCP server initializing...
+[INFO ] [Unity Mcp Server] log Initializing unity-mcp-server v1.0.0
+[2026-08-30T16:34:25.817Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Unity MCP Server started
+[2026-08-30T16:34:25.859Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Client connected: unity-relay-client 1.0.0
+[2026-08-30T16:34:25.870Z] [INFO] log MCP server connected | Name: unity-mcp
+[2026-08-30T16:34:25.983Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-11892
+[2026-08-30T16:34:25.984Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[2026-08-30T16:34:25.992Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T16:34:26.005Z] [INFO] log MCP server initialized | Name: unity-mcp | Tools: 7
+[2026-08-30T16:34:26.006Z] [INFO] log MCP server started successfully | Server: mcp-1 | Tools: 7 | Duration: 424ms
+[2026-08-30T18:33:43.737Z] [INFO] log Domain reload signal received from client editor-11892-qciqen
+[2026-08-30T18:33:43.741Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T18:33:43.742Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T18:33:43.865Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:33:44.073Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:33:44.492Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:33:45.005Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:33:45.087Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T18:33:45.088Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T18:33:45.088Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T18:33:45.090Z] [WARN] connection.lost clientId=null
+[2026-08-30T18:33:45.092Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T18:33:45.098Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T18:33:45.520Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:33:46.037Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:33:46.543Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:33:47.047Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:33:47.563Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:33:48.078Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:33:48.588Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:33:49.104Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:33:49.609Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:33:50.114Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:33:50.544Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T18:33:50.544Z] [INFO] log Unity client connected with ID: editor-11892-4kokfd (relay 1.0.12-build.97)
+[2026-08-30T18:33:50.544Z] [INFO] connection.established clientId=editor-11892-4kokfd port=9001
+[2026-08-30T18:33:50.761Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-11892
+[2026-08-30T18:33:50.768Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T18:33:52.405Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T18:33:52.406Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T18:35:17.228Z] [INFO] log Domain reload signal received from client editor-11892-4kokfd
+[2026-08-30T18:35:17.229Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T18:35:17.229Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T18:35:17.329Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:35:17.549Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:35:17.810Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:35:17.952Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:35:18.181Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T18:35:18.182Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T18:35:18.182Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T18:35:18.183Z] [WARN] connection.lost clientId=null
+[2026-08-30T18:35:18.185Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T18:35:18.186Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T18:35:18.468Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:35:18.984Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:35:19.094Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:35:19.491Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:35:19.996Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:35:20.514Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:35:21.019Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:35:21.319Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:35:21.544Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:35:22.057Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:35:22.563Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:35:23.067Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:35:23.573Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:35:24.078Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:35:24.595Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:35:24.661Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:35:25.113Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:35:25.618Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:35:26.124Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:35:26.640Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:35:26.768Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T18:35:26.768Z] [INFO] log Unity client connected with ID: editor-11892-i28wmd (relay 1.0.12-build.97)
+[2026-08-30T18:35:26.769Z] [INFO] connection.established clientId=editor-11892-i28wmd port=9001
+[2026-08-30T18:35:27.281Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-11892
+[2026-08-30T18:35:27.283Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T18:35:27.992Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T18:35:27.993Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T18:36:17.057Z] [INFO] log Domain reload signal received from client editor-11892-i28wmd
+[2026-08-30T18:36:17.057Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T18:36:17.057Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T18:36:17.162Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:36:17.372Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:36:17.774Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:36:17.955Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T18:36:17.955Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T18:36:17.955Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T18:36:17.956Z] [WARN] connection.lost clientId=null
+[2026-08-30T18:36:17.957Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T18:36:17.957Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T18:36:18.289Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:36:18.794Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:36:19.300Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:36:19.805Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:36:20.310Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:36:20.817Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:36:21.320Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:36:21.826Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:36:22.329Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:36:22.836Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:36:23.353Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:36:24.004Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-11892
+[2026-08-30T18:36:24.005Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T18:36:24.937Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T18:36:24.937Z] [INFO] log Unity client connected with ID: editor-11892-ue9nbf (relay 1.0.12-build.97)
+[2026-08-30T18:36:24.938Z] [INFO] connection.established clientId=editor-11892-ue9nbf port=9001
+[2026-08-30T18:36:25.358Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T18:36:25.358Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T18:40:25.033Z] [INFO] log Domain reload signal received from client editor-11892-ue9nbf
+[2026-08-30T18:40:25.033Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T18:40:25.034Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T18:40:25.137Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:40:25.353Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:40:25.757Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:40:25.950Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T18:40:25.951Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T18:40:25.951Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T18:40:25.952Z] [WARN] connection.lost clientId=null
+[2026-08-30T18:40:25.953Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T18:40:25.953Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T18:40:26.271Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:40:26.785Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:40:27.287Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:40:27.794Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:40:28.296Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:40:28.801Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:40:29.308Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:40:29.815Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:40:30.317Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:40:30.849Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:40:31.352Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:40:31.735Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T18:40:31.735Z] [INFO] log Unity client connected with ID: editor-11892-x8gs4z (relay 1.0.12-build.97)
+[2026-08-30T18:40:31.736Z] [INFO] connection.established clientId=editor-11892-x8gs4z port=9001
+[2026-08-30T18:40:31.994Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-11892
+[2026-08-30T18:40:31.995Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T18:40:33.356Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T18:40:33.357Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T18:40:55.325Z] [INFO] log Domain reload signal received from client editor-11892-x8gs4z
+[2026-08-30T18:40:55.325Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T18:40:55.326Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T18:40:55.438Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:40:55.651Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:40:56.066Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:40:56.245Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T18:40:56.246Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T18:40:56.246Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T18:40:56.246Z] [WARN] connection.lost clientId=null
+[2026-08-30T18:40:56.247Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T18:40:56.248Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T18:40:56.580Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:40:57.100Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:40:57.616Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:40:58.121Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:40:58.626Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:40:59.133Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:40:59.639Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:41:00.155Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:41:00.657Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:41:01.175Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:41:01.689Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:41:02.113Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T18:41:02.114Z] [INFO] log Unity client connected with ID: editor-11892-1uomex (relay 1.0.12-build.97)
+[2026-08-30T18:41:02.114Z] [INFO] connection.established clientId=editor-11892-1uomex port=9001
+[2026-08-30T18:41:02.342Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-11892
+[2026-08-30T18:41:02.343Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T18:41:03.741Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T18:41:03.743Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T18:41:58.519Z] [INFO] log Domain reload signal received from client editor-11892-1uomex
+[2026-08-30T18:41:58.519Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T18:41:58.519Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T18:41:58.620Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:41:58.846Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:41:59.257Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:41:59.484Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T18:41:59.485Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T18:41:59.485Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T18:41:59.485Z] [WARN] connection.lost clientId=null
+[2026-08-30T18:41:59.486Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T18:41:59.488Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T18:41:59.773Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:00.278Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:00.781Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:01.288Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:01.803Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:02.307Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:02.822Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:03.326Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:03.830Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:04.334Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:04.851Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:05.199Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T18:42:05.199Z] [INFO] log Unity client connected with ID: editor-11892-s4axv7 (relay 1.0.12-build.97)
+[2026-08-30T18:42:05.199Z] [INFO] connection.established clientId=editor-11892-s4axv7 port=9001
+[2026-08-30T18:42:05.504Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-11892
+[2026-08-30T18:42:05.505Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T18:42:06.798Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T18:42:06.798Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T18:42:11.105Z] [INFO] log Domain reload signal received from client editor-11892-s4axv7
+[2026-08-30T18:42:11.105Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T18:42:11.106Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T18:42:11.213Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:11.416Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:11.796Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T18:42:11.796Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T18:42:11.797Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T18:42:11.797Z] [WARN] connection.lost clientId=null
+[2026-08-30T18:42:11.797Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T18:42:11.797Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T18:42:11.823Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:12.338Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:12.854Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:13.358Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:13.861Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:14.366Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:14.883Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:15.402Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:15.904Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:16.409Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:16.926Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:17.445Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:17.948Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:18.463Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:18.967Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:19.473Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:19.990Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:20.506Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:21.015Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:21.499Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T18:42:21.499Z] [INFO] log Unity client connected with ID: editor-11892-gafs0q (relay 1.0.12-build.97)
+[2026-08-30T18:42:21.500Z] [INFO] connection.established clientId=editor-11892-gafs0q port=9001
+[2026-08-30T18:42:21.609Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T18:42:21.609Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T18:42:21.661Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-11892
+[2026-08-30T18:42:21.662Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T18:42:49.277Z] [INFO] log Domain reload signal received from client editor-11892-gafs0q
+[2026-08-30T18:42:49.277Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T18:42:49.277Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T18:42:49.379Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:49.582Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:49.927Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T18:42:49.928Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T18:42:49.928Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T18:42:49.928Z] [WARN] connection.lost clientId=null
+[2026-08-30T18:42:49.929Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T18:42:49.929Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T18:42:49.987Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:50.504Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:51.006Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:51.516Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:52.031Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:52.536Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:53.052Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:53.573Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:54.089Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:54.606Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:55.123Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:55.627Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:56.131Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:56.639Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:42:57.156Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-11892 (path: \\.\pipe\unity-mcp-891e31b6-11892)
+[2026-08-30T18:42:57.230Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T18:42:57.230Z] [INFO] log Unity client connected with ID: editor-11892-u0mtnl (relay 1.0.12-build.97)
+[2026-08-30T18:42:57.231Z] [INFO] connection.established clientId=editor-11892-u0mtnl port=9001
+[2026-08-30T18:42:57.339Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T18:42:57.339Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T18:42:57.799Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-11892
+[2026-08-30T18:42:57.800Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T18:46:33.621Z] [INFO] log Domain reload signal received from client editor-11892-u0mtnl
+[2026-08-30T18:46:33.621Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T18:46:33.623Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T18:46:33.673Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:46:33.878Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:46:34.289Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:46:34.530Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T18:46:34.530Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T18:46:34.530Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T18:46:34.531Z] [WARN] connection.lost clientId=null
+[2026-08-30T18:46:34.531Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T18:46:34.531Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T18:46:34.800Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:46:35.319Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:46:35.835Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:46:36.349Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:46:36.859Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:46:37.374Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:46:37.883Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:46:38.395Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:46:38.896Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:46:39.415Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:46:39.928Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:46:40.442Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:46:40.956Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:46:41.473Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:46:41.987Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:46:42.501Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:46:43.019Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:46:43.535Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:46:44.037Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:46:44.556Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:46:45.072Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:46:45.591Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:46:46.094Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:46:46.602Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:46:47.115Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:46:47.416Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T18:46:47.417Z] [INFO] log Unity client connected with ID: editor-11892-azp0bn (relay 1.0.12-build.97)
+[2026-08-30T18:46:47.417Z] [INFO] connection.established clientId=editor-11892-azp0bn port=9001
+[2026-08-30T18:46:47.785Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-11892
+[2026-08-30T18:46:47.786Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T18:46:48.936Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T18:46:48.936Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T18:47:02.519Z] [INFO] log Domain reload signal received from client editor-11892-azp0bn
+[2026-08-30T18:47:02.520Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T18:47:02.520Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T18:47:02.638Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:02.847Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:03.264Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:03.488Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T18:47:03.488Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T18:47:03.489Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T18:47:03.489Z] [WARN] connection.lost clientId=null
+[2026-08-30T18:47:03.490Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T18:47:03.490Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T18:47:03.778Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:04.282Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:04.786Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:05.289Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:05.795Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:06.301Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:06.816Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:07.322Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:07.828Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:08.345Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:08.864Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:09.226Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T18:47:09.226Z] [INFO] log Unity client connected with ID: editor-11892-age819 (relay 1.0.12-build.97)
+[2026-08-30T18:47:09.227Z] [INFO] connection.established clientId=editor-11892-age819 port=9001
+[2026-08-30T18:47:09.518Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-11892
+[2026-08-30T18:47:09.519Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T18:47:10.904Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T18:47:10.904Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T18:47:32.689Z] [INFO] log Domain reload signal received from client editor-11892-age819
+[2026-08-30T18:47:32.689Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T18:47:32.689Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T18:47:32.820Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:33.010Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:33.423Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:33.614Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T18:47:33.615Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T18:47:33.615Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T18:47:33.616Z] [WARN] connection.lost clientId=null
+[2026-08-30T18:47:33.618Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T18:47:33.617Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T18:47:33.936Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:34.445Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:34.960Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:35.471Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:35.988Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:36.501Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:37.010Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:37.521Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:38.038Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:38.549Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:39.053Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:39.557Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:40.061Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:40.566Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:41.076Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:41.580Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:42.099Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:42.615Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:43.130Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:43.643Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:44.162Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:44.670Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:45.188Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:45.696Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:46.208Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:46.718Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:47.234Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:47.750Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:48.273Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:48.784Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:49.295Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:49.808Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:50.325Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:50.834Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:51.351Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:51.866Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:52.372Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:52.895Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:53.406Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:53.925Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:54.428Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:54.950Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:55.456Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:55.978Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:56.488Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:57.004Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:57.512Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:58.017Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:58.535Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:59.044Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:47:59.565Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:48:00.073Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:48:00.587Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:48:01.095Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:48:01.518Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T18:48:01.518Z] [INFO] log Unity client connected with ID: editor-11892-d0ndk5 (relay 1.0.12-build.97)
+[2026-08-30T18:48:01.518Z] [INFO] connection.established clientId=editor-11892-d0ndk5 port=9001
+[2026-08-30T18:48:01.745Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-11892
+[2026-08-30T18:48:01.746Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T18:48:02.858Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T18:48:02.858Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T18:49:42.086Z] [INFO] log Domain reload signal received from client editor-11892-d0ndk5
+[2026-08-30T18:49:42.086Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T18:49:42.086Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T18:49:42.192Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:49:42.409Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:49:42.775Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T18:49:42.775Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T18:49:42.775Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T18:49:42.776Z] [WARN] connection.lost clientId=null
+[2026-08-30T18:49:42.776Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T18:49:42.776Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T18:49:42.819Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:49:43.323Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:49:43.825Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:49:44.333Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:49:44.851Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:49:45.366Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:49:45.884Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:49:46.395Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:49:46.913Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:49:47.417Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:49:47.935Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:49:48.436Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:49:48.941Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:49:49.455Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:49:49.742Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T18:49:49.742Z] [INFO] log Unity client connected with ID: editor-11892-btmc45 (relay 1.0.12-build.97)
+[2026-08-30T18:49:49.742Z] [INFO] connection.established clientId=editor-11892-btmc45 port=9001
+[2026-08-30T18:49:49.850Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T18:49:49.850Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T18:49:50.098Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-11892
+[2026-08-30T18:49:50.099Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T18:52:57.209Z] [INFO] log Domain reload signal received from client editor-11892-btmc45
+[2026-08-30T18:52:57.209Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T18:52:57.209Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T18:52:57.312Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:52:57.527Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:52:57.906Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T18:52:57.906Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T18:52:57.907Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T18:52:57.907Z] [WARN] connection.lost clientId=null
+[2026-08-30T18:52:57.907Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T18:52:57.908Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T18:52:57.934Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:52:58.453Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:52:58.956Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:52:59.459Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:52:59.963Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:53:00.469Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:53:00.988Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:53:01.494Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:53:01.999Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:53:02.505Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:53:03.008Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:53:03.513Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:53:04.017Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:53:04.520Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:53:04.837Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T18:53:04.837Z] [INFO] log Unity client connected with ID: editor-11892-wdlpx3 (relay 1.0.12-build.97)
+[2026-08-30T18:53:04.837Z] [INFO] connection.established clientId=editor-11892-wdlpx3 port=9001
+[2026-08-30T18:53:04.957Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T18:53:04.957Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T18:53:05.161Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-11892
+[2026-08-30T18:53:05.162Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T18:54:37.251Z] [INFO] log Domain reload signal received from client editor-11892-wdlpx3
+[2026-08-30T18:54:37.251Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T18:54:37.252Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T18:54:37.348Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:54:37.556Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:54:37.960Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:54:38.082Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T18:54:38.083Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T18:54:38.083Z] [WARN] connection.lost clientId=null
+[2026-08-30T18:54:38.083Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T18:54:38.083Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T18:54:38.082Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T18:54:38.479Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:54:38.984Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:54:39.485Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:54:39.991Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:54:40.498Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:54:41.003Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:54:41.505Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:54:42.020Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:54:42.524Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:54:43.042Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:54:43.546Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:54:44.066Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-11892 (path: \\.\pipe\unity-mcp-891e31b6-11892)
+[2026-08-30T18:54:44.152Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T18:54:44.153Z] [INFO] log Unity client connected with ID: editor-11892-htuw3b (relay 1.0.12-build.97)
+[2026-08-30T18:54:44.153Z] [INFO] connection.established clientId=editor-11892-htuw3b port=9001
+[2026-08-30T18:54:44.715Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-11892
+[2026-08-30T18:54:44.716Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T18:54:45.658Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T18:54:45.659Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T18:55:43.044Z] [INFO] log Domain reload signal received from client editor-11892-htuw3b
+[2026-08-30T18:55:43.044Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T18:55:43.045Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T18:55:43.148Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:55:43.351Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:55:43.664Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:55:43.748Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T18:55:43.748Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T18:55:43.748Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T18:55:43.749Z] [WARN] connection.lost clientId=null
+[2026-08-30T18:55:43.749Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T18:55:43.749Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T18:55:43.758Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:55:44.272Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:55:44.734Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:55:44.782Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:55:45.285Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:55:45.789Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:55:46.292Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:55:46.812Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:55:47.153Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:55:47.330Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:55:47.834Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:55:48.337Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:55:48.841Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:55:49.358Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:55:49.864Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:55:50.379Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:55:50.618Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T18:55:50.618Z] [INFO] log Unity client connected with ID: editor-11892-yd6nku (relay 1.0.12-build.97)
+[2026-08-30T18:55:50.619Z] [INFO] connection.established clientId=editor-11892-yd6nku port=9001
+[2026-08-30T18:55:50.840Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-11892
+[2026-08-30T18:55:50.894Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[2026-08-30T18:55:50.895Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T18:55:50.971Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T18:55:50.972Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T18:56:09.462Z] [INFO] log Domain reload signal received from client editor-11892-yd6nku
+[2026-08-30T18:56:09.462Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T18:56:09.463Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T18:56:09.564Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:56:09.768Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:56:10.129Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T18:56:10.130Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T18:56:10.130Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T18:56:10.130Z] [WARN] connection.lost clientId=null
+[2026-08-30T18:56:10.130Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T18:56:10.131Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T18:56:10.171Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:56:10.676Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:56:11.178Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:56:11.694Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:56:12.201Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:56:12.704Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:56:13.218Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:56:13.722Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:56:14.227Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:56:14.742Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:56:15.257Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:56:15.760Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:56:16.279Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T18:56:16.804Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-11892 (path: \\.\pipe\unity-mcp-891e31b6-11892)
+[2026-08-30T18:56:16.880Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T18:56:16.881Z] [INFO] log Unity client connected with ID: editor-11892-416nbh (relay 1.0.12-build.97)
+[2026-08-30T18:56:16.881Z] [INFO] connection.established clientId=editor-11892-416nbh port=9001
+[2026-08-30T18:56:16.993Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T18:56:16.993Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T18:56:17.434Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-11892
+[2026-08-30T18:56:17.435Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T19:00:24.647Z] [INFO] log Domain reload signal received from client editor-11892-416nbh
+[2026-08-30T19:00:24.647Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T19:00:24.647Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T19:00:24.742Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:00:24.946Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:00:25.285Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:00:25.351Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:00:25.491Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T19:00:25.493Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T19:00:25.492Z] [WARN] connection.lost clientId=null
+[2026-08-30T19:00:25.492Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T19:00:25.492Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T19:00:25.493Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T19:00:25.868Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:00:26.352Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:00:26.384Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:00:26.888Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:00:27.407Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:00:27.924Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:00:28.430Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:00:28.897Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:00:28.947Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:00:29.459Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:00:29.970Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:00:30.481Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:00:30.994Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:00:31.509Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:00:31.651Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T19:00:31.651Z] [INFO] log Unity client connected with ID: editor-11892-erqii6 (relay 1.0.12-build.97)
+[2026-08-30T19:00:31.651Z] [INFO] connection.established clientId=editor-11892-erqii6 port=9001
+[2026-08-30T19:00:32.146Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-11892
+[2026-08-30T19:00:32.148Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T19:00:33.300Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T19:00:33.301Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T19:00:40.182Z] [INFO] log Domain reload signal received from client editor-11892-erqii6
+[2026-08-30T19:00:40.182Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T19:00:40.183Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T19:00:40.288Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:00:40.502Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:00:40.751Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:00:40.895Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T19:00:40.895Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T19:00:40.896Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T19:00:40.896Z] [WARN] connection.lost clientId=null
+[2026-08-30T19:00:40.896Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T19:00:40.896Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T19:00:40.906Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:00:41.424Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:00:41.927Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:00:42.037Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:00:42.431Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:00:42.936Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:00:43.440Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:00:43.943Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:00:44.449Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:00:44.621Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:00:44.952Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:00:45.458Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:00:45.974Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:00:46.490Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:00:46.991Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:00:47.498Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:00:47.746Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T19:00:47.747Z] [INFO] log Unity client connected with ID: editor-11892-pzg4ao (relay 1.0.12-build.97)
+[2026-08-30T19:00:47.747Z] [INFO] connection.established clientId=editor-11892-pzg4ao port=9001
+[2026-08-30T19:00:47.871Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T19:00:47.871Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T19:00:48.142Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-11892
+[2026-08-30T19:00:48.143Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T19:01:42.276Z] [INFO] log Domain reload signal received from client editor-11892-pzg4ao
+[2026-08-30T19:01:42.276Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T19:01:42.277Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T19:01:42.379Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:01:42.596Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:01:42.938Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T19:01:42.938Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T19:01:42.939Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T19:01:42.939Z] [WARN] connection.lost clientId=null
+[2026-08-30T19:01:42.939Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T19:01:42.940Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T19:01:43.003Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:01:43.507Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:01:44.024Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:01:44.528Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:01:45.032Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:01:45.537Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:01:46.056Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:01:46.571Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:01:47.078Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:01:47.583Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:01:48.089Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:01:48.605Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:01:49.122Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:01:49.468Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T19:01:49.468Z] [INFO] log Unity client connected with ID: editor-11892-jtaaam (relay 1.0.12-build.97)
+[2026-08-30T19:01:49.468Z] [INFO] connection.established clientId=editor-11892-jtaaam port=9001
+[2026-08-30T19:01:49.571Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T19:01:49.571Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T19:01:49.762Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-11892
+[2026-08-30T19:01:49.764Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T19:04:12.581Z] [INFO] log Domain reload signal received from client editor-11892-jtaaam
+[2026-08-30T19:04:12.582Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T19:04:12.582Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T19:04:12.686Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:04:12.903Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:04:13.254Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-08-30T19:04:13.255Z] [DEBUG] acp.queue.pause depth=0
+[2026-08-30T19:04:13.255Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-08-30T19:04:13.255Z] [WARN] connection.lost clientId=null
+[2026-08-30T19:04:13.256Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-08-30T19:04:13.256Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-08-30T19:04:13.310Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:04:13.812Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:04:14.324Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:04:14.827Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:04:15.346Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:04:15.861Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:04:16.380Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:04:16.892Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:04:17.406Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:04:17.909Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:04:18.427Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:04:18.928Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:04:19.436Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:04:19.953Z] [ERROR] log [unity-mcp] stderr: [ERROR] [Unity Mcp Server] log Named pipe connection error: ENOENT - connect ENOENT \\.\pipe\unity-mcp-891e31b6-17292 (path: \\.\pipe\unity-mcp-891e31b6-17292)
+[2026-08-30T19:04:20.188Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-08-30T19:04:20.188Z] [INFO] log Unity client connected with ID: editor-11892-geyklu (relay 1.0.12-build.97)
+[2026-08-30T19:04:20.188Z] [INFO] connection.established clientId=editor-11892-geyklu port=9001
+[2026-08-30T19:04:20.311Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-08-30T19:04:20.311Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-08-30T19:04:20.598Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] connection.established connectionType=Named Pipe path=\\.\pipe\unity-mcp-891e31b6-11892
+[2026-08-30T19:04:20.600Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
+[INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
+[INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T19:05:44.305Z] [INFO] log Shutdown request received from client editor-11892-geyklu
+[2026-08-30T19:05:44.306Z] [INFO] log Unity client requested immediate shutdown - shutting down now, reason: Shutdown requested by client
+[2026-08-30T19:05:44.306Z] [INFO] log Shutdown: Initiating graceful shutdown: Shutdown requested by client

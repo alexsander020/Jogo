@@ -3,12 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|c:\\users\\lorddrakkon\\documents\\github\\jogo\\my project\\assets\\scripts\\ui\\panelpositioner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\panelpositioner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\assets\\scripts\\board\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\board\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\assets\\scripts\\state machine\\states\\loadstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\state machine\\states\\loadstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\assets\\scripts\\state machine\\statemachinecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\state machine\\statemachinecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\assets\\scripts\\state machine\\state.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\state machine\\state.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\assets\\scripts\\movement\\movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\movement\\movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\assets\\scripts\\board\\tilelogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\board\\tilelogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\assets\\scripts\\board\\floor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\board\\floor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\assets\\scripts\\ui\\panelposition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\panelposition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|c:\\users\\lorddrakkon\\documents\\github\\jogo\\my project\\assets\\scripts\\ui\\panelpositioner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\panelpositioner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\assets\\scripts\\state machine\\states\\chooseactionstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,10 +45,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\assets\\scripts\\board\\maploader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\board\\maploader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|c:\\users\\lorddrakkon\\documents\\github\\jogo\\my project\\assets\\scripts\\state machine\\statemachinecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\state machine\\statemachinecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\assets\\scripts\\unit\\stats\\stat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -35,16 +59,8 @@
       "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\state machine\\states\\roamstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\assets\\scripts\\state machine\\states\\loadstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\state machine\\states\\loadstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\assets\\scripts\\unit\\unit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\unit\\unit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\assets\\scripts\\state machine\\state.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\state machine\\state.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\assets\\scripts\\unit\\stats\\statenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -57,22 +73,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\assets\\scripts\\io\\inputcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\io\\inputcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\assets\\scripts\\board\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\board\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\assets\\scripts\\movement\\movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\movement\\movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\assets\\scripts\\board\\floor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\board\\floor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\assets\\scripts\\board\\tilelogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\board\\tilelogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -82,24 +82,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 15,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "StateMachineController.cs",
               "DocumentMoniker": "C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\Assets\\Scripts\\State Machine\\StateMachineController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\State Machine\\StateMachineController.cs",
               "ToolTip": "C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\Assets\\Scripts\\State Machine\\StateMachineController.cs",
               "RelativeToolTip": "Assets\\Scripts\\State Machine\\StateMachineController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwB0AAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAADEAAAAAAAAAAAAcwEUAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-01T20:05:20.632Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 10,
               "Title": "MapLoader.cs",
               "DocumentMoniker": "C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\Assets\\Scripts\\Board\\MapLoader.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Board\\MapLoader.cs",
@@ -107,12 +107,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Board\\MapLoader.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAYwBcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-02T01:57:11.868Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-02T01:57:11.868Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "ChooseActionState.cs",
               "DocumentMoniker": "C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\Assets\\Scripts\\State Machine\\States\\ChooseActionState.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\State Machine\\States\\ChooseActionState.cs",
@@ -120,12 +119,11 @@
               "RelativeToolTip": "Assets\\Scripts\\State Machine\\States\\ChooseActionState.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAAwBoAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-01T22:52:29.006Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-01T22:52:29.006Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "PanelPosition.cs",
               "DocumentMoniker": "C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\Assets\\Scripts\\UI\\PanelPosition.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\PanelPosition.cs",
@@ -138,7 +136,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 8,
               "Title": "PanelPositioner.cs",
               "DocumentMoniker": "C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\Assets\\Scripts\\UI\\PanelPositioner.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\PanelPositioner.cs",
@@ -151,7 +149,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 13,
               "Title": "RoamState.cs",
               "DocumentMoniker": "C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\Assets\\Scripts\\State Machine\\States\\RoamState.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\State Machine\\States\\RoamState.cs",
@@ -159,25 +157,24 @@
               "RelativeToolTip": "Assets\\Scripts\\State Machine\\States\\RoamState.cs",
               "ViewState": "AgIAACQAAAAAAAAAAAAAwDoAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-01T20:40:55.225Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-01T20:40:55.225Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 1,
               "Title": "LoadState.cs",
               "DocumentMoniker": "C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\Assets\\Scripts\\State Machine\\States\\LoadState.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\State Machine\\States\\LoadState.cs",
               "ToolTip": "C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\Assets\\Scripts\\State Machine\\States\\LoadState.cs",
               "RelativeToolTip": "Assets\\Scripts\\State Machine\\States\\LoadState.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-01T20:21:07.7Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 14,
               "Title": "Unit.cs",
               "DocumentMoniker": "C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\Assets\\Scripts\\Unit\\Unit.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Unit\\Unit.cs",
@@ -185,12 +182,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Unit\\Unit.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-02T02:10:40.002Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-02T02:10:40.002Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 12,
               "Title": "Stats.cs",
               "DocumentMoniker": "C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\Assets\\Scripts\\Unit\\Stats\\Stats.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Unit\\Stats\\Stats.cs",
@@ -198,12 +194,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Unit\\Stats\\Stats.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-02T02:34:49.803Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-02T02:34:49.803Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "Stat.cs",
               "DocumentMoniker": "C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\Assets\\Scripts\\Unit\\Stats\\Stat.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Unit\\Stats\\Stat.cs",
@@ -211,12 +206,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Unit\\Stats\\Stat.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-02T02:21:53.962Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-02T02:21:53.962Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "StatEnum.cs",
               "DocumentMoniker": "C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\Assets\\Scripts\\Unit\\Stats\\StatEnum.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Unit\\Stats\\StatEnum.cs",
@@ -228,7 +222,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "Selector.cs",
               "DocumentMoniker": "C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\Assets\\Scripts\\Board\\Selector.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Board\\Selector.cs",
@@ -240,7 +234,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 17,
               "Title": "InputController.cs",
               "DocumentMoniker": "C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\Assets\\Scripts\\IO\\InputController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\IO\\InputController.cs",
@@ -252,7 +246,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 3,
               "Title": "State.cs",
               "DocumentMoniker": "C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\Assets\\Scripts\\State Machine\\State.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\State Machine\\State.cs",
@@ -260,55 +254,60 @@
               "RelativeToolTip": "Assets\\Scripts\\State Machine\\State.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-01T20:01:54.041Z"
+              "WhenOpened": "2026-05-01T20:01:54.041Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 4,
               "Title": "Movement.cs",
               "DocumentMoniker": "C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\Assets\\Scripts\\Movement\\Movement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Movement\\Movement.cs",
               "ToolTip": "C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\Assets\\Scripts\\Movement\\Movement.cs",
               "RelativeToolTip": "Assets\\Scripts\\Movement\\Movement.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACMAAAAAAAAAAAA9wDMAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-01T18:05:19.17Z"
+              "WhenOpened": "2026-05-01T18:05:19.17Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 0,
               "Title": "Board.cs",
               "DocumentMoniker": "C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\Assets\\Scripts\\Board\\Board.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Board\\Board.cs",
               "ToolTip": "C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\Assets\\Scripts\\Board\\Board.cs",
               "RelativeToolTip": "Assets\\Scripts\\Board\\Board.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAmwB0AAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEQAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-01T14:38:20.597Z"
+              "WhenOpened": "2026-05-01T14:38:20.597Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 5,
               "Title": "TileLogic.cs",
               "DocumentMoniker": "C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\Assets\\Scripts\\Board\\TileLogic.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Board\\TileLogic.cs",
               "ToolTip": "C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\Assets\\Scripts\\Board\\TileLogic.cs",
               "RelativeToolTip": "Assets\\Scripts\\Board\\TileLogic.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwBcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-01T14:29:12.82Z"
+              "WhenOpened": "2026-05-01T14:29:12.82Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 6,
               "Title": "Floor.cs",
               "DocumentMoniker": "C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\Assets\\Scripts\\Board\\Floor.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Board\\Floor.cs",
               "ToolTip": "C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\Assets\\Scripts\\Board\\Floor.cs",
               "RelativeToolTip": "Assets\\Scripts\\Board\\Floor.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwAsAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-01T14:12:25.743Z"
+              "WhenOpened": "2026-05-01T14:12:25.743Z",
+              "EditorCaption": ""
             }
           ]
         }
