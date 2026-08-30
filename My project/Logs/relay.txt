@@ -3096,3 +3096,6 @@ O sistema não pode encontrar o caminho especificado. | Duration: 50ms
 [2026-08-30T22:31:54.581Z] [ERROR] log [unity-mcp] stderr: [INFO ] [Unity Mcp Server] log Connection monitor: successfully connected to Unity
 [INFO ] [Unity Mcp Server] log Sending client info to Unity: {"name":"unity-relay-client","version":"1.0.0","title":"unity-relay-client"}
 [INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
+[2026-08-30T22:35:21.132Z] [INFO] log Shutdown request received from client editor-12732-1htfkg
+[2026-08-30T22:35:21.132Z] [INFO] log Unity client requested immediate shutdown - shutting down now, reason: Shutdown requested by client
+[2026-08-30T22:35:21.132Z] [INFO] log Shutdown: Initiating graceful shutdown: Shutdown requested by client
