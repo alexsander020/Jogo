@@ -1,0 +1,345 @@
+﻿DOCUMENTO DE DESIGN DE JOGO (GDD)
+NetShift: Protocolo Quântico
+Versão 3 — Revisão de Consistência e Preenchimento de Lacunas
+Status: Fase 1 – Conceituação e Game Design Document (Revisado)
+Empresa: Neotopia Games Studio
+Agosto de 2026
+Sobre esta revisão (V2 → V3)
+Este documento corrige inconsistências identificadas na V2 (nomenclatura duplicada, tabela de atributos corrompida) e adiciona seções ausentes essenciais para produção: Núcleo de Jogo, Economia, UI/UX, Design de Encontros, Acessibilidade, Orçamento/Equipe e Riscos. Uma lista completa de mudanças está na última seção, 'Registro de Revisão'.
+
+1. Identificação do Projeto
+Título do Projeto: NetShift: Protocolo Quântico
+Empresa: Neotopia Games Studio
+Gênero: Tactical/Turn-Based RPG (SRPG) com exploração investigativa
+2. Proposta de Game e Adequação ao Público
+2.1 High Concept
+E se os aplicativos e inteligências artificiais do nosso mundo ganhassem consciência em uma dimensão digital oculta, e a única forma de salvar a infraestrutura da humanidade fosse alternar entre investigar crimes no mundo real e liderar batalhas táticas em uma grade virtual fundindo entidades em tempo real?
+2.2 Resumo e Visão Geral
+NetShift: Protocolo Quântico é um Tactical/Turn-Based RPG que combina a atmosfera de investigação urbana cyberpunk com batalhas táticas em grelhas isoparamétricas. O jogo sintetiza três referências de gênero, mantendo identidade visual e mecânica próprias:
+Movimentação investigativa e transição dinâmica entre o Mundo Real (Tóquio Neopunk) e a Rede Virtual (CYBER-SPACE), usando pontos de acesso físicos e habilidades de hacking restritas por tipo de entidade — referência de género: Digimon Story: Cyber Sleuth – Hacker's Memory.
+Combate tático em grelha com relevo, posicionamento (flanqueamento e ataques traseiros), alinhamento moral e gerenciamento de energia contínua durante fusões em tempo real — referência de género: Digimon Survive.
+Combate em duplas (2v2) com fusões instantâneas, sistema elemental de 7 categorias funcionais, passivas secundárias e um deck de programas acionado pelo jogador humano sem consumir o turno da entidade — referência de género: Digimon Universe: Appli Monsters 3DS.
+Nota de diferenciação
+A V2 usava termos praticamente idênticos aos das referências (ex.: Karma "Vacina/Dados/Vírus", mundo digital "EDEN"). Esta revisão troca esses termos por nomenclatura própria do universo NetShift (seção 4.2 e 3.1), mantendo a mecânica mas dando identidade de marca autoral — importante tanto para publishers quanto para eventual registro de marca.
+2.3 Público-Alvo do Projeto
+Faixa Etária: 14 a 35 anos (Classificação Indicativa: Teen / 12+).
+Perfil sócio-cultural: fãs de RPGs Táticos (SRPG), jogos de coleção de monstros, cultura pop japonesa, ficção científica/cyberpunk e narrativas investigativas maduras.
+Motivação dos jogadores: planejamento tático profundo, customização avançada de atributos/passivas, exploração de múltiplos mundos e histórias envolventes sobre humanidade e tecnologia.
+3. Núcleo de Jogo (Core Loop)
+Seção nova
+Ausente na V2. Todo GDD precisa definir, antes de qualquer sistema, o que o jogador faz minuto a minuto — é o que orienta produção e prototipagem.
+3.1 Loop Principal (Ciclo de ~15–25 minutos)
+1. HUB (Agência Hudie / Quantum-Lab): jogador recebe ou revisita um caso; ajusta equipe, Deck de Programas e fusões.
+2. Investigação (Mundo Real): explora um distrito de Tóquio, conversa com NPCs, coleta pistas e localiza um ponto de invasão (Access Point).
+3. Login: transição para o CYBER-SPACE correspondente àquele terminal.
+4. Exploração digital: navega pela grelha do setor usando Habilidades de Campo (ver 4.1) para desbloquear rotas, itens e encontros.
+5. Combate tático (2v2): resolve encontros contra entidades selvagens ou corrompidas, usando posicionamento, fusão e o Deck de Programas.
+6. Recompensa e retorno: coleta SAPSS (ver 4.4), decide entre continuar explorando ou fazer Logout para reportar o progresso do caso na Agência.
+7. Progressão narrativa: ao final do caso, uma escolha de diálogo relevante ajusta o Karma do protagonista (ver 4.2), fechando o loop e abrindo o próximo caso.
+3.2 Loop de Sessão Curta (2–5 minutos, dentro do combate)
+Avaliar grid: posição do inimigo, elevação e flancos disponíveis.
+Mover e posicionar as duas entidades ativas.
+Decidir entre atacar separadamente, buscar Combo Sincronizado, ou acionar NetFusion.
+Gerenciar SP restante da forma fundida/evoluída.
+Usar (ou guardar) uma carta do Deck de Programas, considerando cooldown.
+Pendência de design
+Falta definir a duração-alvo de uma investigação completa (ex.: 20 min? 45 min?) e quantos encontros de combate por capítulo são esperados — isso deve ser decidido em conjunto com o time de narrativa antes da pré-produção.
+4. Gameplay e Mecânicas
+4.1 Estrutura de Exploração e Movimentação entre Mundos
+Dualidade Dimensional: o jogo alterna entre o Mundo Real (Tóquio física: Shibuya, Akihabara, escritórios da Agência) e o Mundo Digital (CYBER-SPACE — nome único e consistente em todo o documento; a referência a "EDEN" presente no cronograma da V2 foi um erro de nomenclatura e foi corrigida).
+Access Points e Terminais: o jogador interage com computadores, telefones e servidores no mundo físico para fazer login no CYBER-SPACE. O retorno é feito via comando de Logout em áreas neutras.
+Habilidades de Campo — a navegação por bloqueios exige ter classes específicas de entidades na equipe ativa. Nomes renomeados para identidade própria (equivalência de função indicada entre parênteses):
+Habilidade de Campo
+Tipo de Entidade Requerido
+Função
+Decrypt Break
+Free / Livre
+Quebra barreiras criptografadas no mapa.
+Path Reveal
+Data
+Revela rotas e plataformas ocultas.
+Ghost Protocol
+Virus
+Camufla a equipe de sistemas de detecção (lasers/sentinelas).
+Warp Link
+Qualquer (desbloqueável)
+Viagem rápida instantânea entre servidores já visitados.
+
+Central de Comando (HUB): o "Quantum-Lab" é o ponto intermediário para fusões permanentes, treinamento passivo e viagem rápida entre portais.
+4.2 Sistema de Combate Tático em Grade
+Posicionamento e Terreno (Grid 3D): Dano frontal padrão (100%), Dano Lateral (125%), Dano Traseiro/Backstab (150% + Crítico garantido) e Bônus de Elevação (unidades no alto ganham alcance e dano adicionais).
+Duplas e Sincronia de Ataque (2v2): o jogador controla 2 entidades em campo. Atacar o mesmo alvo no mesmo turno com habilidades da mesma categoria gera Combo Sincronizado e efeito Guard Break.
+Fusão em Tempo Real (NetFusion): duas entidades compatíveis em campo podem se fundir em uma forma superior (Standard → Super → Ultimate → God), curando vida, limpando debuffs e resetando o cooldown de habilidades no mesmo turno.
+Gerenciamento de SP: manter uma entidade fundida ou evoluída consome SP a cada turno. Se o SP esgotar, a unidade reverte para a forma base.
+Sistema de Diálogo e Recrutamento (Talk System): durante batalhas contra entidades selvagens, o jogador pode usar o comando Talk. Responder a 3 perguntas alinhadas com a personalidade da entidade preenche uma barra de afinidade, permitindo recrutá-la ou obter itens raros.
+4.2.1 Ciclo dos 7 Atributos Funcionais (tabela corrigida)
+Correção
+Na V2, a extração/formatação da tabela misturava a "Vantagem Direta" de uma linha com o nome da categoria seguinte, tornando o ciclo ilegível. A estrutura abaixo restaura a lógica original: um ciclo fechado de 7 categorias, cada uma com vantagem direta sobre a próxima — o mesmo princípio de "pedra-papel-tesoura", mas com 7 pontas em vez de 3.
+Categoria
+Especialidade
+Vantagem direta contra
+Social
+Buffs de Grupo / Controle (CC)
+Navi
+Navi
+Precisão, Evasão e Velocidade
+Tool
+Tool
+Tanque / Dano Físico
+Game
+Game
+Crítico / Multi-hit
+Entertainment
+Entertainment
+Debuffs / Provocação
+Life
+Life
+Cura / Regeneração
+System
+System
+Negação / Dano Puro (Hack)
+Social
+
+Leitura do ciclo: Social vence Navi, que vence Tool, que vence Game, que vence Entertainment, que vence Life, que vence System, que vence Social — fechando o círculo.
+4.2.2 Trindade de Protocolo (Karma — renomeada)
+Correção de nomenclatura
+A V2 usava "Vacina / Dados / Vírus", termos emprestados diretamente da franquia Digimon. Renomeado para manter a mecânica (três alinhamentos morais que determinam vantagens secundárias de dano e caminho de evolução) com identidade própria e temática cyberpunk.
+Novo termo
+Alinhamento moral
+Equivalente na V2
+Firewall
+Moral / Proteção — ordem, retidão ética
+Vacina
+Ping
+Harmonia / Equilíbrio — pragmatismo, diplomacia
+Dados
+Overclock
+Cólera / Ruptura — impulso, revolta contra o sistema
+Vírus
+4.3 Atributos, Links Passivos e Deck de Programador
+Link Passivo (Stacking): é possível equipar um "Netlink" secundário na unidade principal. A unidade secundária fica protegida e transfere sua habilidade passiva exclusiva e atributos de suporte ao líder.
+Deck de Programas (ações do jogador humano): o jogador possui um baralho de programas ativáveis (Injeção de Velocidade, Escudo de Absorção, Reinício de SP) acionados por cooldown, que não consomem o turno da entidade em campo.
+4.4 Sistema de Recompensas (SAPSS)
+Pilar
+O que entrega
+Status
+Nível, Trindade de Protocolo (Firewall/Ping/Overclock) e afinidade com companheiros.
+Access
+Desbloqueio de setores do CYBER-SPACE e terminais de Warp Link em Tóquio.
+Power
+Receitas de fusão avançadas (Ultimate/God) e novos slots no Deck de Programas.
+Stuffs
+Equipamentos digitais, módulos de expansão de memória e softwares de suporte.
+5. Economia e Progressão (novo)
+Seção nova
+Ausente na V2. O SAPSS descrevia categorias de recompensa, mas não valores, moedas ou taxas — sem isso, balanceamento e monetização não podem ser modelados.
+5.1 Moedas
+Moeda
+Como se ganha
+Para que serve
+Créditos (soft currency)
+Recompensa de missão, venda de itens duplicados
+Compra de consumíveis, upgrades de equipamento, slots de Deck
+Fragmentos Quânticos (moeda de progressão)
+Recompensa de chefes e casos principais
+Desbloqueio de receitas de fusão Ultimate/God
+5.2 Curva de Progressão
+Nível de entidade: sobe por XP de combate; afeta atributos base e SP máximo.
+Nível de vínculo (afinidade): sobe por uso em combate e diálogos Talk bem-sucedidos; desbloqueia passivas de Netlink.
+Dificuldade de encontros: escala por distrito/capítulo, não apenas por nível do jogador, para preservar tensão tática mesmo em personagens fortes.
+Pendência de design
+Definir curva numérica exata (XP por nível, custo de upgrades) é trabalho de planilha de balanceamento, não deste GDD — mas deve ser produzido antes do fim da pré-produção (item 2.1 do cronograma).
+6. Interface e Experiência do Usuário (novo)
+Seção nova
+Ausente na V2. Um SRPG com grid isométrico + 7 atributos + Trindade de Protocolo + SP + Deck de Programas tem alta densidade de informação — a UI precisa ser desenhada cedo, não deixada para produção.
+6.1 Telas essenciais a prototipar
+HUD de combate: vida, SP, indicador de categoria (dos 7 atributos), timer de cooldown do Deck, indicador de vantagem elemental sobre o alvo selecionado.
+Tela de fusão (NetFusion): visualização clara de quais duas entidades podem se fundir e em qual forma resultante, com prévia de atributos.
+Mapa do distrito (Mundo Real) e mapa do setor (CYBER-SPACE), com indicação visual de Access Points ativos/bloqueados.
+Tela de gerenciamento de equipe no Quantum-Lab: slots de Netlink, Deck de Programas, receitas de fusão desbloqueadas.
+Tela de diálogo Talk, com indicador de barra de afinidade em tempo real.
+6.2 Princípios de UX
+Informação de vantagem elemental (ciclo dos 7 atributos) deve ser legível em 1 olhar, sem exigir memorização do ciclo completo.
+Transição Mundo Real ↔ CYBER-SPACE deve ter feedback visual/sonoro forte (suporta identidade de marca e mascara loading).
+7. Design de Encontros e Inimigos (novo)
+Seção nova
+A V2 detalha profundamente os 3 personagens jogáveis, mas nada sobre o que o jogador enfrenta — essencial para estimar trabalho de arte/animação e para balancear o combate.
+Entidades selvagens: encontros aleatórios/fixos no CYBER-SPACE, recrutáveis via Talk System; variam por distrito e categoria (dos 7 atributos).
+Entidades corrompidas (mini-boss): versões alteradas de entidades selvagens usadas por facções hackers antagonistas; combate obrigatório, sem opção de Talk.
+Chefes de capítulo: entidades únicas ligadas à narrativa principal, com mecânicas de grid exclusivas (ex.: terreno que muda durante a luta, fases com NetFusion forçada do inimigo).
+Curva de dificuldade: recomenda-se documento separado (planilha de encontros) mapeando nível recomendado, categoria elemental e recompensa por capítulo.
+8. Narrativa e Ambientação
+8.1 Backstory
+Em 2032, a sociedade é impulsionada pela rede quântica "AETHER-NET". Contudo, falhas misteriosas e casos de "comatose digital" começam a afetar usuários. O protagonista descobre que aplicativos e algoritmos ganharam inteligência autônoma no submundo da rede (CYBER-SPACE) e que facções de hackers estão sequestrando esses seres para desestabilizar o mundo físico.
+8.2 Progressão Narrativa
+A história se divide em Capítulos de Investigação. O jogador aceita casos na Agência no mundo real, investiga pistas conversando com NPCs, localiza pontos de invasão, faz login no CYBER-SPACE e enfrenta chefes corrompidos em batalhas táticas. As decisões de diálogo moldam a Trindade de Protocolo do protagonista (Firewall, Ping ou Overclock), alterando a evolução do parceiro digital e levando a 3 finais distintos.
+9. Perfil dos Personagens (Detalhado)
+9.1 Ren Kaiba (Protagonista Humano)
+Biografia: Nascido e criado em Shinjuku, Ren Kaiba (18 anos) cresceu imerso na ascensão da AETHER-NET. Aos 15 anos, presenciou o comatose digital de seu irmão mais velho, Kaito Kaiba, engenheiro de software que trabalhava no núcleo da rede quântica. Abandonou a faculdade de TI para ingressar como detetive estagiário na Agência de Investigação Cibernética Hudie. Durante uma incursão em Akihabara, foi exposto a um vazamento de dados quânticos que alterou sua percepção visual, permitindo-lhe enxergar anomalias digitais a olho nu.
+Perfil Psicológico: Analítico, reservado e observador, prioriza a lógica em crises, mas guarda empatia profunda por seres marginalizados. Carrega o peso da culpa pelo destino de Kaito. Suas escolhas fluem entre retidão ética (Firewall), pragmatismo pacificador (Ping) e revolta impulsiva contra a autoridade (Overclock).
+Design Visual: 1,75 m, magro, porte atlético leve. Cabelos castanho-escuros desgrenhados com mecha frontal prateada; olhos cor de avelã que brilham em ciano ao ativar a visão de hacking. No mundo real veste jaqueta corta-vento techwear cinza-escura com detalhes turquesa, calça cargo preta e headset no pescoço. No CYBER-SPACE, a jaqueta ganha brilho de circuito, as luvas projetam holotelas de comando e ele usa um visor monocular holográfico para calcular distância e relevo no grid.
+Função Mecânica: Operador de campo — não luta diretamente no grid, mas dita movimentos, ativa Habilidades de Campo e dispara o Deck de Programas sem gastar turnos das entidades.
+9.2 Aethel (Entidade Digital Parceira)
+Biografia: Inteligência autônoma da categoria System de origem incerta. Encontrado por Ren compactado num arquivo corrompido sob a Nakano Broadway, não possui memórias de sua função original. Demonstra capacidade inédita de assimilar código de outros aplicativos via NetFusion sem perder a essência primária, desenvolvendo personalidade própria conforme aprende com Ren.
+Perfil Psicológico: Inicialmente curioso e literal. Conforme a Trindade de Protocolo de Ren se desenvolve, Aethel transforma-se: na rota Firewall, guardião altruísta e solene; na rota Ping, diplomata sereno; na rota Overclock, predador impaciente e desconfiado da humanidade.
+Design Visual (Forma Standard): criatura bípede de 0,90 m, silhueta entre raposa cibernética e robô miniaturizado. Placas de armadura branco-foscas com detalhes azul-marinho e núcleo quântico pulsante que muda de cor conforme o estado emocional (Azul = Neutro/Firewall, Verde = Ping, Vermelho = Overclock). Rosto sem boca visível, tela curva projetando expressões em pixels vetoriais. Duas orelhas de fibra de carbono como antenas de dados.
+Função Mecânica: unidade principal do jogador em combate. Sua árvore de NetFusion (Super/Ultimate/God) se ramifica em 3 linhas conforme a Trindade de Protocolo acumulada.
+9.3 Maya Tachibana (Mentora e Hacker Sênior)
+Biografia: Maya (24 anos) é fundadora e líder informal da equipe hacker "Hudie". Ex-engenheira de segurança da Kamishiro Enterprise, demitiu-se ao descobrir que a empresa usava vulnerabilidades de usuários como cobaias na AETHER-NET. Abriu a Agência Hudie disfarçada de cibercafé em Nakano; acolheu Ren e forneceu suas ferramentas de hacking.
+Perfil Psicológico: Extrovertida, sarcástica e confiante, usa humor ácido para esconder cautela e instinto protetor. Voz da experiência, questiona os impulsos de Ren.
+Design Visual: 1,68 m, postura confiante. Cabelo bob assimétrico rosa-magenta, olhos castanhos, delineado gatinho metálico. No mundo real veste hoodie oversized roxo-escuro com estampas de borboleta (símbolo da Hudie), shorts jeans rasgados, botas plataforma. No CYBER-SPACE torna-se uma imperatriz hacker estilizada, com capa de dados e asas holográficas, flutuando sobre um skate antigravitacional.
+Função Mecânica: suporte tático e conselheira no HUB. Fornece missões secundárias, vende upgrades do Deck, desbloqueia Habilidades de Campo e atua como piloto de emergência em fugas de bloqueios corporativos.
+10. Aspectos Técnicos
+Plataformas de Lançamento: PC (Steam), PlayStation 5, Xbox Series X/S e Nintendo Switch.
+Decisão pendente — Engine
+A V2 listava "Unity Engine / Unreal Engine 5" como se fossem intercambiáveis. Escolha de engine impacta pipeline de arte, contratação e orçamento; recomenda-se decidir antes do fim da etapa 1.1 do cronograma. Fatores a pesar: suporte a Switch (Unity historicamente mais leve nesse alvo), qualidade de shading estilizado desejado (ambas suportam cel-shading via shaders customizados), e experiência prévia da equipe.
+Hardware de Produção: estações de trabalho PC Intel i9 / RTX 4080; DevKits de consoles.
+Requerimentos de Rede: modo campanha single-player offline; suporte online assíncrono para troca de entidades e rankings de batalhas táticas PvP.
+11. Arte do Game e Elementos Sonoros
+11.1 Direção de Arte Visual
+Estilo: Anime cel-shaded 3D de alta fidelidade com iluminação volumétrica neon-cyberpunk.
+Mundo Real: paleta saturada, urbana, realista, tons frios e chuvosos, arquitetura detalhada de Tóquio.
+CYBER-SPACE: cenários geométricos, grids luminosos, estruturas de dados abstratas, cabos de fibra óptica flutuantes, paleta neon (cobre, ciano, roxo elétrico).
+11.2 Sons, Músicas e Elementos Sonoros
+Estilo musical: trilha híbrida — synthwave/cyberpunk eletrônico (EDM/lo-fi) para exploração de Tóquio; electro-rock/orquestral épico para batalhas e fusões.
+SFX: digitação sintética, glitches digitais, carregamento de energia, explosões cibernéticas.
+Dublagem e Legendas: dublagem completa em japonês e inglês; menus e legendas em PT-BR, espanhol, inglês e japonês.
+12. Acessibilidade (novo)
+Seção nova
+Não mencionada na V2. Hoje é praticamente padrão de mercado (e frequentemente exigência de publisher/plataforma) declarar ao menos a intenção nesta fase.
+Modo de daltonismo para indicadores de categoria elemental (os 7 atributos não devem depender só de cor).
+Escala de texto ajustável na UI de combate, dada a densidade de informação.
+Opção de reduzir/desativar efeitos de tela (glitch, flash) para sensibilidade fotossensível.
+Remapeamento de controles e suporte a leitura de tela em menus, quando viável por plataforma.
+13. Planejamento e Adequação do Plano de Negócios
+13.1 Cronograma de Execução Física (Prazo Total: 24 meses)
+Item
+Etapa
+Início
+Fim
+1
+Desenvolvimento do Projeto (Conceito)
+01/10/2026
+31/12/2026
+1.1
+GDD, Bíblia Narrativa e Design das Mecânicas Integradas
+01/10/2026
+15/11/2026
+1.2
+Concept Art de Personagens, Entidades e Arquitetura do Grid
+16/11/2026
+31/12/2026
+2
+Pré-produção (Protótipo / Vertical Slice)
+01/01/2027
+30/06/2027
+2.1
+Engine do Combate Tático (Grid, Flanqueamento, 7 Atributos)
+01/01/2027
+31/03/2027
+2.2
+Protótipo da Transição Mundo Real / CYBER-SPACE e NetFusion
+01/04/2027
+30/06/2027
+3
+Produção (Beta)
+01/07/2027
+30/06/2028
+3.1
+Modelagem 3D, Animações, Capítulos Narrativos e Dungeons
+01/07/2027
+31/01/2028
+3.2
+Balanceamento 2v2, Deck de Programas, Gravação de Som e Dublagem
+01/02/2028
+30/06/2028
+4
+Pós-Produção (Finalização Ouro e Lançamento)
+01/07/2028
+30/09/2028
+4.1
+QA, Correção de Bugs, Otimização para Consoles
+01/07/2028
+31/08/2028
+4.2
+Publicação e Lançamento Global
+01/09/2028
+30/09/2028
+
+Etapa atual do projeto: Etapa 1 – Desenvolvimento do Projeto (Conceito / GDD).
+Alerta de escopo vs. prazo
+24 meses para um SRPG 3D multiplataforma (PC + PS5 + Xbox + Switch), com fusão dinâmica em tempo real, dublagem completa em 2 idiomas, localização em 4, 3 finais narrativos ramificados e PvP assíncrono é um escopo tipicamente associado a equipes de médio/grande porte trabalhando 3–4 anos. Duas saídas possíveis: (a) justificar o prazo com um dimensionamento de equipe compatível na seção 13.2 abaixo, ou (b) cortar escopo (ex.: lançar Switch em janela posterior, reduzir para 1 idioma de dublagem no lançamento, PvP como atualização pós-lançamento).
+13.2 Orçamento e Equipe (novo)
+Seção nova — requer preenchimento
+A V2 não continha estimativa de equipe, orçamento ou modelo de receita, apesar do título da seção ser "Plano de Negócios". Abaixo, uma estrutura mínima a preencher com os números reais do estúdio; sem isso a seção permanece incompleta para fins de captação.
+Disciplina
+Fase de maior demanda
+A preencher pelo estúdio
+Design (sistemas, narrativa, níveis)
+Etapas 1–2
+Nº de designers / custo
+Arte 2D/3D e Animação
+Etapas 2–3
+Nº de artistas / custo
+Programação (gameplay, engine, UI, netcode PvP)
+Etapas 2–4
+Nº de programadores / custo
+Áudio e Dublagem (JP/EN)
+Etapa 3.2
+Orçamento de estúdio de voz
+QA
+Etapa 4
+Nº de testers / custo
+Produção/Gestão
+Todas
+Nº de produtores
+13.3 Modelo de Monetização (novo)
+Modelo base: venda unitária premium (preço-alvo a definir por plataforma).
+Pós-lançamento: DLCs de novas entidades e capítulos narrativos adicionais (mencionado na V2, mas sem estrutura de preço/cadência definida).
+PvP assíncrono: avaliar se será gratuito (retenção) ou com cosméticos pagos (receita recorrente) — decisão de modelo de negócio pendente.
+13.4 Riscos (novo)
+Risco
+Impacto
+Mitigação sugerida
+Escopo multiplataforma + PvP não cabe em 24 meses
+Alto — atraso ou lançamento incompleto
+Priorizar PC/PS5/Xbox no lançamento; Switch e PvP em janela posterior
+Proximidade excessiva com IPs de referência (nomenclatura, mecânicas)
+Médio — risco de imagem/jurídico em pitch a publishers
+Aplicar a passada de diferenciação iniciada nesta revisão a todos os sistemas restantes antes da etapa 1.2
+Complexidade de UI (7 atributos + Trindade + SP + Deck) sem prototipagem prévia
+Médio — retrabalho tardio de UX
+Prototipar HUD de combate já na etapa 2.1, junto da engine de combate
+Engine não definida (Unity vs. Unreal 5)
+Médio — afeta contratação e pipeline
+Decidir antes do fim da etapa 1.1
+14. Informações Adicionais
+O projeto une três pilares fundamentais do gênero JRPG/SRPG moderno:
+A profundidade estratégica de referências como Digimon Survive na navegação por campos táticos e moralidade do protagonista.
+A diversidade de customização de referências como Appli Monsters (3DS), com os 7 tipos funcionais, fusões dinâmicas e uso de programas em tempo real.
+A imersão e narrativa cyberpunk de referências como Cyber Sleuth, com investigação em Tóquio e hacking no mundo virtual.
+Trata-se de um produto escalável, com potencial para expansões de conteúdo (DLCs de novas entidades), sequências e adaptações transmídia.
+
+15. Registro de Revisão (V2 → V3)
+15.1 Correções
+Tabela dos 7 Atributos Funcionais: reconstruída — a V2 misturava a coluna "Vantagem Direta" com o nome da categoria seguinte, tornando o ciclo elemental ilegível.
+Nomenclatura do mundo digital: unificada como "CYBER-SPACE" em todo o documento; a menção a "EDEN" no cronograma da V2 (item 2.2) foi removida.
+Engine de desenvolvimento: sinalizada como decisão pendente em vez de "Unity ou Unreal", com fatores para a decisão.
+15.2 Diferenciação de marca (mecânicas renomeadas)
+Karma "Vacina/Dados/Vírus" → Trindade de Protocolo "Firewall/Ping/Overclock".
+Habilidades de campo renomeadas: Code Scan → Decrypt Break; Route Access → Path Reveal; Stealth Hide → Ghost Protocol; URL Jump → Warp Link.
+15.3 Seções novas
+3. Núcleo de Jogo (Core Loop)
+5. Economia e Progressão
+6. Interface e Experiência do Usuário (UI/UX)
+7. Design de Encontros e Inimigos
+12. Acessibilidade
+13.2 Orçamento e Equipe
+13.3 Modelo de Monetização
+13.4 Riscos
+Alerta de escopo vs. prazo (dentro da seção 13.1)
+15.4 O que ainda precisa de input do estúdio
+Números reais de equipe e orçamento (seção 13.2 está estruturada, mas não preenchida).
+Curva numérica de progressão/balanceamento (seção 5.2).
+Decisão final de engine (seção 10).
+Preço-alvo e decisão sobre monetização de PvP (seção 13.3).

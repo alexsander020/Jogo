@@ -82,21 +82,21 @@ public class MapLoader : MonoBehaviour
             }
         }
 
-        // 1. Jogador 1 (Aethel)
+        // 1. Jogador 1 (Aethel - Paladino Azul Tecnológico)
         SpawnUnit(holder.transform, "Aethel", Team.Player, FunctionalCategory.System, 
-            ProtocolTrinity.Firewall, FacingDirection.North, p1Tile, 14, 120, 60, 25, 12);
+            ProtocolTrinity.Firewall, FacingDirection.North, p1Tile, 14, 120, 60, 25, 12, new Color(0.85f, 0.95f, 1f));
 
-        // 2. Jogador 2 (Aliado Suporte)
+        // 2. Jogador 2 (Bit-Fox - Aliado Dourado)
         SpawnUnit(holder.transform, "Bit-Fox", Team.Player, FunctionalCategory.Social, 
-            ProtocolTrinity.Ping, FacingDirection.North, p2Tile, 12, 100, 50, 18, 10);
+            ProtocolTrinity.Ping, FacingDirection.North, p2Tile, 12, 100, 50, 18, 10, new Color(1f, 0.92f, 0.70f));
 
-        // 3. Inimigo 1 (Corrupt-Bot Alpha)
+        // 3. Inimigo 1 (Corrupt Alpha - Carmesim)
         SpawnUnit(holder.transform, "Corrupt Alpha", Team.Enemy, FunctionalCategory.Navi, 
-            ProtocolTrinity.Overclock, FacingDirection.South, e1Tile, 11, 90, 30, 20, 8, Color.red);
+            ProtocolTrinity.Overclock, FacingDirection.South, e1Tile, 11, 90, 30, 20, 8, new Color(1f, 0.35f, 0.35f));
 
-        // 4. Inimigo 2 (Corrupt-Bot Beta)
+        // 4. Inimigo 2 (Corrupt Beta - Roxo Corrompido)
         SpawnUnit(holder.transform, "Corrupt Beta", Team.Enemy, FunctionalCategory.Tool, 
-            ProtocolTrinity.Overclock, FacingDirection.South, e2Tile, 9, 140, 20, 22, 15, new Color(1f, 0.4f, 0.4f));
+            ProtocolTrinity.Overclock, FacingDirection.South, e2Tile, 9, 140, 20, 22, 15, new Color(0.85f, 0.45f, 0.95f));
     }
 
     Unit SpawnUnit(Transform parent, string name, Team team, FunctionalCategory cat, 

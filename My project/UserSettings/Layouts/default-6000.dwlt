@@ -192,8 +192,8 @@ MonoBehaviour:
     y: 0
     width: 440
     height: 559
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 226}
+  m_MaxSize: {x: 4001, y: 4026}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 43
+    y: 0
     width: 1920
     height: 36
   m_SerializedDataModeController:
@@ -673,7 +673,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 79
+    y: 24
     width: 439
     height: 533
   m_SerializedDataModeController:
@@ -692,10 +692,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs:
-      - m_Data: 75592
+      m_SelectedIDs: []
       m_LastClickedID:
-        m_Data: 75592
+        m_Data: 0
       m_ExpandedIDs:
       - m_Data: -41116
       - m_Data: -31538
@@ -751,8 +750,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Scene\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 440
-    y: 79
+    x: 441
+    y: 24
     width: 1107
     height: 533
   m_SerializedDataModeController:
@@ -1487,7 +1486,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 638
+    y: 583
     width: 1548
     height: 356
   m_SerializedDataModeController:
@@ -1538,21 +1537,20 @@ MonoBehaviour:
       m_Data: 61128
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 56330
-    - m_Data: 61054
-    - m_Data: 61120
-    - m_Data: 61378
-    - m_Data: 61808
-    - m_Data: 61816
-    - m_Data: 61818
-    - m_Data: 61820
-    - m_Data: 61826
-    - m_Data: 61828
-    - m_Data: 61836
-    - m_Data: 61840
-    - m_Data: 62298
-    - m_Data: 62308
-    - m_Data: 1000000000
+    - m_Data: 56168
+    - m_Data: 59656
+    - m_Data: 59658
+    - m_Data: 59660
+    - m_Data: 59662
+    - m_Data: 59664
+    - m_Data: 59666
+    - m_Data: 59668
+    - m_Data: 59670
+    - m_Data: 59672
+    - m_Data: 59674
+    - m_Data: 59676
+    - m_Data: 59678
+    - m_Data: 59680
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1585,21 +1583,20 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 56330
-    - m_Data: 61054
-    - m_Data: 61120
-    - m_Data: 61378
-    - m_Data: 61808
-    - m_Data: 61816
-    - m_Data: 61818
-    - m_Data: 61820
-    - m_Data: 61826
-    - m_Data: 61828
-    - m_Data: 61836
-    - m_Data: 61840
-    - m_Data: 62298
-    - m_Data: 62308
-    - m_Data: 1000000000
+    - m_Data: 56168
+    - m_Data: 59656
+    - m_Data: 59658
+    - m_Data: 59660
+    - m_Data: 59662
+    - m_Data: 59664
+    - m_Data: 59666
+    - m_Data: 59668
+    - m_Data: 59670
+    - m_Data: 59672
+    - m_Data: 59674
+    - m_Data: 59676
+    - m_Data: 59678
+    - m_Data: 59680
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1811,8 +1808,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Tile Palette\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1549
-    y: 79
+    x: 1550
+    y: 24
     width: 370
     height: 915
   m_SerializedDataModeController:

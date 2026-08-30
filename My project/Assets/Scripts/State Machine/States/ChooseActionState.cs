@@ -116,7 +116,22 @@ public class ChooseActionState : State
                 break;
 
             case 1: // Atacar
-                Debug.Log("[Ação] Opção Atacar selecionada.");
+                if (currentUnit != null && currentUnit.CanAct())
+                {
+                    Debug.Log("[Ação] Opção Atacar selecionada.");
+                    machine.ChangeTo<AttackTargetState>();
+                }
+                else
+                {
+                    Debug.LogWarning("[Ação] Esta unidade já realizou sua ação/ataque neste turno!");
+                    if (BattleHUD.Instance != null)
+                    {
+                        BattleHUD.Instance.UpdateControlsPrompt(
+                            "AÇÃO JÁ REALIZADA", 
+                            "• A unidade atual já atacou neste turno. Escolha Mover ou Encerrar Turno."
+                        );
+                    }
+                }
                 break;
 
             case 2: // Item

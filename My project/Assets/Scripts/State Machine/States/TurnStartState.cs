@@ -192,6 +192,32 @@ public class TurnStartState : State
             {
                 enemy.SetFacing(DirectionUtils.VectorToDirection(diff));
             }
+
+            // 3. Se estiver no alcance (1 tile adjacente), executa o ataque contra o jogador
+            int finalDist = Mathf.Abs(closestPlayer.gridPosition.x - enemy.gridPosition.x) + Mathf.Abs(closestPlayer.gridPosition.y - enemy.gridPosition.y);
+            if (finalDist <= 1 && closestPlayer.IsAlive)
+            {
+                Debug.Log($"[Enemy AI] {enemy.unitName} atacando {closestPlayer.unitName}!");
+
+                if (BattleHUD.Instance != null)
+                {
+                    BattleHUD.Instance.UpdateControlsPrompt(
+                        "ATAQUE INIMIGO!", 
+                        $"• {enemy.unitName} está atacando {closestPlayer.unitName}!"
+                    );
+                }
+
+                yield return new WaitForSeconds(0.3f);
+
+                // Executa a animação de ataque
+                yield return StartCoroutine(enemy.PlayAttackAnimation(closestPlayer.transform.position));
+
+                // Calcula e aplica o dano
+                CombatForecast forecast = CombatService.CalculateForecast(enemy, closestPlayer);
+                closestPlayer.TakeDamage(forecast.finalDamage, forecast.orientation, forecast.isCritical, forecast.hasCategoryAdvantage);
+
+                yield return new WaitForSeconds(0.45f);
+            }
         }
 
         yield return new WaitForSeconds(0.4f);
