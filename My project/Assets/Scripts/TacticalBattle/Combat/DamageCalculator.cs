@@ -32,7 +32,7 @@ namespace TacticalBattle.Combat
             return Math.Max(0, (int)Math.Floor(finalDamage));
         }
 
-        // Sobrecarga completa considerando guarda e crítico adicional
+        // Sobrecarga completa considerando guarda, bônus de cobertura de terreno e crítico adicional
         public static int ComputeFinalDamageDetailed(
             int baseDamage,
             TacticalAttribute attackerAttribute,
@@ -42,7 +42,8 @@ namespace TacticalBattle.Combat
             int defenderZ,
             bool isDefenderGuarding,
             ElevationConfig elevationConfig = null,
-            float guardDamageReduction = 0.5f)
+            float guardDamageReduction = 0.5f,
+            float terrainDefenseReduction = 0.0f)
         {
             if (baseDamage <= 0) return 0;
 
@@ -56,7 +57,10 @@ namespace TacticalBattle.Combat
                 guardMult = Math.Clamp(1.0f - guardDamageReduction, 0.1f, 1.0f);
             }
 
-            float finalDamage = baseDamage * attributeMult * positionalRes.positionalMultiplier * elevationMult * guardMult;
+            // Redução de dano por cobertura de terreno (ex: Barricada -20% de dano recebido)
+            float terrainMult = Math.Clamp(1.0f - terrainDefenseReduction, 0.1f, 1.0f);
+
+            float finalDamage = baseDamage * attributeMult * positionalRes.positionalMultiplier * elevationMult * guardMult * terrainMult;
 
             return Math.Max(0, (int)Math.Floor(finalDamage));
         }

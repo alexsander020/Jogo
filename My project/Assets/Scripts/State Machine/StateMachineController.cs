@@ -104,16 +104,11 @@ public class StateMachineController : MonoBehaviour
         busy = false;
     }
 
-    // Move o seletor visual para uma coordenada de tile
-    public void MoveSelectorTo(TileLogic tile)
+    // Move o seletor visual para uma coordenada de tile de forma suave
+    public void MoveSelectorTo(TileLogic tile, bool instant = false)
     {
         if (tile == null || Selector.Instance == null) return;
 
-        Selector.Instance.tile = tile;
-        if (Selector.Instance.spriteRenderer != null)
-        {
-            Selector.Instance.spriteRenderer.sortingOrder = tile.contentOrder;
-        }
-        Selector.Instance.transform.position = tile.worldPos;
+        Selector.Instance.SetTargetTile(tile, instant);
     }
 }

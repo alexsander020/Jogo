@@ -19,6 +19,16 @@ public class Unit : MonoBehaviour
 
     public Vector3Int gridPosition => currentTile != null ? currentTile.pos : Vector3Int.zero;
 
+    [Header("Sprites Direcionais (4 Direções)")]
+    [Tooltip("Sprite olhando para o Norte (+Y - Costas)")]
+    public Sprite spriteNorth;
+    [Tooltip("Sprite olhando para o Leste (+X - Frente-Direita)")]
+    public Sprite spriteEast;
+    [Tooltip("Sprite olhando para o Sul (-Y - Frente-Esquerda)")]
+    public Sprite spriteSouth;
+    [Tooltip("Sprite olhando para o Oeste (-X - Costas-Esquerda)")]
+    public Sprite spriteWest;
+
     [Header("Estado no Turno")]
     public bool hasMoved = false;
     public bool hasActed = false;
@@ -31,6 +41,8 @@ public class Unit : MonoBehaviour
     [HideInInspector]
     public SpriteRenderer spriteRenderer;
 
+    private GameObject directionIndicatorObj;
+
     void Awake()
     {
         stats = GetComponentInChildren<Stats>();
@@ -38,6 +50,21 @@ public class Unit : MonoBehaviour
 
         movement = GetComponent<Movement>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+
+        // Tenta auto-carregar sprites direcionais se não estiverem configurados
+        TryAutoPopulateDirectionalSprites();
+
+        // Inicializa a orientação visual inicial
+        SetFacing(facing);
+    }
+
+    void TryAutoPopulateDirectionalSprites()
+    {
+        if (spriteNorth == null || spriteEast == null || spriteSouth == null || spriteWest == null)
+        {
+            // Se spriteRenderer já tem um sprite, tenta mapear pelos recursos ou manter
+            if (spriteEast == null && spriteRenderer != null) spriteEast = spriteRenderer.sprite;
+        }
     }
 
     // Posiciona a unidade em um tile do grid
@@ -60,21 +87,70 @@ public class Unit : MonoBehaviour
         }
     }
 
-    // Altera a direção que a unidade está olhando e atualiza o visual
+    // Altera a direção que a unidade está olhando e atualiza o visual em todas as 4 direções
     public void SetFacing(FacingDirection newFacing)
     {
         facing = newFacing;
 
-        // Feedback visual da direção (Flip horizontal para East/West)
         if (spriteRenderer != null)
         {
-            if (facing == FacingDirection.West)
+            switch (facing)
             {
-                spriteRenderer.flipX = true;
-            }
-            else if (facing == FacingDirection.East)
-            {
-                spriteRenderer.flipX = false;
+                case FacingDirection.North:
+                    if (spriteNorth != null)
+                    {
+                        spriteRenderer.sprite = spriteNorth;
+                        spriteRenderer.flipX = false;
+                    }
+                    else if (spriteSouth != null)
+                    {
+                        // Fallback
+                        spriteRenderer.sprite = spriteSouth;
+                        spriteRenderer.flipX = false;
+                    }
+                    break;
+
+                case FacingDirection.East:
+                    if (spriteEast != null)
+                    {
+                        spriteRenderer.sprite = spriteEast;
+                        spriteRenderer.flipX = false;
+                    }
+                    else
+                    {
+                        spriteRenderer.flipX = false;
+                    }
+                    break;
+
+                case FacingDirection.South:
+                    if (spriteSouth != null)
+                    {
+                        spriteRenderer.sprite = spriteSouth;
+                        spriteRenderer.flipX = false;
+                    }
+                    else if (spriteEast != null)
+                    {
+                        spriteRenderer.sprite = spriteEast;
+                        spriteRenderer.flipX = false;
+                    }
+                    break;
+
+                case FacingDirection.West:
+                    if (spriteWest != null)
+                    {
+                        spriteRenderer.sprite = spriteWest;
+                        spriteRenderer.flipX = false;
+                    }
+                    else if (spriteEast != null)
+                    {
+                        spriteRenderer.sprite = spriteEast;
+                        spriteRenderer.flipX = true;
+                    }
+                    else
+                    {
+                        spriteRenderer.flipX = true;
+                    }
+                    break;
             }
         }
     }
@@ -103,3 +179,4 @@ public class Unit : MonoBehaviour
         return !isTurnCompleted && !hasMoved;
     }
 }
+

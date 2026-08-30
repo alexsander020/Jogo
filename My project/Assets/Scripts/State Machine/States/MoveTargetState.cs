@@ -155,32 +155,80 @@ public class MoveTargetState : State
 
         bool isValid = isReachable && isFree;
 
-        // Atualiza a cor do cursor (Branco se válido, Vermelho se inválido/bloqueado)
+        // Atualiza a cor do cursor e a rota desenhada no tabuleiro
         if (GridHighlighter.Instance != null && Selector.Instance != null)
         {
             GridHighlighter.Instance.UpdateHover(Selector.Instance.position, isValid);
+
+            if (isValid && Selector.Instance.tile != null && currentUnit.currentTile != null)
+            {
+                var pathPreview = CalculatePathTo(Selector.Instance.tile);
+                GridHighlighter.Instance.UpdatePathPreview(pathPreview);
+            }
+            else
+            {
+                GridHighlighter.Instance.UpdatePathPreview(null);
+            }
         }
 
         if (BattleHUD.Instance != null)
         {
-            string facingName = currentUnit.facing switch
-            {
-                FacingDirection.North => "NORTE (▲ / +Y)",
-                FacingDirection.South => "SUL (▼ / -Y)",
-                FacingDirection.East => "LESTE (► / +X)",
-                FacingDirection.West => "OESTE (◄ / -X)",
-                _ => "SUL"
-            };
+            string facingName = DirectionUtils.GetDirectionName(currentUnit.facing);
 
             string statusText = isValid 
-                ? "<color=#55FF55><b>● CÉLULA VÁLIDA (BRANCO)</b></color>" 
-                : "<color=#FF4444><b>● CÉLULA INVÁLIDA (VERMELHO)</b></color>";
+                ? "<color=#55FF55><b>● CÉLULA ALCANÇÁVEL</b></color>" 
+                : "<color=#FF4444><b>● CÉLULA FORA DE ALCANCE / BLOQUEADA</b></color>";
+
+            string terrainInfo = "";
+            if (Selector.Instance != null && Selector.Instance.tile != null)
+            {
+                var t = Selector.Instance.tile.Terrain;
+                terrainInfo = $"\n• <color=#00E5FF><b>Terreno: {t.displayName}</b></color> ({t.GetSummary()})";
+            }
 
             BattleHUD.Instance.UpdateControlsPrompt(
                 $"MOVER — DIREÇÃO: {facingName}",
-                $"• {statusText}\n• [W/A/S/D ou SETAS] : Mover Cursor | [AZUL : Área de Alcance]\n• [ESPAÇO / ENTER / Z] : Confirmar Destino\n• [X / ESC] : Cancelar e Voltar"
+                $"• {statusText}{terrainInfo}\n• [W/A/S/D ou SETAS] : Mover Cursor | [CIANO : Alcance]\n• [ESPAÇO / ENTER / Z] : Confirmar Destino\n• [X / ESC] : Cancelar e Voltar"
             );
         }
+    }
+
+    private List<Vector3Int> CalculatePathTo(TileLogic targetTile)
+    {
+        List<Vector3Int> result = new List<Vector3Int>();
+        if (currentUnit == null || currentUnit.currentTile == null || targetTile == null) return result;
+
+        GridState grid = BuildGridStateFromBoard();
+        int currentZ = currentUnit.currentTile.floor != null && Board.instance != null
+            ? Math.Max(0, Board.instance.floors.IndexOf(currentUnit.currentTile.floor))
+            : 0;
+
+        int targetZ = targetTile.floor != null && Board.instance != null
+            ? Math.Max(0, Board.instance.floors.IndexOf(targetTile.floor))
+            : 0;
+
+        var origin = new GridCoord(currentUnit.gridPosition.x, currentUnit.gridPosition.y, currentZ);
+        var dest = new GridCoord(targetTile.pos.x, targetTile.pos.y, targetZ);
+
+        string currentUnitId = currentUnit.gameObject.GetInstanceID().ToString();
+        var pathCoords = PathfindingService.FindPath(
+            origin, 
+            dest, 
+            grid, 
+            unitId => FindUnitStateById(unitId), 
+            currentUnitId,
+            BattleRulesConfig.DefaultGrid,
+            maxClimbHeight: 1
+        );
+
+        if (pathCoords != null)
+        {
+            foreach (var c in pathCoords)
+            {
+                result.Add(new Vector3Int(c.x, c.y, 0));
+            }
+        }
+        return result;
     }
 
     void OnFire(object sender, object args)
@@ -247,39 +295,16 @@ public class MoveTargetState : State
             );
         }
 
-        GridState grid = BuildGridStateFromBoard();
-        int currentZ = currentUnit.currentTile.floor != null && Board.instance != null
-            ? Math.Max(0, Board.instance.floors.IndexOf(currentUnit.currentTile.floor))
-            : 0;
-
-        int targetZ = targetTile.floor != null && Board.instance != null
-            ? Math.Max(0, Board.instance.floors.IndexOf(targetTile.floor))
-            : 0;
-
-        var origin = new GridCoord(currentUnit.gridPosition.x, currentUnit.gridPosition.y, currentZ);
-        var dest = new GridCoord(targetTile.pos.x, targetTile.pos.y, targetZ);
-
-        string currentUnitId = currentUnit.gameObject.GetInstanceID().ToString();
-        var pathCoords = PathfindingService.FindPath(
-            origin, 
-            dest, 
-            grid, 
-            unitId => FindUnitStateById(unitId), 
-            currentUnitId,
-            BattleRulesConfig.DefaultGrid,
-            maxClimbHeight: 1
-        );
-
-        if (pathCoords == null || pathCoords.Count == 0)
+        // Câmera acompanha o deslocamento suave da unidade
+        if (TacticalCameraController.Instance != null && currentUnit != null)
         {
-            Debug.LogWarning("[MoveTargetState] Pathfinding não encontrou caminho detalhado. Usando rota direta.");
-            pathCoords = new List<GridCoord> { origin, dest };
+            TacticalCameraController.Instance.FocusOn(currentUnit.transform);
         }
 
-        List<Vector3Int> pathVectors = new List<Vector3Int>();
-        foreach (var c in pathCoords)
+        List<Vector3Int> pathVectors = CalculatePathTo(targetTile);
+        if (pathVectors == null || pathVectors.Count == 0)
         {
-            pathVectors.Add(new Vector3Int(c.x, c.y, 0));
+            pathVectors = new List<Vector3Int> { currentUnit.gridPosition, new Vector3Int(targetTile.pos.x, targetTile.pos.y, 0) };
         }
 
         Movement movComponent = currentUnit.movement ?? currentUnit.GetComponent<Movement>() ?? currentUnit.GetComponentInChildren<Movement>();
@@ -296,6 +321,11 @@ public class MoveTargetState : State
         if (currentUnit.currentTile != null)
         {
             machine.MoveSelectorTo(currentUnit.currentTile);
+        }
+
+        if (TacticalCameraController.Instance != null && Selector.Instance != null)
+        {
+            TacticalCameraController.Instance.FocusOn(Selector.Instance.transform);
         }
 
         Debug.Log($"[MoveTargetState] Movimento concluído com sucesso para {currentUnit.unitName} na posição {targetTile.pos}. Retornando ao Menu de Ações.");
@@ -317,7 +347,9 @@ public class MoveTargetState : State
                 ? Math.Max(0, Board.instance.floors.IndexOf(tile.floor))
                 : 0;
 
-            grid.cells[GridState.Key(pos.x, pos.y)] = new GridCell(pos.x, pos.y, z, terrainCost: 1, isWalkable: true);
+            int cost = tile.movementCost;
+            bool walkable = tile.isWalkable;
+            grid.cells[GridState.Key(pos.x, pos.y)] = new GridCell(pos.x, pos.y, z, terrainCost: cost, isWalkable: walkable);
 
             if (pos.x < minX) minX = pos.x;
             if (pos.x > maxX) maxX = pos.x;

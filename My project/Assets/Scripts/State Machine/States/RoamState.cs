@@ -11,14 +11,7 @@ public class RoamState : State
         inputs.OnMove += OnMove;
         inputs.OnFire += OnFire;
         CheckNullPosition();
-
-        if (BattleHUD.Instance != null)
-        {
-            BattleHUD.Instance.UpdateControlsPrompt(
-                "NAVEGAÇÃO LIVRE (GRID)", 
-                "• [W / A / S / D ou SETAS] : Mover Cursor pelo Tabuleiro\n• [ESPAÇO / ENTER] : Inspecionar / Abrir Menu da Unidade\n• [X / ESC] : Retornar à Unidade Ativa e Abrir Menu"
-            );
-        }
+        UpdateHUDInfo();
     }
 
     public override void Exit()
@@ -40,7 +33,36 @@ public class RoamState : State
             {
                 TacticalCameraController.Instance.FocusOn(Selector.Instance.transform);
             }
+            UpdateHUDInfo();
         }
+    }
+
+    void UpdateHUDInfo()
+    {
+        if (BattleHUD.Instance == null) return;
+
+        string extraInfo = "";
+        if (Selector.Instance != null && Selector.Instance.tile != null)
+        {
+            var tile = Selector.Instance.tile;
+            var terrain = tile.Terrain;
+            extraInfo = $"\n• <color=#00E5FF><b>Terreno: {terrain.displayName}</b></color> ({terrain.GetSummary()})";
+
+            if (tile.content != null)
+            {
+                var u = tile.content.GetComponent<Unit>();
+                if (u != null)
+                {
+                    string teamColor = u.team == Team.Player ? "#55FF55" : "#FF5555";
+                    extraInfo += $"\n• <color={teamColor}><b>{u.unitName} [{u.team}]</b></color> (HP: {u.stats.GetStat(StatEnum.HP)}/{u.stats.GetStat(StatEnum.MaxHp)})";
+                }
+            }
+        }
+
+        BattleHUD.Instance.UpdateControlsPrompt(
+            "NAVEGAÇÃO LIVRE (GRID)", 
+            $"• [W/A/S/D ou SETAS] : Mover Cursor pelo Tabuleiro{extraInfo}\n• [ESPAÇO / ENTER] : Inspecionar / Abrir Menu\n• [X / ESC] : Retornar à Unidade Ativa"
+        );
     }
 
     void OnFire(object sender, object args)

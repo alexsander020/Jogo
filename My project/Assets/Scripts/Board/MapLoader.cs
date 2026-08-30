@@ -21,77 +21,95 @@ public class MapLoader : MonoBehaviour
             return;
         }
 
-        GameObject holder = new GameObject("Units Holder");
-        holder.transform.parent = Board.instance != null ? Board.instance.transform : transform;
-
-        // Lista de posições candidatas
-        List<Vector3Int> candidatePositions = new List<Vector3Int>();
-        if (Board.instance != null && Board.instance.tiles != null)
+        if (Board.instance == null || Board.instance.tiles == null || Board.instance.tiles.Count == 0)
         {
-            foreach (var pos in Board.instance.tiles.Keys)
+            Debug.LogError("[MapLoader] Tabuleiro vazio ou não inicializado ao criar unidades!");
+            return;
+        }
+
+        GameObject holder = new GameObject("Units Holder");
+        holder.transform.parent = Board.instance.transform;
+
+        // Coleta todos os tiles válidos existentes no tabuleiro
+        List<TileLogic> availableTiles = new List<TileLogic>();
+        foreach (var tile in Board.instance.tiles.Values)
+        {
+            if (tile != null && tile.content == null)
             {
-                candidatePositions.Add(pos);
+                availableTiles.Add(tile);
             }
         }
 
-        // Ordena posições por Y para colocar jogadores ao sul (baixo) e inimigos ao norte (cima)
-        candidatePositions.Sort((a, b) => a.y.CompareTo(b.y));
+        if (availableTiles.Count == 0)
+        {
+            Debug.LogError("[MapLoader] Nenhum tile disponível no tabuleiro para posicionar unidades!");
+            return;
+        }
 
-        Vector3Int p1Pos = FindAvailablePos(candidatePositions, new Vector3Int(0, 0, 0));
-        Vector3Int p2Pos = FindAvailablePos(candidatePositions, new Vector3Int(1, 0, 0));
-        Vector3Int e1Pos = FindAvailablePos(candidatePositions, new Vector3Int(0, 3, 0), true);
-        Vector3Int e2Pos = FindAvailablePos(candidatePositions, new Vector3Int(1, 3, 0), true);
+        // Ordena tiles por Y crescente (Sul = menor Y, Norte = maior Y)
+        availableTiles.Sort((a, b) => a.pos.y != b.pos.y ? a.pos.y.CompareTo(b.pos.y) : a.pos.x.CompareTo(b.pos.x));
+
+        // Seleção segura de tiles para os jogadores (Sul)
+        TileLogic p1Tile = availableTiles[0];
+        TileLogic p2Tile = availableTiles.Count > 1 ? availableTiles[1] : availableTiles[0];
+
+        // Seleção segura de tiles para os inimigos (Norte / Platô)
+        TileLogic e1Tile = availableTiles[availableTiles.Count - 1];
+        TileLogic e2Tile = availableTiles.Count > 2 ? availableTiles[availableTiles.Count - 2] : e1Tile;
+
+        // Se houver pontos de spawn preferenciais da arena que existam no tabuleiro, usa-os
+        if (MapAssembler.ActiveMap != null)
+        {
+            if (MapAssembler.ActiveMap.playerSpawns.Count > 0)
+            {
+                TileLogic t = Board.GetTile(MapAssembler.ActiveMap.playerSpawns[0]);
+                if (t != null && t.content == null) p1Tile = t;
+            }
+            if (MapAssembler.ActiveMap.playerSpawns.Count > 1)
+            {
+                TileLogic t = Board.GetTile(MapAssembler.ActiveMap.playerSpawns[1]);
+                if (t != null && t.content == null && t != p1Tile) p2Tile = t;
+            }
+            if (MapAssembler.ActiveMap.enemySpawns.Count > 0)
+            {
+                TileLogic t = Board.GetTile(MapAssembler.ActiveMap.enemySpawns[0]);
+                if (t != null && t.content == null && t != p1Tile && t != p2Tile) e1Tile = t;
+            }
+            if (MapAssembler.ActiveMap.enemySpawns.Count > 1)
+            {
+                TileLogic t = Board.GetTile(MapAssembler.ActiveMap.enemySpawns[1]);
+                if (t != null && t.content == null && t != p1Tile && t != p2Tile && t != e1Tile) e2Tile = t;
+            }
+        }
 
         // 1. Jogador 1 (Aethel)
         SpawnUnit(holder.transform, "Aethel", Team.Player, FunctionalCategory.System, 
-            ProtocolTrinity.Firewall, FacingDirection.North, p1Pos, 14, 120, 60, 25, 12);
+            ProtocolTrinity.Firewall, FacingDirection.North, p1Tile, 14, 120, 60, 25, 12);
 
         // 2. Jogador 2 (Aliado Suporte)
         SpawnUnit(holder.transform, "Bit-Fox", Team.Player, FunctionalCategory.Social, 
-            ProtocolTrinity.Ping, FacingDirection.North, p2Pos, 12, 100, 50, 18, 10);
+            ProtocolTrinity.Ping, FacingDirection.North, p2Tile, 12, 100, 50, 18, 10);
 
         // 3. Inimigo 1 (Corrupt-Bot Alpha)
         SpawnUnit(holder.transform, "Corrupt Alpha", Team.Enemy, FunctionalCategory.Navi, 
-            ProtocolTrinity.Overclock, FacingDirection.South, e1Pos, 11, 90, 30, 20, 8, Color.red);
+            ProtocolTrinity.Overclock, FacingDirection.South, e1Tile, 11, 90, 30, 20, 8, Color.red);
 
         // 4. Inimigo 2 (Corrupt-Bot Beta)
         SpawnUnit(holder.transform, "Corrupt Beta", Team.Enemy, FunctionalCategory.Tool, 
-            ProtocolTrinity.Overclock, FacingDirection.South, e2Pos, 9, 140, 20, 22, 15, new Color(1f, 0.4f, 0.4f));
-    }
-
-    Vector3Int FindAvailablePos(List<Vector3Int> candidates, Vector3Int preferred, bool fromTop = false)
-    {
-        if (Board.GetTile(preferred) != null && Board.GetTile(preferred).content == null)
-        {
-            return preferred;
-        }
-
-        if (fromTop)
-        {
-            for (int i = candidates.Count - 1; i >= 0; i--)
-            {
-                TileLogic t = Board.GetTile(candidates[i]);
-                if (t != null && t.content == null) return candidates[i];
-            }
-        }
-        else
-        {
-            for (int i = 0; i < candidates.Count; i++)
-            {
-                TileLogic t = Board.GetTile(candidates[i]);
-                if (t != null && t.content == null) return candidates[i];
-            }
-        }
-
-        return preferred;
+            ProtocolTrinity.Overclock, FacingDirection.South, e2Tile, 9, 140, 20, 22, 15, new Color(1f, 0.4f, 0.4f));
     }
 
     Unit SpawnUnit(Transform parent, string name, Team team, FunctionalCategory cat, 
-        ProtocolTrinity protocol, FacingDirection facing, Vector3Int gridPos, 
+        ProtocolTrinity protocol, FacingDirection facing, TileLogic tile, 
         int speed, int hp, int sp, int atk, int def, Color? tint = null)
     {
-        TileLogic tile = Board.GetTile(gridPos);
-        Vector3 spawnWorldPos = tile != null ? tile.worldPos : Vector3.zero;
+        if (tile == null)
+        {
+            Debug.LogError($"[MapLoader] Tentativa de spawnar unidade {name} em tile nulo!");
+            return null;
+        }
+
+        Vector3 spawnWorldPos = tile.worldPos;
 
         Unit unit = Instantiate(unitPrefab, spawnWorldPos, Quaternion.identity, parent);
         unit.gameObject.name = name;
@@ -125,10 +143,7 @@ public class MapLoader : MonoBehaviour
             unit.spriteRenderer.color = tint.Value;
         }
 
-        if (tile != null)
-        {
-            unit.PlaceAtTile(tile);
-        }
+        unit.PlaceAtTile(tile);
 
         if (BattleController.Instance != null)
         {

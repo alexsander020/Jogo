@@ -10,13 +10,26 @@ public delegate void DelegateModel(object sender, object args);
 
 public class InputController : MonoBehaviour
 {
-    float hCooldown = 0;
-    float vCooldown = 0;
-    float cooldownTime = 0.22f;
-
     public static InputController Instance;
+
+    [Header("Configurações de DAS (Delayed Auto Shift)")]
+    [Tooltip("Atraso inicial antes de iniciar a rolagem contínua ao segurar uma direção")]
+    public float initialRepeatDelay = 0.22f;
+    [Tooltip("Intervalo entre passos durante a rolagem contínua no grid")]
+    public float repeatInterval = 0.075f;
+
     public DelegateModel OnMove;
     public DelegateModel OnFire;
+
+    // Estado do eixo Horizontal
+    private int lastH = 0;
+    private float hHoldTimer = 0f;
+    private float hNextRepeatTime = 0f;
+
+    // Estado do eixo Vertical
+    private int lastV = 0;
+    private float vHoldTimer = 0f;
+    private float vNextRepeatTime = 0f;
 
     void Awake()
     {
@@ -64,9 +77,8 @@ public class InputController : MonoBehaviour
 #endif
 
         Vector3Int moved = Vector3Int.zero;
-
-        if (h != 0) { moved.x = GetMoved(ref hCooldown, Math.Sign(h)); } else { hCooldown = 0; }
-        if (v != 0) { moved.y = GetMoved(ref vCooldown, Math.Sign(v)); } else { vCooldown = 0; }
+        moved.x = ProcessAxisInput(h, ref lastH, ref hHoldTimer, ref hNextRepeatTime);
+        moved.y = ProcessAxisInput(v, ref lastV, ref vHoldTimer, ref vNextRepeatTime);
 
         if (moved != Vector3Int.zero && OnMove != null)
         {
@@ -83,13 +95,38 @@ public class InputController : MonoBehaviour
         }
     }
 
-    int GetMoved(ref float cooldownSum, int value)
+    /// <summary>
+    /// Processa o input de um eixo com DAS: resposta imediata no 1º frame, pausa inicial e rolagem rápida subsequente.
+    /// </summary>
+    private int ProcessAxisInput(int currentInput, ref int lastInput, ref float holdTimer, ref float nextRepeatTime)
     {
-        if (Time.time > cooldownSum)
+        if (currentInput == 0)
         {
-            cooldownSum = Time.time + cooldownTime;
-            return value;
+            lastInput = 0;
+            holdTimer = 0f;
+            nextRepeatTime = 0f;
+            return 0;
         }
+
+        int sign = Math.Sign(currentInput);
+
+        // Se mudou de direção ou acabou de pressionar
+        if (sign != lastInput)
+        {
+            lastInput = sign;
+            holdTimer = Time.time;
+            nextRepeatTime = Time.time + initialRepeatDelay;
+            return sign;
+        }
+
+        // Se está segurando a mesma direção
+        if (Time.time >= nextRepeatTime)
+        {
+            nextRepeatTime = Time.time + repeatInterval;
+            return sign;
+        }
+
         return 0;
     }
 }
+

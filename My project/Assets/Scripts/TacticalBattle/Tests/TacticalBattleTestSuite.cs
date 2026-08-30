@@ -34,6 +34,8 @@ namespace TacticalBattle.Tests
             Test_Grid_ReachableCells_MovementBudgetZero(); passed++;
             Test_Grid_CannotMoveToOccupiedCell(); passed++;
             Test_Grid_HeightDifferenceBlocksMovement(); passed++;
+            Test_Terrain_MovementCostAndImpassability(); passed++;
+            Test_Terrain_DefenseReduction(); passed++;
 
             // 2. TESTES DE ATRIBUTOS
             Test_Attributes_StrictAsymmetry(); passed++;
@@ -119,6 +121,62 @@ namespace TacticalBattle.Tests
 
             Assert(!reachable.Contains(new GridCoord(2, 1, 3)),
                 "Grid: Diferença de altura acima do limite de escalada (z=3 vs z=0) bloqueia movimento.");
+        }
+
+        public static void Test_Terrain_MovementCostAndImpassability()
+        {
+            var grid = new GridState { width = 5, height = 5 };
+            for (int x = 0; x < 5; x++)
+                for (int y = 0; y < 5; y++)
+                    grid.cells[GridState.Key(x, y)] = new GridCell(x, y, 0, terrainCost: 1, isWalkable: true);
+
+            // Célula (1, 2) é Barricada (Custo MOV = 2)
+            grid.cells[GridState.Key(1, 2)].terrainCost = 2;
+
+            // Célula (2, 1) é Abismo/Chasm (isWalkable = false)
+            grid.cells[GridState.Key(2, 1)].isWalkable = false;
+
+            var origin = new GridCoord(1, 1, 0);
+
+            // Com budget = 1, não pode alcançar a Barricada em (1, 2) que custa 2 nem o Abismo em (2, 1)
+            var reachable1 = PathfindingService.ComputeReachableCells(origin, 1, grid);
+            Assert(!reachable1.Contains(new GridCoord(1, 2, 0)), "Terreno: Barricada com custo 2 não é alcançável com budget 1.");
+            Assert(!reachable1.Contains(new GridCoord(2, 1, 0)), "Terreno: Abismo (isWalkable=false) é intransponível.");
+
+            // Com budget = 2, pode alcançar a Barricada em (1, 2)
+            var reachable2 = PathfindingService.ComputeReachableCells(origin, 2, grid);
+            Assert(reachable2.Contains(new GridCoord(1, 2, 0)), "Terreno: Barricada é alcançável com budget 2.");
+        }
+
+        public static void Test_Terrain_DefenseReduction()
+        {
+            var barricade = TerrainDatabase.Get(TerrainType.Barricade);
+            Assert(barricade.defenseBonusPercent == 0.20f && barricade.movementCost == 2, "Terreno: Catálogo possui Barricada com +20% de defesa e custo 2.");
+
+            int damageWithoutCover = DamageCalculator.ComputeFinalDamageDetailed(
+                baseDamage: 100,
+                attackerAttribute: TacticalAttribute.Free,
+                defenderAttribute: TacticalAttribute.Free,
+                position: RelativeCombatPosition.Front,
+                attackerZ: 0,
+                defenderZ: 0,
+                isDefenderGuarding: false,
+                terrainDefenseReduction: 0f
+            );
+
+            int damageWithCover = DamageCalculator.ComputeFinalDamageDetailed(
+                baseDamage: 100,
+                attackerAttribute: TacticalAttribute.Free,
+                defenderAttribute: TacticalAttribute.Free,
+                position: RelativeCombatPosition.Front,
+                attackerZ: 0,
+                defenderZ: 0,
+                isDefenderGuarding: false,
+                terrainDefenseReduction: barricade.defenseBonusPercent
+            );
+
+            Assert(damageWithoutCover == 100 && damageWithCover == 80,
+                "Terreno: Redução de 20% de dano por cobertura de Barricada aplicada corretamente (100 -> 80).");
         }
 
         // =========================================================================

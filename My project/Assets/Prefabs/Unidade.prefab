@@ -230,3 +230,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Unit
   stats: {fileID: 0}
+  spriteNorth: {fileID: -8363439421255634622, guid: 3d9290ad0497d7e42bb7f3b2e3559388, type: 3}
+  spriteEast: {fileID: -869946325018663979, guid: aa1ce94b78d085f47992eedc91dbde77, type: 3}
+  spriteSouth: {fileID: -5719015454336554714, guid: a8de94cf352f89b41b900b38965e24e0, type: 3}
+  spriteWest: {fileID: -737508327571194540, guid: 16534571f88b5774c93c91d0767e391c, type: 3}
+

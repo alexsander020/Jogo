@@ -23,6 +23,37 @@ public class TurnStartState : State
 
         battle.StartCurrentUnitTurn();
 
+        // Processa efeitos de terreno no início do turno (Cura, Dano por Corrupção, Ganho de SP)
+        if (unit.currentTile != null && unit.stats != null)
+        {
+            var terrain = unit.currentTile.Terrain;
+            if (terrain.hpTurnEffect != 0)
+            {
+                int currentHp = unit.stats.GetStat(StatEnum.HP);
+                int maxHp = unit.stats.GetStat(StatEnum.MaxHp);
+                int newHp = Mathf.Clamp(currentHp + terrain.hpTurnEffect, 0, maxHp);
+                unit.stats.SetStat(StatEnum.HP, newHp);
+
+                if (terrain.hpTurnEffect > 0)
+                {
+                    Debug.Log($"[Terreno] {unit.unitName} regenerou +{terrain.hpTurnEffect} HP no {terrain.displayName} ({newHp}/{maxHp})");
+                }
+                else
+                {
+                    Debug.LogWarning($"[Terreno] {unit.unitName} sofreu {terrain.hpTurnEffect} de dano residual no {terrain.displayName} ({newHp}/{maxHp})");
+                }
+            }
+
+            if (terrain.spTurnEffect > 0)
+            {
+                int currentSp = unit.stats.GetStat(StatEnum.SP);
+                int maxSp = unit.stats.GetStat(StatEnum.MaxSp);
+                int newSp = Mathf.Clamp(currentSp + terrain.spTurnEffect, 0, maxSp);
+                unit.stats.SetStat(StatEnum.SP, newSp);
+                Debug.Log($"[Terreno] {unit.unitName} recuperou +{terrain.spTurnEffect} SP no {terrain.displayName} ({newSp}/{maxSp})");
+            }
+        }
+
         // Move o seletor para a unidade atual e foca a câmera
         if (unit.currentTile != null)
         {
@@ -81,7 +112,7 @@ public class TurnStartState : State
             }
         }
 
-        // 2. Se encontrou um jogador, move em direção a ele
+        // 2. Se encontrou um jogador, move em direção a ele considerando custos de terreno
         if (closestPlayer != null && enemy.movement != null && enemy.CanMove() && Board.instance != null)
         {
             int movBudget = enemy.stats != null ? enemy.stats.GetStat(StatEnum.MOV) : 3;
@@ -98,7 +129,7 @@ public class TurnStartState : State
                 var pos = kvp.Key;
                 var tile = kvp.Value;
                 int z = tile.floor != null ? Mathf.Max(0, Board.instance.floors.IndexOf(tile.floor)) : 0;
-                gridState.cells[TacticalBattle.Core.GridState.Key(pos.x, pos.y)] = new TacticalBattle.Core.GridCell(pos.x, pos.y, z);
+                gridState.cells[TacticalBattle.Core.GridState.Key(pos.x, pos.y)] = new TacticalBattle.Core.GridCell(pos.x, pos.y, z, tile.movementCost, tile.isWalkable);
 
                 if (tile.content != null && tile.content != enemy.gameObject)
                 {

@@ -8,14 +8,7 @@ public class SelectFacingState : State
         inputs.OnMove += OnMove;
         inputs.OnFire += OnFire;
 
-        if (BattleHUD.Instance != null)
-        {
-            BattleHUD.Instance.UpdateControlsPrompt(
-                "ESCOLHER DIREÇÃO", 
-                "• [▲ / ▼ / ◄ / ► ou W / A / S / D] : Girar Unidade (Norte/Sul/Leste/Oeste)\n• [ESPAÇO / ENTER / Z] : Confirmar Direção e Finalizar Turno\n• [X / ESC] : Cancelar / Voltar ao Menu"
-            );
-        }
-
+        UpdateHUD();
         Debug.Log("[SelectFacingState] Escolha a direção para qual a unidade deve olhar.");
     }
 
@@ -35,8 +28,20 @@ public class SelectFacingState : State
         {
             FacingDirection newFacing = DirectionUtils.VectorToDirection(dir);
             currentUnit.SetFacing(newFacing);
-            Debug.Log($"[SelectFacingState] Unidade {currentUnit.unitName} virada para: {newFacing}");
+            UpdateHUD();
+            Debug.Log($"[SelectFacingState] Unidade {currentUnit.unitName} virada para: {DirectionUtils.GetDirectionName(newFacing)}");
         }
+    }
+
+    void UpdateHUD()
+    {
+        if (BattleHUD.Instance == null || currentUnit == null) return;
+
+        string facingName = DirectionUtils.GetDirectionName(currentUnit.facing);
+        BattleHUD.Instance.UpdateControlsPrompt(
+            $"ESCOLHER DIREÇÃO — ATUAL: {facingName}", 
+            "• [W / A / S / D ou SETAS] : Girar Unidade (Norte/Sul/Leste/Oeste)\n• [ESPAÇO / ENTER / Z] : Confirmar Direção e Finalizar Turno\n• [X / ESC] : Cancelar / Voltar ao Menu"
+        );
     }
 
     void OnFire(object sender, object args)
@@ -55,3 +60,4 @@ public class SelectFacingState : State
         }
     }
 }
+

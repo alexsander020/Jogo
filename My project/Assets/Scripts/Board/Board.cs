@@ -10,6 +10,11 @@ public class Board : MonoBehaviour
     [HideInInspector]
     public Grid grid;
 
+    [Header("Configuração de Arena / Mapa Tático")]
+    [Tooltip("Se ativado, monta automaticamente a arena tática procedural nos andares. Se falso, usa o mapa desenhado na cena")]
+    public bool autoAssembleTacticalMap = false;
+    public MapBiome activeBiome = MapBiome.CyberRuins;
+
     void Awake()
     {
         tiles = new Dictionary<Vector3Int, TileLogic>();
@@ -17,9 +22,16 @@ public class Board : MonoBehaviour
         grid = GetComponent<Grid>();
     }
 
-
     public IEnumerator InitSequence(LoadState loadState)
     {
+        if (autoAssembleTacticalMap)
+        {
+            var mapDef = activeBiome == MapBiome.NaturalPlateau 
+                ? TacticalMapDefinition.CreateNaturalPlateauForest()
+                : TacticalMapDefinition.CreateCyberRuinsSectorCentral();
+            MapAssembler.AssembleMap(this, mapDef);
+        }
+
         yield return StartCoroutine(LoadFloors(loadState));
         yield return null;
         Debug.Log("Board InitSequence completed");
@@ -47,9 +59,9 @@ public class Board : MonoBehaviour
     {
         Vector3 worldPos = grid.CellToWorld(pos);
         worldPos.y += (floor.tilemap.tileAnchor.y / 2) - 0.5f;
-        TileLogic tile = new TileLogic(pos, worldPos, floor);
-        tiles.Add(pos, tile); //tileLogic
-
+        TerrainType terrain = floor != null ? floor.GetTerrainAt(pos) : TerrainType.Standard;
+        TileLogic tile = new TileLogic(pos, worldPos, floor, terrain);
+        tiles.Add(pos, tile);
     }
 
 

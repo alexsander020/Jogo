@@ -1,51 +1,94 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum GridHighlightMode
+{
+    Movement,
+    Attack,
+    Skill
+}
+
 public class GridHighlighter : MonoBehaviour
 {
     public static GridHighlighter Instance;
 
-    [Header("Cores dos Destaques (Estilo Digimon Survive)")]
-    public Color reachableColor = new Color(0.15f, 0.75f, 1.0f, 0.60f);   // Azul / Ciano Neon
-    public Color hoverValidColor = new Color(1.0f, 1.0f, 1.0f, 0.95f);     // Branco Brilhante
-    public Color invalidBlockedColor = new Color(1.0f, 0.20f, 0.20f, 0.85f);// Vermelho (Não pode andar)
-    public Color occupiedColor = new Color(1.0f, 0.40f, 0.15f, 0.75f);     // Laranja / Alerta
+    [Header("Configurações Visuais")]
+    [Tooltip("Intensidade do efeito de pulso / respiração neon")]
+    public float pulseIntensity = 0.08f;
+    [Tooltip("Velocidade da respiração do brilho dos tiles")]
+    public float pulseSpeed = 3.5f;
 
     private List<GameObject> activeOverlayPool = new List<GameObject>();
     private Dictionary<Vector3Int, SpriteRenderer> activeOverlays = new Dictionary<Vector3Int, SpriteRenderer>();
-    private Sprite highlightSprite;
+    private HashSet<Vector3Int> currentRangeCoords = new HashSet<Vector3Int>();
+    private List<Vector3Int> currentPathTrail = new List<Vector3Int>();
+    private GridHighlightMode currentMode = GridHighlightMode.Movement;
 
     void Awake()
     {
         Instance = this;
     }
 
-    Sprite GetHighlightSprite()
+    void Update()
     {
-        if (highlightSprite != null) return highlightSprite;
-
-        if (Selector.Instance != null && Selector.Instance.spriteRenderer != null)
+        // Efeito de pulso e respiração suave no brilho dos tiles ativos
+        if (activeOverlays.Count > 0)
         {
-            highlightSprite = Selector.Instance.spriteRenderer.sprite;
-        }
+            float pulse = 1.0f + Mathf.Sin(Time.time * pulseSpeed) * pulseIntensity;
+            Color baseColor = Color.white;
 
-        // Se ainda for nulo, tenta carregar dos Resources ou cria sprite padrão
-        if (highlightSprite == null)
-        {
-            var loaded = Resources.Load<Sprite>("selector");
-            if (loaded != null) highlightSprite = loaded;
+            foreach (var kvp in activeOverlays)
+            {
+                if (kvp.Value != null && kvp.Value.gameObject.activeSelf)
+                {
+                    // Não altera os tiles da rota que já estão super iluminados
+                    if (!currentPathTrail.Contains(kvp.Key))
+                    {
+                        kvp.Value.color = new Color(baseColor.r, baseColor.g, baseColor.b, pulse);
+                    }
+                }
+            }
         }
-
-        return highlightSprite;
     }
 
-    // Exibe a grade de alcance de movimento em Azul
+    /// <summary>
+    /// Exibe a grade de alcance de movimento em Ciano Neon com cantos arredondados e centro translúcido.
+    /// </summary>
     public void ShowMovementRange(HashSet<Vector3Int> reachableCoords, Vector3Int? currentHovered = null)
     {
-        ClearHighlights();
-        Sprite spr = GetHighlightSprite();
+        ShowRange(reachableCoords, GridHighlightMode.Movement, currentHovered);
+    }
 
-        foreach (var pos in reachableCoords)
+    /// <summary>
+    /// Exibe a grade de alcance de ataque em Laranja / Âmbar Incandescente (Digimon Survive Imagem 4).
+    /// </summary>
+    public void ShowAttackRange(HashSet<Vector3Int> attackCoords, Vector3Int? currentHovered = null)
+    {
+        ShowRange(attackCoords, GridHighlightMode.Attack, currentHovered);
+    }
+
+    /// <summary>
+    /// Exibe a grade de alcance de habilidades de suporte / cura em Verde Esmeralda.
+    /// </summary>
+    public void ShowSkillRange(HashSet<Vector3Int> skillCoords, Vector3Int? currentHovered = null)
+    {
+        ShowRange(skillCoords, GridHighlightMode.Skill, currentHovered);
+    }
+
+    private void ShowRange(HashSet<Vector3Int> coords, GridHighlightMode mode, Vector3Int? currentHovered)
+    {
+        ClearHighlights();
+        currentMode = mode;
+        currentRangeCoords = new HashSet<Vector3Int>(coords);
+
+        Sprite rangeSprite = mode switch
+        {
+            GridHighlightMode.Attack => ProceduralGridTileFactory.AttackTile,
+            GridHighlightMode.Skill => ProceduralGridTileFactory.SkillTile,
+            _ => ProceduralGridTileFactory.MovementTile
+        };
+
+        foreach (var pos in coords)
         {
             TileLogic tile = Board.GetTile(pos);
             if (tile == null) continue;
@@ -56,9 +99,9 @@ public class GridHighlighter : MonoBehaviour
             SpriteRenderer sr = overlay.GetComponent<SpriteRenderer>();
             if (sr != null)
             {
-                sr.sprite = spr;
-                sr.color = reachableColor;
-                sr.sortingOrder = tile.contentOrder + 1; // Fica acima do chão
+                sr.sprite = rangeSprite;
+                sr.color = Color.white;
+                sr.sortingOrder = tile.contentOrder + 1; // Camada logo acima do chão
             }
 
             overlay.SetActive(true);
@@ -67,38 +110,69 @@ public class GridHighlighter : MonoBehaviour
 
         if (currentHovered.HasValue)
         {
-            UpdateHover(currentHovered.Value, reachableCoords.Contains(currentHovered.Value));
+            UpdateHover(currentHovered.Value, coords.Contains(currentHovered.Value));
         }
     }
 
-    // Atualiza a cor do cursor onde o jogador está selecionando
+    /// <summary>
+    /// Destaca a rota projetada do caminho que a unidade irá percorrer até o cursor.
+    /// </summary>
+    public void UpdatePathPreview(List<Vector3Int> path)
+    {
+        // 1. Restaura as cores originais da área alcançável
+        if (currentPathTrail.Count > 0)
+        {
+            foreach (var pos in currentPathTrail)
+            {
+                if (activeOverlays.TryGetValue(pos, out var sr) && sr != null)
+                {
+                    sr.color = Color.white;
+                }
+            }
+            currentPathTrail.Clear();
+        }
+
+        if (path == null || path.Count <= 1) return;
+
+        // 2. Aplica destaque luminoso na trilha da rota
+        for (int i = 0; i < path.Count; i++)
+        {
+            Vector3Int p = path[i];
+            currentPathTrail.Add(p);
+
+            if (activeOverlays.TryGetValue(p, out var sr) && sr != null)
+            {
+                // Realça a rota com brilho extra (1.35x de intensidade visual)
+                sr.color = new Color(1.2f, 1.2f, 1.2f, 1.0f);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Atualiza o visual do seletor e feedback de célula válida/inválida.
+    /// </summary>
     public void UpdateHover(Vector3Int hoverPos, bool isReachableAndFree)
     {
-        if (Selector.Instance != null && Selector.Instance.spriteRenderer != null)
+        if (Selector.Instance != null)
         {
             TileLogic hoveredTile = Board.GetTile(hoverPos);
+            Selector.Instance.SetSelectionVisual(isReachableAndFree, currentMode);
 
-            if (isReachableAndFree)
+            if (hoveredTile != null && Selector.Instance.spriteRenderer != null)
             {
-                // Branco brilhante para onde ele está escolhendo andar
-                Selector.Instance.spriteRenderer.color = hoverValidColor;
-            }
-            else
-            {
-                // Vermelho onde ele NÃO pode andar
-                Selector.Instance.spriteRenderer.color = invalidBlockedColor;
-            }
-
-            if (hoveredTile != null)
-            {
-                Selector.Instance.spriteRenderer.sortingOrder = hoveredTile.contentOrder + 2; // Acima dos destaques azuis
+                Selector.Instance.spriteRenderer.sortingOrder = hoveredTile.contentOrder + 2;
             }
         }
     }
 
-    // Limpa todos os destaques do grid e restaura o seletor
+    /// <summary>
+    /// Limpa todos os destaques do grid e restaura o seletor.
+    /// </summary>
     public void ClearHighlights()
     {
+        currentPathTrail.Clear();
+        currentRangeCoords.Clear();
+
         foreach (var kvp in activeOverlays)
         {
             if (kvp.Value != null)
@@ -108,15 +182,14 @@ public class GridHighlighter : MonoBehaviour
         }
         activeOverlays.Clear();
 
-        if (Selector.Instance != null && Selector.Instance.spriteRenderer != null)
+        if (Selector.Instance != null)
         {
-            Selector.Instance.spriteRenderer.color = Color.white;
+            Selector.Instance.ResetSelectionVisual();
         }
     }
 
     private GameObject GetOrCreateOverlay()
     {
-        // Reutiliza objeto inativo do pool
         for (int i = 0; i < activeOverlayPool.Count; i++)
         {
             if (!activeOverlayPool[i].activeSelf)
@@ -125,14 +198,15 @@ public class GridHighlighter : MonoBehaviour
             }
         }
 
-        // Cria novo objeto de overlay
         GameObject obj = new GameObject("TileHighlightOverlay");
         obj.transform.parent = transform;
 
         SpriteRenderer sr = obj.AddComponent<SpriteRenderer>();
-        sr.sprite = GetHighlightSprite();
+        sr.sprite = ProceduralGridTileFactory.MovementTile;
 
         activeOverlayPool.Add(obj);
         return obj;
     }
 }
+
+

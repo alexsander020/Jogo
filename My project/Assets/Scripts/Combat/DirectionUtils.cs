@@ -3,17 +3,35 @@ using UnityEngine;
 
 public static class DirectionUtils
 {
-    // Converte um vetor de deslocamento na direção de orientação mais próxima
+    // Converte um vetor de deslocamento na direção de orientação mais próxima e precisa
     public static FacingDirection VectorToDirection(Vector3Int dir)
     {
-        if (Mathf.Abs(dir.x) >= Mathf.Abs(dir.y))
+        if (dir.x != 0 && dir.y == 0)
         {
-            return dir.x >= 0 ? FacingDirection.East : FacingDirection.West;
+            return dir.x > 0 ? FacingDirection.East : FacingDirection.West;
         }
-        else
+        else if (dir.y != 0 && dir.x == 0)
         {
-            return dir.y >= 0 ? FacingDirection.North : FacingDirection.South;
+            return dir.y > 0 ? FacingDirection.North : FacingDirection.South;
         }
+        else if (dir.x != 0 && dir.y != 0)
+        {
+            // Para diagonais, avalia magnitude ou o sinal predominante
+            if (Mathf.Abs(dir.x) > Mathf.Abs(dir.y))
+            {
+                return dir.x > 0 ? FacingDirection.East : FacingDirection.West;
+            }
+            else if (Mathf.Abs(dir.y) > Mathf.Abs(dir.x))
+            {
+                return dir.y > 0 ? FacingDirection.North : FacingDirection.South;
+            }
+            else
+            {
+                // Em caso de empate |x| == |y|, analisa o eixo y (North/South)
+                return dir.y > 0 ? FacingDirection.North : FacingDirection.South;
+            }
+        }
+        return FacingDirection.South;
     }
 
     // Converte FacingDirection para Vector3Int no grid
@@ -33,6 +51,20 @@ public static class DirectionUtils
                 return Vector3Int.down;
         }
     }
+
+    // Retorna nome legível e ícone da direção
+    public static string GetDirectionName(FacingDirection dir)
+    {
+        return dir switch
+        {
+            FacingDirection.North => "NORTE (▲ / +Y)",
+            FacingDirection.East => "LESTE (► / +X)",
+            FacingDirection.South => "SUL (▼ / -Y)",
+            FacingDirection.West => "OESTE (◄ / -X)",
+            _ => "SUL (▼)"
+        };
+    }
+
 
     // Determina a orientação do ataque: Frontal, Flanco (Lateral) ou Backstab (Traseiro)
     public static AttackOrientation GetAttackOrientation(FacingDirection targetFacing, Vector3Int targetPos, Vector3Int attackerPos)
