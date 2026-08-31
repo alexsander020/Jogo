@@ -1,0 +1,1891 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.3/respin/6000.3.6f1-732c1ec89f18' branch; Version is '6000.3.6f1 (bbb010bdb8a3) revision 12300304'; Using compiler version '194234433'; Build Type 'Release'
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-20010480" at "2026-08-31T22:45:40.229674Z"
+OS: 'Windows 11  (10.0.26200) Professional' Language: 'pt' Physical Memory: 16105 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+System  architecture: x64
+Process architecture: x64
+Date: 2026-08-31T22:45:40Z
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity 6000.3.6f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker8
+-projectPath
+C:/Users/20010480/Documents/GitHub/Jogo/My project
+-logFile
+Logs/AssetImportWorker8.log
+-srvPort
+61427
+-job-worker-count
+9
+-background-job-worker-count
+8
+-gc-helper-count
+1
+-name
+AssetImport
+Successfully changed project path to: C:/Users/20010480/Documents/GitHub/Jogo/My project
+C:/Users/20010480/Documents/GitHub/Jogo/My project
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+Player connection [30728]  Target information:
+
+Player connection [30728]  * "[IP] 10.1.32.235 [Port] 0 [Flags] 2 [Guid] 2212469783 [EditorId] 2212469783 [Version] 1048832 [Id] WindowsEditor(7,311-02) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [30728]  * "[IP] 192.168.56.1 [Port] 0 [Flags] 2 [Guid] 2212469783 [EditorId] 2212469783 [Version] 1048832 [Id] WindowsEditor(7,311-02) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [30728] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [30728] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 9
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 4.90 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.3.6f1 (bbb010bdb8a3)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity 6000.3.6f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/20010480/Documents/GitHub/Jogo/My project/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1660 SUPER (ID=0x21c4)
+    Vendor:   NVIDIA
+    VRAM:     5966 MB
+    Driver:   32.0.15.9595
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity 6000.3.6f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity 6000.3.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity 6000.3.6f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56324
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity 6000.3.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+[Licensing::Module] Licensing is not yet initialized.
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.17.4+4293ba1
+  Session Id:              8cb2df0cb81d43098bed380913b5c72e
+  Correlation Id:          d3c068be13d9e62fdfccd37a49c0640e
+  External correlation Id: 8714272588553390330
+  Machine Id:              HErJ3yHv3eKw5hB/1RS9xL70qnk=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-20010480" (connect: 0.00s, validation: 0.00s, handshake: 0.88s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-20010480-notifications" at "2026-08-31T22:45:41.1078877Z"
+[Licensing::Module] Licensing Background thread has ended after 0.88s
+[Licensing::Module] Licensing is initialized (took 0.11s).
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: E4-QACR-PCJC-RJZY-FAD9-XXXX
+  Product: Unity Education
+  Type: ULF
+  Expiration: 2027-09-15T17:06:36Z
+Register platform support module: C:/Program Files/Unity 6000.3.6f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Registered in 0.113680 seconds.
+- Loaded All Assemblies, in  0.450 seconds
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 252 ms
+Native extension for WindowsStandalone target not found
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.616 seconds
+Domain Reload Profiling: 1064ms
+	BeginReloadAssembly (115ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (29ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (151ms)
+	LoadAllAssembliesAndSetupDomain (143ms)
+		LoadAssemblies (114ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (139ms)
+			TypeCache.Refresh (138ms)
+				TypeCache.ScanAssembly (127ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (616ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (577ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (325ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (62ms)
+			ProcessInitializeOnLoadAttributes (114ms)
+			ProcessInitializeOnLoadMethodAttributes (73ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Import Worker Mode flag is 0x00
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+- Loaded All Assemblies, in  0.910 seconds
+Refreshing native plugins compatible for Editor in 0.82 ms, found 4 plugins.
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.99 ms, found 4 plugins.
+Package Manager log level set to [2]
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Licensing::Client] Error: Code 404 while processing request (status: Found 0 entitlement groups and 0 free entitlements matching requested entitlement ids)
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.334 seconds
+Domain Reload Profiling: 2240ms
+	BeginReloadAssembly (142ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (25ms)
+	RebuildCommonClasses (34ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (54ms)
+	LoadAllAssembliesAndSetupDomain (664ms)
+		LoadAssemblies (382ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (359ms)
+			TypeCache.Refresh (273ms)
+				TypeCache.ScanAssembly (253ms)
+			BuildScriptInfoCaches (73ms)
+			ResolveRequiredComponents (9ms)
+	FinalizeReload (1335ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1203ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (8ms)
+			SetLoadedEditorAssemblies (5ms)
+			BeforeProcessingInitializeOnLoad (132ms)
+			ProcessInitializeOnLoadAttributes (816ms)
+			ProcessInitializeOnLoadMethodAttributes (238ms)
+			AfterProcessingInitializeOnLoad (4ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Refreshing native plugins compatible for Editor in 0.97 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 17 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 9088 unused Assets / (5.2 MB). Loaded Objects now: 9908.
+Memory consumption went from 175.9 MB to 170.7 MB.
+Total: 25.419000 ms (FindLiveObjects: 1.514200 ms CreateObjectMapping: 0.812000 ms MarkObjects: 19.699600 ms  DeleteObjects: 3.391600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 24507.377445 seconds.
+  path: Assets/Scripts/Combat/SkillIconDatabase.cs
+  artifactKey: Guid(9d1bf1307166324458fe32d71e2c2736) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Combat/SkillIconDatabase.cs using Guid(9d1bf1307166324458fe32d71e2c2736) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3e80dbddf4cafc869975d30c6f1bc4ad') in 0.0780666 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_300.png
+  artifactKey: Guid(9a055d54af24dab4683826edca1ba3e7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_300.png using Guid(9a055d54af24dab4683826edca1ba3e7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '81c708d00649c542368ad2918f3fbc8f') in 0.0461521 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_476.png
+  artifactKey: Guid(34baed5f0d4950e4c98a5ade245c661e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_476.png using Guid(34baed5f0d4950e4c98a5ade245c661e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '4fa21b8349ea44198c1b1232bf89fb93') in 0.0083903 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/FlexUnit/WaterSpell/Materials/Water/InnerWater3.mat
+  artifactKey: Guid(895eb40c8c50547a5a86ac5bd13abd03) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/FlexUnit/WaterSpell/Materials/Water/InnerWater3.mat using Guid(895eb40c8c50547a5a86ac5bd13abd03) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e52327597815f524e121484061d46de8') in 0.1880744 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_180.png
+  artifactKey: Guid(4661b6652c421224e8280d42e06d50af) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_180.png using Guid(4661b6652c421224e8280d42e06d50af) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'acd8d54063b9c1387e8403fe323ebbbc') in 0.0075001 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_249.png
+  artifactKey: Guid(dab3d35a76d206f49989976c7fb13b2d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_249.png using Guid(dab3d35a76d206f49989976c7fb13b2d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'fc233345a3272ea4731920579934af16') in 0.0071908 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/UI_Skill_Icon_MeteorShower.png
+  artifactKey: Guid(300abdf8cbdd5c742a05b6506767fd64) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/UI_Skill_Icon_MeteorShower.png using Guid(300abdf8cbdd5c742a05b6506767fd64) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'ef703c0e2fc418faf559c83fda726c33') in 0.0080831 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/FlexUnit/WaterSpell/Shaders/SpellCircle.shadergraph
+  artifactKey: Guid(ecfe1171f12244d4c887983de44747c6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/FlexUnit/WaterSpell/Shaders/SpellCircle.shadergraph using Guid(ecfe1171f12244d4c887983de44747c6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2032283c0a79a21be149c6ef52279f3a') in 0.1513496 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_204.png
+  artifactKey: Guid(cdba1506788764c4d81ac7b4d8b585b1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_204.png using Guid(cdba1506788764c4d81ac7b4d8b585b1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1e9b469403339f37bbfe79817bd9e1e7') in 0.0081874 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_363.png
+  artifactKey: Guid(1fe784c0346a64742a9ab94ab0dd7617) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_363.png using Guid(1fe784c0346a64742a9ab94ab0dd7617) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '88ae364cf83d9c30142fabd184c57f85') in 0.0073571 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_440.png
+  artifactKey: Guid(c17805f8911a60848b487c77559dffc4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_440.png using Guid(c17805f8911a60848b487c77559dffc4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2a7a7484909d7baebd9ca619c2f2a373') in 0.0078467 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_007.png
+  artifactKey: Guid(c93168c1fa286dc429e17172d490261b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_007.png using Guid(c93168c1fa286dc429e17172d490261b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '667f227df473c07214cf7ce51a5b321d') in 0.0073659 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_191.png
+  artifactKey: Guid(3a71b148b3aeddc46a11b5b528ed0acc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_191.png using Guid(3a71b148b3aeddc46a11b5b528ed0acc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'ff776b7143133f1ec2e35a146ca00f10') in 0.007258 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/FlexUnit/WaterSpell/Materials/Ground
+  artifactKey: Guid(4b1771ebbdc94490781115eaab10a0d7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/FlexUnit/WaterSpell/Materials/Ground using Guid(4b1771ebbdc94490781115eaab10a0d7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c4db8a855bbfe98a5c73a8deab1a0db3') in 0.0030011 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_293.png
+  artifactKey: Guid(d3841ac03960280419d526a5aa21120c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_293.png using Guid(d3841ac03960280419d526a5aa21120c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '23ea839860fe4971ca83ef5c693841e3') in 0.0067869 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_287.png
+  artifactKey: Guid(b4693be666ef4d14e9c674e553f1566a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_287.png using Guid(b4693be666ef4d14e9c674e553f1566a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '94f7055040ecde7b1263b7782076c415') in 0.0063321 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_400.png
+  artifactKey: Guid(dac494cb512ddb944919422126fa39be) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_400.png using Guid(dac494cb512ddb944919422126fa39be) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5acc428ce22c05601e53824f5a93e470') in 0.0067529 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_410.png
+  artifactKey: Guid(f01d661fe4334474ab1c79e3817558c9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_410.png using Guid(f01d661fe4334474ab1c79e3817558c9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2567d4138096ac83b97291b811e4d786') in 0.0083385 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_501.png
+  artifactKey: Guid(918887f1aacb71b4cb34e86339c92e1b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_501.png using Guid(918887f1aacb71b4cb34e86339c92e1b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd301fe44874ba2bc9621b27a9f7abbc9') in 0.0062493 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/FlexUnit/WaterSpell/Materials/Water/OuterWater.mat
+  artifactKey: Guid(1a9ae1d57a32d4de69f612f807ebdda0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/FlexUnit/WaterSpell/Materials/Water/OuterWater.mat using Guid(1a9ae1d57a32d4de69f612f807ebdda0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2baa58c6fca4ef24c8a5521abe88d66e') in 0.007167 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/FlexUnit/WaterSpell/Materials/Water/WaterSpell_Сircle3.mat
+  artifactKey: Guid(7b93587d362864436ba94fee29d479a1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/FlexUnit/WaterSpell/Materials/Water/WaterSpell_Сircle3.mat using Guid(7b93587d362864436ba94fee29d479a1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'caf9f3dd9abd65fbe5cfb4f3210db8a4') in 0.0706581 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.123195 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_414.png
+  artifactKey: Guid(e1688ac2b0316444a9cd1305b07b37b7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_414.png using Guid(e1688ac2b0316444a9cd1305b07b37b7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'cd036874ee09261e2494c543dcda8572') in 0.009411 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_016.png
+  artifactKey: Guid(f6bbaa16fe1da104988720c13d65e19b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_016.png using Guid(f6bbaa16fe1da104988720c13d65e19b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '80371aa2dc4c2662629fe48302ffe00d') in 0.0074652 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_156.png
+  artifactKey: Guid(19be8949aec831c42a29d0148f6edf5d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_156.png using Guid(19be8949aec831c42a29d0148f6edf5d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '8fe039b3ba5866d410cf8bad3a7f6887') in 0.0069247 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_237.png
+  artifactKey: Guid(5356601251fc8b9478154b652d50b2f9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_237.png using Guid(5356601251fc8b9478154b652d50b2f9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'ca6ac968473d71856719352f86b08bed') in 0.0072952 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_206.png
+  artifactKey: Guid(03b0d95c839f48c43af808e21b70b8ab) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_206.png using Guid(03b0d95c839f48c43af808e21b70b8ab) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '733c179bf0a521ab7fdf1ada3e2b72bf') in 0.0070317 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_116.png
+  artifactKey: Guid(d59645c7fcb8ee146b3c19f7ae8ce288) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_116.png using Guid(d59645c7fcb8ee146b3c19f7ae8ce288) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9cc4d9579652c1d6aaf529344f938d4a') in 0.007313 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_061.png
+  artifactKey: Guid(4f8261ad6deaf564a8efcde0d564741d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_061.png using Guid(4f8261ad6deaf564a8efcde0d564741d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5a1ae0abc58df0f111bc84cac48afc06') in 0.0061495 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_149.png
+  artifactKey: Guid(cb9e700fd405ed1409bdc040a3e35254) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_149.png using Guid(cb9e700fd405ed1409bdc040a3e35254) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b074fb9711832003e0ba4949c574c563') in 0.0083205 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_146.png
+  artifactKey: Guid(bd450c4b5ed35264b9902dde31bdcc8f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_146.png using Guid(bd450c4b5ed35264b9902dde31bdcc8f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b850d8f5275271ee4f4d1a4b89d6303d') in 0.0068776 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_164.png
+  artifactKey: Guid(e21da6bbf16d05d49b3b4d4a74f5a53b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_164.png using Guid(e21da6bbf16d05d49b3b4d4a74f5a53b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'cab56bc5bd8ca2243fb14b6ca0a62f59') in 0.0070567 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_511.png
+  artifactKey: Guid(add1cb68348f0f94483ffaa67fbcbb29) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_511.png using Guid(add1cb68348f0f94483ffaa67fbcbb29) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0d5f32cc3d7100a51ba02cd26c87819d') in 0.0071995 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_520.png
+  artifactKey: Guid(ca1e93f15829ff54c84f41da0ce5b62a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_520.png using Guid(ca1e93f15829ff54c84f41da0ce5b62a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '23544ba51ca3ea806d1dc19e41036222') in 0.0071142 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_318.png
+  artifactKey: Guid(bffc840d0bcf4e649ba9f98dbc6f9434) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_318.png using Guid(bffc840d0bcf4e649ba9f98dbc6f9434) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7360e0bac18f2bafa61e7ba910af213f') in 0.0068324 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_065.png
+  artifactKey: Guid(c24620eafefbca84791c90c58ec5dae5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_065.png using Guid(c24620eafefbca84791c90c58ec5dae5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'fa5396da10c33e9d90ce1836c5b56648') in 0.0069722 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_185.png
+  artifactKey: Guid(c9bb2b54de8c00841b7495219d70c680) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_185.png using Guid(c9bb2b54de8c00841b7495219d70c680) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b72bd6b0531d29d9776ef9e94bd09110') in 0.006643 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_011.png
+  artifactKey: Guid(58e58267b85ea41478ef1793ef2f8213) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_011.png using Guid(58e58267b85ea41478ef1793ef2f8213) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1ee64e21271b2e1be8a3aec04253c478') in 0.0066171 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_387.png
+  artifactKey: Guid(2a8ca7b40282054448af185b4a316faf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_387.png using Guid(2a8ca7b40282054448af185b4a316faf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'fad18e4e6f697bb92c03e93af122d33c') in 0.0064163 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_086.png
+  artifactKey: Guid(f0f8dd035fb34dc4ca292b932674bd39) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_086.png using Guid(f0f8dd035fb34dc4ca292b932674bd39) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6dd0ce16aacf7bf5418adcc7b3992b4b') in 0.0093127 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_358.png
+  artifactKey: Guid(bd92c6460bb5438468597608360690c1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_358.png using Guid(bd92c6460bb5438468597608360690c1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'fc00049fa2a15c649cac164f26b4d2b3') in 0.0066731 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_278.png
+  artifactKey: Guid(1727c88f1a0056b47aca9180463d4e6c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_278.png using Guid(1727c88f1a0056b47aca9180463d4e6c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '82e3ccd855624a22823b5ab11472440b') in 0.0067379 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_013.png
+  artifactKey: Guid(95c076b3f531697469ee83e2c5c57ece) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_013.png using Guid(95c076b3f531697469ee83e2c5c57ece) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c01dc7158bd9f916d883f78199377c25') in 0.0071387 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/UI_Skill_Icon_Blackhole.png
+  artifactKey: Guid(eed44235dcbd621438f7c0c4f05e2356) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/UI_Skill_Icon_Blackhole.png using Guid(eed44235dcbd621438f7c0c4f05e2356) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'fcac6aba82b427d94a86a714eced4ea8') in 0.0076739 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_208.png
+  artifactKey: Guid(01989fe6af71d95478db566107a76de8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_208.png using Guid(01989fe6af71d95478db566107a76de8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9351a805060a19c68fb183a47edb5ac7') in 0.0074747 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_183.png
+  artifactKey: Guid(6daa7f5a6702ac8479f516d7ce5fe7fb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_183.png using Guid(6daa7f5a6702ac8479f516d7ce5fe7fb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '4cd810aad16c5f59683d30decb3f1b8f') in 0.0071424 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_438.png
+  artifactKey: Guid(f8f4041f3be20b24486f68d0bf5e28e0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_438.png using Guid(f8f4041f3be20b24486f68d0bf5e28e0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '91e634b1000cfb643ee1eb0b436afe78') in 0.0069113 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_113.png
+  artifactKey: Guid(a004a4dcf30d9ee4ea9a2b6c0a8383bb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_113.png using Guid(a004a4dcf30d9ee4ea9a2b6c0a8383bb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2f0ee963af5ff25005b6ea422b0ccc74') in 0.0068148 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_233.png
+  artifactKey: Guid(a3b792d74d96ab84eaac934399e5b662) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_233.png using Guid(a3b792d74d96ab84eaac934399e5b662) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c89a2a9d3740a4aed079458b3125b5d8') in 0.0067401 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_436.png
+  artifactKey: Guid(ae1de6ae38f897544a368855b6df51ec) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_436.png using Guid(ae1de6ae38f897544a368855b6df51ec) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b5f63a3b8015dc095b654f9c3e1e0369') in 0.0083985 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_334.png
+  artifactKey: Guid(0efb3cece104ec043801e4ea3f618c83) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_334.png using Guid(0efb3cece104ec043801e4ea3f618c83) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '93b25ec7bf93c7e3ca485d108f393916') in 0.0066619 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_138.png
+  artifactKey: Guid(0061ebebb74cc1b4b8030d9c969975bc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_138.png using Guid(0061ebebb74cc1b4b8030d9c969975bc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'ad9f6c4a430e9d50bc5b9dc4a8328c95') in 0.0066422 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.214831 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_434.png
+  artifactKey: Guid(17951649342328b44a00606416d2b440) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_434.png using Guid(17951649342328b44a00606416d2b440) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1aeb519b5f94c277165881d95ceaad0b') in 0.0071313 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_309.png
+  artifactKey: Guid(77d7018450196774a99cc2be5ed47a3f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_309.png using Guid(77d7018450196774a99cc2be5ed47a3f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '4b60dde93b48a4278ba5f25f152ba3b7') in 0.0067903 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_073.png
+  artifactKey: Guid(c58fbdfde802f3c46806af29a6805f8a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_073.png using Guid(c58fbdfde802f3c46806af29a6805f8a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'da028b0ad30ef993e6e7aef5798a327f') in 0.0074009 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_509.png
+  artifactKey: Guid(02794f49dda7c82449716771eb44fb02) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_509.png using Guid(02794f49dda7c82449716771eb44fb02) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b7d2250d1a17087f557e4b289b14ac8f') in 0.0075338 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_422.png
+  artifactKey: Guid(cdcf67092a342e7489795df664aafd5d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_422.png using Guid(cdcf67092a342e7489795df664aafd5d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '99e7afe4432cce8b4da8b8df7caee155') in 0.0069998 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_243.png
+  artifactKey: Guid(8bbb93be856e1d04f81d82f9abebdc9f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_243.png using Guid(8bbb93be856e1d04f81d82f9abebdc9f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '04cab5d5c297cc0d56acc094a6ecd823') in 0.0063635 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_059.png
+  artifactKey: Guid(ae2a72439316c2848b28cd3af4c774c4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_059.png using Guid(ae2a72439316c2848b28cd3af4c774c4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5323ddca77728f1d4e3eb85da5248a11') in 0.0069341 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_424.png
+  artifactKey: Guid(80d496e203a2ea045b8de4bf235ce518) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_424.png using Guid(80d496e203a2ea045b8de4bf235ce518) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '923939f2ef6935a413272573f49fab24') in 0.0087931 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_095.png
+  artifactKey: Guid(02f8aa0bb2ec18f4eac367806275fb25) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_095.png using Guid(02f8aa0bb2ec18f4eac367806275fb25) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5ebd0b938837953158d84efc520545a9') in 0.0074827 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_109.png
+  artifactKey: Guid(c6406523391cdce44a6d3f221b6615f4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_109.png using Guid(c6406523391cdce44a6d3f221b6615f4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f96fb5840d342ef7f03d00c608b981b1') in 0.0066034 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_263.png
+  artifactKey: Guid(632845e67271d7641baceaedd518aef9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_263.png using Guid(632845e67271d7641baceaedd518aef9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd9ff539e6262be59f61a45a57ed4b9c4') in 0.0068437 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_055.png
+  artifactKey: Guid(5620ad4a5665fb84184dab2e923ecd3f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_055.png using Guid(5620ad4a5665fb84184dab2e923ecd3f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2086a536c52cad5f5a966eba98dc641b') in 0.0066241 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_409.png
+  artifactKey: Guid(4c2d00409c0b3494f9802468f35fd9b5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_409.png using Guid(4c2d00409c0b3494f9802468f35fd9b5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '36b35bec7bda55d27ad4b51f1b702f8d') in 0.0065753 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_333.png
+  artifactKey: Guid(4109f87a7dbbe3f4e8176950a54d077d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_333.png using Guid(4109f87a7dbbe3f4e8176950a54d077d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c53414d47586e89209e50bb0ed011609') in 0.0068172 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_163.png
+  artifactKey: Guid(7cf72b8c7eebd384a91c4bded1f01e53) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_163.png using Guid(7cf72b8c7eebd384a91c4bded1f01e53) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9795757c92ade33f643b238faf9d4fcd') in 0.0063891 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_209.png
+  artifactKey: Guid(632c7767ebf48d24c910a98544d8f70b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_209.png using Guid(632c7767ebf48d24c910a98544d8f70b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b1489b3ec62f9874daa3a50f62adcef8') in 0.0067879 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_217.png
+  artifactKey: Guid(8add1fab220686143932d80c15e39fb1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_217.png using Guid(8add1fab220686143932d80c15e39fb1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e492a10804f759f38a930fb3ab0c3f7b') in 0.0077631 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_111.png
+  artifactKey: Guid(e30d9b061a327664bb50a3754c68c392) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_111.png using Guid(e30d9b061a327664bb50a3754c68c392) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b2bca2d93693dd451c1668fe45505847') in 0.0068113 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_169.png
+  artifactKey: Guid(1de21660958eafb4bb3187d622ed4bfc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_169.png using Guid(1de21660958eafb4bb3187d622ed4bfc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5208ae69044b9853e2f6a7c1da6956f8') in 0.0105598 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_310.png
+  artifactKey: Guid(1b854b67289f56949a01a239306eb0c1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_310.png using Guid(1b854b67289f56949a01a239306eb0c1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b97fe60e5f4c474fe55385e743fe2ef5') in 0.0075386 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_129.png
+  artifactKey: Guid(55ebcc0240da93849becd22af0acc025) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_129.png using Guid(55ebcc0240da93849becd22af0acc025) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c3e030bbeec7ccd45fde517e8f651fda') in 0.0100681 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_468.png
+  artifactKey: Guid(d520463c6ea6a9340811452d2a5cfe83) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_468.png using Guid(d520463c6ea6a9340811452d2a5cfe83) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '33ee5f47e1930b35a66be1959f04fa82') in 0.0075877 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/UI_Skill_Icon_Slide.png
+  artifactKey: Guid(6960c6bd5088317429f7e0e033bee813) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/UI_Skill_Icon_Slide.png using Guid(6960c6bd5088317429f7e0e033bee813) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5bfab8e698bd9a47f81c2a17f3ff38ba') in 0.0071377 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_349.png
+  artifactKey: Guid(4fe46e27fc7b9364d964fdcf16bb9642) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_349.png using Guid(4fe46e27fc7b9364d964fdcf16bb9642) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f2a7d0b4235bb0e2a7e612c1f0afeb9c') in 0.0066467 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_430.png
+  artifactKey: Guid(fa2e13df7e1fed941835a6ffca0bcc83) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_430.png using Guid(fa2e13df7e1fed941835a6ffca0bcc83) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '28c605a5238efb29db9a3e8357045e1e') in 0.006581 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_140.png
+  artifactKey: Guid(6b268e9ee2b3014448c1e456cd3ae5c5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_140.png using Guid(6b268e9ee2b3014448c1e456cd3ae5c5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '14481455771cb9b8e581d8e8982ce45b') in 0.0070147 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_038.png
+  artifactKey: Guid(b00564e353aca3e4a853c66d5568c6ca) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_038.png using Guid(b00564e353aca3e4a853c66d5568c6ca) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7ef224b133ffa8f62e19802996a5445a') in 0.006059 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_039.png
+  artifactKey: Guid(32cf63def3300bb4a99dd151ea9a4d42) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_039.png using Guid(32cf63def3300bb4a99dd151ea9a4d42) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0fdb7b5cbd18d0d63457a14949f9ecc5') in 0.0063336 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_323.png
+  artifactKey: Guid(0f8c613bb6359eb4aaeff6884020c720) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_323.png using Guid(0f8c613bb6359eb4aaeff6884020c720) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '661bf724923890f513493ab780218ce3') in 0.0068317 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_369.png
+  artifactKey: Guid(e0d28137676e2ba428d9594922a7cfd3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_369.png using Guid(e0d28137676e2ba428d9594922a7cfd3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f2cf6aad5ccb01f7ab592da537ee442f') in 0.0134789 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_103.png
+  artifactKey: Guid(6e68b90f3d10e9a4bbd40a485c40d5ac) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_103.png using Guid(6e68b90f3d10e9a4bbd40a485c40d5ac) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9ec343acfacd7264af66154b547ca010') in 0.0074541 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_245.png
+  artifactKey: Guid(d33131a7918b3e346b987ecf3b80b505) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_245.png using Guid(d33131a7918b3e346b987ecf3b80b505) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2959ff1bf103c5ca8b45b54bf3b10058') in 0.007165 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_187.png
+  artifactKey: Guid(c7563785c7dbdf241a735caeaa48ecca) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_187.png using Guid(c7563785c7dbdf241a735caeaa48ecca) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b31c037dd69187f1fb72f13ed4582d5d') in 0.0063163 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_117.png
+  artifactKey: Guid(8cd4b5fa6bda7bc4abe451063e24c9a1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_117.png using Guid(8cd4b5fa6bda7bc4abe451063e24c9a1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '37ce7f59b0db1ef011b3bd0c2811bcf5') in 0.0063998 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_461.png
+  artifactKey: Guid(3a0144888d3a16a45abc673033382aa1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_461.png using Guid(3a0144888d3a16a45abc673033382aa1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '70214a421a6b6676e7b1167c22e75b61') in 0.0067675 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_373.png
+  artifactKey: Guid(5eb3d12ced0c31d4ca9a8b884eba9083) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_373.png using Guid(5eb3d12ced0c31d4ca9a8b884eba9083) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5c7ccd408e86be89084423d8630b5ead') in 0.0066817 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_078.png
+  artifactKey: Guid(2467fd7f0af6c4e42a5ff3cdcb943bef) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_078.png using Guid(2467fd7f0af6c4e42a5ff3cdcb943bef) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '171c48a7496594ec6d96a7970c7eea6e') in 0.0074463 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_040.png
+  artifactKey: Guid(3d374cd3dfe286347a286e36190046e0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_040.png using Guid(3d374cd3dfe286347a286e36190046e0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b4c43c6593499a5213e645e83631a451') in 0.0070893 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_247.png
+  artifactKey: Guid(4dc752ce982341043aa3686b259ae528) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_247.png using Guid(4dc752ce982341043aa3686b259ae528) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'bbe39b7e50a98fa7b97e4f69f687caa5') in 0.0068019 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_331.png
+  artifactKey: Guid(5604c071f7afd5c4892a892c65c15c00) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_331.png using Guid(5604c071f7afd5c4892a892c65c15c00) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3ac4de71bca896b144e0d73d44903cf6') in 0.0090806 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_469.png
+  artifactKey: Guid(9fb3e1e3995ea7b43b71d0f8f0b540cb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_469.png using Guid(9fb3e1e3995ea7b43b71d0f8f0b540cb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3563321d3729f07ec081e6fc5e5f9c05') in 0.0066323 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_020.png
+  artifactKey: Guid(dd9553335d5e8ac4f8cd1bf7715b004f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_020.png using Guid(dd9553335d5e8ac4f8cd1bf7715b004f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '139ec9d46a29fb974317b91a5d082090') in 0.0065131 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_427.png
+  artifactKey: Guid(644c3c5054bb4904096b7d3b5b4b4f92) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_427.png using Guid(644c3c5054bb4904096b7d3b5b4b4f92) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '60a6ac00382b0e56ff514bc5cd9a3b06') in 0.0068161 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_214.png
+  artifactKey: Guid(f30d24ae22e16d847909033c850ab569) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_214.png using Guid(f30d24ae22e16d847909033c850ab569) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a9cf28f4971b9a863744c16e3cf0b89c') in 0.0064246 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_447.png
+  artifactKey: Guid(5fb625a032f4aac44b6589bf64a11673) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_447.png using Guid(5fb625a032f4aac44b6589bf64a11673) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '140bdfa90d54cc1a09b517ae9c8b0625') in 0.0069026 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_405.png
+  artifactKey: Guid(50fb6caf8baed6444ad7fce208b6cfb0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_405.png using Guid(50fb6caf8baed6444ad7fce208b6cfb0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7fa0cd83b617ebf89e106bb6af31e453') in 0.0062631 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_171.png
+  artifactKey: Guid(213232a13a18d944383332f9e4cc3528) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_171.png using Guid(213232a13a18d944383332f9e4cc3528) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd583e4d8f3f8eaaf79171164e09739d4') in 0.0065242 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_031.png
+  artifactKey: Guid(d83ec8a2332a17f4d9310f3415b42b47) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_031.png using Guid(d83ec8a2332a17f4d9310f3415b42b47) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '910af510dceab4fbf7a4d71eda963fba') in 0.0066831 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_107.png
+  artifactKey: Guid(0f9ec3968ab7b3643a49a98897dc7c7d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_107.png using Guid(0f9ec3968ab7b3643a49a98897dc7c7d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c131d2a6c9756caad0c6b4a2960e2157') in 0.0063877 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_319.png
+  artifactKey: Guid(5bbca44050388b340b33b3e6003ad454) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_319.png using Guid(5bbca44050388b340b33b3e6003ad454) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9a1fc75f9bc996957abe5eb07d504043') in 0.006957 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_268.png
+  artifactKey: Guid(945dd38febb63974ebdc2ee411def911) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_268.png using Guid(945dd38febb63974ebdc2ee411def911) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd9e708182c77f06f389ba62032c79b1d') in 0.0086635 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_238.png
+  artifactKey: Guid(1c25a83e860cd6946b37ef066e08e80c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_238.png using Guid(1c25a83e860cd6946b37ef066e08e80c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6e4f73f0c395ec922b8809105023a4c3') in 0.0067632 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_072.png
+  artifactKey: Guid(16475b66d6dc90046bbc420457bbf669) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_072.png using Guid(16475b66d6dc90046bbc420457bbf669) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6a351d838fd7867df2a8362a42680011') in 0.0068887 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_448.png
+  artifactKey: Guid(38ebee959c83e8a498548bc10e7755d8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_448.png using Guid(38ebee959c83e8a498548bc10e7755d8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '4a14bd9fb16a82cacabee4cad70b1d5e') in 0.0070919 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_012.png
+  artifactKey: Guid(b72d7e78b2d53094da1cce58ce76de41) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_012.png using Guid(b72d7e78b2d53094da1cce58ce76de41) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1e0bf9334f5d599ea5dd7517dded0c06') in 0.0066213 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/UI_Skill_Icon_Buff.png
+  artifactKey: Guid(a2563f2b8dbc4044b9a50537d3a29962) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/UI_Skill_Icon_Buff.png using Guid(a2563f2b8dbc4044b9a50537d3a29962) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '65fa5a92c37ee9015fb5a4a2a09296c7') in 0.0066487 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_372.png
+  artifactKey: Guid(35b8cde45bf670946983613addb23588) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_372.png using Guid(35b8cde45bf670946983613addb23588) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1dae3e833e6c75dfac5e94d90276b8c6') in 0.0065849 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_483.png
+  artifactKey: Guid(22ee3b835a002394d93cf815a5f3ee2e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_483.png using Guid(22ee3b835a002394d93cf815a5f3ee2e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '92144e3de4bd730a54c32dc33ed2baec') in 0.0067492 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_255.png
+  artifactKey: Guid(63659ea75aa571241a1c798ea8114b43) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_255.png using Guid(63659ea75aa571241a1c798ea8114b43) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'ad36e227892eb76cf71e6feb42d3639b') in 0.0071186 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_152.png
+  artifactKey: Guid(3b6b30b9aa8bf1f4483130c6e71c25c3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_152.png using Guid(3b6b30b9aa8bf1f4483130c6e71c25c3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '764a702c5e47357898c568771c561bb6') in 0.0070762 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_396.png
+  artifactKey: Guid(f67a1c0135d3c084b9ac978e98a4039a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_396.png using Guid(f67a1c0135d3c084b9ac978e98a4039a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e78c1f6d1f6c222589e1e8c899412d26') in 0.0082284 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_219.png
+  artifactKey: Guid(240cd37c2acc0a6489aa01993e78d981) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_219.png using Guid(240cd37c2acc0a6489aa01993e78d981) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3f21807ba651e916dff4b6fe7c9df626') in 0.006697 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_198.png
+  artifactKey: Guid(157eb96413830e04793d0fc68a6b8695) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_198.png using Guid(157eb96413830e04793d0fc68a6b8695) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0720eeb37bcc3e5f0a566ba95c451d50') in 0.0087223 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_089.png
+  artifactKey: Guid(a497970c7be0d0647b2129f5fff4c541) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_089.png using Guid(a497970c7be0d0647b2129f5fff4c541) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '84f944a69325b6f7c144318665c9dd3f') in 0.0063296 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_062.png
+  artifactKey: Guid(fd83ad945587d8f419c3e4d669fcf563) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_062.png using Guid(fd83ad945587d8f419c3e4d669fcf563) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd258859fa87b5b63eb15295f169b5313') in 0.0070038 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_160.png
+  artifactKey: Guid(aff6a6d197ebc3145876a6a3117318c4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_160.png using Guid(aff6a6d197ebc3145876a6a3117318c4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5e4594ecb2aac44d82d4a11bf908e006') in 0.006622 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_416.png
+  artifactKey: Guid(47077642d68a2924c8a317e159578f92) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_416.png using Guid(47077642d68a2924c8a317e159578f92) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7e23860e4a6d1bd1d35f5834015313b0') in 0.0063973 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_494.png
+  artifactKey: Guid(371f3a320df317c45ad884dce273f66d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_494.png using Guid(371f3a320df317c45ad884dce273f66d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6ae1aba34b6589e8d18bc9f350a95497') in 0.006846 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_473.png
+  artifactKey: Guid(38f8ade3c3645e9429f9784ff542378b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_473.png using Guid(38f8ade3c3645e9429f9784ff542378b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '85aa92d126d12461d0f19aed2dd9282f') in 0.0072238 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_008.png
+  artifactKey: Guid(490cf4ff636f2024b89863e434474ab8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_008.png using Guid(490cf4ff636f2024b89863e434474ab8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e7f063e302dee118c394d90785b69f46') in 0.0064883 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_508.png
+  artifactKey: Guid(64b05c3b141a6c04290477be9765e811) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_508.png using Guid(64b05c3b141a6c04290477be9765e811) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9216a46af2550408a5c22f3886270bf0') in 0.0071911 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_381.png
+  artifactKey: Guid(4ba0a0c27b4c6ea45ad09abf5b43f711) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_381.png using Guid(4ba0a0c27b4c6ea45ad09abf5b43f711) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'bd1adf0dafc8e39dc97031a818270e73') in 0.0085501 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_125.png
+  artifactKey: Guid(333e7435b7d88d44b9dc0df723e24a97) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_125.png using Guid(333e7435b7d88d44b9dc0df723e24a97) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c7554c0251aa677ec524527a362d62a6') in 0.0061919 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_399.png
+  artifactKey: Guid(c76fdb1e546236e42b04429c334081b2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_399.png using Guid(c76fdb1e546236e42b04429c334081b2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a8ed624be8e85917606a0c588efd3c75') in 0.00681 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_235.png
+  artifactKey: Guid(9fb2db68e05e4bd4f822bfe3cbab9373) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_235.png using Guid(9fb2db68e05e4bd4f822bfe3cbab9373) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'cf1c482370be16c5ed73ccadcb649c28') in 0.007733 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_305.png
+  artifactKey: Guid(f47342aef65088546b3a1daf13cb9ccb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_305.png using Guid(f47342aef65088546b3a1daf13cb9ccb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '086fce41c270f9c997da0dc230048439') in 0.0067039 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_315.png
+  artifactKey: Guid(3c04d3c9e41398348bb1dcebd2baa2ae) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_315.png using Guid(3c04d3c9e41398348bb1dcebd2baa2ae) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5c404d6f5b63c3e474b5765972886718') in 0.0071266 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_386.png
+  artifactKey: Guid(cd402ed8b8d9a8b42be3e9bcd40f7735) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_386.png using Guid(cd402ed8b8d9a8b42be3e9bcd40f7735) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '99aa54a60db4417e11a477ac432c20f2') in 0.0063614 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_311.png
+  artifactKey: Guid(99709748bc8b8a24795a8bb5523453e3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_311.png using Guid(99709748bc8b8a24795a8bb5523453e3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '09960bb1d546adc1a440dabfad41f78e') in 0.0071623 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_376.png
+  artifactKey: Guid(2876010d540fd574b9d660eccfba05d3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_376.png using Guid(2876010d540fd574b9d660eccfba05d3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9b8f1d3154a22019239d51b34b75a945') in 0.0073271 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_114.png
+  artifactKey: Guid(4157f3295e1ae0b408164ae7fb67ceca) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_114.png using Guid(4157f3295e1ae0b408164ae7fb67ceca) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '74c865f4bfda4d18bf199c327705b986') in 0.0069869 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_486.png
+  artifactKey: Guid(cf0d49030c5bc104ea35c76dad2d2c5a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_486.png using Guid(cf0d49030c5bc104ea35c76dad2d2c5a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3caf3a40a2ea0f386dfcec48cb498bd9') in 0.008165 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/UI_Skill_Icon_SpiritArrows.png
+  artifactKey: Guid(0825dfa25de4551469e65496af7b3c71) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/UI_Skill_Icon_SpiritArrows.png using Guid(0825dfa25de4551469e65496af7b3c71) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1b7de4c9a444b4fa8ebd2a369e09e6bf') in 0.0069948 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_441.png
+  artifactKey: Guid(9461060db4cc4f84e8fe5ffb9c76205a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_441.png using Guid(9461060db4cc4f84e8fe5ffb9c76205a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6490a33e3f04c518601a2b849bd2a285') in 0.0075813 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_087.png
+  artifactKey: Guid(c8db765f8404a794eaf075cab8798c0a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_087.png using Guid(c8db765f8404a794eaf075cab8798c0a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '4ccf1b8f1da01622d01030da3dc06745') in 0.0075912 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_047.png
+  artifactKey: Guid(d59ce47b22d721a4d9ae6256b153ce7d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_047.png using Guid(d59ce47b22d721a4d9ae6256b153ce7d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '52a6948a42a39018a70d086a5d33928a') in 0.0062469 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_014.png
+  artifactKey: Guid(8e5a3df2309599d42a812baca6503547) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_014.png using Guid(8e5a3df2309599d42a812baca6503547) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '83bd7d881d1c5dd829b9ec40824c043f') in 0.0073167 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_503.png
+  artifactKey: Guid(213554a92d3066c41b87cbd3f67c86b5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_503.png using Guid(213554a92d3066c41b87cbd3f67c86b5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '4043def9483549c6279e58db8af503d5') in 0.0064318 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_099.png
+  artifactKey: Guid(6e7a7d4509d113c44be8358ecbbca0fc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_099.png using Guid(6e7a7d4509d113c44be8358ecbbca0fc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'bbd9b1bdd8b071e1f7fb7519407c7389') in 0.0065875 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_045.png
+  artifactKey: Guid(4c79d075f66c8af4196cc6e11bc54127) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_045.png using Guid(4c79d075f66c8af4196cc6e11bc54127) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f8f34ef00c761ff3979c5cacdef02672') in 0.0070458 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_383.png
+  artifactKey: Guid(156b1649b67a4ea49b2f88d0c37fd463) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_383.png using Guid(156b1649b67a4ea49b2f88d0c37fd463) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5ffa86b1e2b71cce9ae35c0893746c1a') in 0.0082286 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_403.png
+  artifactKey: Guid(bb07ba5c0347c724b869a12eca4875d4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_403.png using Guid(bb07ba5c0347c724b869a12eca4875d4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'eb7e32675943c64438c3b7264fe36040') in 0.006588 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_128.png
+  artifactKey: Guid(a71b2e9c23985684085032adc79415a7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_128.png using Guid(a71b2e9c23985684085032adc79415a7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'bb22104733309d7707278df026eb25ef') in 0.0090113 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_404.png
+  artifactKey: Guid(05c095db683b3ac4891fcf939a082460) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_404.png using Guid(05c095db683b3ac4891fcf939a082460) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '19213a0dc8f39bc3dae091e673b3f8a7') in 0.0071786 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_343.png
+  artifactKey: Guid(619fbe1fc6dd3da4096b2e061321c2ff) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_343.png using Guid(619fbe1fc6dd3da4096b2e061321c2ff) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7a0e3fe06bb90e39e806cf27d5c9ca2a') in 0.0064681 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_426.png
+  artifactKey: Guid(c1d1028ad8fda7b4aaff411b535f6e2a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_426.png using Guid(c1d1028ad8fda7b4aaff411b535f6e2a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '394f4fc80a260b7eabf18c61b4d84d8f') in 0.0060529 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_500.png
+  artifactKey: Guid(052790ed269a1eb4d88e25e15505a3fc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_500.png using Guid(052790ed269a1eb4d88e25e15505a3fc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9cfdf381bd7221189e3ec9ea24813da7') in 0.0064928 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_003.png
+  artifactKey: Guid(7a2181c228f80644b8029357fb1209fe) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_003.png using Guid(7a2181c228f80644b8029357fb1209fe) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '21b3c19fe4202cbc7bad4768b0ad8b7b') in 0.0066865 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_251.png
+  artifactKey: Guid(64bd6fcd22dcdb1488b50b0c02849b95) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_251.png using Guid(64bd6fcd22dcdb1488b50b0c02849b95) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0cfdea42d13ede9c78fe60ae01e4dcd2') in 0.0069436 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_357.png
+  artifactKey: Guid(b2a3a45fda3b8774aa4c547c4297bd28) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_357.png using Guid(b2a3a45fda3b8774aa4c547c4297bd28) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '729d69374e038b5c1eb9f9dd77f8f43a') in 0.006973 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_368.png
+  artifactKey: Guid(5855d55827282764894da9570c2815d5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_368.png using Guid(5855d55827282764894da9570c2815d5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'bb278dc6391088d44362842e1e68083c') in 0.0104615 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_050.png
+  artifactKey: Guid(1666fb24b220d2242b4e75e7057d249a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_050.png using Guid(1666fb24b220d2242b4e75e7057d249a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f0a4c9bb1d6587a94b7b5668448280a1') in 0.0069844 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_384.png
+  artifactKey: Guid(d6a0dc2f08f982c47957ce126e114f32) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_384.png using Guid(d6a0dc2f08f982c47957ce126e114f32) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'bdb53c4083a0cc4a16a4da9d439511a3') in 0.0083338 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004827 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_352.png
+  artifactKey: Guid(1b0e90a1b037bc049959917c2a8a7435) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_352.png using Guid(1b0e90a1b037bc049959917c2a8a7435) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b1135b14be50b227cfe7cf872d75fa74') in 0.0064963 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_378.png
+  artifactKey: Guid(e20b5f6fb1e89574f9fc09bc7ae429f4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_378.png using Guid(e20b5f6fb1e89574f9fc09bc7ae429f4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f08ea856b17d7aa80fb5db21848085e3') in 0.0065478 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_223.png
+  artifactKey: Guid(5c1bbaf8f77dbaa4bbd2f12852d0b4a8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_223.png using Guid(5c1bbaf8f77dbaa4bbd2f12852d0b4a8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2a70f8b363e7cdc96f4d0104c081beea') in 0.0064676 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_131.png
+  artifactKey: Guid(7ba70c7fe2668ba4abb2024710cadf07) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_131.png using Guid(7ba70c7fe2668ba4abb2024710cadf07) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '073a23a11a4d1c0e33830d2dea2765b4') in 0.0078341 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_321.png
+  artifactKey: Guid(e9beec94865bb1946a85a6f662c37491) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_321.png using Guid(e9beec94865bb1946a85a6f662c37491) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '77c941f3a27587a7a34c60f32330955a') in 0.0073406 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_009.png
+  artifactKey: Guid(af72b21847e4cc745a9550417bf2dac1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_009.png using Guid(af72b21847e4cc745a9550417bf2dac1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a2bc084a9f607aaa39c6504da0165ed7') in 0.0074752 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_506.png
+  artifactKey: Guid(0bff7be837e8d024e8b90a84cc395a46) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_506.png using Guid(0bff7be837e8d024e8b90a84cc395a46) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '4592a488a19c8c7f3672899e80694678') in 0.0073595 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_269.png
+  artifactKey: Guid(1349ea49edb6a9d4abcfe1673bf360b8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_269.png using Guid(1349ea49edb6a9d4abcfe1673bf360b8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'dd5a2a29c8e115c73234947fc3e76c7c') in 0.0082903 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_252.png
+  artifactKey: Guid(418d204d00f988245acbe2ac615c0e14) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_252.png using Guid(418d204d00f988245acbe2ac615c0e14) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b0595e4046e3e0f719d55e00c913f899') in 0.0063065 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_478.png
+  artifactKey: Guid(07a271c2956bdca46a772b89662daf1e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_478.png using Guid(07a271c2956bdca46a772b89662daf1e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd7ffb0eb93c40441945f27ea033e2aed') in 0.0070884 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_413.png
+  artifactKey: Guid(7e029ccd4fa2a9d4c849194f47c7028f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_413.png using Guid(7e029ccd4fa2a9d4c849194f47c7028f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd5b71753def03bc71c269158eff786d4') in 0.0068096 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_053.png
+  artifactKey: Guid(9b4b50c788455b7449573053a74ebf12) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_053.png using Guid(9b4b50c788455b7449573053a74ebf12) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'beb8a6d7cca9aac5225054bcb6e39b59') in 0.0067074 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/UI_Skill_Icon_Reflect.png
+  artifactKey: Guid(f6b8b85cbdc82ce439a41ae3d56d57ee) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/UI_Skill_Icon_Reflect.png using Guid(f6b8b85cbdc82ce439a41ae3d56d57ee) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '8534de5ede3c9d6b3597f7da09612294') in 0.0068617 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_307.png
+  artifactKey: Guid(54d2a43caa5691c40b3c7ae3ad3d605c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_307.png using Guid(54d2a43caa5691c40b3c7ae3ad3d605c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7de8bd578bbc7c26b865c70c0ce19c0f') in 0.0081998 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_272.png
+  artifactKey: Guid(806c72fc2e807224f92bc797c73c63ca) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_272.png using Guid(806c72fc2e807224f92bc797c73c63ca) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'ff5bc82811c9d88f5bac6fcf94afea92') in 0.006547 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_317.png
+  artifactKey: Guid(9b4941e66a2567f4caa8d0a295a0151f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_317.png using Guid(9b4941e66a2567f4caa8d0a295a0151f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '50a9403f14c3efbb9cf9da3435e6a2c6') in 0.0063954 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_351.png
+  artifactKey: Guid(ed9ff98f4919105408f2ed8efb38010b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_351.png using Guid(ed9ff98f4919105408f2ed8efb38010b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7bc912e683863b96466f3610781b6030') in 0.0076321 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Art/Battle_Elements/Isle of Assets/Mobile Force Field/Textures/Cell.png
+  artifactKey: Guid(c30605f6d555a27428b4341fa357a828) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Isle of Assets/Mobile Force Field/Textures/Cell.png using Guid(c30605f6d555a27428b4341fa357a828) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd0401ad3eaaffa16078672fcf09b99fd') in 0.0070321 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Art/Battle_Elements/Isle of Assets/Mobile Force Field/Materials/Ground.mat
+  artifactKey: Guid(2242ac91ef2456245aac3ac10777a380) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Isle of Assets/Mobile Force Field/Materials/Ground.mat using Guid(2242ac91ef2456245aac3ac10777a380) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '61bedd194faf6f228c1e3a6ad2b53907') in 0.0093653 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Art/Battle_Elements/Isle of Assets/Mobile Force Field/Prefabs/ForceField.prefab
+  artifactKey: Guid(1e540d660e5117e4b8c65668bb0b9a8d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Isle of Assets/Mobile Force Field/Prefabs/ForceField.prefab using Guid(1e540d660e5117e4b8c65668bb0b9a8d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '851fc855a507a830bf5043e573624d97') in 0.0245407 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_240.png
+  artifactKey: Guid(4abf3c14149faf443ba21990a107d80a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_240.png using Guid(4abf3c14149faf443ba21990a107d80a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '97c340400f121b104271f0e41c04bc83') in 0.0064674 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_266.png
+  artifactKey: Guid(0ee5cc1637825db4eaf4045d043ed1c1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_266.png using Guid(0ee5cc1637825db4eaf4045d043ed1c1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '8857e3af663dbfaa93bcfa9267e8fc1c') in 0.006585 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_188.png
+  artifactKey: Guid(46a80354147dba446b27fbe725925dca) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_188.png using Guid(46a80354147dba446b27fbe725925dca) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f54a7c710d288b9007f8cce8e53a940c') in 0.0069921 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Art/Battle_Elements/Isle of Assets/Mobile Force Field/Scenes/SampleScene/ReflectionProbe-0.exr
+  artifactKey: Guid(6777e4062f5b63947a6a5dd5b629127e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Isle of Assets/Mobile Force Field/Scenes/SampleScene/ReflectionProbe-0.exr using Guid(6777e4062f5b63947a6a5dd5b629127e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9f44f01a13530c8e52c12f6564e1ad6e') in 0.0078117 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Art/Battle_Elements/Isle of Assets/Mobile Force Field/Shaders/Force Field.shader
+  artifactKey: Guid(c3848e75f32e9db479918b6cce2d209f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Isle of Assets/Mobile Force Field/Shaders/Force Field.shader using Guid(c3848e75f32e9db479918b6cce2d209f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'dd421a77ef007e4e636f690b262a0e62') in 0.0044822 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Art/Battle_Elements/Isle of Assets/Mobile Force Field/Scenes/SampleScene/Lightmap-2_comp_light.exr
+  artifactKey: Guid(2981d18453f0f34488ce51bb43ea7449) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Isle of Assets/Mobile Force Field/Scenes/SampleScene/Lightmap-2_comp_light.exr using Guid(2981d18453f0f34488ce51bb43ea7449) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'ce57f049b10427c32ec5cfadea109d5e') in 0.0063318 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Art/Battle_Elements/Isle of Assets/Mobile Force Field/Scenes/SampleScene
+  artifactKey: Guid(4c37b2e2dd37f3e4193c542ac62f3112) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Isle of Assets/Mobile Force Field/Scenes/SampleScene using Guid(4c37b2e2dd37f3e4193c542ac62f3112) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'cf2a43586ff7bd14ba26b5d07d3a77ed') in 0.0026523 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.063524 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/FlexUnit/WaterSpell/Textures/Water1.png
+  artifactKey: Guid(60bb6eb2c64414ed28b22a351436c1b5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/FlexUnit/WaterSpell/Textures/Water1.png using Guid(60bb6eb2c64414ed28b22a351436c1b5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'cfa5ba35f08d965bf56fe85d2640606b') in 0.0124608 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/FlexUnit/WaterSpell/Materials/Water/WaterSpell_Сircle2.mat
+  artifactKey: Guid(e429e0d2e68394f4eb3ba0af073e05e7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/FlexUnit/WaterSpell/Materials/Water/WaterSpell_Сircle2.mat using Guid(e429e0d2e68394f4eb3ba0af073e05e7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b1d4d1d050407a52157981e2748f6a88') in 0.010196 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/FlexUnit/WaterSpell/Prefabs/WaterSpell2.prefab
+  artifactKey: Guid(c1335396aea434a6ab7bf94c401421a0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/FlexUnit/WaterSpell/Prefabs/WaterSpell2.prefab using Guid(c1335396aea434a6ab7bf94c401421a0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '07300a54274d2f43c1bbd2bccdcb7f34') in 0.0177163 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 59
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/FlexUnit/WaterSpell/Materials/Water/InnerWater1.mat
+  artifactKey: Guid(d03318b9e04a3446a97cc039cd8538f4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/FlexUnit/WaterSpell/Materials/Water/InnerWater1.mat using Guid(d03318b9e04a3446a97cc039cd8538f4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a46ded2bd5da9ce7a515cd672e1ee760') in 0.0085089 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_306.png
+  artifactKey: Guid(23c85b1b900c2664c9ae4e7a78da7963) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_306.png using Guid(23c85b1b900c2664c9ae4e7a78da7963) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b0e20e419277d24579f3da193e7c633c') in 0.0089454 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/FlexUnit/WaterSpell/Materials/Water/WaterSpell_Сircle1.mat
+  artifactKey: Guid(0a85b8e1630e849b488fa459dc75fcbb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/FlexUnit/WaterSpell/Materials/Water/WaterSpell_Сircle1.mat using Guid(0a85b8e1630e849b488fa459dc75fcbb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1190bed08037403284e9dacb62990e43') in 0.0081359 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_360.png
+  artifactKey: Guid(ce0e9c614c20782498047fb16eb408c6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_360.png using Guid(ce0e9c614c20782498047fb16eb408c6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e016017c128b57b0c857676701c15746') in 0.0064731 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_023.png
+  artifactKey: Guid(9f7d01a9b7d70a841a718b796499b50c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_023.png using Guid(9f7d01a9b7d70a841a718b796499b50c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7f290bf41f0d36648d1d7dca7322031d') in 0.0068312 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_464.png
+  artifactKey: Guid(d8e8912eb0e430d499d921be1c3cf4be) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_464.png using Guid(d8e8912eb0e430d499d921be1c3cf4be) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'df6f8442398932af3ba29f0665f7f519') in 0.0072246 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_325.png
+  artifactKey: Guid(0aeec7ac656bda04f8dd3d7535309545) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_325.png using Guid(0aeec7ac656bda04f8dd3d7535309545) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '45e61251217226def6137e6f4b27c5a9') in 0.0072943 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_332.png
+  artifactKey: Guid(b04a3e2f6735af7449ea7a219f00d7df) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_332.png using Guid(b04a3e2f6735af7449ea7a219f00d7df) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f25f5e66605a13a50cdde57d158cd1d9') in 0.0068743 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_326.png
+  artifactKey: Guid(693aedcf1382feb4baed8baa61ff238b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_326.png using Guid(693aedcf1382feb4baed8baa61ff238b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2b869719123dddb656a5b26bb11f9ef8') in 0.0069962 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/FlexUnit/WaterSpell/Shaders/Water.shadergraph
+  artifactKey: Guid(3a515eacead67418780c23f1ba9bf329) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/FlexUnit/WaterSpell/Shaders/Water.shadergraph using Guid(3a515eacead67418780c23f1ba9bf329) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd82bbd7bb9553103ec5a80b03605e5ab') in 0.070316 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.466297 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_139.png
+  artifactKey: Guid(11cab13548c67f14e88bd4ab018c6ab6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_139.png using Guid(11cab13548c67f14e88bd4ab018c6ab6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '8290ea1a21f0064c6d156d17730ec1b4') in 0.00783 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_270.png
+  artifactKey: Guid(a320b7a365e233b4aba10ed060f50243) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_270.png using Guid(a320b7a365e233b4aba10ed060f50243) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '03e3821aca6b6748f74c1e9d0a781a27') in 0.0085813 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_308.png
+  artifactKey: Guid(ecc13c9d26a515344bd96efb69a9121e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_308.png using Guid(ecc13c9d26a515344bd96efb69a9121e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c4b38b1adf74a945578f85ae69ad9857') in 0.0100129 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_141.png
+  artifactKey: Guid(1a1ffa6606544084bb364d8769a7d50b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/500FreeSkillIcons/Icons/skill_141.png using Guid(1a1ffa6606544084bb364d8769a7d50b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f2200fd953342ef0cf4c4f13c7b48ac9') in 0.0071595 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.235159 seconds.
+  path: Assets/Art/Battle_Elements/Defesa
+  artifactKey: Guid(38b8be679e02e2d44a2f4a757923de9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Battle_Elements/Defesa using Guid(38b8be679e02e2d44a2f4a757923de9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4e478e902f155d6d2eb01f621e9e5c92') in 0.0007453 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.572460 seconds.
+  path: Assets/Art/Battle_Elements/Defesa/Mobile Force Field/Prefabs
+  artifactKey: Guid(c7153c65335abac44868a6d4a181efe1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Defesa/Mobile Force Field/Prefabs using Guid(c7153c65335abac44868a6d4a181efe1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '919ddb34601ca70bb5be8029f4685a3f') in 0.0172717 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Art/Battle_Elements/Defesa/Mobile Force Field/Scenes/SampleScene.unity
+  artifactKey: Guid(67a8bb7792d01f8438ca5be5250bc92b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Defesa/Mobile Force Field/Scenes/SampleScene.unity using Guid(67a8bb7792d01f8438ca5be5250bc92b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '4ffffb2e871c0aeb5c2c9fab302aa47a') in 0.0039827 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Art/Battle_Elements/Defesa/Mobile Force Field/Scenes/SampleScene/Lightmap-1_comp_light.exr
+  artifactKey: Guid(d747a7fe756145c4c9be7dc139c631e5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Defesa/Mobile Force Field/Scenes/SampleScene/Lightmap-1_comp_light.exr using Guid(d747a7fe756145c4c9be7dc139c631e5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2ad4e6b6ae5c9c5720c3fb6b97776563') in 0.0064338 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/Defesa/Mobile Force Field/Prefabs/ForceField.prefab
+  artifactKey: Guid(1e540d660e5117e4b8c65668bb0b9a8d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Defesa/Mobile Force Field/Prefabs/ForceField.prefab using Guid(1e540d660e5117e4b8c65668bb0b9a8d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '57e82a3a395c4b13d210c18e28207569') in 0.005512 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/Defesa/Mobile Force Field/Materials/ForceField_1.mat
+  artifactKey: Guid(0960f507df40faa4ea033d24d5327f61) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Defesa/Mobile Force Field/Materials/ForceField_1.mat using Guid(0960f507df40faa4ea033d24d5327f61) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1b1b381858a76cd2dce7389640f3f5f0') in 0.0041282 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Art/Battle_Elements/Defesa/Mobile Force Field/Scenes/SampleScene/Lightmap-0_comp_light.exr
+  artifactKey: Guid(a6e5584703d22d942a53795db8dc0a08) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Defesa/Mobile Force Field/Scenes/SampleScene/Lightmap-0_comp_light.exr using Guid(a6e5584703d22d942a53795db8dc0a08) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '288813e1c2d6cce2318f8115f36e02cb') in 0.0065592 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Art/Battle_Elements/Defesa/Mobile Force Field/Scenes/SampleScene/Lightmap-1_comp_dir.png
+  artifactKey: Guid(38f170821dafd0744b87ff4ccfbe90ab) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Defesa/Mobile Force Field/Scenes/SampleScene/Lightmap-1_comp_dir.png using Guid(38f170821dafd0744b87ff4ccfbe90ab) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e0f8cc26de465e52ddadba2763c20cf7') in 0.005831 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Art/Battle_Elements/Defesa/Mobile Force Field/Models
+  artifactKey: Guid(896d5accff1e8d54398d6d5716596738) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Defesa/Mobile Force Field/Models using Guid(896d5accff1e8d54398d6d5716596738) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '195f206105c3e327f847a58b09d3cdee') in 0.0033239 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Art/Battle_Elements/Defesa/Mobile Force Field/Textures/Grid.png
+  artifactKey: Guid(33c9fdec47fa7814d8ca19fce550008c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Defesa/Mobile Force Field/Textures/Grid.png using Guid(33c9fdec47fa7814d8ca19fce550008c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b65b387034196e38e9c4921f123a8539') in 0.0068482 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

@@ -17,9 +17,13 @@ public class Unit : MonoBehaviour
     public FacingDirection facing = FacingDirection.South;
     public TileLogic currentTile;
 
-    [Header("Combate")]
-    [Tooltip("Alcance de ataque em tiles (padrão: 2)")]
+    [Header("Combate & Habilidades")]
+    [Tooltip("Alcance de ataque padrão em tiles")]
     public int attackRange = 2;
+    [Tooltip("Lista de Habilidades e Golpes de Combate")]
+    public List<SkillData> skills = new List<SkillData>();
+    [Tooltip("Habilidade Passiva da Unidade")]
+    public PassiveSkillData passiveSkill = new PassiveSkillData("Pernas Poderosas", "Aumenta VELOC em um nível.");
 
     public Vector3Int gridPosition => currentTile != null ? currentTile.pos : Vector3Int.zero;
 
@@ -41,6 +45,7 @@ public class Unit : MonoBehaviour
     public bool hasMoved = false;
     public bool hasActed = false;
     public bool isTurnCompleted = false;
+    public bool isDefending = false;
 
     [HideInInspector]
     public Stats stats;
@@ -163,12 +168,30 @@ public class Unit : MonoBehaviour
         }
     }
 
+    public void ShowDefensePreview(FacingDirection dir)
+    {
+        SetFacing(dir);
+    }
+
+    public void SetDefenseStance(FacingDirection dir)
+    {
+        isDefending = true;
+        SetFacing(dir);
+        Debug.Log($"[Defesa] {unitName} assumiu posição de Defesa voltada para {DirectionUtils.GetDirectionName(dir)}.");
+    }
+
+    public void ClearDefenseStance()
+    {
+        isDefending = false;
+    }
+
     // Inicia o turno desta unidade
     public virtual void StartTurn()
     {
         hasMoved = false;
         hasActed = false;
         isTurnCompleted = false;
+        ClearDefenseStance();
     }
 
     // Encerra o turno desta unidade
@@ -193,6 +216,23 @@ public class Unit : MonoBehaviour
     {
         if (stats != null)
         {
+            // Se a unidade estiver em posição de Defesa
+            if (isDefending)
+            {
+                if (orientation == AttackOrientation.Frontal)
+                {
+                    int reducedDamage = Mathf.Max(1, Mathf.RoundToInt(damage * 0.70f)); // 30% de absorção de dano frontal
+                    Debug.Log($"[Defesa] {unitName} defendeu o ataque frontal! Dano reduzido: {damage} -> {reducedDamage}");
+                    damage = reducedDamage;
+                }
+                else if (orientation == AttackOrientation.Flank)
+                {
+                    int reducedDamage = Mathf.Max(1, Mathf.RoundToInt(damage * 0.85f)); // 15% de absorção lateral
+                    Debug.Log($"[Defesa] {unitName} amorteceu o ataque lateral! Dano reduzido: {damage} -> {reducedDamage}");
+                    damage = reducedDamage;
+                }
+            }
+
             int currentHp = stats.GetStat(StatEnum.HP);
             int newHp = Mathf.Max(0, currentHp - damage);
             stats.SetStat(StatEnum.HP, newHp);
@@ -212,9 +252,15 @@ public class Unit : MonoBehaviour
         }
     }
 
+    [Header("Configurações de Animação")]
+    [Tooltip("Habilita ou desabilita a animação de avanço (lunge) no ataque")]
+    public bool enableAttackAnimation = false;
+    [Tooltip("Habilita ou desabilita a animação de tremor/piscar ao receber dano")]
+    public bool enableDamageFeedbackAnimation = false;
+
     public IEnumerator DamageFeedbackRoutine()
     {
-        if (spriteRenderer == null) yield break;
+        if (!enableDamageFeedbackAnimation || spriteRenderer == null) yield break;
 
         Color originalColor = spriteRenderer.color;
         Vector3 originalPos = transform.position;
@@ -237,6 +283,12 @@ public class Unit : MonoBehaviour
 
     public IEnumerator PlayAttackAnimation(Vector3 targetWorldPos)
     {
+        if (!enableAttackAnimation)
+        {
+            yield return new WaitForSeconds(0.05f);
+            yield break;
+        }
+
         Vector3 originPos = transform.position;
         Vector3 lungePos = Vector3.Lerp(originPos, targetWorldPos, 0.35f);
 
@@ -310,6 +362,54 @@ public class Unit : MonoBehaviour
         if (spriteWest != null) return spriteWest;
         if (spriteRenderer != null && spriteRenderer.sprite != null) return spriteRenderer.sprite;
         return null;
+    }
+
+    public List<SkillData> GetSkills()
+    {
+        if (skills == null) skills = new List<SkillData>();
+
+        if (skills.Count == 0)
+        {
+            // Habilidade 1: Ataque Básico (SP 0, Efeito 85) - Garra / Corte
+            string basicIcon = "UI_Skill_Icon_Claw";
+            if (category == FunctionalCategory.Game || category == FunctionalCategory.Tool)
+            {
+                basicIcon = "UI_Skill_Icon_Slash";
+            }
+            skills.Add(SkillData.CreateBasicAttack("Atacar", 85, attackRange > 0 ? attackRange : 2, category, basicIcon));
+
+            // Habilidade 2: Habilidade Especial Elemental / Assinatura (SP 30, Efeito 120)
+            string specName = "Rugido Destrutivo";
+            string specDesc = "Causa dano de Vento aos alvos.";
+            string specIcon = "🌪";
+            string specAsset = "UI_Skill_Icon_Beam";
+
+            if (unitName.Contains("Agumon") || unitName.Contains("Greymon"))
+            {
+                specName = "Rugido Destrutivo";
+                specDesc = "Causa dano de Vento aos alvos.";
+                specIcon = "🔥";
+                specAsset = "UI_Skill_Icon_MeteorShower";
+            }
+            else if (unitName.Contains("Palmon"))
+            {
+                specName = "Espinho Venenoso";
+                specDesc = "Dispara espinhos perfurantes de longo alcance.";
+                specIcon = "🌿";
+                specAsset = "UI_Skill_Icon_Arrow_Barrage";
+            }
+            else if (category == FunctionalCategory.System)
+            {
+                specName = "Pulso Quântico";
+                specDesc = "Descarga de dados concentrada que atinge o alvo.";
+                specIcon = "⚡";
+                specAsset = "UI_Skill_Icon_PsycicAttack";
+            }
+
+            skills.Add(SkillData.CreateSpecialSkill(specName, 120, 30, category, specDesc, 3, TacticalBattle.Core.AttackShapeType.Single, 0, specIcon, specAsset));
+        }
+
+        return skills;
     }
 }
 

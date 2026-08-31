@@ -99,6 +99,58 @@ public class BattleHUD : MonoBehaviour
     private RectTransform fcDefenderSpFill;
     private Text fcDefenderResistances;
 
+    // --- PAINEL DE SELEÇÃO DE ATAQUE / HABILIDADES (Estilo Digimon Survive) ---
+    private GameObject skillSelectionRoot;
+    
+    // Aba Atacar
+    private GameObject skillActionTab;
+    private Text skillActionTabText;
+    
+    // Janela Lista Habilidades
+    private GameObject skillListPanel;
+    private List<SkillListItemUI> skillListItems = new List<SkillListItemUI>();
+    
+    // Janela Habilidade Passiva
+    private GameObject passivePanel;
+    private Text passiveTitleText;
+    private Text passiveNameText;
+    private Text passiveDescText;
+    
+    // Janela Informações sobre Habilidade
+    private GameObject skillInfoPanel;
+    private Text skillInfoNameText;
+    private Text skillInfoPowerText;
+    private Text skillInfoSpText;
+    private Text skillInfoCategoryIcon;
+    private Image skillInfoIconImage;
+    private Text skillInfoDescText;
+    
+    // Grids Táticos ALCANCE e ÁREA
+    private MiniTacticalGridUI reachGridUI;
+    private MiniTacticalGridUI aoeGridUI;
+
+    // ==========================================
+    // TELA DE SELEÇÃO DE ITENS (Estilo Digimon Survive)
+    // ==========================================
+    private GameObject itemSelectionRoot;
+    private GameObject itemActionTab;
+    private Text itemActionTabText;
+    
+    // Janela Lista de Itens
+    private GameObject itemListPanel;
+    private List<ItemListItemUI> itemListItems = new List<ItemListItemUI>();
+    
+    // Janela Detalhes do item
+    private GameObject itemDetailPanel;
+    private Image itemDetailIconImage;
+    private Text itemDetailNameText;
+    private Text itemDetailEffectIcon;
+    private Text itemDetailDescText;
+    
+    // Grids Táticos ALCANCE e ÁREA do Item
+    private MiniTacticalGridUI itemReachGridUI;
+    private MiniTacticalGridUI itemAoeGridUI;
+
     private Font hudFont;
     private Unit cachedCurrentUnit;
 
@@ -261,6 +313,12 @@ public class BattleHUD : MonoBehaviour
 
             // 5. BANNER DE PREVISÃO DE COMBATE (Estilo Digimon Survive - Top Center)
             BuildCombatForecastBanner();
+
+            // 6. PAINEL DE SELEÇÃO DE ATAQUE / HABILIDADES (Estilo Digimon Survive)
+            BuildSkillSelectionPanel();
+
+            // 7. PAINEL DE SELEÇÃO DE ITENS (Estilo Digimon Survive)
+            BuildItemSelectionPanel();
         }
         catch (Exception ex)
         {
@@ -966,6 +1024,422 @@ public class BattleHUD : MonoBehaviour
         }
     }
 
+    void BuildSkillSelectionPanel()
+    {
+        // Container principal da tela de seleção de habilidades (Centralizado na tela)
+        skillSelectionRoot = CreateUIPanel(canvas.transform, "SkillSelectionRoot",
+            new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f),
+            new Vector2(0, 10), new Vector2(920, 275), new Color(0, 0, 0, 0));
+
+        // 1. ABA ATACAR (Destaque Amarelo na Esquerda)
+        skillActionTab = CreateUIPanel(skillSelectionRoot.transform, "ActionTab_Atacar",
+            new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
+            new Vector2(0, 0), new Vector2(145, 42), new Color(0.98f, 0.84f, 0.0f, 0.98f));
+
+        CreateUIPanel(skillActionTab.transform, "TabBorder",
+            new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0.5f, 0.5f),
+            Vector2.zero, Vector2.zero, new Color(1f, 0.95f, 0.45f, 0.95f));
+
+        skillActionTabText = CreateUIText(skillActionTab.transform, "TabText", "Atacar", 16, FontStyle.Bold,
+            new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0.5f, 0.5f),
+            Vector2.zero, Vector2.zero, new Color(0.06f, 0.06f, 0.06f, 1f), TextAnchor.MiddleCenter);
+
+        // 2. JANELA "LISTA HABILIDADES" (Coluna Esquerda, ao lado da aba Atacar)
+        skillListPanel = CreateUIPanel(skillSelectionRoot.transform, "SkillListPanel",
+            new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
+            new Vector2(155, 0), new Vector2(305, 160), new Color(0.08f, 0.11f, 0.15f, 0.90f));
+
+        CreateUIPanel(skillListPanel.transform, "ListBorder",
+            new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0.5f, 0.5f),
+            Vector2.zero, Vector2.zero, new Color(0.35f, 0.42f, 0.50f, 0.45f));
+
+        GameObject listHeader = CreateUIPanel(skillListPanel.transform, "ListHeader",
+            new Vector2(0f, 1f), new Vector2(1f, 1f), new Vector2(0f, 1f),
+            Vector2.zero, new Vector2(0, 24), new Color(0.05f, 0.07f, 0.10f, 0.95f));
+
+        CreateUIText(listHeader.transform, "Title", "Lista Habilidades", 11, FontStyle.Bold,
+            new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0f, 0.5f),
+            new Vector2(10, 0), Vector2.zero, new Color(0.85f, 0.90f, 0.95f), TextAnchor.MiddleLeft);
+
+        CreateUIDivider(skillListPanel.transform, new Vector2(0, -24), new Vector2(305, 1), new Color(0.3f, 0.38f, 0.48f, 0.40f));
+
+        // Slots de Habilidades na Lista
+        skillListItems.Clear();
+        for (int i = 0; i < 4; i++)
+        {
+            float yPos = -29 - (i * 31f);
+            GameObject itemObj = CreateUIPanel(skillListPanel.transform, $"SkillItem_{i}",
+                new Vector2(0f, 1f), new Vector2(1f, 1f), new Vector2(0f, 1f),
+                new Vector2(6, yPos), new Vector2(-12, 28), new Color(0.04f, 0.07f, 0.11f, 0.70f));
+
+            GameObject borderObj = CreateUIPanel(itemObj.transform, "Border",
+                new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0.5f, 0.5f),
+                Vector2.zero, Vector2.zero, new Color(0.25f, 0.32f, 0.40f, 0.30f));
+
+            // Ícone do Golpe (Battle_Elements)
+            GameObject iconObj = CreateUIPanel(itemObj.transform, "Icon",
+                new Vector2(0f, 0.5f), new Vector2(0f, 0.5f), new Vector2(0f, 0.5f),
+                new Vector2(6, 0), new Vector2(22, 22), Color.white);
+            Image iconImg = iconObj.GetComponent<Image>();
+            iconImg.preserveAspect = true;
+
+            Text nameTxt = CreateUIText(itemObj.transform, "Name", "// Atacar", 12, FontStyle.Bold,
+                new Vector2(0f, 0f), new Vector2(0.72f, 1f), new Vector2(0f, 0.5f),
+                new Vector2(32, 0), new Vector2(-32, 0), Color.white, TextAnchor.MiddleLeft);
+
+            Text spTxt = CreateUIText(itemObj.transform, "SP", "SP    0", 11, FontStyle.Bold,
+                new Vector2(0.72f, 0f), new Vector2(1f, 1f), new Vector2(1f, 0.5f),
+                new Vector2(-10, 0), Vector2.zero, new Color(0.95f, 0.75f, 0.2f), TextAnchor.MiddleRight);
+
+            skillListItems.Add(new SkillListItemUI
+            {
+                container = itemObj,
+                bgImage = itemObj.GetComponent<Image>(),
+                borderImage = borderObj.GetComponent<Image>(),
+                iconImage = iconImg,
+                nameText = nameTxt,
+                spText = spTxt
+            });
+        }
+
+        // 3. JANELA "HABIL. PASSIVA" (Coluna Esquerda, abaixo da Lista de Habilidades)
+        passivePanel = CreateUIPanel(skillSelectionRoot.transform, "PassivePanel",
+            new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
+            new Vector2(155, -170), new Vector2(305, 95), new Color(0.08f, 0.11f, 0.15f, 0.90f));
+
+        CreateUIPanel(passivePanel.transform, "PassiveBorder",
+            new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0.5f, 0.5f),
+            Vector2.zero, Vector2.zero, new Color(0.35f, 0.42f, 0.50f, 0.45f));
+
+        GameObject passiveHeader = CreateUIPanel(passivePanel.transform, "PassiveHeader",
+            new Vector2(0f, 1f), new Vector2(1f, 1f), new Vector2(0f, 1f),
+            Vector2.zero, new Vector2(0, 24), new Color(0.05f, 0.07f, 0.10f, 0.95f));
+
+        passiveTitleText = CreateUIText(passiveHeader.transform, "Title", "Habil. Passiva", 11, FontStyle.Bold,
+            new Vector2(0f, 0f), new Vector2(0.48f, 1f), new Vector2(0f, 0.5f),
+            new Vector2(10, 0), Vector2.zero, new Color(0.85f, 0.90f, 0.95f), TextAnchor.MiddleLeft);
+
+        passiveNameText = CreateUIText(passiveHeader.transform, "PassiveName", "Pernas Poderosas", 11, FontStyle.Bold,
+            new Vector2(0.48f, 0f), new Vector2(1f, 1f), new Vector2(1f, 0.5f),
+            new Vector2(-10, 0), Vector2.zero, Color.white, TextAnchor.MiddleRight);
+
+        CreateUIDivider(passivePanel.transform, new Vector2(0, -24), new Vector2(305, 1), new Color(0.3f, 0.38f, 0.48f, 0.40f));
+
+        passiveDescText = CreateUIText(passivePanel.transform, "PassiveDesc", "Aumenta VELOC em um nível.", 11, FontStyle.Normal,
+            new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0f, 0.5f),
+            new Vector2(10, -12), new Vector2(-20, -32), new Color(0.80f, 0.86f, 0.92f), TextAnchor.UpperLeft);
+
+        // 4. JANELA "INFORMAÇÕES SOBRE HABILIDADE" (Coluna Direita, Topo)
+        skillInfoPanel = CreateUIPanel(skillSelectionRoot.transform, "SkillInfoPanel",
+            new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
+            new Vector2(475, 0), new Vector2(440, 125), new Color(0.08f, 0.11f, 0.15f, 0.90f));
+
+        CreateUIPanel(skillInfoPanel.transform, "InfoBorder",
+            new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0.5f, 0.5f),
+            Vector2.zero, Vector2.zero, new Color(0.35f, 0.42f, 0.50f, 0.45f));
+
+        GameObject infoHeader = CreateUIPanel(skillInfoPanel.transform, "InfoHeader",
+            new Vector2(0f, 1f), new Vector2(1f, 1f), new Vector2(0f, 1f),
+            Vector2.zero, new Vector2(0, 24), new Color(0.05f, 0.07f, 0.10f, 0.95f));
+
+        CreateUIText(infoHeader.transform, "Title", "Informações sobre Habilidade", 11, FontStyle.Bold,
+            new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0f, 0.5f),
+            new Vector2(10, 0), Vector2.zero, new Color(0.85f, 0.90f, 0.95f), TextAnchor.MiddleLeft);
+
+        CreateUIDivider(skillInfoPanel.transform, new Vector2(0, -24), new Vector2(440, 1), new Color(0.3f, 0.38f, 0.48f, 0.40f));
+
+        // Nome da Habilidade e Traço decorativo
+        CreateUIDivider(skillInfoPanel.transform, new Vector2(14, -40), new Vector2(25, 2), new Color(0.4f, 0.50f, 0.65f));
+
+        skillInfoNameText = CreateUIText(skillInfoPanel.transform, "SkillName", "Atacar", 13, FontStyle.Bold,
+            new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
+            new Vector2(50, -31), new Vector2(200, 20), Color.white, TextAnchor.MiddleLeft);
+
+        // Tabela de EFEITO & SP & Ícone
+        GameObject statsTable = CreateUIPanel(skillInfoPanel.transform, "StatsTable",
+            new Vector2(0f, 1f), new Vector2(1f, 1f), new Vector2(0f, 1f),
+            new Vector2(50, -52), new Vector2(-60, 42), new Color(0.04f, 0.07f, 0.11f, 0.75f));
+
+        CreateUIPanel(statsTable.transform, "TableBorder",
+            new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0.5f, 0.5f),
+            Vector2.zero, Vector2.zero, new Color(0.25f, 0.32f, 0.40f, 0.35f));
+
+        // Linha 1 da Tabela: EFEITO
+        CreateUIText(statsTable.transform, "EfeitoLabel", "EFEITO", 10, FontStyle.Bold,
+            new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
+            new Vector2(10, -3), new Vector2(65, 16), new Color(0.75f, 0.82f, 0.90f), TextAnchor.MiddleLeft);
+
+        skillInfoPowerText = CreateUIText(statsTable.transform, "EfeitoVal", "85", 12, FontStyle.Bold,
+            new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
+            new Vector2(85, -3), new Vector2(50, 16), Color.white, TextAnchor.MiddleLeft);
+
+        // Linha 2 da Tabela: SP
+        CreateUIText(statsTable.transform, "SpLabel", "SP", 10, FontStyle.Bold,
+            new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
+            new Vector2(10, -22), new Vector2(65, 16), new Color(0.75f, 0.82f, 0.90f), TextAnchor.MiddleLeft);
+
+        skillInfoSpText = CreateUIText(statsTable.transform, "SpVal", "0", 12, FontStyle.Bold,
+            new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
+            new Vector2(85, -22), new Vector2(50, 16), Color.white, TextAnchor.MiddleLeft);
+
+        // Ícone Grande do Golpe (Battle_Elements) no lado direito da tabela
+        GameObject bigIconBox = CreateUIPanel(statsTable.transform, "BigIconBox",
+            new Vector2(1f, 0.5f), new Vector2(1f, 0.5f), new Vector2(1f, 0.5f),
+            new Vector2(-8, 0), new Vector2(34, 34), new Color(0.10f, 0.14f, 0.20f, 0.95f));
+
+        CreateUIPanel(bigIconBox.transform, "Border",
+            new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0.5f, 0.5f),
+            Vector2.zero, Vector2.zero, new Color(0.35f, 0.45f, 0.60f, 0.45f));
+
+        GameObject bigIconImgObj = CreateUIPanel(bigIconBox.transform, "BigIconImage",
+            new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0.5f, 0.5f),
+            Vector2.zero, new Vector2(-4, -4), Color.white);
+        skillInfoIconImage = bigIconImgObj.GetComponent<Image>();
+        skillInfoIconImage.preserveAspect = true;
+
+        skillInfoCategoryIcon = CreateUIText(statsTable.transform, "CategoryIcon", "///", 18, FontStyle.Bold,
+            new Vector2(1f, 0.5f), new Vector2(1f, 0.5f), new Vector2(1f, 0.5f),
+            new Vector2(-15, 0), new Vector2(40, 30), new Color(0.85f, 0.95f, 0.2f), TextAnchor.MiddleCenter);
+        skillInfoCategoryIcon.gameObject.SetActive(false);
+
+        // Descrição da Habilidade
+        skillInfoDescText = CreateUIText(skillInfoPanel.transform, "SkillDesc", "Causa dano de Vento aos alvos.", 11, FontStyle.Normal,
+            new Vector2(0f, 0f), new Vector2(1f, 0f), new Vector2(0f, 0f),
+            new Vector2(12, 6), new Vector2(-24, 22), new Color(0.80f, 0.86f, 0.92f), TextAnchor.MiddleLeft);
+
+        // 5. GRIDS TÁTICOS (ALCANCE e ÁREA - Coluna Direita, Abaixo das Informações)
+        reachGridUI = BuildMiniGrid(skillSelectionRoot.transform, "ReachGridBox",
+            new Vector2(475, -135), new Vector2(215, 130), "ALCANCE", new Color(0.95f, 0.42f, 0.05f, 0.95f));
+
+        aoeGridUI = BuildMiniGrid(skillSelectionRoot.transform, "AoeGridBox",
+            new Vector2(700, -135), new Vector2(215, 130), "ÁREA", new Color(0.80f, 0.05f, 0.85f, 0.95f));
+
+        skillSelectionRoot.SetActive(false);
+    }
+
+    MiniTacticalGridUI BuildMiniGrid(Transform parent, string name, Vector2 pos, Vector2 size, string headerTitle, Color headerColor)
+    {
+        GameObject boxObj = CreateUIPanel(parent, name,
+            new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
+            pos, size, new Color(0.08f, 0.11f, 0.15f, 0.90f));
+
+        CreateUIPanel(boxObj.transform, "Border",
+            new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0.5f, 0.5f),
+            Vector2.zero, Vector2.zero, new Color(0.35f, 0.42f, 0.50f, 0.45f));
+
+        GameObject headerObj = CreateUIPanel(boxObj.transform, "Header",
+            new Vector2(0f, 1f), new Vector2(1f, 1f), new Vector2(0f, 1f),
+            Vector2.zero, new Vector2(0, 20), headerColor);
+
+        CreateUIText(headerObj.transform, "Title", headerTitle, 10, FontStyle.Bold,
+            new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0f, 0.5f),
+            new Vector2(8, 0), Vector2.zero, Color.white, TextAnchor.MiddleLeft);
+
+        GameObject gridRoot = new GameObject("GridRoot", typeof(RectTransform));
+        gridRoot.transform.SetParent(boxObj.transform, false);
+        RectTransform gridRt = gridRoot.GetComponent<RectTransform>();
+        gridRt.anchorMin = new Vector2(0f, 1f);
+        gridRt.anchorMax = new Vector2(0f, 1f);
+        gridRt.pivot = new Vector2(0f, 1f);
+        gridRt.anchoredPosition = new Vector2(8, -25);
+        gridRt.sizeDelta = new Vector2(110, 100);
+
+        MiniTacticalGridUI gridUI = new MiniTacticalGridUI
+        {
+            rootObj = boxObj,
+            headerBg = headerObj.GetComponent<Image>()
+        };
+
+        float cellSize = 10f;
+        float spacing = 1.2f;
+
+        for (int y = 0; y < 9; y++)
+        {
+            for (int x = 0; x < 9; x++)
+            {
+                float xPos = x * (cellSize + spacing);
+                float yPos = -y * (cellSize + spacing);
+
+                GameObject cellObj = CreateUIPanel(gridRoot.transform, $"Cell_{x}_{y}",
+                    new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
+                    new Vector2(xPos, yPos), new Vector2(cellSize, cellSize),
+                    new Color(0.12f, 0.16f, 0.22f, 0.85f));
+
+                Image cellImg = cellObj.GetComponent<Image>();
+
+                Text cellTxt = CreateUIText(cellObj.transform, "T", "", 7, FontStyle.Bold,
+                    new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0.5f, 0.5f),
+                    Vector2.zero, Vector2.zero, Color.white, TextAnchor.MiddleCenter);
+
+                gridUI.cells[x, y] = cellImg;
+                gridUI.cellTexts[x, y] = cellTxt;
+            }
+        }
+
+        // Indicadores de Elevação (▲ 1a e ▼ 1a) no lado direito
+        GameObject heightObj = new GameObject("HeightBox", typeof(RectTransform));
+        heightObj.transform.SetParent(boxObj.transform, false);
+        RectTransform heightRt = heightObj.GetComponent<RectTransform>();
+        heightRt.anchorMin = new Vector2(0f, 1f);
+        heightRt.anchorMax = new Vector2(0f, 1f);
+        heightRt.pivot = new Vector2(0f, 1f);
+        heightRt.anchoredPosition = new Vector2(125, -25);
+        heightRt.sizeDelta = new Vector2(82, 100);
+
+        gridUI.heightUpText = CreateUIText(heightObj.transform, "HeightUp", "▲\n1a", 10, FontStyle.Bold,
+            new Vector2(0f, 0.5f), new Vector2(1f, 1f), new Vector2(0.5f, 0.5f),
+            new Vector2(0, -5), Vector2.zero, new Color(0.92f, 0.92f, 0.92f), TextAnchor.MiddleCenter);
+
+        gridUI.heightDownText = CreateUIText(heightObj.transform, "HeightDown", "▼\n1a", 10, FontStyle.Bold,
+            new Vector2(0f, 0f), new Vector2(1f, 0.5f), new Vector2(0.5f, 0.5f),
+            new Vector2(0, 5), Vector2.zero, new Color(0.92f, 0.92f, 0.92f), TextAnchor.MiddleCenter);
+
+        return gridUI;
+    }
+
+    void BuildItemSelectionPanel()
+    {
+        // Container principal da tela de seleção de itens (Centralizado na tela)
+        itemSelectionRoot = CreateUIPanel(canvas.transform, "ItemSelectionRoot",
+            new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f),
+            new Vector2(0, 10), new Vector2(920, 275), new Color(0, 0, 0, 0));
+
+        // 1. ABA ITEM (Destaque Amarelo na Esquerda)
+        itemActionTab = CreateUIPanel(itemSelectionRoot.transform, "ActionTab_Item",
+            new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
+            new Vector2(0, 0), new Vector2(145, 42), new Color(0.98f, 0.84f, 0.0f, 0.98f));
+
+        CreateUIPanel(itemActionTab.transform, "TabBorder",
+            new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0.5f, 0.5f),
+            Vector2.zero, Vector2.zero, new Color(1f, 0.95f, 0.45f, 0.95f));
+
+        itemActionTabText = CreateUIText(itemActionTab.transform, "TabText", "Item", 16, FontStyle.Bold,
+            new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0.5f, 0.5f),
+            Vector2.zero, Vector2.zero, new Color(0.06f, 0.06f, 0.06f, 1f), TextAnchor.MiddleCenter);
+
+        // 2. JANELA "LISTA DE ITENS" (Coluna Esquerda, ao lado da aba Item)
+        itemListPanel = CreateUIPanel(itemSelectionRoot.transform, "ItemListPanel",
+            new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
+            new Vector2(155, 0), new Vector2(305, 175), new Color(0.08f, 0.11f, 0.15f, 0.90f));
+
+        CreateUIPanel(itemListPanel.transform, "ListBorder",
+            new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0.5f, 0.5f),
+            Vector2.zero, Vector2.zero, new Color(0.35f, 0.42f, 0.50f, 0.45f));
+
+        GameObject listHeader = CreateUIPanel(itemListPanel.transform, "ListHeader",
+            new Vector2(0f, 1f), new Vector2(1f, 1f), new Vector2(0f, 1f),
+            Vector2.zero, new Vector2(0, 24), new Color(0.05f, 0.07f, 0.10f, 0.95f));
+
+        CreateUIText(listHeader.transform, "Title", "Lista de Itens", 11, FontStyle.Bold,
+            new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0f, 0.5f),
+            new Vector2(10, 0), Vector2.zero, new Color(0.85f, 0.90f, 0.95f), TextAnchor.MiddleLeft);
+
+        CreateUIDivider(itemListPanel.transform, new Vector2(0, -24), new Vector2(305, 1), new Color(0.3f, 0.38f, 0.48f, 0.40f));
+
+        // Slots de Itens na Lista
+        itemListItems.Clear();
+        for (int i = 0; i < 4; i++)
+        {
+            float yPos = -29 - (i * 32f);
+            GameObject itemObj = CreateUIPanel(itemListPanel.transform, $"ItemSlot_{i}",
+                new Vector2(0f, 1f), new Vector2(1f, 1f), new Vector2(0f, 1f),
+                new Vector2(6, yPos), new Vector2(-12, 29), new Color(0.04f, 0.07f, 0.11f, 0.70f));
+
+            GameObject borderObj = CreateUIPanel(itemObj.transform, "Border",
+                new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0.5f, 0.5f),
+                Vector2.zero, Vector2.zero, new Color(0.25f, 0.32f, 0.40f, 0.30f));
+
+            Text nameTxt = CreateUIText(itemObj.transform, "Name", "Curativo", 12, FontStyle.Bold,
+                new Vector2(0f, 0f), new Vector2(0.78f, 1f), new Vector2(0f, 0.5f),
+                new Vector2(10, 0), Vector2.zero, Color.white, TextAnchor.MiddleLeft);
+
+            Text qtyTxt = CreateUIText(itemObj.transform, "Qty", "7", 12, FontStyle.Bold,
+                new Vector2(0.78f, 0f), new Vector2(1f, 1f), new Vector2(1f, 0.5f),
+                new Vector2(-10, 0), Vector2.zero, Color.white, TextAnchor.MiddleRight);
+
+            // Linha divisória vertical interna entre nome e quantidade
+            CreateUIPanel(itemObj.transform, "SlotDivider",
+                new Vector2(0.78f, 0.1f), new Vector2(0.78f, 0.9f), new Vector2(0.5f, 0.5f),
+                Vector2.zero, new Vector2(1, 0), new Color(0.35f, 0.42f, 0.50f, 0.35f));
+
+            itemListItems.Add(new ItemListItemUI
+            {
+                container = itemObj,
+                bgImage = itemObj.GetComponent<Image>(),
+                borderImage = borderObj.GetComponent<Image>(),
+                nameText = nameTxt,
+                qtyText = qtyTxt
+            });
+        }
+
+        // Barra decorativa amarela vertical ao lado da lista de itens (como na imagem de referência)
+        CreateUIPanel(itemListPanel.transform, "YellowScrollIndicator",
+            new Vector2(1f, 0f), new Vector2(1f, 1f), new Vector2(0f, 0.5f),
+            new Vector2(8, 0), new Vector2(3, 0), new Color(0.98f, 0.84f, 0.0f, 0.95f));
+
+        // 3. JANELA "DETALHES DO ITEM" (Coluna Direita, Topo)
+        itemDetailPanel = CreateUIPanel(itemSelectionRoot.transform, "ItemDetailPanel",
+            new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
+            new Vector2(475, 0), new Vector2(440, 130), new Color(0.08f, 0.11f, 0.15f, 0.90f));
+
+        CreateUIPanel(itemDetailPanel.transform, "InfoBorder",
+            new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0.5f, 0.5f),
+            Vector2.zero, Vector2.zero, new Color(0.35f, 0.42f, 0.50f, 0.45f));
+
+        GameObject detailHeader = CreateUIPanel(itemDetailPanel.transform, "DetailHeader",
+            new Vector2(0f, 1f), new Vector2(1f, 1f), new Vector2(0f, 1f),
+            Vector2.zero, new Vector2(0, 24), new Color(0.05f, 0.07f, 0.10f, 0.95f));
+
+        CreateUIText(detailHeader.transform, "Title", "Detalhes do item", 11, FontStyle.Bold,
+            new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0f, 0.5f),
+            new Vector2(10, 0), Vector2.zero, new Color(0.85f, 0.90f, 0.95f), TextAnchor.MiddleLeft);
+
+        CreateUIDivider(itemDetailPanel.transform, new Vector2(0, -24), new Vector2(440, 1), new Color(0.3f, 0.38f, 0.48f, 0.40f));
+
+        // Caixa e Ícone Ilustrado do Item
+        GameObject iconBox = CreateUIPanel(itemDetailPanel.transform, "ItemIconBox",
+            new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
+            new Vector2(12, -30), new Vector2(48, 48), new Color(0.04f, 0.07f, 0.11f, 0.75f));
+
+        CreateUIPanel(iconBox.transform, "Border",
+            new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0.5f, 0.5f),
+            Vector2.zero, Vector2.zero, new Color(0.25f, 0.32f, 0.40f, 0.35f));
+
+        GameObject iconImgObj = CreateUIPanel(iconBox.transform, "IconImage",
+            new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0.5f, 0.5f),
+            Vector2.zero, new Vector2(-4, -4), Color.white);
+        itemDetailIconImage = iconImgObj.GetComponent<Image>();
+        itemDetailIconImage.preserveAspect = true;
+
+        // Nome do Item
+        itemDetailNameText = CreateUIText(itemDetailPanel.transform, "ItemName", "Curativo", 13, FontStyle.Bold,
+            new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
+            new Vector2(70, -32), new Vector2(250, 20), Color.white, TextAnchor.MiddleLeft);
+
+        // Ícone de Efeito / Estrela no canto superior direito
+        itemDetailEffectIcon = CreateUIText(itemDetailPanel.transform, "EffectIcon", "✦", 16, FontStyle.Bold,
+            new Vector2(1f, 1f), new Vector2(1f, 1f), new Vector2(1f, 1f),
+            new Vector2(-15, -32), new Vector2(30, 20), new Color(0.95f, 0.95f, 0.95f), TextAnchor.MiddleCenter);
+
+        CreateUIDivider(itemDetailPanel.transform, new Vector2(70, -56), new Vector2(350, 1), new Color(0.3f, 0.38f, 0.48f, 0.30f));
+
+        // Descrição do Item
+        itemDetailDescText = CreateUIText(itemDetailPanel.transform, "ItemDesc", 
+            "Restaura levemente o HP do alvo. Uma bandagem de velha escola, pra ser correto. Alguém deixou cair aqui?", 
+            11, FontStyle.Normal,
+            new Vector2(0f, 0f), new Vector2(1f, 0f), new Vector2(0f, 0f),
+            new Vector2(12, 8), new Vector2(-24, 42), new Color(0.80f, 0.86f, 0.92f), TextAnchor.UpperLeft);
+
+        // 4. GRIDS TÁTICOS DO ITEM (ALCANCE e ÁREA - Coluna Direita, Abaixo dos Detalhes)
+        itemReachGridUI = BuildMiniGrid(itemSelectionRoot.transform, "ItemReachGridBox",
+            new Vector2(475, -140), new Vector2(215, 130), "ALCANCE", new Color(0.95f, 0.42f, 0.05f, 0.95f));
+
+        itemAoeGridUI = BuildMiniGrid(itemSelectionRoot.transform, "ItemAoeGridBox",
+            new Vector2(700, -140), new Vector2(215, 130), "ÁREA", new Color(0.80f, 0.05f, 0.85f, 0.95f));
+
+        itemSelectionRoot.SetActive(false);
+    }
+
     #endregion
 
     #region Public HUD Updates
@@ -1257,6 +1731,252 @@ public class BattleHUD : MonoBehaviour
         };
     }
 
+    public void ShowSkillSelection(bool show, Unit unit = null, int selectedSkillIndex = 0)
+    {
+        if (skillSelectionRoot == null) return;
+
+        if (show)
+        {
+            if (actionMenuContainer != null) actionMenuContainer.SetActive(false);
+            if (playerInfoCard != null) playerInfoCard.SetActive(false);
+            if (combatForecastRoot != null) combatForecastRoot.SetActive(false);
+
+            skillSelectionRoot.SetActive(true);
+            if (unit != null)
+            {
+                UpdateSkillSelectionUI(unit, selectedSkillIndex);
+            }
+        }
+        else
+        {
+            skillSelectionRoot.SetActive(false);
+            if (playerInfoCard != null) playerInfoCard.SetActive(true);
+        }
+    }
+
+    public void UpdateSkillSelectionUI(Unit unit, int selectedIndex)
+    {
+        if (unit == null) return;
+        cachedCurrentUnit = unit;
+
+        List<SkillData> skills = unit.GetSkills();
+        if (skills == null || skills.Count == 0) return;
+
+        selectedIndex = Mathf.Clamp(selectedIndex, 0, skills.Count - 1);
+        SkillData selectedSkill = skills[selectedIndex];
+
+        int currentUnitSp = unit.stats != null ? unit.stats.GetStat(StatEnum.SP) : 50;
+
+        // 1. Atualiza lista de habilidades
+        for (int i = 0; i < skillListItems.Count; i++)
+        {
+            var item = skillListItems[i];
+            if (item == null || item.container == null) continue;
+
+            if (i < skills.Count)
+            {
+                item.container.SetActive(true);
+                SkillData sk = skills[i];
+                bool isSelected = (i == selectedIndex);
+                bool hasSp = (currentUnitSp >= sk.spCost);
+
+                if (item.iconImage != null)
+                {
+                    Sprite icon = sk.GetIconSprite();
+                    if (icon != null)
+                    {
+                        item.iconImage.gameObject.SetActive(true);
+                        item.iconImage.sprite = icon;
+                        item.iconImage.color = isSelected ? Color.white : new Color(0.85f, 0.88f, 0.92f, 0.80f);
+                        item.nameText.text = sk.skillName;
+                    }
+                    else
+                    {
+                        item.iconImage.gameObject.SetActive(false);
+                        item.nameText.text = $"{sk.iconSymbol}  {sk.skillName}";
+                    }
+                }
+                else
+                {
+                    item.nameText.text = $"{sk.iconSymbol}  {sk.skillName}";
+                }
+
+                item.spText.text = $"SP   {sk.spCost}";
+
+                if (isSelected)
+                {
+                    item.bgImage.color = new Color(0.98f, 0.84f, 0.0f, 0.98f); // Amarelo Ouro
+                    item.nameText.color = new Color(0.06f, 0.06f, 0.06f, 1f);
+                    item.spText.color = hasSp ? new Color(0.06f, 0.06f, 0.06f, 1f) : new Color(0.85f, 0.1f, 0.1f, 1f);
+                    if (item.borderImage != null) item.borderImage.color = new Color(1f, 0.95f, 0.45f, 0.95f);
+                }
+                else
+                {
+                    item.bgImage.color = new Color(0.05f, 0.08f, 0.12f, 0.85f);
+                    item.nameText.color = hasSp ? new Color(0.85f, 0.90f, 0.95f) : new Color(0.5f, 0.55f, 0.6f);
+                    item.spText.color = hasSp ? new Color(0.95f, 0.75f, 0.2f) : new Color(0.7f, 0.3f, 0.3f);
+                    if (item.borderImage != null) item.borderImage.color = new Color(0.25f, 0.32f, 0.40f, 0.35f);
+                }
+            }
+            else
+            {
+                item.container.SetActive(false);
+            }
+        }
+
+        // 2. Atualiza Habilidade Passiva
+        if (passiveNameText != null)
+        {
+            passiveNameText.text = unit.passiveSkill != null ? unit.passiveSkill.passiveName : "Pernas Poderosas";
+        }
+        if (passiveDescText != null)
+        {
+            passiveDescText.text = unit.passiveSkill != null ? unit.passiveSkill.description : "Aumenta VELOC em um nível.";
+        }
+
+        // 3. Atualiza Informações sobre Habilidade
+        if (skillInfoNameText != null) skillInfoNameText.text = selectedSkill.skillName;
+        if (skillInfoPowerText != null) skillInfoPowerText.text = selectedSkill.effectPower.ToString();
+        if (skillInfoSpText != null)
+        {
+            skillInfoSpText.text = selectedSkill.spCost.ToString();
+            skillInfoSpText.color = (currentUnitSp >= selectedSkill.spCost) ? Color.white : new Color(1f, 0.35f, 0.35f);
+        }
+
+        // Ícone Grande do Golpe (Battle_Elements)
+        if (skillInfoIconImage != null)
+        {
+            Sprite bigIcon = selectedSkill.GetIconSprite();
+            if (bigIcon != null)
+            {
+                skillInfoIconImage.gameObject.SetActive(true);
+                skillInfoIconImage.sprite = bigIcon;
+                if (skillInfoCategoryIcon != null) skillInfoCategoryIcon.gameObject.SetActive(false);
+            }
+            else
+            {
+                skillInfoIconImage.gameObject.SetActive(false);
+                if (skillInfoCategoryIcon != null)
+                {
+                    skillInfoCategoryIcon.gameObject.SetActive(true);
+                    skillInfoCategoryIcon.text = "///";
+                    skillInfoCategoryIcon.color = GetCategoryColor(selectedSkill.category);
+                }
+            }
+        }
+        else if (skillInfoCategoryIcon != null)
+        {
+            skillInfoCategoryIcon.gameObject.SetActive(true);
+            skillInfoCategoryIcon.text = "///";
+            skillInfoCategoryIcon.color = GetCategoryColor(selectedSkill.category);
+        }
+
+        if (skillInfoDescText != null) skillInfoDescText.text = selectedSkill.description;
+
+        // 4. Atualiza Grids Táticos
+        if (reachGridUI != null)
+        {
+            reachGridUI.SetReach(selectedSkill.minRange, selectedSkill.maxRange, selectedSkill.heightToleranceUp, selectedSkill.heightToleranceDown);
+        }
+        if (aoeGridUI != null)
+        {
+            aoeGridUI.SetArea(selectedSkill.aoeType, selectedSkill.aoeRadius, selectedSkill.aoeHeightToleranceUp, selectedSkill.aoeHeightToleranceDown);
+        }
+    }
+
+    public void ShowItemSelection(bool show, int selectedIndex = 0)
+    {
+        if (itemSelectionRoot == null) return;
+
+        if (show)
+        {
+            if (skillSelectionRoot != null) skillSelectionRoot.SetActive(false);
+            if (playerInfoCard != null) playerInfoCard.SetActive(false);
+            itemSelectionRoot.SetActive(true);
+            UpdateItemSelectionUI(selectedIndex);
+        }
+        else
+        {
+            itemSelectionRoot.SetActive(false);
+            if (playerInfoCard != null) playerInfoCard.SetActive(true);
+        }
+    }
+
+    public void UpdateItemSelectionUI(int selectedIndex)
+    {
+        var items = InventoryService.GetInventory();
+        if (items == null || items.Count == 0) return;
+
+        selectedIndex = Mathf.Clamp(selectedIndex, 0, items.Count - 1);
+        ItemData selectedItem = items[selectedIndex];
+
+        // 1. Atualiza slots da lista de itens
+        for (int i = 0; i < itemListItems.Count; i++)
+        {
+            var itemSlot = itemListItems[i];
+            if (itemSlot == null || itemSlot.container == null) continue;
+
+            if (i < items.Count)
+            {
+                itemSlot.container.SetActive(true);
+                ItemData it = items[i];
+                bool isSelected = (i == selectedIndex);
+                bool hasQty = (it.quantity > 0);
+
+                itemSlot.nameText.text = it.itemName;
+                itemSlot.qtyText.text = it.quantity.ToString();
+
+                if (isSelected)
+                {
+                    itemSlot.bgImage.color = new Color(0.98f, 0.84f, 0.0f, 0.98f); // Amarelo Ouro
+                    itemSlot.nameText.color = new Color(0.06f, 0.06f, 0.06f, 1f);
+                    itemSlot.qtyText.color = hasQty ? new Color(0.06f, 0.06f, 0.06f, 1f) : new Color(0.7f, 0.1f, 0.1f, 1f);
+                    if (itemSlot.borderImage != null) itemSlot.borderImage.color = new Color(1f, 0.95f, 0.45f, 0.95f);
+                }
+                else
+                {
+                    itemSlot.bgImage.color = new Color(0.05f, 0.08f, 0.12f, 0.85f);
+                    itemSlot.nameText.color = hasQty ? new Color(0.85f, 0.90f, 0.95f) : new Color(0.5f, 0.55f, 0.6f);
+                    itemSlot.qtyText.color = hasQty ? Color.white : new Color(0.6f, 0.3f, 0.3f);
+                    if (itemSlot.borderImage != null) itemSlot.borderImage.color = new Color(0.25f, 0.32f, 0.40f, 0.30f);
+                }
+            }
+            else
+            {
+                itemSlot.container.SetActive(false);
+            }
+        }
+
+        // 2. Atualiza Detalhes do Item
+        if (itemDetailNameText != null) itemDetailNameText.text = selectedItem.itemName;
+        if (itemDetailDescText != null) itemDetailDescText.text = selectedItem.description;
+        if (itemDetailEffectIcon != null) itemDetailEffectIcon.text = selectedItem.effectSymbol;
+
+        if (itemDetailIconImage != null)
+        {
+            Sprite icon = selectedItem.GetIconSprite();
+            if (icon != null)
+            {
+                itemDetailIconImage.gameObject.SetActive(true);
+                itemDetailIconImage.sprite = icon;
+            }
+            else
+            {
+                itemDetailIconImage.gameObject.SetActive(false);
+            }
+        }
+
+        // 3. Atualiza Grids Táticos do Item
+        if (itemReachGridUI != null)
+        {
+            itemReachGridUI.SetReach(selectedItem.minRange, selectedItem.maxRange, selectedItem.heightToleranceUp, selectedItem.heightToleranceDown);
+        }
+        if (itemAoeGridUI != null)
+        {
+            itemAoeGridUI.SetArea(selectedItem.aoeType, selectedItem.aoeRadius, selectedItem.aoeHeightToleranceUp, selectedItem.aoeHeightToleranceDown);
+        }
+    }
+
     #endregion
 
     #region UI Helper Methods
@@ -1340,5 +2060,122 @@ public class BattleHUD : MonoBehaviour
         public Image bgImage;
         public Image portraitImage;
         public Text fallbackText;
+    }
+
+    private class SkillListItemUI
+    {
+        public GameObject container;
+        public Image bgImage;
+        public Image borderImage;
+        public Image iconImage;
+        public Text nameText;
+        public Text spText;
+    }
+
+    private class ItemListItemUI
+    {
+        public GameObject container;
+        public Image bgImage;
+        public Image borderImage;
+        public Text nameText;
+        public Text qtyText;
+    }
+
+    private class MiniTacticalGridUI
+    {
+        public GameObject rootObj;
+        public Image headerBg;
+        public Image[,] cells = new Image[9, 9];
+        public Text[,] cellTexts = new Text[9, 9];
+        public Text heightUpText;
+        public Text heightDownText;
+
+        public void ClearGrid()
+        {
+            for (int y = 0; y < 9; y++)
+            {
+                for (int x = 0; x < 9; x++)
+                {
+                    bool isCenter = (x == 4 && y == 4);
+                    if (cells[x, y] != null)
+                    {
+                        cells[x, y].color = isCenter ? new Color(0.22f, 0.32f, 0.45f, 0.95f) : new Color(0.10f, 0.14f, 0.20f, 0.85f);
+                    }
+                    if (cellTexts[x, y] != null)
+                    {
+                        cellTexts[x, y].text = isCenter ? "◈" : "";
+                        cellTexts[x, y].color = isCenter ? new Color(0.3f, 0.85f, 1f) : Color.clear;
+                    }
+                }
+            }
+        }
+
+        public void SetReach(int minRange, int maxRange, int heightUp, int heightDown)
+        {
+            ClearGrid();
+            for (int y = 0; y < 9; y++)
+            {
+                for (int x = 0; x < 9; x++)
+                {
+                    int dist = Mathf.Abs(x - 4) + Mathf.Abs(y - 4);
+                    if (dist >= minRange && dist <= maxRange)
+                    {
+                        if (cells[x, y] != null)
+                        {
+                            cells[x, y].color = new Color(0.98f, 0.48f, 0.05f, 0.98f); // Laranja Vigoroso
+                        }
+                        if (cellTexts[x, y] != null)
+                        {
+                            cellTexts[x, y].text = dist.ToString();
+                            cellTexts[x, y].color = new Color(0.08f, 0.04f, 0.0f, 1f);
+                        }
+                    }
+                }
+            }
+
+            if (heightUpText != null) heightUpText.text = $"▲\n{heightUp}a";
+            if (heightDownText != null) heightDownText.text = $"▼\n{heightDown}a";
+        }
+
+        public void SetArea(TacticalBattle.Core.AttackShapeType aoeType, int aoeRadius, int heightUp, int heightDown)
+        {
+            ClearGrid();
+            for (int y = 0; y < 9; y++)
+            {
+                for (int x = 0; x < 9; x++)
+                {
+                    bool inArea = false;
+                    if (aoeRadius == 0 || aoeType == TacticalBattle.Core.AttackShapeType.Single)
+                    {
+                        inArea = (x == 4 && y == 4);
+                    }
+                    else if (aoeType == TacticalBattle.Core.AttackShapeType.Area || aoeType == TacticalBattle.Core.AttackShapeType.Cone)
+                    {
+                        int dist = Mathf.Abs(x - 4) + Mathf.Abs(y - 4);
+                        inArea = (dist <= aoeRadius);
+                    }
+                    else
+                    {
+                        int maxD = Mathf.Max(Mathf.Abs(x - 4), Mathf.Abs(y - 4));
+                        inArea = (maxD <= aoeRadius);
+                    }
+
+                    if (inArea)
+                    {
+                        if (cells[x, y] != null)
+                        {
+                            cells[x, y].color = new Color(0.85f, 0.05f, 0.95f, 0.98f); // Magenta / Rosa Intenso
+                        }
+                        if (cellTexts[x, y] != null)
+                        {
+                            cellTexts[x, y].text = "";
+                        }
+                    }
+                }
+            }
+
+            if (heightUpText != null) heightUpText.text = $"▲\n{heightUp}a";
+            if (heightDownText != null) heightDownText.text = $"▼\n{heightDown}a";
+        }
     }
 }

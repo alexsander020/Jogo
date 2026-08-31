@@ -8,8 +8,13 @@ public class SelectFacingState : State
         inputs.OnMove += OnMove;
         inputs.OnFire += OnFire;
 
+        if (currentUnit != null)
+        {
+            currentUnit.SetFacing(currentUnit.facing);
+        }
+
         UpdateHUD();
-        Debug.Log("[SelectFacingState] Escolha a direção para qual a unidade deve olhar.");
+        Debug.Log("[SelectFacingState] Escolha a direção de término do turno.");
     }
 
     public override void Exit()
@@ -50,7 +55,11 @@ public class SelectFacingState : State
 
         if (button == 1)
         {
-            // Confirmou a direção de olhar
+            // Confirmou a direção e finaliza o turno
+            if (currentUnit != null)
+            {
+                currentUnit.SetDefenseStance(currentUnit.facing);
+            }
             machine.ChangeTo<TurnEndState>();
         }
         else if (button == 2)

@@ -6,6 +6,7 @@ public struct CombatForecast
 {
     public Unit attacker;
     public Unit defender;
+    public SkillData skill;
     public int baseDamage;
     public int finalDamage;
     public AttackOrientation orientation;
@@ -62,12 +63,13 @@ public static class CombatService
     /// <summary>
     /// Calcula a previsão completa de combate entre o atacante e o defensor de acordo com o GDD NetShift V3.
     /// </summary>
-    public static CombatForecast CalculateForecast(Unit attacker, Unit defender)
+    public static CombatForecast CalculateForecast(Unit attacker, Unit defender, SkillData skill = null)
     {
         CombatForecast forecast = new CombatForecast
         {
             attacker = attacker,
-            defender = defender
+            defender = defender,
+            skill = skill
         };
 
         if (attacker == null || defender == null) return forecast;
@@ -78,8 +80,10 @@ public static class CombatService
 
         forecast.defenderCurrentHp = defenderHp;
 
-        // 1. Dano Base: (ATK * 2) - DEF
-        int baseDamage = Mathf.Max(1, attackerAtk * 2 - defenderDef);
+        // 1. Dano Base: escala com o efeito da habilidade (se informada) ou (ATK * 2) - DEF
+        int effectPower = (skill != null && skill.effectPower > 0) ? skill.effectPower : 85;
+        float powerFactor = effectPower / 85.0f;
+        int baseDamage = Mathf.Max(1, Mathf.RoundToInt((attackerAtk * 2 * powerFactor) - defenderDef));
         forecast.baseDamage = baseDamage;
 
         // 2. Orientação Posicional (Frontal / Flanco / Backstab)
@@ -89,7 +93,8 @@ public static class CombatService
         forecast.isCritical = guaranteedCrit;
 
         // Chance de crítico aleatório se não for Backstab (ex: Game tem maior taxa de crítico)
-        if (!forecast.isCritical && attacker.category == FunctionalCategory.Game)
+        FunctionalCategory attackCategory = (skill != null) ? skill.category : attacker.category;
+        if (!forecast.isCritical && attackCategory == FunctionalCategory.Game)
         {
             // Categoria Game tem bônus de crítico
             forecast.isCritical = true;
@@ -97,8 +102,8 @@ public static class CombatService
 
         // 3. Ciclo dos 7 Atributos Funcionais
         // Social > Navi > Tool > Game > Entertainment > Life > System > Social
-        forecast.hasCategoryAdvantage = DirectionUtils.HasCategoryAdvantage(attacker.category, defender.category);
-        forecast.hasCategoryDisadvantage = DirectionUtils.HasCategoryAdvantage(defender.category, attacker.category);
+        forecast.hasCategoryAdvantage = DirectionUtils.HasCategoryAdvantage(attackCategory, defender.category);
+        forecast.hasCategoryDisadvantage = DirectionUtils.HasCategoryAdvantage(defender.category, attackCategory);
 
         if (forecast.hasCategoryAdvantage)
         {

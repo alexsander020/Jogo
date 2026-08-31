@@ -118,8 +118,8 @@ public class ChooseActionState : State
             case 1: // Atacar
                 if (currentUnit != null && currentUnit.CanAct())
                 {
-                    Debug.Log("[Ação] Opção Atacar selecionada.");
-                    machine.ChangeTo<AttackTargetState>();
+                    Debug.Log("[Ação] Opção Atacar selecionada. Abrindo seleção de habilidades...");
+                    machine.ChangeTo<SelectSkillState>();
                 }
                 else
                 {
@@ -135,7 +135,22 @@ public class ChooseActionState : State
                 break;
 
             case 2: // Item
-                Debug.Log("[Ação] Opção Item selecionada.");
+                if (currentUnit != null && currentUnit.CanAct())
+                {
+                    Debug.Log("[Ação] Opção Item selecionada. Abrindo inventário de itens...");
+                    machine.ChangeTo<SelectItemState>();
+                }
+                else
+                {
+                    Debug.LogWarning("[Ação] Esta unidade já realizou sua ação neste turno!");
+                    if (BattleHUD.Instance != null)
+                    {
+                        BattleHUD.Instance.UpdateControlsPrompt(
+                            "AÇÃO JÁ REALIZADA", 
+                            "• A unidade atual já agiu neste turno. Escolha Mover ou Encerrar Turno."
+                        );
+                    }
+                }
                 break;
 
             case 3: // Evolução

@@ -10,6 +10,12 @@ public class AttackTargetState : State
     private int currentTargetIndex = 0;
     private Unit targetedEnemy = null;
     private bool isAttacking = false;
+    private SkillData selectedSkill = null;
+
+    public void SetSelectedSkill(SkillData skill)
+    {
+        selectedSkill = skill;
+    }
 
     public override void Enter()
     {
@@ -26,9 +32,19 @@ public class AttackTargetState : State
             return;
         }
 
+        if (selectedSkill == null)
+        {
+            var skills = currentUnit.GetSkills();
+            if (skills != null && skills.Count > 0)
+            {
+                selectedSkill = skills[0];
+            }
+        }
+
         if (BattleHUD.Instance != null)
         {
             BattleHUD.Instance.ShowActionMenu(false);
+            BattleHUD.Instance.ShowSkillSelection(false);
         }
 
         inputs.OnMove += OnMove;
@@ -57,12 +73,13 @@ public class AttackTargetState : State
                 machine.MoveSelectorTo(currentUnit.currentTile);
             }
 
-            int range = currentUnit != null ? currentUnit.attackRange : 2;
+            int range = selectedSkill != null ? selectedSkill.maxRange : (currentUnit != null ? currentUnit.attackRange : 2);
+            string skillName = selectedSkill != null ? selectedSkill.skillName : "Ataque";
             if (BattleHUD.Instance != null)
             {
                 BattleHUD.Instance.UpdateControlsPrompt(
                     "NENHUM INIMIGO NO ALCANCE",
-                    $"• Não há inimigos dentro do alcance de ataque ({range} tiles).\n• Pressione [X / ESC] para voltar ao menu e Mover-se primeiro."
+                    $"• Não há inimigos no alcance de {skillName} ({range} tiles).\n• Pressione [X / ESC] para voltar e selecionar outra habilidade ou mover-se."
                 );
             }
         }
@@ -76,6 +93,7 @@ public class AttackTargetState : State
         attackableTiles.Clear();
         enemiesInRange.Clear();
         targetedEnemy = null;
+        selectedSkill = null;
 
         if (GridHighlighter.Instance != null)
         {
@@ -94,21 +112,22 @@ public class AttackTargetState : State
         if (currentUnit == null || currentUnit.currentTile == null) return;
 
         Vector3Int origin = currentUnit.currentTile.pos;
-        int range = currentUnit.attackRange > 0 ? currentUnit.attackRange : 2;
+        int minRange = selectedSkill != null ? selectedSkill.minRange : 1;
+        int maxRange = selectedSkill != null ? selectedSkill.maxRange : (currentUnit.attackRange > 0 ? currentUnit.attackRange : 2);
 
         // Bônus de elevação de alcance (+1 tile se estiver no alto)
         int unitZ = currentUnit.currentTile.floor != null && Board.instance != null
             ? Board.instance.floors.IndexOf(currentUnit.currentTile.floor)
             : 0;
-        if (unitZ > 0) range += 1;
+        if (unitZ > 0) maxRange += 1;
 
-        // Calcula todos os tiles no raio de distância Manhattan <= range
-        for (int dx = -range; dx <= range; dx++)
+        // Calcula todos os tiles no raio de distância Manhattan entre minRange e maxRange
+        for (int dx = -maxRange; dx <= maxRange; dx++)
         {
-            for (int dy = -range; dy <= range; dy++)
+            for (int dy = -maxRange; dy <= maxRange; dy++)
             {
                 int dist = Mathf.Abs(dx) + Mathf.Abs(dy);
-                if (dist > 0 && dist <= range)
+                if (dist >= minRange && dist <= maxRange)
                 {
                     Vector3Int targetPos = new Vector3Int(origin.x + dx, origin.y + dy, 0);
                     TileLogic tile = Board.GetTile(targetPos);
@@ -162,8 +181,8 @@ public class AttackTargetState : State
             machine.MoveSelectorTo(targetedEnemy.currentTile);
         }
 
-        // Calcula a previsão completa de combate (NetShift GDD V3)
-        CombatForecast forecast = CombatService.CalculateForecast(currentUnit, targetedEnemy);
+        // Calcula a previsão completa de combate usando a habilidade selecionada
+        CombatForecast forecast = CombatService.CalculateForecast(currentUnit, targetedEnemy, selectedSkill);
 
         // Exibe o Banner Elegante de Previsão de Combate (Estilo Digimon Survive)
         if (BattleHUD.Instance != null)
@@ -171,8 +190,8 @@ public class AttackTargetState : State
             BattleHUD.Instance.ShowCombatForecastBanner(true, forecast);
 
             string targetIndexHeader = enemiesInRange.Count > 1 
-                ? $"PREVISÃO DE ATAQUE [ALVO {currentTargetIndex + 1}/{enemiesInRange.Count}]" 
-                : "PREVISÃO DE ATAQUE";
+                ? $"PREVISÃO: {selectedSkill?.skillName?.ToUpper() ?? "ATAQUE"} [ALVO {currentTargetIndex + 1}/{enemiesInRange.Count}]" 
+                : $"PREVISÃO: {selectedSkill?.skillName?.ToUpper() ?? "ATAQUE"}";
 
             string promptControls = "• [ESPAÇO / ENTER / Z] : Executar Ataque    [X / ESC] : Cancelar";
             if (enemiesInRange.Count > 1)
@@ -248,7 +267,8 @@ public class AttackTargetState : State
         }
         else if (button == 2) // Cancelar (X / Esc)
         {
-            machine.ChangeTo<ChooseActionState>();
+            // Retorna para a tela de Seleção de Habilidades
+            machine.ChangeTo<SelectSkillState>();
         }
     }
 
@@ -256,7 +276,8 @@ public class AttackTargetState : State
     {
         isAttacking = true;
 
-        Debug.Log($"[AttackTargetState] {currentUnit.unitName} executando ataque contra {target.unitName}!");
+        string skillName = selectedSkill != null ? selectedSkill.skillName : "Ataque";
+        Debug.Log($"[AttackTargetState] {currentUnit.unitName} executando {skillName} contra {target.unitName}!");
 
         // 1. Atacante vira para encarar o alvo
         Vector3Int diff = target.gridPosition - currentUnit.gridPosition;
@@ -265,25 +286,35 @@ public class AttackTargetState : State
             currentUnit.SetFacing(DirectionUtils.VectorToDirection(diff));
         }
 
-        // 2. Calcula a resolução de combate
-        CombatForecast forecast = CombatService.CalculateForecast(currentUnit, target);
+        // 2. Calcula a resolução de combate com a habilidade selecionada
+        CombatForecast forecast = CombatService.CalculateForecast(currentUnit, target, selectedSkill);
 
         // Registra o ataque para permitir Combo Sincronizado se um parceiro atacar depois
-        CombatService.RegisterAttackOnTarget(target, currentUnit.category);
+        FunctionalCategory atkCat = selectedSkill != null ? selectedSkill.category : currentUnit.category;
+        CombatService.RegisterAttackOnTarget(target, atkCat);
+
+        // 3. Deduz o custo de SP da habilidade
+        if (selectedSkill != null && selectedSkill.spCost > 0 && currentUnit.stats != null)
+        {
+            int currentSp = currentUnit.stats.GetStat(StatEnum.SP);
+            int newSp = Mathf.Max(0, currentSp - selectedSkill.spCost);
+            currentUnit.stats.SetStat(StatEnum.SP, newSp);
+            Debug.Log($"[Combate] {currentUnit.unitName} gastou {selectedSkill.spCost} SP. SP Restante: {newSp}");
+        }
 
         if (BattleHUD.Instance != null)
         {
             BattleHUD.Instance.ShowCombatForecastBanner(false);
             BattleHUD.Instance.UpdateControlsPrompt(
                 "EXECUTANDO ATAQUE!",
-                $"• {currentUnit.unitName} desferiu um golpe em {target.unitName}!"
+                $"• {currentUnit.unitName} usou {skillName} em {target.unitName}!"
             );
         }
 
-        // 3. Animação de ataque com lunge dinâmico
+        // 4. Animação de ataque com lunge dinâmico
         yield return StartCoroutine(currentUnit.PlayAttackAnimation(target.transform.position));
 
-        // 4. Aplica o dano no defensor
+        // 5. Aplica o dano no defensor
         target.TakeDamage(forecast.finalDamage, forecast.orientation, forecast.isCritical, forecast.hasCategoryAdvantage);
 
         // Atualiza o banner do turno e stats no HUD
