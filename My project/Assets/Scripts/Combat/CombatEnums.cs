@@ -16,7 +16,7 @@ public enum AttackOrientation
     Backstab  // Dano traseiro: 150% + Crítico garantido
 }
 
-// 7 Atributos Funcionais de NetShift
+// Atributos Funcionais de NetShift & Appmon
 public enum FunctionalCategory
 {
     Social,        // Buffs de Grupo / CC (vence Navi)
@@ -25,7 +25,8 @@ public enum FunctionalCategory
     Game,          // Crítico / Multi-hit (vence Entertainment)
     Entertainment, // Debuffs / Provocação (vence Life)
     Life,          // Cura / Regeneração (vence System)
-    System         // Negação / Dano Puro / Hack (vence Social)
+    System,        // Negação / Dano Puro / Hack (vence Social)
+    Security       // Defesa Cibernética / Firewalls / Isolamento (vence System/Malware)
 }
 
 // Trindade de Protocolo (Alinhamento Moral / Afinidade)
@@ -36,13 +37,15 @@ public enum ProtocolTrinity
     Overclock  // Cólera / Ruptura (Impulso, revolta contra o sistema)
 }
 
-// Estágios de Evolução / NetFusion
+// Estágios de Evolução / NetFusion / Compêndio Appmon
 public enum EvolutionRank
 {
-    Standard,
-    Super,
-    Ultimate,
-    God
+    Standard,  // Nami / Comum
+    Super,     // Gêmeos de Algoritmo
+    Ultimate,  // Fusão Suprema
+    God,       // Guardiões Celestiais (Celestial)
+    Celestial = God,
+    Demon      // Demônios dos Pecados Capitais (Corrupt)
 }
 
 // Facção / Time em campo
@@ -52,3 +55,25 @@ public enum Team
     Enemy,
     Neutral
 }
+
+// Efeitos de Status do Sistema Tático
+public enum StatusEffectType
+{
+    None = 0,
+    Immobilized,       // Não pode se mover (Quarantine Lock, Polygon Trap, Greed Trap)
+    Stun,              // Não pode agir nem se mover por 1 turno
+    Silence,           // Não pode usar habilidades mágicas ou especiais
+    Sleep,             // Adormecido, perde a vez até receber dano ou expirar
+    DeepSleep,         // Sono profundo inquebrável (Golden Sloth)
+    Burn,              // Dano contínuo de fogo a cada turno
+    ChaosBurn,         // Dano intenso contínuo de Fogo do Caos
+    Paralysis,         // Chance alta de perder a ação ou velocidade drasticamente reduzida
+    Blind,             // Precisão de ataque reduzida
+    Panic,             // Unidade aterrorizada / carcaça destruída
+    Bleed,             // Sangramento contínuo (Razor Wind Grid)
+    Invisible,         // Camuflagem / Furtividade temporária
+    GoldPetrification, // Petrificação de ouro
+    Frozen,            // Congelamento absoluto
+    Confused           // Confusão / Ataca aliados involuntariamente
+}
+

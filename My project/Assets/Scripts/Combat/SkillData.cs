@@ -17,10 +17,25 @@ public class SkillData
     [Header("Poder e Custo")]
     public int effectPower = 85;
     public int spCost = 0;
+    public int mpCost = 0;
+    public bool isMagic = false; // false = Físico (ATK vs DEF), true = Mágico (INT vs SPI)
     
     [Header("Descrição do Efeito")]
     [TextArea(2, 3)]
     public string description = "Causa dano de Vento aos alvos.";
+
+    [Header("Efeitos de Status e Terreno")]
+    public StatusEffectType statusToApply = StatusEffectType.None;
+    public int statusDurationTurns = 1;
+    public float statusChance = 1f; // 1 = 100% de chance
+    public TerrainType createsTerrain = TerrainType.Standard;
+    public bool hasTerrainCreation = false;
+    public int terrainRadius = 0; // 0 = 1 tile, 1 = 3x3, 2 = 5x5
+    public int pushDistance = 0;  // Empurrão em tiles
+    public int pullDistance = 0;  // Puxão em tiles
+    public bool healsTarget = false;
+    public bool isTeleport = false;
+    public int teleportRange = 0;
 
     [Header("Alcance (ALCANCE)")]
     public int minRange = 1;

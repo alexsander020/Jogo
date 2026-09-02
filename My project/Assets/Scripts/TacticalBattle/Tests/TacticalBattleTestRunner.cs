@@ -7,8 +7,10 @@ namespace TacticalBattle.Tests
         [ContextMenu("Executar Todos os Testes")]
         public void RunTestsInEditor()
         {
-            int total = TacticalBattleTestSuite.RunAllTests();
-            Debug.Log($"<color=green><b>[SUCESSO]</b></color> Todos os {total} testes unitários foram validados!");
+            int totalTactical = TacticalBattleTestSuite.RunAllTests();
+            int totalAppmon = AppmonAndComboTestSuite.RunAllTests();
+            int total = totalTactical + totalAppmon;
+            Debug.Log($"<color=green><b>[SUCESSO COMPLETO]</b></color> Todos os {total} testes (Tático + Appmon + Combos) foram validados com 100% de sucesso!");
         }
 
         void Start()

@@ -56,6 +56,8 @@ public class Stats : MonoBehaviour
                 return 10;
             case StatEnum.MOV:
                 return 3;
+            case StatEnum.CRT:
+                return 5;
             default:
                 return 10;
         }

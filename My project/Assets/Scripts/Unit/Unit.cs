@@ -192,30 +192,71 @@ public class Unit : MonoBehaviour
         hasActed = false;
         isTurnCompleted = false;
         ClearDefenseStance();
+
+        var appmon = GetComponent<TacticalBattle.Appmon.AppmonCharacter>();
+        if (appmon != null)
+        {
+            appmon.OnTurnStart();
+        }
     }
 
     // Encerra o turno desta unidade
     public virtual void EndTurn()
     {
         isTurnCompleted = true;
+
+        var appmon = GetComponent<TacticalBattle.Appmon.AppmonCharacter>();
+        if (appmon != null)
+        {
+            appmon.OnTurnEnd();
+        }
     }
 
     public bool CanAct()
     {
+        var appmon = GetComponent<TacticalBattle.Appmon.AppmonCharacter>();
+        if (appmon != null && !appmon.CanAct()) return false;
         return !isTurnCompleted && !hasActed && IsAlive;
     }
 
     public bool CanMove()
     {
+        var appmon = GetComponent<TacticalBattle.Appmon.AppmonCharacter>();
+        if (appmon != null && !appmon.CanMove()) return false;
         return !isTurnCompleted && !hasMoved && IsAlive;
     }
 
     public bool IsAlive => stats != null ? stats.GetStat(StatEnum.HP) > 0 : true;
 
+    public void ApplyAppmon(string nameOrId)
+    {
+        var data = TacticalBattle.Appmon.AppmonDatabase.Get(nameOrId);
+        if (data != null) ApplyAppmon(data);
+    }
+
+    public void ApplyAppmon(TacticalBattle.Appmon.AppmonData data)
+    {
+        if (data == null) return;
+        var comp = GetComponent<TacticalBattle.Appmon.AppmonCharacter>();
+        if (comp == null) comp = gameObject.AddComponent<TacticalBattle.Appmon.AppmonCharacter>();
+        comp.InitializeFromData(data);
+    }
+
     public void TakeDamage(int damage, AttackOrientation orientation = AttackOrientation.Frontal, bool isCritical = false, bool hasAdvantage = false)
     {
         if (stats != null)
         {
+            var appmon = GetComponent<TacticalBattle.Appmon.AppmonCharacter>();
+            if (appmon != null)
+            {
+                if (appmon.teamDamageImmunityTurns > 0)
+                {
+                    Debug.Log($"[Imunidade Celestial] {unitName} anulou 100% do dano recebido!");
+                    DamagePopupService.ShowDamage(transform.position, 0, orientation, false, false);
+                    return;
+                }
+            }
+
             // Se a unidade estiver em posição de Defesa
             if (isDefending)
             {
@@ -319,6 +360,17 @@ public class Unit : MonoBehaviour
 
     public void Die()
     {
+        var appmon = GetComponent<TacticalBattle.Appmon.AppmonCharacter>();
+        if (appmon != null && appmon.TryTriggerRebirth())
+        {
+            return; // Renasce das cinzas com 50% HP!
+        }
+
+        if (appmon != null)
+        {
+            appmon.OnDefeated(); // Dispara passivas como Combustão
+        }
+
         Debug.Log($"[Combate] {unitName} foi derrotado em combate!");
         StartCoroutine(DieRoutine());
     }

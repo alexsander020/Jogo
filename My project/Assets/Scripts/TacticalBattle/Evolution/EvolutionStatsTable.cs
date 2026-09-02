@@ -43,9 +43,18 @@ namespace TacticalBattle.Evolution
 
         public static BaseTierStats GetStatsForTier(string speciesId, EvolutionTier tier)
         {
-            if (!string.IsNullOrEmpty(speciesId) && SpeciesStatsTables.TryGetValue(speciesId, out var speciesTable))
+            if (!string.IsNullOrEmpty(speciesId))
             {
-                if (speciesTable.TryGetValue(tier, out var stats)) return stats;
+                var appmon = Appmon.AppmonDatabase.Get(speciesId);
+                if (appmon != null)
+                {
+                    return new BaseTierStats(appmon.hp, appmon.atk, appmon.def, appmon.mov);
+                }
+
+                if (SpeciesStatsTables.TryGetValue(speciesId, out var speciesTable))
+                {
+                    if (speciesTable.TryGetValue(tier, out var stats)) return stats;
+                }
             }
 
             if (DefaultStatsByTier.TryGetValue(tier, out var defaultStats))

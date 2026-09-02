@@ -14,6 +14,13 @@ public static class ProceduralGridTileFactory
     private static Sprite s_targetSprite;
     private static Sprite s_invalidSprite;
     private static Sprite s_chevronSprite;
+    private static Sprite s_deploySprite;
+
+    public static Sprite DeployTile => s_deploySprite ??= CreateIsometricTile(
+        coreColor: new Color(0.98f, 0.95f, 0.20f, 1.0f),     // Amarelo Dourado / Neon (Digimon Survive Spawn Tile)
+        glowColor: new Color(0.95f, 0.85f, 0.10f, 0.90f),
+        innerFillColor: new Color(0.98f, 0.95f, 0.20f, 0.22f)
+    );
 
     public static Sprite MovementTile => s_movementSprite ??= CreateIsometricTile(
         coreColor: new Color(0.15f, 0.95f, 1.0f, 1.0f),     // Ciano Neon Elétrico (#00F0FF)

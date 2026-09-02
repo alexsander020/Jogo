@@ -152,4 +152,142 @@ public class MapLoader : MonoBehaviour
 
         return unit;
     }
+
+    public Unit SpawnAppmonUnit(Transform parent, string appmonName, Team team, FacingDirection facing, TileLogic tile, Color? tint = null)
+    {
+        var appmonData = TacticalBattle.Appmon.AppmonDatabase.Get(appmonName);
+        if (appmonData == null)
+        {
+            Debug.LogError($"[MapLoader] Appmon '{appmonName}' não encontrado no AppmonDatabase!");
+            return null;
+        }
+
+        int speed = appmonData.spd;
+        int hp = appmonData.hp;
+        int sp = appmonData.mp;
+        int atk = appmonData.atk;
+        int def = appmonData.def;
+
+        Unit u = SpawnUnit(parent, appmonData.name, team, appmonData.primaryCategory, appmonData.protocol, facing, tile, speed, hp, sp, atk, def, tint);
+        if (u != null)
+        {
+            u.ApplyAppmon(appmonData);
+        }
+        return u;
+    }
+
+    private GameObject unitsHolder;
+
+    public GameObject GetUnitsHolder()
+    {
+        if (unitsHolder == null)
+        {
+            unitsHolder = new GameObject("Units Holder");
+            if (Board.instance != null)
+            {
+                unitsHolder.transform.parent = Board.instance.transform;
+            }
+        }
+        return unitsHolder;
+    }
+
+    public List<TileLogic> GetPlayerSpawnTiles(int count = 4)
+    {
+        List<TileLogic> result = new List<TileLogic>();
+        if (Board.instance == null || Board.instance.tiles == null) return result;
+
+        // 1. Tenta pegar os spawns definidos no mapa
+        if (MapAssembler.ActiveMap != null && MapAssembler.ActiveMap.playerSpawns != null)
+        {
+            foreach (var pos in MapAssembler.ActiveMap.playerSpawns)
+            {
+                TileLogic t = Board.GetTile(pos);
+                if (t != null && !result.Contains(t) && t.content == null)
+                {
+                    result.Add(t);
+                    if (result.Count >= count) return result;
+                }
+            }
+        }
+
+        // 2. Se faltar, preenche com tiles livres ao Sul (menor Y)
+        List<TileLogic> availableTiles = new List<TileLogic>();
+        foreach (var t in Board.instance.tiles.Values)
+        {
+            if (t != null && t.content == null && !result.Contains(t))
+            {
+                availableTiles.Add(t);
+            }
+        }
+        availableTiles.Sort((a, b) => a.pos.y != b.pos.y ? a.pos.y.CompareTo(b.pos.y) : a.pos.x.CompareTo(b.pos.x));
+
+        for (int i = 0; i < availableTiles.Count && result.Count < count; i++)
+        {
+            result.Add(availableTiles[i]);
+        }
+
+        return result;
+    }
+
+    public void SpawnEnemyUnits()
+    {
+        if (unitPrefab == null || Board.instance == null) return;
+        Transform parent = GetUnitsHolder().transform;
+
+        // Coleta tiles do Norte para os inimigos
+        List<TileLogic> enemyTiles = new List<TileLogic>();
+        if (MapAssembler.ActiveMap != null && MapAssembler.ActiveMap.enemySpawns != null)
+        {
+            foreach (var pos in MapAssembler.ActiveMap.enemySpawns)
+            {
+                TileLogic t = Board.GetTile(pos);
+                if (t != null && t.content == null && !enemyTiles.Contains(t))
+                {
+                    enemyTiles.Add(t);
+                }
+            }
+        }
+
+        if (enemyTiles.Count == 0)
+        {
+            // Fallback: tiles de maior Y
+            List<TileLogic> all = new List<TileLogic>(Board.instance.tiles.Values);
+            all.Sort((a, b) => b.pos.y.CompareTo(a.pos.y));
+            for (int i = 0; i < 2 && i < all.Count; i++) enemyTiles.Add(all[i]);
+        }
+
+        // Inimigo 1: Shitakumon (ou Corrupt Alpha)
+        if (enemyTiles.Count > 0)
+        {
+            SpawnAppmonUnit(parent, "Shitakumon", Team.Enemy, FacingDirection.South, enemyTiles[0], new Color(1f, 0.45f, 0.45f));
+        }
+
+        // Inimigo 2: Flame-Log (ou Corrupt Beta)
+        if (enemyTiles.Count > 1)
+        {
+            SpawnAppmonUnit(parent, "Flame-Log", Team.Enemy, FacingDirection.South, enemyTiles[1], new Color(1f, 0.55f, 0.35f));
+        }
+    }
+
+    public Unit SpawnPlayerDeployUnit(string appmonName, TileLogic tile)
+    {
+        if (tile == null) return null;
+        Transform parent = GetUnitsHolder().transform;
+        Unit unit = SpawnAppmonUnit(parent, appmonName, Team.Player, FacingDirection.North, tile, new Color(0.95f, 1f, 1f));
+        return unit;
+    }
+
+    public void RemovePlayerDeployUnit(Unit unit)
+    {
+        if (unit == null) return;
+        if (unit.currentTile != null && unit.currentTile.content == unit.gameObject)
+        {
+            unit.currentTile.content = null;
+        }
+        if (BattleController.Instance != null)
+        {
+            BattleController.Instance.UnregisterUnit(unit);
+        }
+        Destroy(unit.gameObject);
+    }
 }

@@ -16,21 +16,14 @@ public class LoadState : State
         yield return StartCoroutine(Board.instance.InitSequence(this));
         yield return null;
 
-        // 2. Instancia as unidades 2v2 no tabuleiro
+        // 2. Instancia as unidades inimigas no tabuleiro
         if (MapLoader.instance != null)
         {
-            MapLoader.instance.CriaUnidades();
+            MapLoader.instance.SpawnEnemyUnits();
         }
         yield return null;
 
-        // 3. Inicializa o controlador de batalha e a fila de turnos
-        if (battle != null)
-        {
-            battle.InitBattle();
-        }
-        yield return null;
-
-        // 4. Centraliza a câmera perfeitamente no tabuleiro
+        // 3. Centraliza a câmera perfeitamente no tabuleiro
         Camera mainCam = Camera.main;
         if (mainCam != null && mainCam.GetComponent<TacticalCameraController>() == null)
         {
@@ -43,7 +36,7 @@ public class LoadState : State
         }
         yield return null;
 
-        // 5. Inicia o primeiro turno de combate
-        machine.ChangeTo<TurnStartState>();
+        // 4. Entra no estado de seleção e posicionamento de criaturas pré-batalha (Smartphone Digimon Survive)
+        machine.ChangeTo<DeploySelectionState>();
     }
 }

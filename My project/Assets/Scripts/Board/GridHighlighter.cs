@@ -5,7 +5,8 @@ public enum GridHighlightMode
 {
     Movement,
     Attack,
-    Skill
+    Skill,
+    Deploy
 }
 
 public class GridHighlighter : MonoBehaviour
@@ -75,6 +76,14 @@ public class GridHighlighter : MonoBehaviour
         ShowRange(skillCoords, GridHighlightMode.Skill, currentHovered);
     }
 
+    /// <summary>
+    /// Exibe a grade de posições de spawn disponíveis para posicionamento pré-batalha em Amarelo Neon (Digimon Survive).
+    /// </summary>
+    public void ShowDeployRange(HashSet<Vector3Int> deployCoords, Vector3Int? currentHovered = null)
+    {
+        ShowRange(deployCoords, GridHighlightMode.Deploy, currentHovered);
+    }
+
     private void ShowRange(HashSet<Vector3Int> coords, GridHighlightMode mode, Vector3Int? currentHovered)
     {
         ClearHighlights();
@@ -85,6 +94,7 @@ public class GridHighlighter : MonoBehaviour
         {
             GridHighlightMode.Attack => ProceduralGridTileFactory.AttackTile,
             GridHighlightMode.Skill => ProceduralGridTileFactory.SkillTile,
+            GridHighlightMode.Deploy => ProceduralGridTileFactory.DeployTile,
             _ => ProceduralGridTileFactory.MovementTile
         };
 

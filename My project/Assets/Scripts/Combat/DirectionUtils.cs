@@ -138,6 +138,8 @@ public static class DirectionUtils
                 return defender == FunctionalCategory.System;
             case FunctionalCategory.System:
                 return defender == FunctionalCategory.Social;
+            case FunctionalCategory.Security:
+                return defender == FunctionalCategory.System;
             default:
                 return false;
         }

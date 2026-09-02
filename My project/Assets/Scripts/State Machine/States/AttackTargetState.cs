@@ -316,6 +316,7 @@ public class AttackTargetState : State
 
         // 5. Aplica o dano no defensor
         target.TakeDamage(forecast.finalDamage, forecast.orientation, forecast.isCritical, forecast.hasCategoryAdvantage);
+        CombatService.ApplyCombatEffects(currentUnit, target, selectedSkill, forecast.finalDamage);
 
         // Atualiza o banner do turno e stats no HUD
         if (BattleHUD.Instance != null)
