@@ -48,6 +48,9 @@ namespace TacticalBattle.Tests
             Test_CombinedAttacks_CelestialHarmonyArray(); passed++;
             Test_CombinedAttacks_CataclysmicPandemonium(); passed++;
 
+            // 5. TESTES DE MAPEAMENTO DOS EFEITOS VISUAIS (FREE SLASH VFX)
+            Test_AttackVfx_DatabaseMapping(); passed++;
+
             Debug.Log("=================================================");
             Debug.Log($"SUCESSO: TODOS OS {passed} TESTES DE APPMON E COMBOS FORAM APROVADOS!");
             Debug.Log("=================================================");
@@ -258,6 +261,36 @@ namespace TacticalBattle.Tests
             var def = CombinedAttackService.Catalog[CombinedAttackId.CataclysmicPandemonium];
             Assert(def.participantA == "Satanmon" && def.participantB == "Lucifermon",
                 "Cataclysmic Pandemonium tem os demônios Satanmon e Lucifermon.");
+        }
+
+        public static void Test_AttackVfx_DatabaseMapping()
+        {
+            // 1. Ataques elementais diretos
+            var fireSkill = new SkillData { id = "firewall_flare", skillName = "Firewall Flare", maxRange = 3 };
+            Assert(AttackVfxDatabase.ResolveVfxName(fireSkill) == "Slash Projectile VFX Fire", "Firewall Flare mapeia para Slash Projectile VFX Fire.");
+
+            var waterSkill = new SkillData { id = "water_jet", skillName = "Jato de Água", maxRange = 3 };
+            Assert(AttackVfxDatabase.ResolveVfxName(waterSkill) == "Slash Projectile VFX Water", "Jato de Água mapeia para Slash Projectile VFX Water.");
+
+            var elecSkill = new SkillData { id = "spark_zap", skillName = "Spark Zap", maxRange = 3 };
+            Assert(AttackVfxDatabase.ResolveVfxName(elecSkill) == "Slash Projectile VFX Eletric", "Spark Zap mapeia para Slash Projectile VFX Eletric.");
+
+            var earthSkill = new SkillData { id = "tool_strike", skillName = "Tool Strike", maxRange = 1 };
+            Assert(AttackVfxDatabase.ResolveVfxName(earthSkill) == "Slash Earth VFX", "Tool Strike mapeia para Slash Earth VFX.");
+
+            // 2. Cortes básicos e múltiplos
+            var basicSkill = SkillData.CreateBasicAttack("Atacar", 85, 2);
+            Assert(AttackVfxDatabase.ResolveVfxName(basicSkill) == "Slash VFX", "Ataque básico mapeia para Slash VFX.");
+
+            var multiSkill = new SkillData { id = "error_bite", skillName = "Error Bite", maxRange = 1 };
+            Assert(AttackVfxDatabase.ResolveVfxName(multiSkill) == "Multiple Slashes", "Error Bite mapeia para Multiple Slashes.");
+
+            // 3. Fallback inteligente por descrição/nome
+            var customFire = new SkillData { skillName = "Chamas Devastadoras", description = "Queima o alvo com fogo intenso", maxRange = 1 };
+            Assert(AttackVfxDatabase.ResolveVfxName(customFire) == "Slash Fire VFX", "Habilidade com palavra-chave 'fogo' melee mapeia para Slash Fire VFX.");
+
+            var customRangedWater = new SkillData { skillName = "Onda Abissal", description = "Dispara água em alta pressão", maxRange = 3 };
+            Assert(AttackVfxDatabase.ResolveVfxName(customRangedWater) == "Slash Projectile VFX Water", "Habilidade com palavra-chave 'água' ranged mapeia para Slash Projectile VFX Water.");
         }
     }
 }

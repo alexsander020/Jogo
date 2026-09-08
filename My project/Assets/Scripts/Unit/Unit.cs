@@ -435,13 +435,15 @@ public class Unit : MonoBehaviour
             string specDesc = "Causa dano de Vento aos alvos.";
             string specIcon = "🌪";
             string specAsset = "UI_Skill_Icon_Beam";
+            string specVfx = "Slash VFX";
 
             if (unitName.Contains("Agumon") || unitName.Contains("Greymon"))
             {
                 specName = "Rugido Destrutivo";
-                specDesc = "Causa dano de Vento aos alvos.";
+                specDesc = "Causa dano de Fogo aos alvos.";
                 specIcon = "🔥";
                 specAsset = "UI_Skill_Icon_MeteorShower";
+                specVfx = "Slash Projectile VFX Fire";
             }
             else if (unitName.Contains("Palmon"))
             {
@@ -449,6 +451,7 @@ public class Unit : MonoBehaviour
                 specDesc = "Dispara espinhos perfurantes de longo alcance.";
                 specIcon = "🌿";
                 specAsset = "UI_Skill_Icon_Arrow_Barrage";
+                specVfx = "Slash Projectile VFX Earth";
             }
             else if (category == FunctionalCategory.System)
             {
@@ -456,9 +459,10 @@ public class Unit : MonoBehaviour
                 specDesc = "Descarga de dados concentrada que atinge o alvo.";
                 specIcon = "⚡";
                 specAsset = "UI_Skill_Icon_PsycicAttack";
+                specVfx = "Slash Projectile VFX Eletric";
             }
 
-            skills.Add(SkillData.CreateSpecialSkill(specName, 120, 30, category, specDesc, 3, TacticalBattle.Core.AttackShapeType.Single, 0, specIcon, specAsset));
+            skills.Add(SkillData.CreateSpecialSkill(specName, 120, 30, category, specDesc, 3, TacticalBattle.Core.AttackShapeType.Single, 0, specIcon, specAsset, specVfx));
         }
 
         return skills;

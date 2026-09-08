@@ -37,7 +37,7 @@ namespace TacticalBattle.Appmon
             dataViper.skills.Add(new SkillData
             {
                 id = "quarantine_lock", skillName = "Quarantine Lock",
-                category = FunctionalCategory.Security, effectPower = 90, mpCost = 15, isMagic = false,
+                category = FunctionalCategory.Security, attackVfxName = "Slash VFX", effectPower = 90, mpCost = 15, isMagic = false,
                 minRange = 1, maxRange = 2, statusToApply = StatusEffectType.Immobilized, statusDurationTurns = 1,
                 description = "Causa dano físico e aplica [Imobilizado] no alvo por 1 turno."
             });
@@ -70,7 +70,7 @@ namespace TacticalBattle.Appmon
             glitchHound.skills.Add(new SkillData
             {
                 id = "error_bite", skillName = "Error Bite",
-                category = FunctionalCategory.System, effectPower = 100, mpCost = 15, isMagic = false,
+                category = FunctionalCategory.System, attackVfxName = "Multiple Slashes", effectPower = 100, mpCost = 15, isMagic = false,
                 minRange = 1, maxRange = 1,
                 description = "Dano físico direto que reduz a SPD do alvo em 15%."
             });
@@ -122,7 +122,7 @@ namespace TacticalBattle.Appmon
             craftCraft.skills.Add(new SkillData
             {
                 id = "tool_strike", skillName = "Tool Strike",
-                category = FunctionalCategory.Tool, effectPower = 90, mpCost = 10, isMagic = false,
+                category = FunctionalCategory.Tool, attackVfxName = "Slash Earth VFX", effectPower = 90, mpCost = 10, isMagic = false,
                 minRange = 1, maxRange = 1,
                 description = "Dano físico simples com chance de reduzir a DEF do inimigo."
             });
@@ -141,7 +141,7 @@ namespace TacticalBattle.Appmon
             shitakumon.skills.Add(new SkillData
             {
                 id = "water_jet", skillName = "Jato de Água",
-                category = FunctionalCategory.Security, effectPower = 95, mpCost = 20, isMagic = true,
+                category = FunctionalCategory.Security, attackVfxName = "Slash Projectile VFX Water", effectPower = 95, mpCost = 20, isMagic = true,
                 rangeType = AttackShapeType.Line, minRange = 1, maxRange = 3, pushDistance = 1,
                 description = "Dano mágico em linha reta de 3 Tiles, empurrando o alvo 1 Tile para trás."
             });
@@ -168,7 +168,7 @@ namespace TacticalBattle.Appmon
             flameLog.skills.Add(new SkillData
             {
                 id = "firewall_flare", skillName = "Firewall Flare",
-                category = FunctionalCategory.System, effectPower = 85, mpCost = 15, isMagic = true,
+                category = FunctionalCategory.System, attackVfxName = "Slash Projectile VFX Fire", effectPower = 85, mpCost = 15, isMagic = true,
                 minRange = 1, maxRange = 3, hasTerrainCreation = true, createsTerrain = TerrainType.Fire,
                 description = "Transforma 1 Tile em [Terreno de Fogo], causando dano contínuo a quem pisar."
             });
@@ -194,7 +194,7 @@ namespace TacticalBattle.Appmon
             voltPlug.skills.Add(new SkillData
             {
                 id = "spark_zap", skillName = "Spark Zap",
-                category = FunctionalCategory.Tool, effectPower = 90, mpCost = 20, isMagic = true,
+                category = FunctionalCategory.Tool, attackVfxName = "Slash Projectile VFX Eletric", effectPower = 90, mpCost = 20, isMagic = true,
                 minRange = 1, maxRange = 3, statusToApply = StatusEffectType.Paralysis, statusDurationTurns = 1,
                 description = "Dano elétrico em um alvo com chance de aplicar [Paralisia]."
             });

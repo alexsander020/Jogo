@@ -13,6 +13,10 @@ public class SkillData
     public string iconAssetName = "UI_Skill_Icon_Claw";
     public Sprite iconSprite;
     public FunctionalCategory category = FunctionalCategory.System;
+
+    [Header("Animação e Efeito Visual (Free Slash VFX)")]
+    public string attackVfxName = "";
+    public GameObject attackVfxPrefab = null;
     
     [Header("Poder e Custo")]
     public int effectPower = 85;
@@ -65,6 +69,7 @@ public class SkillData
             iconSymbol = "//",
             iconAssetName = iconAsset,
             category = cat,
+            attackVfxName = "Slash VFX",
             effectPower = power,
             spCost = 0,
             description = "Ataque físico direto com dano concentrado.",
@@ -80,7 +85,7 @@ public class SkillData
         };
     }
 
-    public static SkillData CreateSpecialSkill(string name, int power, int spCost, FunctionalCategory cat, string desc, int maxRange = 3, AttackShapeType aoe = AttackShapeType.Single, int aoeRadius = 0, string icon = "⚡", string iconAsset = "UI_Skill_Icon_MeteorShower")
+    public static SkillData CreateSpecialSkill(string name, int power, int spCost, FunctionalCategory cat, string desc, int maxRange = 3, AttackShapeType aoe = AttackShapeType.Single, int aoeRadius = 0, string icon = "⚡", string iconAsset = "UI_Skill_Icon_MeteorShower", string vfxName = "")
     {
         return new SkillData
         {
@@ -89,6 +94,7 @@ public class SkillData
             iconSymbol = icon,
             iconAssetName = iconAsset,
             category = cat,
+            attackVfxName = vfxName,
             effectPower = power,
             spCost = spCost,
             description = desc,

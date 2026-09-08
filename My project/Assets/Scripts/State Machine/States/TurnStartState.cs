@@ -209,7 +209,10 @@ public class TurnStartState : State
 
                 yield return new WaitForSeconds(0.3f);
 
-                // Executa a animação de ataque
+                // Executa a animação de ataque com VFX correspondente
+                var enemySkills = enemy.GetSkills();
+                SkillData enemySkill = (enemySkills != null && enemySkills.Count > 0) ? enemySkills[0] : null;
+                AttackVfxDatabase.PlaySkillVfx(enemy, closestPlayer, enemySkill);
                 yield return StartCoroutine(enemy.PlayAttackAnimation(closestPlayer.transform.position));
 
                 // Calcula e aplica o dano

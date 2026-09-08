@@ -127,11 +127,6 @@ public class Board : MonoBehaviour
         return list;
     }
 
-    [Header("Exibição da Grade no Editor")]
-    [Tooltip("Desenha as linhas da grade no Editor APENAS sobre a área desenhada com tiles")]
-    public bool showGridOnlyOnDrawnArea = true;
-    public Color drawnGridColor = new Color(0.0f, 0.95f, 1.0f, 0.55f);
-
     [ContextMenu("Comprimir Limites dos Tilemaps (Compress Bounds)")]
     public void CompressBoundsToDrawnArea()
     {
@@ -144,68 +139,5 @@ public class Board : MonoBehaviour
             Debug.Log($"[Board] Tilemap '{tm.name}' comprimido para limites reais: {tm.cellBounds}");
         }
         Debug.Log($"[Board] {count} Tilemaps comprimidos com sucesso para a área desenhada!");
-    }
-
-    void OnDrawGizmos()
-    {
-        if (!showGridOnlyOnDrawnArea) return;
-
-        Grid g = grid != null ? grid : GetComponent<Grid>();
-        if (g == null) return;
-
-        Gizmos.color = drawnGridColor;
-
-        Vector3 cellSize = g.cellSize;
-        float hw = cellSize.x * 0.5f;
-        float hh = cellSize.y * 0.5f;
-
-        // 1. Se em execução e o dicionário de tiles estiver populado
-        if (tiles != null && tiles.Count > 0)
-        {
-            foreach (var t in tiles.Values)
-            {
-                Vector3 center = t.worldPos;
-                center.y += 0.5f;
-                DrawIsometricCellGizmo(center, hw, hh);
-            }
-        }
-        else
-        {
-            // 2. Em modo de edição no Unity, busca todas as células preenchidas nos Tilemaps filhos
-            var tilemaps = GetComponentsInChildren<UnityEngine.Tilemaps.Tilemap>();
-            if (tilemaps == null || tilemaps.Length == 0) return;
-
-            HashSet<Vector3Int> drawnCells = new HashSet<Vector3Int>();
-            foreach (var tm in tilemaps)
-            {
-                BoundsInt bounds = tm.cellBounds;
-                foreach (var pos in bounds.allPositionsWithin)
-                {
-                    if (tm.HasTile(pos))
-                    {
-                        drawnCells.Add(pos);
-                    }
-                }
-            }
-
-            foreach (var pos in drawnCells)
-            {
-                Vector3 center = g.GetCellCenterWorld(pos);
-                DrawIsometricCellGizmo(center, hw, hh);
-            }
-        }
-    }
-
-    private void DrawIsometricCellGizmo(Vector3 center, float hw, float hh)
-    {
-        Vector3 top = center + new Vector3(0, hh, 0);
-        Vector3 right = center + new Vector3(hw, 0, 0);
-        Vector3 bottom = center + new Vector3(0, -hh, 0);
-        Vector3 left = center + new Vector3(-hw, 0, 0);
-
-        Gizmos.DrawLine(top, right);
-        Gizmos.DrawLine(right, bottom);
-        Gizmos.DrawLine(bottom, left);
-        Gizmos.DrawLine(left, top);
     }
 }

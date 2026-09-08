@@ -65,3 +65,24 @@ The following packages were updated:
   com.unity.ide.visualstudio from version 2.0.25 to 2.0.26
   com.unity.inputsystem from version 1.17.0 to 1.18.0
   com.unity.timeline from version 1.8.9 to 1.8.10
+
+=== Fri Sep  4 22:58:31 2026
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.render-pipelines.core from version 17.0.3 to 17.3.0
+  com.unity.render-pipelines.universal from version 17.0.3 to 17.3.0
+  com.unity.shadergraph from version 17.0.3 to 17.3.0
+
+=== Fri Sep  4 22:58:31 2026
+
+Packages were changed.
+Update Mode: mergeDefaultDependencies
+
+The following packages were added:
+  com.unity.render-pipelines.core@17.3.0
+  com.unity.render-pipelines.universal-config@17.0.3
+  com.unity.shadergraph@17.3.0
+  com.unity.modules.subsystems@1.0.0

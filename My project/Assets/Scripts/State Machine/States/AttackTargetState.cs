@@ -311,7 +311,8 @@ public class AttackTargetState : State
             );
         }
 
-        // 4. Animação de ataque com lunge dinâmico
+        // 4. Dispara o efeito visual correspondente da pasta Free Slash VFX e animação de lunge
+        AttackVfxDatabase.PlaySkillVfx(currentUnit, target, selectedSkill);
         yield return StartCoroutine(currentUnit.PlayAttackAnimation(target.transform.position));
 
         // 5. Aplica o dano no defensor
