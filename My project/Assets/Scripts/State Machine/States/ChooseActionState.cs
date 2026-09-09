@@ -90,7 +90,14 @@ public class ChooseActionState : State
         }
     }
 
-    void ActionButton()
+    public void SelectAndExecute(int actionIndex)
+    {
+        index = Mathf.Clamp(actionIndex, 0, 5);
+        ChangeSelector();
+        ActionButton();
+    }
+
+    public void ActionButton()
     {
         Debug.Log($"[ChooseActionState] Ação selecionada: {index}");
 
@@ -157,8 +164,23 @@ public class ChooseActionState : State
                 Debug.Log("[Ação] Opção Evolução / NetFusion selecionada.");
                 break;
 
-            case 4: // Falar / Talk
-                Debug.Log("[Ação] Opção Falar selecionada.");
+            case 4: // Link (Applink / Conexão com reserva)
+                if (currentUnit != null && (currentUnit.CanAct() || currentUnit.IsLinked))
+                {
+                    Debug.Log("[Ação] Opção Link selecionada. Abrindo Sistema de App-Link...");
+                    machine.ChangeTo<AppLinkState>();
+                }
+                else
+                {
+                    Debug.LogWarning("[Ação] Esta unidade já realizou sua ação neste turno!");
+                    if (BattleHUD.Instance != null)
+                    {
+                        BattleHUD.Instance.UpdateControlsPrompt(
+                            "AÇÃO JÁ REALIZADA", 
+                            "• A unidade atual já agiu neste turno. Escolha Mover ou Encerrar Turno."
+                        );
+                    }
+                }
                 break;
 
             case 5: // Encerrar Turno

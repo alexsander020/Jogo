@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TacticalBattle.Appmon;
+using TacticalBattle.AppLink;
 using UnityEngine;
 
 public class Unit : MonoBehaviour
@@ -46,6 +48,11 @@ public class Unit : MonoBehaviour
     public bool hasActed = false;
     public bool isTurnCompleted = false;
     public bool isDefending = false;
+
+    [Header("App-Link (Conexão com Reserva)")]
+    public AppmonData linkedBagAppmon;
+    public AppLinkRecord currentAppLink;
+    public bool IsLinked => linkedBagAppmon != null;
 
     [HideInInspector]
     public Stats stats;
@@ -408,6 +415,7 @@ public class Unit : MonoBehaviour
         }
 
         DefenseVfxService.ClearDefenseVfx(this);
+        AppLinkService.RemoveLink(this);
         gameObject.SetActive(false);
     }
 

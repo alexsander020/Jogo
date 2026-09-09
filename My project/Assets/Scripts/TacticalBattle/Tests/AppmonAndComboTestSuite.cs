@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using TacticalBattle.Appmon;
+using TacticalBattle.AppLink;
 using TacticalBattle.Combat;
 using TacticalBattle.Core;
 using UnityEngine;
@@ -51,8 +52,11 @@ namespace TacticalBattle.Tests
             // 5. TESTES DE MAPEAMENTO DOS EFEITOS VISUAIS (FREE SLASH VFX)
             Test_AttackVfx_DatabaseMapping(); passed++;
 
+            // 6. TESTES DO SISTEMA DE APP-LINK
+            Test_AppLink_System(); passed++;
+
             Debug.Log("=================================================");
-            Debug.Log($"SUCESSO: TODOS OS {passed} TESTES DE APPMON E COMBOS FORAM APROVADOS!");
+            Debug.Log($"SUCESSO: TODOS OS {passed} TESTES DE APPMON, COMBOS E APP-LINK FORAM APROVADOS!");
             Debug.Log("=================================================");
 
             return passed;
@@ -291,6 +295,155 @@ namespace TacticalBattle.Tests
 
             var customRangedWater = new SkillData { skillName = "Onda Abissal", description = "Dispara água em alta pressão", maxRange = 3 };
             Assert(AttackVfxDatabase.ResolveVfxName(customRangedWater) == "Slash Projectile VFX Water", "Habilidade com palavra-chave 'água' ranged mapeia para Slash Projectile VFX Water.");
+        }
+
+        // =========================================================================
+        // 6. TESTES DO SISTEMA DE APP-LINK
+        // =========================================================================
+        public static void Test_AppLink_System()
+        {
+            AppLinkService.ResetAllLinks();
+
+            // Setup de unidade para teste
+            var go1 = new GameObject("TestFieldUnit1");
+            var unit1 = go1.AddComponent<Unit>();
+            var stats1 = go1.AddComponent<Stats>();
+            stats1.InitializeStatsIfEmpty();
+            unit1.stats = stats1;
+            unit1.unitName = "Test-Security-Unit";
+            unit1.category = FunctionalCategory.Security;
+            stats1.SetStat(StatEnum.ATK, 100);
+            stats1.SetStat(StatEnum.DEF, 80);
+
+            // 1. Escalonamento Standard (+5% base, +7.5% com compatibilidade)
+            var dataViper = AppmonDatabase.Get("Data-Viper"); // Standard, Security
+            Assert(dataViper != null, "Data-Viper existe no banco.");
+            var calcStdComp = AppLinkService.CalculateBonus(unit1, dataViper);
+            Assert(calcStdComp.hasCompatibility, "Compatibilidade ativada (mesma categoria Security).");
+            Assert(Mathf.Approximately(calcStdComp.compatibilityMultiplier, 1.5f), "Multiplicador de compatibilidade é 1.5x.");
+            Assert(calcStdComp.statBonuses.Count > 0, "Possui bônus de status.");
+            Assert(Mathf.Approximately(calcStdComp.statBonuses[0].finalPercent, 7.5f), "Bônus final do Standard compatível é 7.5% (5% * 1.5).");
+
+            var glitchHound = AppmonDatabase.Get("Glitch-Hound"); // Standard, System
+            var calcStdNoComp = AppLinkService.CalculateBonus(unit1, glitchHound);
+            Assert(!calcStdNoComp.hasCompatibility, "Sem compatibilidade (Security vs System).");
+            Assert(Mathf.Approximately(calcStdNoComp.compatibilityMultiplier, 1.0f), "Multiplicador é 1.0x.");
+            Assert(Mathf.Approximately(calcStdNoComp.statBonuses[0].finalPercent, 5.0f), "Bônus final do Standard sem compatibilidade é 5.0%.");
+
+            // 2. Escalonamento Super (+10% base, +15% com compatibilidade)
+            var architect = AppmonDatabase.Get("Architectmon"); // Super, Security
+            Assert(architect != null, "Architectmon existe no banco.");
+            var calcSuperComp = AppLinkService.CalculateBonus(unit1, architect);
+            Assert(calcSuperComp.hasCompatibility, "Super compatível.");
+            Assert(Mathf.Approximately(calcSuperComp.statBonuses[0].finalPercent, 15.0f), "Super compatível concede +15% (+10% * 1.5) no atributo principal.");
+            Assert(calcSuperComp.statBonuses[0].stat == StatEnum.ATK, "Atributo principal é ATK (maior stat = 100).");
+
+            var magmaLog = AppmonDatabase.Get("Magma-Logmon"); // Super, System
+            var calcSuperNoComp = AppLinkService.CalculateBonus(unit1, magmaLog);
+            Assert(!calcSuperNoComp.hasCompatibility, "Super sem compatibilidade.");
+            Assert(Mathf.Approximately(calcSuperNoComp.statBonuses[0].finalPercent, 10.0f), "Super sem compatibilidade concede +10% no atributo principal.");
+
+            // 3. Escalonamento Ultimate (+15% em 2 atributos: 8% e 7%, ou 12% e 10.5% com compatibilidade)
+            var genbu = AppmonDatabase.Get("Genbu-Architectmon"); // Ultimate, Security / Tool
+            Assert(genbu != null, "Genbu-Architectmon existe no banco.");
+            var calcUltComp = AppLinkService.CalculateBonus(unit1, genbu);
+            Assert(calcUltComp.hasCompatibility, "Ultimate compatível.");
+            Assert(calcUltComp.statBonuses.Count == 2, "Ultimate concede bônus em 2 atributos principais.");
+            Assert(Mathf.Approximately(calcUltComp.statBonuses[0].finalPercent, 12.0f), "Bônus primário Ultimate compatível é 12.0% (8% * 1.5).");
+            Assert(Mathf.Approximately(calcUltComp.statBonuses[1].finalPercent, 10.5f), "Bônus secundário Ultimate compatível é 10.5% (7% * 1.5).");
+
+            // 4. Escalonamento God (+25% base, +37.5% com compatibilidade)
+            var deus = AppmonDatabase.Get("Deusmon"); // God, System
+            var calcGodNoComp = AppLinkService.CalculateBonus(unit1, deus);
+            Assert(!calcGodNoComp.hasCompatibility, "Deusmon sem compatibilidade com Security.");
+            Assert(Mathf.Approximately(calcGodNoComp.statBonuses[0].finalPercent, 25.0f), "God sem compatibilidade concede +25% no atributo principal.");
+
+            var goSys = new GameObject("TestSysUnit");
+            var unitSys = goSys.AddComponent<Unit>();
+            var statsSys = goSys.AddComponent<Stats>();
+            statsSys.InitializeStatsIfEmpty();
+            unitSys.stats = statsSys;
+            unitSys.category = FunctionalCategory.System;
+            statsSys.SetStat(StatEnum.ATK, 100);
+            var calcGodComp = AppLinkService.CalculateBonus(unitSys, deus);
+            Assert(calcGodComp.hasCompatibility, "Deusmon compatível com System.");
+            Assert(Mathf.Approximately(calcGodComp.statBonuses[0].finalPercent, 37.5f), "God com compatibilidade concede +37.5% (25% * 1.5) no atributo principal.");
+
+            // 5. Aplicação, Exclusividade, Limite Máximo e Remoção
+            int atkBefore = unit1.stats.GetStat(StatEnum.ATK);
+            bool linked = AppLinkService.ApplyLink(unit1, architect, out string linkErr);
+            Assert(linked, $"App-Link aplicado com sucesso: {linkErr}");
+            Assert(unit1.IsLinked, "unit1 está marcada como IsLinked.");
+            Assert(unit1.linkedBagAppmon == architect, "unit1 está vinculada a Architectmon.");
+            Assert(AppLinkService.IsAppmonLinked(architect), "Architectmon está marcado como [LINKADO].");
+            Assert(unit1.stats.GetStat(StatEnum.ATK) > atkBefore, "ATK da unidade aumentou com o vínculo.");
+            Assert(unit1.hasActed, "Vincular App-Link consome a ação do turno (hasActed = true).");
+
+            // Regra: Apenas 1 App-Link por personagem (Substituição/Troca dinâmica sem empilhar vínculos)
+            glitchHound = AppmonDatabase.Get("Glitch-Hound");
+            bool swapped = AppLinkService.ApplyLink(unit1, glitchHound, out string swapErr);
+            Assert(swapped, "Troca de parceiro realizada com sucesso no mesmo personagem.");
+            Assert(unit1.IsLinked && unit1.linkedBagAppmon.name == "Glitch-Hound", "unit1 agora possui como parceiro único o Glitch-Hound.");
+            Assert(!AppLinkService.IsAppmonLinked(architect), "O parceiro antigo Architectmon foi desvinculado e liberado.");
+            Assert(AppLinkService.ActiveLinkCount == 1, "Personagem mantém estritamente 1 único link ativo (Apenas 1 Link por personagem).");
+
+            // Exclusividade 1-para-1: Não pode linkar o mesmo Appmon da Bag em outro personagem
+            var go2 = new GameObject("TestFieldUnit2");
+            var unit2 = go2.AddComponent<Unit>();
+            var stats2 = go2.AddComponent<Stats>();
+            stats2.InitializeStatsIfEmpty();
+            unit2.stats = stats2;
+            unit2.unitName = "Test-Unit-2";
+            bool canLinkSame = AppLinkService.CanLink(unit2, glitchHound, out string exclusivityReason);
+            Assert(!canLinkSame, "Não é permitido vincular um Appmon que já está linkado a outra unidade.");
+
+            // Cada personagem em campo pode possuir seu respectivo 1 Link
+            var dataViperBag = AppmonDatabase.Get("Data-Viper");
+            bool linked2 = AppLinkService.ApplyLink(unit2, dataViperBag, out string linkErr2);
+            Assert(linked2, "Segundo personagem do time vinculou seu próprio parceiro com sucesso.");
+            Assert(AppLinkService.ActiveLinkCount == 2, "Exatamente 2 links ativos no time (1 por personagem).");
+
+            var go3 = new GameObject("TestFieldUnit3");
+            var unit3 = go3.AddComponent<Unit>();
+            var stats3 = go3.AddComponent<Stats>();
+            stats3.InitializeStatsIfEmpty();
+            unit3.stats = stats3;
+            unit3.unitName = "Test-Unit-3";
+            var craftCraftBag = AppmonDatabase.Get("Craft-Craft");
+            bool linked3 = AppLinkService.ApplyLink(unit3, craftCraftBag, out string linkErr3);
+            Assert(linked3, "Terceiro combatente também pôde criar seu 1 Link individual.");
+            Assert(AppLinkService.ActiveLinkCount == 3, "Três personagens do time possuem seu respectivo 1 Link.");
+
+            // Remoção de link e restauração de atributos
+            bool unlinked = AppLinkService.RemoveLink(unit1);
+            Assert(unlinked, "unit1 desvinculada com sucesso.");
+            Assert(!unit1.IsLinked, "unit1 não está mais vinculada.");
+            Assert(!AppLinkService.IsAppmonLinked(glitchHound), "Glitch-Hound não está mais [LINKADO].");
+            Assert(unit1.stats.GetStat(StatEnum.ATK) == atkBefore, "ATK restaurado ao valor original após desvincular.");
+            Assert(AppLinkService.ActiveLinkCount == 2, "2 links ativos restantes para os outros combatentes.");
+
+            // 6. Distribuição de XP Pós-Batalha (100% Campo, 50% Bag Linkada)
+            bool xpReceived = false;
+            int capturedFieldXp = 0;
+            int capturedBagXp = 0;
+            Action<int, int> xpHandler = (f, b) =>
+            {
+                xpReceived = true;
+                capturedFieldXp = f;
+                capturedBagXp = b;
+            };
+            AppLinkService.OnXpDistributed += xpHandler;
+            AppLinkService.DistributeBattleXp(120);
+            Assert(xpReceived && capturedFieldXp == 120 && capturedBagXp == 60, "XP pós-batalha distribui 100% (120 XP) para combatentes e 50% (60 XP) para parceiros vinculados na Bag.");
+            AppLinkService.OnXpDistributed -= xpHandler;
+
+            // Limpeza de testes
+            AppLinkService.ResetAllLinks();
+            Assert(AppLinkService.ActiveLinkCount == 0, "Todos os links resetados com sucesso.");
+            GameObject.DestroyImmediate(go1);
+            GameObject.DestroyImmediate(go2);
+            GameObject.DestroyImmediate(go3);
+            GameObject.DestroyImmediate(goSys);
         }
     }
 }

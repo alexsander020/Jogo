@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TacticalBattle.AppLink;
 using TacticalBattle.Core;
 using TacticalBattle.Evolution;
 using TacticalBattle.Integration;
@@ -24,6 +25,7 @@ public class BattleController : MonoBehaviour
     {
         Instance = this;
         tacticalController = new TacticalBattleController();
+        AppLinkService.ResetAllLinks();
     }
 
     public void RegisterUnit(Unit unit)
@@ -116,6 +118,12 @@ public class BattleController : MonoBehaviour
         {
             Debug.Log($"[NetShift Battle] Batalha encerrada! Vencedor: {winner}");
             OnBattleEnd?.Invoke(winner);
+
+            // 5. Progressão e Experiência (XP): 100% combatentes de campo, 50% suportes [LINKADO] na Bag
+            if (winner == Team.Player)
+            {
+                TacticalBattle.AppLink.AppLinkService.DistributeBattleXp(120);
+            }
             return;
         }
 

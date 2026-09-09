@@ -36,7 +36,7 @@ public class BattleHUD : MonoBehaviour
         "Attack",
         "Item",
         "Evolution",
-        "Talk",
+        "Link",
         "End Turn"
     };
     private readonly string[] actionIcons = new string[]
@@ -45,7 +45,7 @@ public class BattleHUD : MonoBehaviour
         "⚡", // Attack
         "🏺", // Item
         "📈", // Evolution
-        "💬", // Talk
+        "🔗", // Link
         "⏭"  // End Turn
     };
 
@@ -465,6 +465,21 @@ public class BattleHUD : MonoBehaviour
             Text labelText = CreateUIText(innerItem.transform, "LabelText", actionNames[i], 12, FontStyle.Bold,
                 new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0f, 0.5f),
                 new Vector2(28, 0), new Vector2(-30, 0), new Color(0.80f, 0.85f, 0.92f, 0.85f), TextAnchor.MiddleLeft);
+
+            int actionIdx = i;
+            Button itemBtn = itemObj.AddComponent<Button>();
+            itemBtn.targetGraphic = innerItem.GetComponent<Image>();
+            itemBtn.onClick.AddListener(() =>
+            {
+                if (StateMachineController.Instance != null)
+                {
+                    var chooseState = StateMachineController.Instance.GetState<ChooseActionState>();
+                    if (chooseState != null && StateMachineController.Instance.current == chooseState)
+                    {
+                        chooseState.SelectAndExecute(actionIdx);
+                    }
+                }
+            });
 
             ActionMenuItemUI itemUI = new ActionMenuItemUI
             {
@@ -1655,6 +1670,14 @@ public class BattleHUD : MonoBehaviour
 
             bool isOptionAvailable = true;
             if (i == 0 && cachedCurrentUnit != null && !cachedCurrentUnit.CanMove())
+            {
+                isOptionAvailable = false;
+            }
+            else if ((i == 1 || i == 2) && cachedCurrentUnit != null && !cachedCurrentUnit.CanAct())
+            {
+                isOptionAvailable = false;
+            }
+            else if (i == 4 && cachedCurrentUnit != null && !cachedCurrentUnit.CanAct() && !cachedCurrentUnit.IsLinked)
             {
                 isOptionAvailable = false;
             }
