@@ -223,7 +223,34 @@ public class TurnStartState : State
             }
         }
 
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.3f);
+
+        // 4. A Oponente escolhe estrategicamente o lado para defender ao encerrar o turno
+        FacingDirection enemyDefenseDir = enemy.facing;
+        if (closestPlayer != null)
+        {
+            Vector3Int diff = closestPlayer.gridPosition - enemy.gridPosition;
+            if (diff != Vector3Int.zero)
+            {
+                enemyDefenseDir = DirectionUtils.VectorToDirection(diff);
+            }
+        }
+
+        enemy.SetFacing(enemyDefenseDir);
+        enemy.SetDefenseStance(enemyDefenseDir);
+        DefenseVfxService.ShowDefensePreview(enemy, enemyDefenseDir);
+        DefenseVfxService.ConfirmDefenseStance(enemy);
+
+        if (BattleHUD.Instance != null)
+        {
+            BattleHUD.Instance.UpdateControlsPrompt(
+                "POSTURA DEFENSIVA INIMIGA", 
+                $"• {enemy.unitName} ativou barreira de Defesa voltada para {DirectionUtils.GetDirectionName(enemyDefenseDir)}!"
+            );
+        }
+
+        Debug.Log($"[Enemy AI] {enemy.unitName} encerrou o turno ativando Defesa para {DirectionUtils.GetDirectionName(enemyDefenseDir)}");
+        yield return new WaitForSeconds(0.75f);
 
         // Transiciona para o encerramento do turno do inimigo
         machine.ChangeTo<TurnEndState>();

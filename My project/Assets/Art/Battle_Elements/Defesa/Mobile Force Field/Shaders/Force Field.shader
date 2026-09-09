@@ -1,4 +1,4 @@
-﻿Shader "Force Field" {
+Shader "Force Field" {
     Properties {
         _MainTex ("Texture", 2D ) = "white" {}
         _Color ("Color", Color) = (1, 1, 1, 1)
@@ -29,7 +29,11 @@
                 v2f o;
                 o.pos = UnityObjectToClipPos(v.vertex);
                 o.normal = normalize(mul((float3x3)unity_ObjectToWorld, v.normal));
-                o.viewDir = normalize(_WorldSpaceCameraPos - mul((float3x3)unity_ObjectToWorld, v.vertex));
+                if (unity_OrthoParams.w > 0.5) {
+                    o.viewDir = -UNITY_MATRIX_V[2].xyz;
+                } else {
+                    o.viewDir = normalize(_WorldSpaceCameraPos - mul((float3x3)unity_ObjectToWorld, v.vertex));
+                }
                 o.uv = TRANSFORM_TEX(v.texcoord, _MainTex);
                 return o;
             }
@@ -37,9 +41,12 @@
             fixed4 _Color;
  
             fixed4 frag(v2f i) : COLOR {
-                float val = 0.95 - abs(dot(i.viewDir, i.normal.yz));
-				float val2 = 1.5 - abs(dot(i.viewDir, i.normal.zx));
-                return _Color * val * val2 * tex2D(_MainTex, i.uv) * 1.7;
+                float3 n = normalize(i.normal);
+                float3 v = normalize(i.viewDir);
+                float rim = 1.0 - saturate(abs(dot(v, n)));
+                float edgeGlow = pow(rim, 1.6) * 2.2 + 0.4;
+                fixed4 tex = tex2D(_MainTex, i.uv);
+                return _Color * tex * edgeGlow * 1.7;
             }
             ENDCG
         }

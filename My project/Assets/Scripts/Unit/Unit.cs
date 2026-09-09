@@ -171,18 +171,21 @@ public class Unit : MonoBehaviour
     public void ShowDefensePreview(FacingDirection dir)
     {
         SetFacing(dir);
+        DefenseVfxService.ShowDefensePreview(this, dir);
     }
 
     public void SetDefenseStance(FacingDirection dir)
     {
         isDefending = true;
         SetFacing(dir);
+        DefenseVfxService.ConfirmDefenseStance(this);
         Debug.Log($"[Defesa] {unitName} assumiu posição de Defesa voltada para {DirectionUtils.GetDirectionName(dir)}.");
     }
 
     public void ClearDefenseStance()
     {
         isDefending = false;
+        DefenseVfxService.ClearDefenseVfx(this);
     }
 
     // Inicia o turno desta unidade
@@ -260,6 +263,8 @@ public class Unit : MonoBehaviour
             // Se a unidade estiver em posição de Defesa
             if (isDefending)
             {
+                DefenseVfxService.PlayDefenseImpactVfx(this);
+
                 if (orientation == AttackOrientation.Frontal)
                 {
                     int reducedDamage = Mathf.Max(1, Mathf.RoundToInt(damage * 0.70f)); // 30% de absorção de dano frontal
@@ -402,7 +407,13 @@ public class Unit : MonoBehaviour
             }
         }
 
+        DefenseVfxService.ClearDefenseVfx(this);
         gameObject.SetActive(false);
+    }
+
+    void OnDisable()
+    {
+        DefenseVfxService.ClearDefenseVfx(this);
     }
 
     public Sprite GetPortraitSprite()

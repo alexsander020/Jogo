@@ -1,48 +1,37 @@
 [Licensing::Module] Trying to connect to existing licensing client channel...
 Built from '6000.3/respin/6000.3.6f1-732c1ec89f18' branch; Version is '6000.3.6f1 (bbb010bdb8a3) revision 12300304'; Using compiler version '194234433'; Build Type 'Release'
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-LordDrakkon" at "2026-09-08T23:34:34.9327962Z"
-OS: 'Windows 10  (10.0.19045) 64bit Professional' Language: 'pt' Physical Memory: 32638 MB
+OS: 'Windows 11  (10.0.26100) Professional' Language: 'pt' Physical Memory: 7973 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
 System  architecture: x64
 Process architecture: x64
-Date: 2026-09-08T23:34:34Z
-[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 6840, path: "C:/Program Files/Unity/Hub/Editor/6000.0.74f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
-[Licensing::Module] LicensingClient has failed validation; ignoring
-[Licensing::Client] Handshaking with LicensingClient:
-  Version:                 1.17.4+4293ba1
-  Session Id:              dffeddaa786b4088b7916ca47c18929d
-  Correlation Id:          4b8cff5bda76ccbdb80c98e1a792bfad
-  External correlation Id: 943395273443144856
-  Machine Id:              rz7OFoUSL7MgzTyJRWH9cIttXHE=
-[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-LordDrakkon" (connect: 0.00s, validation: 0.00s, handshake: 0.04s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-LordDrakkon-notifications" at "2026-09-08T23:34:34.9778961Z"
-[Licensing::Module] Licensing Background thread has ended after 0.05s
+Date: 2026-09-09T19:23:46Z
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-20010480" at "2026-09-09T19:23:46.310861Z"
 
 COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity\Hub\Editor\6000.3.6f1\Editor\Unity.exe
+C:\Program Files\Unity 6000.3.6f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker1
 -projectPath
-C:/Users/LordDrakkon/Documents/GitHub/Jogo/My project
+C:/Users/20010480/Documents/GitHub/Jogo/My project
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-55915
+57736
 -licensingIpc
-LicenseClient-LordDrakkon
+LicenseClient-20010480
 -job-worker-count
-5
+2
 -background-job-worker-count
 8
 -gc-helper-count
 1
 -name
 AssetImport
-Successfully changed project path to: C:/Users/LordDrakkon/Documents/GitHub/Jogo/My project
-C:/Users/LordDrakkon/Documents/GitHub/Jogo/My project
+Successfully changed project path to: C:/Users/20010480/Documents/GitHub/Jogo/My project
+C:/Users/20010480/Documents/GitHub/Jogo/My project
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
     "memorysetup-temp-allocator-size-audio-worker=65536"
@@ -78,13 +67,15 @@ C:/Users/LordDrakkon/Documents/GitHub/Jogo/My project
     "memorysetup-job-temp-allocator-block-size-background=1048576"
     "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
     "memorysetup-temp-allocator-size-cloud-worker=32768"
-Player connection [16040]  Target information:
+Player connection [24384]  Target information:
 
-Player connection [16040]  * "[IP] 192.168.1.113 [Port] 0 [Flags] 2 [Guid] 4105095746 [EditorId] 4105095746 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-V0Q8PJ4) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [24384]  * "[IP] 10.1.33.188 [Port] 0 [Flags] 2 [Guid] 1178927977 [EditorId] 1178927977 [Version] 1048832 [Id] WindowsEditor(7,307-29) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [16040] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [16040] Host joined alternative multi-casting on [225.0.0.222:34997]...
-JobSystem: Creating JobQueue using job-worker-count value 5
+Player connection [24384]  * "[IP] 192.168.56.1 [Port] 0 [Flags] 2 [Guid] 1178927977 [EditorId] 1178927977 [Version] 1048832 [Id] WindowsEditor(7,307-29) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [24384] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [24384] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 2
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
 [Physics::Module] Id: 0xdecafbad
@@ -95,69 +86,83 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 4.66 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 50.70 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.3.6f1 (bbb010bdb8a3)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/LordDrakkon/Documents/GitHub/Jogo/My project/Assets
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity 6000.3.6f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/20010480/Documents/GitHub/Jogo/My project/Assets
 GfxDevice: creating device client; kGfxThreadingModeNonThreaded
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: Radeon RX550/550 Series (ID=0x699f)
-    Vendor:   ATI
-    VRAM:     4075 MB
-    Driver:   31.0.21923.1000
+    Renderer: Intel(R) UHD Graphics 630 (ID=0x3e92)
+    Vendor:   Intel
+    VRAM:     3986 MB
+    Driver:   31.0.101.2141
+Shader 'TextMeshPro/Distance Field Overlay': fallback shader 'TextMeshPro/Mobile/Distance Field' not found
+Shader 'TextMeshPro/Distance Field SSD': fallback shader 'TextMeshPro/Mobile/Distance Field' not found
+Shader 'TextMeshPro/Distance Field': fallback shader 'TextMeshPro/Mobile/Distance Field' not found
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
-Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56508
+Mono path[0] = 'C:/Program Files/Unity 6000.3.6f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity 6000.3.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity 6000.3.6f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56384
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: C:/Program Files/Unity 6000.3.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+[Licensing::Module] Licensing is not yet initialized.
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.17.4+4293ba1
+  Session Id:              e746945c1f6f45688b3c280c8d34caa9
+  Correlation Id:          caf1ad90c78d429db9d436053f6303a1
+  External correlation Id: 4913289679701913714
+  Machine Id:              KHPjjKXc3m3Pysmhk8qSziAJNgM=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-20010480" (connect: 0.01s, validation: 0.07s, handshake: 3.81s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-20010480-notifications" at "2026-09-09T19:23:50.1915966Z"
+[Licensing::Module] Licensing Background thread has ended after 3.89s
+[Licensing::Module] Licensing is initialized (took 0.47s).
 [Licensing::Client] Successfully resolved entitlement details
 [Licensing::Module] License group:
-  Id: 4674060662707-UnityPersXXXX
-  Product: Unity Personal
-  Type: Assigned
-  Expiration: Unlimited
-Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
-Registered in 0.004847 seconds.
-- Loaded All Assemblies, in  0.620 seconds
+  Id: E4-QACR-PCJC-RJZY-FAD9-XXXX
+  Product: Unity Education
+  Type: ULF
+  Expiration: 2027-09-15T17:06:36Z
+Register platform support module: C:/Program Files/Unity 6000.3.6f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Registered in 0.484747 seconds.
+- Loaded All Assemblies, in  2.195 seconds
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 256 ms
+Android Extension - Scanning For ADB Devices 444 ms
 Native extension for WindowsStandalone target not found
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.841 seconds
-Domain Reload Profiling: 1457ms
-	BeginReloadAssembly (226ms)
+- Finished resetting the current domain, in  1.086 seconds
+Domain Reload Profiling: 3274ms
+	BeginReloadAssembly (870ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (53ms)
-	RebuildNativeTypeToScriptingClass (28ms)
-	initialDomainReloadingComplete (65ms)
-	LoadAllAssembliesAndSetupDomain (244ms)
-		LoadAssemblies (222ms)
+	RebuildCommonClasses (135ms)
+	RebuildNativeTypeToScriptingClass (65ms)
+	initialDomainReloadingComplete (824ms)
+	LoadAllAssembliesAndSetupDomain (292ms)
+		LoadAssemblies (866ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (239ms)
-			TypeCache.Refresh (238ms)
-				TypeCache.ScanAssembly (219ms)
+		AnalyzeDomain (282ms)
+			TypeCache.Refresh (280ms)
+				TypeCache.ScanAssembly (253ms)
 			BuildScriptInfoCaches (0ms)
 			ResolveRequiredComponents (1ms)
-	FinalizeReload (841ms)
+	FinalizeReload (1087ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (775ms)
+		SetupLoadedEditorAssemblies (1038ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (368ms)
-			SetLoadedEditorAssemblies (6ms)
-			BeforeProcessingInitializeOnLoad (118ms)
-			ProcessInitializeOnLoadAttributes (191ms)
-			ProcessInitializeOnLoadMethodAttributes (92ms)
+			InitializePlatformSupportModulesInManaged (555ms)
+			SetLoadedEditorAssemblies (5ms)
+			BeforeProcessingInitializeOnLoad (142ms)
+			ProcessInitializeOnLoadAttributes (222ms)
+			ProcessInitializeOnLoadMethodAttributes (114ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -168,11 +173,11 @@ Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
 [Licensing::Client] Successfully resolved entitlement details
 Symbol file LoadedFromMemory is not a mono symbol file
-- Loaded All Assemblies, in  1.587 seconds
-Refreshing native plugins compatible for Editor in 1.71 ms, found 4 plugins.
+- Loaded All Assemblies, in  2.606 seconds
+Refreshing native plugins compatible for Editor in 4.74 ms, found 4 plugins.
 Native extension for Android target not found
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.78 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 2.49 ms, found 4 plugins.
 Package Manager log level set to [2]
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
@@ -180,238 +185,1854 @@ Package Manager log level set to [2]
 [Licensing::Client] Error: Code 404 while processing request (status: Found 0 entitlement groups and 0 free entitlements matching requested entitlement ids)
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  2.308 seconds
-Domain Reload Profiling: 3888ms
-	BeginReloadAssembly (251ms)
+- Finished resetting the current domain, in  3.496 seconds
+Domain Reload Profiling: 6089ms
+	BeginReloadAssembly (303ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (9ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (45ms)
-	RebuildCommonClasses (48ms)
-	RebuildNativeTypeToScriptingClass (18ms)
-	initialDomainReloadingComplete (88ms)
-	LoadAllAssembliesAndSetupDomain (1173ms)
-		LoadAssemblies (629ms)
+	RebuildCommonClasses (46ms)
+	RebuildNativeTypeToScriptingClass (16ms)
+	initialDomainReloadingComplete (89ms)
+	LoadAllAssembliesAndSetupDomain (2137ms)
+		LoadAssemblies (1390ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (681ms)
-			TypeCache.Refresh (520ms)
-				TypeCache.ScanAssembly (490ms)
-			BuildScriptInfoCaches (139ms)
-			ResolveRequiredComponents (15ms)
-	FinalizeReload (2309ms)
+		AnalyzeDomain (928ms)
+			TypeCache.Refresh (699ms)
+				TypeCache.ScanAssembly (621ms)
+			BuildScriptInfoCaches (194ms)
+			ResolveRequiredComponents (20ms)
+	FinalizeReload (3497ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (2094ms)
+		SetupLoadedEditorAssemblies (3163ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (11ms)
-			SetLoadedEditorAssemblies (6ms)
-			BeforeProcessingInitializeOnLoad (258ms)
-			ProcessInitializeOnLoadAttributes (1415ms)
-			ProcessInitializeOnLoadMethodAttributes (396ms)
-			AfterProcessingInitializeOnLoad (7ms)
-			EditorAssembliesLoaded (0ms)
+			InitializePlatformSupportModulesInManaged (17ms)
+			SetLoadedEditorAssemblies (8ms)
+			BeforeProcessingInitializeOnLoad (310ms)
+			ProcessInitializeOnLoadAttributes (2137ms)
+			ProcessInitializeOnLoadMethodAttributes (680ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (2ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (8ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
-Refreshing native plugins compatible for Editor in 1.95 ms, found 4 plugins.
+		AwakeInstancesAfterBackupRestoration (15ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
+Refreshing native plugins compatible for Editor in 2.13 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 17 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 9111 unused Assets / (5.2 MB). Loaded Objects now: 9950.
-Memory consumption went from 178.1 MB to 172.9 MB.
-Total: 24.999400 ms (FindLiveObjects: 1.124400 ms CreateObjectMapping: 2.011700 ms MarkObjects: 18.261000 ms  DeleteObjects: 3.601400 ms)
+Unloading 9111 unused Assets / (4.0 MB). Loaded Objects now: 9944.
+Memory consumption went from 170.6 MB to 166.6 MB.
+Total: 38.873200 ms (FindLiveObjects: 1.936600 ms CreateObjectMapping: 2.496600 ms MarkObjects: 29.137900 ms  DeleteObjects: 5.298900 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 708224.568571 seconds.
-  path: Assets/Art/Elementos_Sena/Palettes/Plains.prefab
-  artifactKey: Guid(fcf3087d5328fea43a95e90985cacd14) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Art/Elementos_Sena/Palettes/Plains.prefab using Guid(fcf3087d5328fea43a95e90985cacd14) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd226e3602616b8e569d560788933bce1') in 0.1421749 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+  Time since last request: 35519.512456 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Flat/mountain_3.png
+  artifactKey: Guid(6a09cf075fd315e44b7324fd250a3ac2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Flat/mountain_3.png using Guid(6a09cf075fd315e44b7324fd250a3ac2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b7913d0b990b346e39b20b5cc8805c13') in 0.2785642 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 123.519864 seconds.
-  path: Assets/Art/Tiles/Tiles_Vi/plains-sliced_31.asset
-  artifactKey: Guid(744c90dbd6fb5cb4793ef5a3274c6bbf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Art/Tiles/Tiles_Vi/plains-sliced_31.asset using Guid(744c90dbd6fb5cb4793ef5a3274c6bbf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'bf7b0746e08153efeae05f3a08e0d9e3') in 0.030439 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+  Time since last request: 0.000750 seconds.
+  path: Assets/Scripts/State Machine/States/DeploySelectionState.cs
+  artifactKey: Guid(883a86d3e173c7e45a4d4599d21eb00e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/State Machine/States/DeploySelectionState.cs using Guid(883a86d3e173c7e45a4d4599d21eb00e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a814c3689a5e35f2d626f9914912b80e') in 0.0109029 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Art/Tiles/Tiles_Vi/plains-sliced_11.asset
-  artifactKey: Guid(bc1590c8645ff0f48958591ef9efea5a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Art/Tiles/Tiles_Vi/plains-sliced_11.asset using Guid(bc1590c8645ff0f48958591ef9efea5a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '612630df7fe363e5171156c52ffb56c8') in 0.0150707 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+  Time since last request: 0.000020 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/ColliderSprites/tile-half-1.png
+  artifactKey: Guid(4a84cc2d487664161aacd5a7f6e84df8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/ColliderSprites/tile-half-1.png using Guid(4a84cc2d487664161aacd5a7f6e84df8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c26d7d755fd2ca84b4af2adfb40b02b3') in 0.0221838 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000032 seconds.
-  path: Assets/Art/Tiles/Tiles_Vi/plains-sliced_08.asset
-  artifactKey: Guid(2df373a5a95a4d04598900afe0fd6850) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Art/Tiles/Tiles_Vi/plains-sliced_08.asset using Guid(2df373a5a95a4d04598900afe0fd6850) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '99fe4dba7bea6cad6b68f345805f77c6') in 0.0169351 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/TextMesh Pro
+  artifactKey: Guid(f54d1bd14bd3ca042bd867b519fee8cc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/TextMesh Pro using Guid(f54d1bd14bd3ca042bd867b519fee8cc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd93dfc1597dc1a9492aed196b0e2eab8') in 0.0078184 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Art/Tiles/Tiles_Vi/plains-sliced_29.asset
-  artifactKey: Guid(f5224afbd9355e840b0d87956fab50ae) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Art/Tiles/Tiles_Vi/plains-sliced_29.asset using Guid(f5224afbd9355e840b0d87956fab50ae) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3d9e98e1d28e451d79e7eaab6340ed17') in 0.014738 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+  Time since last request: 0.000046 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Basic/Flat/base05.png
+  artifactKey: Guid(ce2175153a1212143aafc9489e374666) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Basic/Flat/base05.png using Guid(ce2175153a1212143aafc9489e374666) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '03eecab51b58f3233c60f287c7b89083') in 0.0175528 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenCave/Raised/cave-sliced_21.png
+  artifactKey: Guid(37f1b3547942106468df1f34edf13f2d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenCave/Raised/cave-sliced_21.png using Guid(37f1b3547942106468df1f34edf13f2d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '28ffabea82e27a9031251459158f9622') in 0.0139836 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Scripts/Board/MapLoader.cs
+  artifactKey: Guid(bb2bb9d302490224fa2514296893124c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Board/MapLoader.cs using Guid(bb2bb9d302490224fa2514296893124c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0db11d3c07cf256688de3670489c63e4') in 0.0063514 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000019 seconds.
-  path: Assets/Art/Tiles/Tiles_Vi/plains-sliced_40.asset
-  artifactKey: Guid(4e4ba991c8fa60d44a029bff3d9e8a0e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Art/Tiles/Tiles_Vi/plains-sliced_40.asset using Guid(4e4ba991c8fa60d44a029bff3d9e8a0e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd37fef838dd96f368769bb4a8ae61133') in 0.0135385 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+  path: Assets/Scripts/Combat/DirectionUtils.cs
+  artifactKey: Guid(99c5e733f4b5b96439a55b3b2ebd7174) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Combat/DirectionUtils.cs using Guid(99c5e733f4b5b96439a55b3b2ebd7174) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '93410baa3cdeed3361318357501113f5') in 0.0126203 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000028 seconds.
-  path: Assets/Art/Tiles/Tiles_Vi/plains-sliced_30.asset
-  artifactKey: Guid(2fd8877fbb9921c4595255bee7ac5bd5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Art/Tiles/Tiles_Vi/plains-sliced_30.asset using Guid(2fd8877fbb9921c4595255bee7ac5bd5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0eb5bcaedc33a5228681acd6d7d46be6') in 0.0169595 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000040 seconds.
-  path: Assets/Art/Tiles/Tiles_Vi/plains-sliced_25.asset
-  artifactKey: Guid(a749be5c997694e4f996c4c556c7826e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Art/Tiles/Tiles_Vi/plains-sliced_25.asset using Guid(a749be5c997694e4f996c4c556c7826e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1c6149405ed81370d6c476cca4f957a6') in 0.0168344 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Art/Tiles/Tiles_Vi/plains-sliced_10.asset
-  artifactKey: Guid(154d7561cd7e0e141a0b90e57235fa3e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Art/Tiles/Tiles_Vi/plains-sliced_10.asset using Guid(154d7561cd7e0e141a0b90e57235fa3e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'fa557af6dd86806a57c586b3c3380d64') in 0.0153994 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/Art/Tiles/Tiles_Vi/plains-sliced_01.asset
-  artifactKey: Guid(9a05a527207951047bde2c2310574eb5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Art/Tiles/Tiles_Vi/plains-sliced_01.asset using Guid(9a05a527207951047bde2c2310574eb5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a5f5a9b1b3a40c32b3366abd0e212b37') in 0.0222529 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/Art/Tiles/Tiles_Vi/plains-sliced_24.asset
-  artifactKey: Guid(1b91bfa88349b8b43804e34154b79483) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Art/Tiles/Tiles_Vi/plains-sliced_24.asset using Guid(1b91bfa88349b8b43804e34154b79483) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c5f2fecf5594fd80ee4180b23c6b18e9') in 0.0137822 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+  path: Assets/Scripts/TacticalBattle/Combat/CombinedAttackData.cs
+  artifactKey: Guid(14429484fbc1af043999921f5fa060a5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/TacticalBattle/Combat/CombinedAttackData.cs using Guid(14429484fbc1af043999921f5fa060a5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6259a7d5c84754e50004a946390d599c') in 0.0062353 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000034 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Plains/Flat/plains-sliced_02.png
+  artifactKey: Guid(6feaffb95601b4b4aaaafae1786cb932) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Plains/Flat/plains-sliced_02.png using Guid(6feaffb95601b4b4aaaafae1786cb932) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd53b5b9c44fab4240959b2ba048810bb') in 0.0117437 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Scripts/State Machine/States/TurnStartState.cs
+  artifactKey: Guid(976dd6b763125f54a82e303d22cbae2e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/State Machine/States/TurnStartState.cs using Guid(976dd6b763125f54a82e303d22cbae2e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '730dc7447791f6e108faa7bd45deeed2') in 0.0050185 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Basic/Flat/base04.png
+  artifactKey: Guid(865d28014e800974183ada3b8af65308) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Basic/Flat/base04.png using Guid(865d28014e800974183ada3b8af65308) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b699c98a95370c640d7a6450f5d2bc51') in 0.0111614 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Desert/Decoration/desert-sliced_22.png
+  artifactKey: Guid(e1b008b354f0b6e4e8dc71bf07c7cee1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Desert/Decoration/desert-sliced_22.png using Guid(e1b008b354f0b6e4e8dc71bf07c7cee1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'fc82e0f6eee4b71c23ab36d69233556b') in 0.0094864 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Model/Katana/Katana License.txt
+  artifactKey: Guid(2664938b6bb1c0a44b4c055deb980a68) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Model/Katana/Katana License.txt using Guid(2664938b6bb1c0a44b4c055deb980a68) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '651e9333b9c349d4aa8cc65ae28fadfe') in 0.0049305 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Desert/Decoration/desert-sliced_59.png
+  artifactKey: Guid(298d6e68c0cd48746a19fbbf30d2bd29) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Desert/Decoration/desert-sliced_59.png using Guid(298d6e68c0cd48746a19fbbf30d2bd29) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '45ee3fe2c513ea76c014a0ae2f66ec1a') in 0.0152462 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Scripts/Board/TerrainData.cs
+  artifactKey: Guid(5a53e04c244d8e0418b68bbc1da18734) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Board/TerrainData.cs using Guid(5a53e04c244d8e0418b68bbc1da18734) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'be178d24d70ddd83fa67fd09634d58c3') in 0.0064855 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Flat/snow_N.png
+  artifactKey: Guid(d3b0d5067b76a0849a0577c583a4f6d3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Flat/snow_N.png using Guid(d3b0d5067b76a0849a0577c583a4f6d3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '8cfe265976a322afe4df47920f51baa5') in 0.0105545 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000057 seconds.
   path: Assets/Art/Tiles/Tiles_Vi/plains-sliced_09.asset
   artifactKey: Guid(86a8930f23d63d949adf018524bb9c46) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Art/Tiles/Tiles_Vi/plains-sliced_09.asset using Guid(86a8930f23d63d949adf018524bb9c46) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'cb4c9f4911637fb7bbbf4931b2a1996b') in 0.0131072 seconds
+Start importing Assets/Art/Tiles/Tiles_Vi/plains-sliced_09.asset using Guid(86a8930f23d63d949adf018524bb9c46) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9ff44a07310f905401c5629fbe709206') in 0.0350635 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
 
 ========================================================================
 Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Plains/Decoration/plains-sliced_70.png
+  artifactKey: Guid(13effef3774f8a84bb9106d5bba8b185) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Plains/Decoration/plains-sliced_70.png using Guid(13effef3774f8a84bb9106d5bba8b185) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '08535c25eb60f69da239cfe04b0d53bd') in 0.0154922 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/Scripts/SlashDecal.cs
+  artifactKey: Guid(75c365dabbe897b499c6ddc7e013d494) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/Scripts/SlashDecal.cs using Guid(75c365dabbe897b499c6ddc7e013d494) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '39b6acfb2ab1a7e40fa975a6e77deaec') in 0.0090873 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Plains/Flat/plains-sliced_29.png
+  artifactKey: Guid(35394165b800f3a46b8f387909cb310a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Plains/Flat/plains-sliced_29.png using Guid(35394165b800f3a46b8f387909cb310a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9d4141eba9994ae39d1bd928ac7e2959') in 0.0142229 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Art/Tiles/Tiles_Vi/plains-sliced_32.asset
+  artifactKey: Guid(fa0b986bc1097284eb60fd810ee9c250) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Tiles/Tiles_Vi/plains-sliced_32.asset using Guid(fa0b986bc1097284eb60fd810ee9c250) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '97c1ee87528594c5b817226c262b87ea') in 0.0154945 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Temple/MoltenLava_Animation/molten_cornerN_2.png
+  artifactKey: Guid(28094ac6deffe8643b2d68e9b5030ec8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Temple/MoltenLava_Animation/molten_cornerN_2.png using Guid(28094ac6deffe8643b2d68e9b5030ec8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'fd9188e9f31fa39429edde2adc26f048') in 0.0217779 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Desert/Decoration/desert-sliced_57.png
+  artifactKey: Guid(aa22187d5a686b0449798b05aef5d043) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Desert/Decoration/desert-sliced_57.png using Guid(aa22187d5a686b0449798b05aef5d043) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '661c327c6baa1f81f0d840016ef64151') in 0.014467 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Plains/Raised/plains-sliced_51.png
+  artifactKey: Guid(46e3b9ddebcc3824da5d755980e56fab) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Plains/Raised/plains-sliced_51.png using Guid(46e3b9ddebcc3824da5d755980e56fab) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'fb2d8ea4995e89ffd69b825aa3271db1') in 0.0166895 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/TextMesh Pro/Fonts
+  artifactKey: Guid(6ab70aee4d56447429c680537fbf93ed) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/TextMesh Pro/Fonts using Guid(6ab70aee4d56447429c680537fbf93ed) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '225d949a006da0cd0e10d640c649fc3f') in 0.0074144 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Scripts/TacticalBattle/Appmon/AppmonDatabase.cs
+  artifactKey: Guid(dab53dafe68401f46a5ab4fb21e8de7b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/TacticalBattle/Appmon/AppmonDatabase.cs using Guid(dab53dafe68401f46a5ab4fb21e8de7b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '35ebacca67043b8e662512c2514c60f4') in 0.0081495 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Art/Tiles/Tiles_Vi/plains-sliced_07.asset
+  artifactKey: Guid(f22b7a1df852b0b4eb87a723f4cd14ae) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Tiles/Tiles_Vi/plains-sliced_07.asset using Guid(f22b7a1df852b0b4eb87a723f4cd14ae) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '89b4583044cbf77a4df962e28ceb687c') in 0.0076247 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Plains/Flat/plains-sliced_24.png
+  artifactKey: Guid(d42223ea6c5a1b64ea3c5d0423709b7e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Plains/Flat/plains-sliced_24.png using Guid(d42223ea6c5a1b64ea3c5d0423709b7e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7d35b17bf87a0a28e4bc1af25695be02') in 0.0170064 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/TextMesh Pro/Shaders/TMP_SDF-URP Lit.shadergraph
+  artifactKey: Guid(a3d800b099a06e0478fb790c5e79057a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/TextMesh Pro/Shaders/TMP_SDF-URP Lit.shadergraph using Guid(a3d800b099a06e0478fb790c5e79057a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6dbe1404881de451ed95e90b8ec00918') in 0.0598802 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Desert/Raised/desert-sliced_29.png
+  artifactKey: Guid(be4b70f86d38cbf41b09740e793d03a0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Desert/Raised/desert-sliced_29.png using Guid(be4b70f86d38cbf41b09740e793d03a0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9d7b17ee70cbd928a483f0a345f0ecd1') in 0.0235292 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000070 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenCave/Raised/cave-sliced_20.png
+  artifactKey: Guid(9724b10684169e24583471751a22904e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenCave/Raised/cave-sliced_20.png using Guid(9724b10684169e24583471751a22904e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0cd7eaafbdd7bee9b8ef5c8f29c4ff5d') in 0.0153418 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Temple/Flat/temple-sliced_07.png
+  artifactKey: Guid(5a2bf4da2dea62a4d99ce164f16f99ba) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Temple/Flat/temple-sliced_07.png using Guid(5a2bf4da2dea62a4d99ce164f16f99ba) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'baa154c3648b780500e21691c08d0fba') in 0.0131419 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/TextMesh Pro/Shaders/SDFFunctions.hlsl
+  artifactKey: Guid(96de908384869cd409c75efa351d5edf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/TextMesh Pro/Shaders/SDFFunctions.hlsl using Guid(96de908384869cd409c75efa351d5edf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '8cb7dfe5aeb06ab1fd552468896223ff') in 0.0075117 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Raised/slope_NE.png
+  artifactKey: Guid(4de81b05cfb495149aa1f1f19c34b058) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Raised/slope_NE.png using Guid(4de81b05cfb495149aa1f1f19c34b058) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'ca332aac3628f550039f17e0abff1386') in 0.0191825 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Basic/Raised/cube08.png
+  artifactKey: Guid(00ea94a06913fba41aaa0216f8efc325) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Basic/Raised/cube08.png using Guid(00ea94a06913fba41aaa0216f8efc325) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1e5bec86ec014f80e207953e90425f00') in 0.0131174 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000066 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/TextMesh Pro/Shaders/TMP_SDF-URP Unlit.shadergraph
+  artifactKey: Guid(124c112a6e8f1a54e8b0870e881b56d8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/TextMesh Pro/Shaders/TMP_SDF-URP Unlit.shadergraph using Guid(124c112a6e8f1a54e8b0870e881b56d8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '4beb406dfccd532af5cba4a0e46e8f04') in 0.02964 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000067 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Textures/Noise Circle_albedo.png
+  artifactKey: Guid(f6446cef2231473fbf5ad32efe336831) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Textures/Noise Circle_albedo.png using Guid(f6446cef2231473fbf5ad32efe336831) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'dd802ec17e1bb43b5356299c89aeecd3') in 0.0125831 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Flat/snow_NE.png
+  artifactKey: Guid(503c9ac0cf5dc1348b5f1051456cb992) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Flat/snow_NE.png using Guid(503c9ac0cf5dc1348b5f1051456cb992) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c4a23458bf2edcf49e6eeefe4f10eb86') in 0.0198643 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
   Time since last request: 0.000019 seconds.
-  path: Assets/Art/Tiles/Tiles_Vi
-  artifactKey: Guid(147234e7ef88c2641b3e70d5e58f2e7e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Art/Tiles/Tiles_Vi using Guid(147234e7ef88c2641b3e70d5e58f2e7e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e164cf8dd3856c2b0d1b44590542a215') in 0.0095105 seconds
+  path: Assets/Art/Elementos_Sena/Sprites/Plains/Flat/plains-sliced_18.png
+  artifactKey: Guid(d0f8d288ad6debb44b6991c153b8e6ed) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Plains/Flat/plains-sliced_18.png using Guid(d0f8d288ad6debb44b6991c153b8e6ed) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'dd9d17c09600f68d6ff1060cdc04bc89') in 0.0168501 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Temple/Raised/temple-sliced_22.png
+  artifactKey: Guid(7bf20ce4e0d55f549aa154145f2c4213) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Temple/Raised/temple-sliced_22.png using Guid(7bf20ce4e0d55f549aa154145f2c4213) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a2f037d375e1529a59c56eb9e4d284ad') in 0.0172938 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Scripts/Unit/Unit.cs
+  artifactKey: Guid(8351dca389edf4d4899176eb40109b4f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Unit/Unit.cs using Guid(8351dca389edf4d4899176eb40109b4f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2756ee1ca00d25e38e68344161bb04e1') in 0.0055011 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenCave/Decoration/cave-sliced_23.png
+  artifactKey: Guid(b46e8587a4d2eff4195a3b4e5ff31e4e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenCave/Decoration/cave-sliced_23.png using Guid(b46e8587a4d2eff4195a3b4e5ff31e4e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7139be6a69d61ca127c495c3efced582') in 0.015425 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Flat/snow_S.png
+  artifactKey: Guid(0e8108fc0b02a41419330ba61618f00a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Flat/snow_S.png using Guid(0e8108fc0b02a41419330ba61618f00a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '94b1e3d503bb03c5e5aa07e28e70b51f') in 0.0152313 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Scripts/Unit/Stats/Stats.cs
+  artifactKey: Guid(3219781634901e34297d15eea191ddb7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Unit/Stats/Stats.cs using Guid(3219781634901e34297d15eea191ddb7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c732aaffac5fcf34b8570b4d9a814f73') in 0.0107614 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Temple/MoltenLava_Animation/molten_NE_3.png
+  artifactKey: Guid(e9d6bd18ffc1b5740ba3e6eeaa935c39) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Temple/MoltenLava_Animation/molten_NE_3.png using Guid(e9d6bd18ffc1b5740ba3e6eeaa935c39) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '8dfedfbb6aaeb258ea1190979c1f29b4') in 0.0336863 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Desert/Raised/desert-sliced_37.png
+  artifactKey: Guid(9d9eaa5596fe0024187edb8f8035bd8a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Desert/Raised/desert-sliced_37.png using Guid(9d9eaa5596fe0024187edb8f8035bd8a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5ec9c9ac3138f15a44df724db908edf8') in 0.0264325 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Scripts/Editor
+  artifactKey: Guid(76cc30b3e048709438a99db2d69e74d8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Editor using Guid(76cc30b3e048709438a99db2d69e74d8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '59b6904db3b466d5204f615ec420873d') in 0.005674 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Scripts/Combat/CombatService.cs
+  artifactKey: Guid(a449cd3bb5a318542970ae362c618c34) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Combat/CombatService.cs using Guid(a449cd3bb5a318542970ae362c618c34) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c065a4e840356dd790a86475a9ff85fc') in 0.0046735 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Temple
+  artifactKey: Guid(2830be0c64a910a4caa2a69cf81fc515) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Temple using Guid(2830be0c64a910a4caa2a69cf81fc515) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '11373c7248b5d668f99c92f45326bccb') in 0.0045173 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX
+  artifactKey: Guid(5cb7d27fccd15b84b9d492ba29723ec0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX using Guid(5cb7d27fccd15b84b9d492ba29723ec0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a2443d65004e8dee3e296f27d105650a') in 0.0073257 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Plains/Flat/plains-sliced_11.png
+  artifactKey: Guid(d3f1da88a29e6544abd23e2de5b31a97) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Plains/Flat/plains-sliced_11.png using Guid(d3f1da88a29e6544abd23e2de5b31a97) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e353098d0c7aa1993b6bca24f919408d') in 0.0149677 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Scripts/UI/DeploymentMenuUI.cs
+  artifactKey: Guid(5dbcf98085f90414eb269edbe34734a0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/UI/DeploymentMenuUI.cs using Guid(5dbcf98085f90414eb269edbe34734a0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e850f9358712fc73c00ba17c6e331ce7') in 0.0115867 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/Scripts/ElementsShowCase.cs
+  artifactKey: Guid(e018d20b83e5dd24ebf346dbe8d19054) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/Scripts/ElementsShowCase.cs using Guid(e018d20b83e5dd24ebf346dbe8d19054) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '95f143fda2177b0c860ef99d901cc944') in 0.0115398 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Plains/Raised/plains-sliced_41.png
+  artifactKey: Guid(ddba491d794068b46ba646e1efbf32a6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Plains/Raised/plains-sliced_41.png using Guid(ddba491d794068b46ba646e1efbf32a6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'affd8e52c2fbc98b502008a0e74143df') in 0.0149175 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Art/Tiles/Tiles_Vi/plains-sliced_14.asset
+  artifactKey: Guid(5a7207f39ef556c4497a32e88964aaaa) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Tiles/Tiles_Vi/plains-sliced_14.asset using Guid(5a7207f39ef556c4497a32e88964aaaa) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'abad6fb08fb14ee9afd4c55360d0b53a') in 0.0072111 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Plains/Flat
+  artifactKey: Guid(4e1844b45a0f66f419f09f9ad660dfb9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Plains/Flat using Guid(4e1844b45a0f66f419f09f9ad660dfb9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e14ccaf6e0af133c94fee24d0fb38875') in 0.0149957 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenCave/Raised/cave-sliced_13.png
+  artifactKey: Guid(fb1144eeb45cec743b42b15cc1d49145) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenCave/Raised/cave-sliced_13.png using Guid(fb1144eeb45cec743b42b15cc1d49145) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c1c8016e9d9274a58566df264eb176c7') in 0.0131796 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Textures/Looping Laser 2.png
+  artifactKey: Guid(b75d4b8553eb42c6ad0d8e95c3e0ab25) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Textures/Looping Laser 2.png using Guid(b75d4b8553eb42c6ad0d8e95c3e0ab25) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '33af7fc2a2071619a27dbd758267bbd4') in 0.0185853 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Decoration/tree_fir.png
+  artifactKey: Guid(d6810ec48c15cdf469ab2343d9ee15ec) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Decoration/tree_fir.png using Guid(d6810ec48c15cdf469ab2343d9ee15ec) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '690489180c788a9333c1dd83d7e359c1') in 0.015438 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/Scripts/CameraOrbit.cs
+  artifactKey: Guid(511d2b577fca56e4b86ba7daa5ee285a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/Scripts/CameraOrbit.cs using Guid(511d2b577fca56e4b86ba7daa5ee285a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6716987506a0899b7fd2421860e11b3a') in 0.0075377 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Temple/Flat/temple-sliced_02.png
+  artifactKey: Guid(3f221c4714026b84dbb830e71c63cf0b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Temple/Flat/temple-sliced_02.png using Guid(3f221c4714026b84dbb830e71c63cf0b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b3f9bcba1dad843bdcf83853b7c23eb5') in 0.0150451 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000072 seconds.
+  path: Assets/Art/Tiles/Tiles_Vi/plains-sliced_34.asset
+  artifactKey: Guid(f0dcf6819cff1a84bbe4e3f7217da522) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Tiles/Tiles_Vi/plains-sliced_34.asset using Guid(f0dcf6819cff1a84bbe4e3f7217da522) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '814e7b69a446023c2c92c99ea374230b') in 0.0086386 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Desert/Raised/desert-sliced_53.png
+  artifactKey: Guid(dbfe26f852ac8d046afaba7b0663c9b0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Desert/Raised/desert-sliced_53.png using Guid(dbfe26f852ac8d046afaba7b0663c9b0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd9cc38d68a86bcd7e85ec883a84c9063') in 0.0224394 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Plains
+  artifactKey: Guid(9521046badbc1594e8e8fa03fe5b063a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Plains using Guid(9521046badbc1594e8e8fa03fe5b063a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7f03c1bcc9164192b8483f77ec232612') in 0.007773 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Desert/Decoration/desert-sliced_50.png
+  artifactKey: Guid(e9fd822aa2b1f1c46a19863b254e8e65) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Desert/Decoration/desert-sliced_50.png using Guid(e9fd822aa2b1f1c46a19863b254e8e65) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '89a2b111df09a993916fe31363e82cb3') in 0.0162185 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/Scenes/SampleScene
+  artifactKey: Guid(ad2414e6dcc346f479f36cee9880b2a5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/Scenes/SampleScene using Guid(ad2414e6dcc346f479f36cee9880b2a5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '368e91f8b05ab3a1d0279c4f9182290e') in 0.0111477 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000017 seconds.
-  path: Assets/Art/Tiles/Tiles_Vi/plains-sliced_17.asset
-  artifactKey: Guid(4e803063922bf18419eac583d150d362) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Art/Tiles/Tiles_Vi/plains-sliced_17.asset using Guid(4e803063922bf18419eac583d150d362) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0737d16f488b1718b4078a800d6fc856') in 0.0132862 seconds
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Raised/elevation_snow_NE.png
+  artifactKey: Guid(f211ad0325627a44eb458fd6b97d4805) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Raised/elevation_snow_NE.png using Guid(f211ad0325627a44eb458fd6b97d4805) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'cb106fd652bde100293504b7a6be95ee') in 0.0185352 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Desert/Decoration/desert-sliced_51.png
+  artifactKey: Guid(a326f9c1a909d3441a0bd01ad4f23ae8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Desert/Decoration/desert-sliced_51.png using Guid(a326f9c1a909d3441a0bd01ad4f23ae8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b56871aad2c36824d05f9dc0da6c9a6a') in 0.0171048 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000184 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Flat
+  artifactKey: Guid(43b3eae75ee64e64593c0d824c37ede8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Flat using Guid(43b3eae75ee64e64593c0d824c37ede8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b8548a95e36098ed576bb6229e598c3e') in 0.0051891 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000064 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Plains/Flat/plains-sliced_04.png
+  artifactKey: Guid(1e506aa101043a4489d18e6260eab976) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Plains/Flat/plains-sliced_04.png using Guid(1e506aa101043a4489d18e6260eab976) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0b8429982d98b895d090b6337b7d840c') in 0.0111282 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000070 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Temple/MoltenLava_Animation/molten_cornerN_1.png
+  artifactKey: Guid(b8ae7bad68d546048ac7c625fa5371ab) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Temple/MoltenLava_Animation/molten_cornerN_1.png using Guid(b8ae7bad68d546048ac7c625fa5371ab) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '949ebef41d41e0869635e96a86f08e31') in 0.0124723 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/TextMesh Pro/Shaders/TMPro_Mobile.cginc
+  artifactKey: Guid(c334973cef89a9840b0b0c507e0377ab) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/TextMesh Pro/Shaders/TMPro_Mobile.cginc using Guid(c334973cef89a9840b0b0c507e0377ab) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '67dc3f77e7b3fea128b5b530eea619d0') in 0.0069756 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/Animation
+  artifactKey: Guid(5c02dd12c4793a4438b9b0b2aba997c6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/Animation using Guid(5c02dd12c4793a4438b9b0b2aba997c6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e4961f611c7511a7990df623ab0b08b5') in 0.0083085 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenCave/Decoration/cave-sliced_31.png
+  artifactKey: Guid(942cd32e35640c146ab116b6d4d08da4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenCave/Decoration/cave-sliced_31.png using Guid(942cd32e35640c146ab116b6d4d08da4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2346b5560e68e36054f3de0ab298fb77') in 0.0220885 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenCave
+  artifactKey: Guid(c792aa4dd3e61914088855b1273102ca) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenCave using Guid(c792aa4dd3e61914088855b1273102ca) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '196a84c9889afada277aca38826e768f') in 0.0143092 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Temple/Raised/temple-sliced_37.png
+  artifactKey: Guid(05de6a4550a660a4d9a7eb014cb4a36c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Temple/Raised/temple-sliced_37.png using Guid(05de6a4550a660a4d9a7eb014cb4a36c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e89b544d7e74b4a375fba1a407fd5004') in 0.0257824 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Temple/Decoration/temple-sliced_44.png
+  artifactKey: Guid(a8fefdcc5154bcd4eac2f09f26f9f3f3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Temple/Decoration/temple-sliced_44.png using Guid(a8fefdcc5154bcd4eac2f09f26f9f3f3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b346fc9cba5f2cb0fa42859ea88c74d9') in 0.0132235 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Materials/Variations/Slash World Var 1.mat
+  artifactKey: Guid(47e6eea1f5c473b4ab8acf42cb434d8b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Materials/Variations/Slash World Var 1.mat using Guid(47e6eea1f5c473b4ab8acf42cb434d8b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '06fc355ff0e7fc7e9668eb9055c42949') in 0.0423579 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/Scripts/ParticleAnimationEvent.cs
+  artifactKey: Guid(c6643c81ee520244096aa377a9f9fc7b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/Scripts/ParticleAnimationEvent.cs using Guid(c6643c81ee520244096aa377a9f9fc7b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '8a9f805c86e2bda4849ca50c0297c874') in 0.0051131 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000067 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Plains/Decoration/plains-sliced_64.png
+  artifactKey: Guid(e0df95e8ce8172145afb5967040ac7c5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Plains/Decoration/plains-sliced_64.png using Guid(e0df95e8ce8172145afb5967040ac7c5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '575a19ee1d9251c9886f9d8d4f748277') in 0.0251169 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Flat/snow_corner_S.png
+  artifactKey: Guid(d88d123b7d295f0429b10e22f4cd0d63) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Flat/snow_corner_S.png using Guid(d88d123b7d295f0429b10e22f4cd0d63) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'ee46fd8eba60349fc6229c1ff444e19b') in 0.0101021 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Plains/Raised/plains-sliced_71.png
+  artifactKey: Guid(65f197e0b55d5174081ccf7fb6ac0799) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Plains/Raised/plains-sliced_71.png using Guid(65f197e0b55d5174081ccf7fb6ac0799) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9aa13c7671f580a7ae75b8fc9fe76fb8') in 0.0145696 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Decoration/tree_fir_mask.png
+  artifactKey: Guid(076bf4dcad357a04a806cdd514df2046) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Decoration/tree_fir_mask.png using Guid(076bf4dcad357a04a806cdd514df2046) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1c4d7db27962adba5a4ad51a4195d15b') in 0.017557 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Temple/MoltenLava_Animation/molten_NE_4.png
+  artifactKey: Guid(bf033c7edeb94d54dbccace2cd0da43a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Temple/MoltenLava_Animation/molten_NE_4.png using Guid(bf033c7edeb94d54dbccace2cd0da43a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e01af24d19d2270816b3098e9f15e8b0') in 0.0137809 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000057 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Plains/Flat/plains-sliced_21.png
+  artifactKey: Guid(27b1c5c94d242b5438ff771064e7d0c3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Plains/Flat/plains-sliced_21.png using Guid(27b1c5c94d242b5438ff771064e7d0c3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3a0e226f7299b14101dc7d7f9ffca152') in 0.0100622 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000110 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Textures/Razengan_texture_3.png
+  artifactKey: Guid(3eec528b328a4bd89fc22f00eb652736) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Textures/Razengan_texture_3.png using Guid(3eec528b328a4bd89fc22f00eb652736) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '04c224de1f56c4104c9ba9fc2ec13dd7') in 0.0105512 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Temple/MoltenLava_Animation/molten_cornerN_0.png
+  artifactKey: Guid(3bb817e6aa9d2e746ab2031d8871da73) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Temple/MoltenLava_Animation/molten_cornerN_0.png using Guid(3bb817e6aa9d2e746ab2031d8871da73) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c8bd4b98ea98d2fa0750c1dfac66f474') in 0.0147324 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Basic/Flat/base07.png
+  artifactKey: Guid(1d845397ab1e02b47b5bad303c3e5c27) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Basic/Flat/base07.png using Guid(1d845397ab1e02b47b5bad303c3e5c27) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9fe959aae652675b255d649daf7590ec') in 0.0151134 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Temple/MoltenLava_Animation/molten_NW_1.png
+  artifactKey: Guid(27641cce7e3e3d04fa61a90d19e138c2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Temple/MoltenLava_Animation/molten_NW_1.png using Guid(27641cce7e3e3d04fa61a90d19e138c2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2107de4acfe1b72711d3b66c0643bbb5') in 0.0101784 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Plains/Flat/plains-sliced_14.png
+  artifactKey: Guid(ab453227acb9e594d827b08033411d4b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Plains/Flat/plains-sliced_14.png using Guid(ab453227acb9e594d827b08033411d4b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '88f9ed45771ba23c5c48575184d918e7') in 0.009261 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/Model/Ground Plane.fbx
+  artifactKey: Guid(a4d586a6ba7981e46abfe95247fa8415) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/Model/Ground Plane.fbx using Guid(a4d586a6ba7981e46abfe95247fa8415) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'efb6cc161e14cb04adacd1637cc07c6b') in 0.0949015 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Temple/MoltenLava_Animation/molten_cornerN_5.png
+  artifactKey: Guid(896e28aaca1c53841a621dffd3211fdf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Temple/MoltenLava_Animation/molten_cornerN_5.png using Guid(896e28aaca1c53841a621dffd3211fdf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9221fc8157431835779a4aeee015a2df') in 0.0235503 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/TextMesh Pro/Fonts/LiberationSans.ttf
+  artifactKey: Guid(e3265ab4bf004d28a9537516768c1c75) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/TextMesh Pro/Fonts/LiberationSans.ttf using Guid(e3265ab4bf004d28a9537516768c1c75) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6412ac1b397d82650ef6068fa2ebcee5') in 0.0222525 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Temple/Raised/temple-sliced_29.png
+  artifactKey: Guid(becb8b93c6dd8194794e75b0775a9e52) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Temple/Raised/temple-sliced_29.png using Guid(becb8b93c6dd8194794e75b0775a9e52) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '8227269d0164cb66e1f1de4d5aca0f92') in 0.0225968 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000068 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Raised/slope_NW_mask.png
+  artifactKey: Guid(e5342e8f795298c46bade3eecf613940) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Raised/slope_NW_mask.png using Guid(e5342e8f795298c46bade3eecf613940) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '57e753e18a8108b01358072453fa7009') in 0.0174891 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Prefabs/Projectiles/Slash Projectile VFX Fire.prefab
+  artifactKey: Guid(c4b2ddd78a478394da66879a43e7af99) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Prefabs/Projectiles/Slash Projectile VFX Fire.prefab using Guid(c4b2ddd78a478394da66879a43e7af99) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9b3275b71e301e7ea3cc726232c38bf1') in 0.1271543 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 58
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/Material/Sky.mat
+  artifactKey: Guid(93dc0cb522306954088b6a1524b062ff) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/Material/Sky.mat using Guid(93dc0cb522306954088b6a1524b062ff) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7bdbff5db30ffe15c99f690fee63fbfc') in 0.0106033 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Temple/Decoration/temple-sliced_69.png
+  artifactKey: Guid(fc8f62277d1e7da43b83534d161efd66) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Temple/Decoration/temple-sliced_69.png using Guid(fc8f62277d1e7da43b83534d161efd66) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '35308c0a8ce6bdc727c88743d001cb25') in 0.0116723 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/Scenes/SampleScene/ReflectionProbe-0.exr
+  artifactKey: Guid(4915995645a79da48b50ba211a70c3c7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/Scenes/SampleScene/ReflectionProbe-0.exr using Guid(4915995645a79da48b50ba211a70c3c7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '74b23f2814527bc841829dc3700673df') in 0.01323 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Model/Smoke/SmokeSphere01.fbx
+  artifactKey: Guid(7f2c09fa4c36d064083944bc9331f95e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Model/Smoke/SmokeSphere01.fbx using Guid(7f2c09fa4c36d064083944bc9331f95e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '348ac6fcb7ad4ee4b8d35a36137b8890') in 0.0176102 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/Art/Tiles/Tiles_Vi/plains-sliced_12.asset
+  artifactKey: Guid(f8c4fca386f44fc418c460405616375d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Tiles/Tiles_Vi/plains-sliced_12.asset using Guid(f8c4fca386f44fc418c460405616375d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '40f193154604b1bef30798db69b56116') in 0.0105925 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Desert/Raised/desert-sliced_39.png
+  artifactKey: Guid(c047d326d73228341b37d36ffec656fb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Desert/Raised/desert-sliced_39.png using Guid(c047d326d73228341b37d36ffec656fb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '98f10101bd17de74ae44f220d5eaea3c') in 0.0139449 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Temple/Raised/temple-sliced_26.png
+  artifactKey: Guid(111869924fb11de4584e891d5f5ac5ec) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Temple/Raised/temple-sliced_26.png using Guid(111869924fb11de4584e891d5f5ac5ec) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e472f2c4dc7e326028fb29825d14fe7e') in 0.0175567 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000022 seconds.
-  path: Assets/Art/Tiles/Tiles_Vi/plains-sliced_13.asset
-  artifactKey: Guid(11f09d26c83218d4394f1c75bfa433ba) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Art/Tiles/Tiles_Vi/plains-sliced_13.asset using Guid(11f09d26c83218d4394f1c75bfa433ba) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'ff19270ad7d93bca5e7a6b3f14ee7896') in 0.0114862 seconds
+  path: Assets/Art/Tiles/Tiles_Vi/plains-sliced_20.asset
+  artifactKey: Guid(2018d1e5c5f58204383ba59f91d35795) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Tiles/Tiles_Vi/plains-sliced_20.asset using Guid(2018d1e5c5f58204383ba59f91d35795) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '023bc0dc12fc4f3d55621de16a38f689') in 0.0097656 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Art/Tiles/Tiles_Vi/plains-sliced_22.asset
-  artifactKey: Guid(59f58400ab38e3941acd1619138d5ab0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Art/Tiles/Tiles_Vi/plains-sliced_22.asset using Guid(59f58400ab38e3941acd1619138d5ab0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e848002bc9a09df475bb6a69e9a92440') in 0.0114474 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+  Time since last request: 0.000033 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Basic
+  artifactKey: Guid(90de5eaf498115a4eac323596bb8e8fb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Basic using Guid(90de5eaf498115a4eac323596bb8e8fb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'dd63e105c4805e177362e5f78e947ef3') in 0.0060304 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Scripts/TacticalBattle/Tests/TacticalBattleTestRunner.cs
+  artifactKey: Guid(46d4ee0107650e6468768b52581ba03c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/TacticalBattle/Tests/TacticalBattleTestRunner.cs using Guid(46d4ee0107650e6468768b52581ba03c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '37b3806f605a2eeafcbb9719411b3814') in 0.0064226 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000028 seconds.
-  path: Assets/Art/Tiles/Tiles_Vi/plains-sliced_39.asset
-  artifactKey: Guid(688dfa84ae85d8b4a9d5c3ae216a2b95) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Art/Tiles/Tiles_Vi/plains-sliced_39.asset using Guid(688dfa84ae85d8b4a9d5c3ae216a2b95) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a88be7acd2cc400fea2d80daba555925') in 0.0131207 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+  path: Assets/GabrielAguiarProductions/FreeQuickEffectsVol1_2022_HDRP_v1.0.unitypackage
+  artifactKey: Guid(73bb3be0ae8d7b44e9cb35c23bdeeb2f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/GabrielAguiarProductions/FreeQuickEffectsVol1_2022_HDRP_v1.0.unitypackage using Guid(73bb3be0ae8d7b44e9cb35c23bdeeb2f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2770e957fc059003079bd945974a1f98') in 0.0069274 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Shaders/ParallaxOcclusion.shadergraph
+  artifactKey: Guid(29b6c50d98d3b7d4789e257fab2b33c8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Shaders/ParallaxOcclusion.shadergraph using Guid(29b6c50d98d3b7d4789e257fab2b33c8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '900476cc63716393fc5127daea12d386') in 0.0196726 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset
+  artifactKey: Guid(8f586378b4e144a9851e7b34d9b748ee) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset using Guid(8f586378b4e144a9851e7b34d9b748ee) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '28c4056019547823d37ae8d56e690cde') in 0.0679562 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000021 seconds.
-  path: Assets/Art/Tiles/Tiles_Vi/plains-sliced_07.asset
-  artifactKey: Guid(f22b7a1df852b0b4eb87a723f4cd14ae) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Art/Tiles/Tiles_Vi/plains-sliced_07.asset using Guid(f22b7a1df852b0b4eb87a723f4cd14ae) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f39ccb9a1b51e588d8dabe9326601da9') in 0.0139852 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/Model/Ground Plane.prefab
+  artifactKey: Guid(be389035946ca1145aa0a72fa23e7909) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/Model/Ground Plane.prefab using Guid(be389035946ca1145aa0a72fa23e7909) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3b33f501a9dfd19e0ecfabaa8cf073f6') in 0.0165007 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Art/Tiles/Tiles_Vi/plains-sliced_37.asset
-  artifactKey: Guid(fb92a23f5d18699469f57839312f5e18) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Art/Tiles/Tiles_Vi/plains-sliced_37.asset using Guid(fb92a23f5d18699469f57839312f5e18) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b446167eb0fb47617424e64a260a4b54') in 0.0121668 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Art/Tiles/Tiles_Vi/plains-sliced_26.asset
-  artifactKey: Guid(b008e07f316ea474e886160f99df6866) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Art/Tiles/Tiles_Vi/plains-sliced_26.asset using Guid(b008e07f316ea474e886160f99df6866) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '285e4f89ae56f1afbd14e1a905b343ad') in 0.0135261 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+  Time since last request: 0.000037 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Raised/elevation_snow_corner_S.png
+  artifactKey: Guid(988bbbbf0d2413042ac1d34a8057e6c1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Raised/elevation_snow_corner_S.png using Guid(988bbbbf0d2413042ac1d34a8057e6c1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '45e1499cf549d5015a8bede068a47c61') in 0.0105104 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000021 seconds.
-  path: Assets/Art/Tiles/Tiles_Vi/plains-sliced_04.asset
-  artifactKey: Guid(91a4e4a4c50503747af789bb0dae228b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Art/Tiles/Tiles_Vi/plains-sliced_04.asset using Guid(91a4e4a4c50503747af789bb0dae228b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f4d1038a9571951de6e59eba7cb7abe6') in 0.0130653 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/Scripts/AttackerController.cs
+  artifactKey: Guid(456ea838a4ee80541afbb5e8ff58137c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/Scripts/AttackerController.cs using Guid(456ea838a4ee80541afbb5e8ff58137c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '4691634ecd8279595599c7d59197bfaa') in 0.0046901 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000036 seconds.
-  path: Assets/Art/Tiles/Tiles_Vi/plains-sliced_03.asset
-  artifactKey: Guid(6a7ab900aa173c34bab0f2bdbc4fad34) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Art/Tiles/Tiles_Vi/plains-sliced_03.asset using Guid(6a7ab900aa173c34bab0f2bdbc4fad34) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '8dcb345ef3d28a129fb6e3e2cdf88a8b') in 0.0125759 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Basic/Flat/base06.png
+  artifactKey: Guid(b2816f12715df9845b0905b25ace3bc3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Basic/Flat/base06.png using Guid(b2816f12715df9845b0905b25ace3bc3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '37644487dfc7afa604fdb17564339b96') in 0.0133413 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000023 seconds.
-  path: Assets/Art/Tiles/Tiles_Vi/plains-sliced_18.asset
-  artifactKey: Guid(80aa7c3b5956e6e4d8565e5ca515c79b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Art/Tiles/Tiles_Vi/plains-sliced_18.asset using Guid(80aa7c3b5956e6e4d8565e5ca515c79b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '71ef8ecc23a9e0200a7314a0d83a5d7b') in 0.4883239 seconds
+  path: Assets/Art/Elementos_Sena/Sprites/Plains/Decoration/plains-sliced_68.png
+  artifactKey: Guid(47b5725ff292d4640b9d51ef4c74a00c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Plains/Decoration/plains-sliced_68.png using Guid(47b5725ff292d4640b9d51ef4c74a00c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '25e5892a934f2b2fe3f162c485d288db') in 0.0100417 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000080 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenCave/Wall/cave-sliced_40.png
+  artifactKey: Guid(8ae2efc2f6b8a7240ae203f4173e7561) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenCave/Wall/cave-sliced_40.png using Guid(8ae2efc2f6b8a7240ae203f4173e7561) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5358887cb87ba876f4648ac2b43b085f') in 0.010282 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Basic/Raised/cube00.png
+  artifactKey: Guid(c6abcb688c044ce48bde3e87ee7f2a12) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Basic/Raised/cube00.png using Guid(c6abcb688c044ce48bde3e87ee7f2a12) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '8b04d820ebf0870c306e67303bc9e5f6') in 0.0104009 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Textures/Blue Noise_Blue Noise.png
+  artifactKey: Guid(cc787246631312346a9cdc3763379035) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Textures/Blue Noise_Blue Noise.png using Guid(cc787246631312346a9cdc3763379035) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5111d8cf7ced2482944486a76999aa9a') in 0.0088219 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Temple/MoltenLava_Animation/molten_NW_5.png
+  artifactKey: Guid(e3e570e2b14e90149b25706663ff0894) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Temple/MoltenLava_Animation/molten_NW_5.png using Guid(e3e570e2b14e90149b25706663ff0894) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '81dd6aba36ae0356b96faceab2c7464e') in 0.0134654 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Plains/Decoration
+  artifactKey: Guid(3e30e8e12916e934bb5421094204f1b6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Plains/Decoration using Guid(3e30e8e12916e934bb5421094204f1b6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '4766ff031a71ab123f22262a73caceda') in 0.0040687 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Flat/snow_SE.png
+  artifactKey: Guid(8b57c58ba70d7c74781732bbd4177596) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Flat/snow_SE.png using Guid(8b57c58ba70d7c74781732bbd4177596) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6e306b546c33d7741146bb6f1f34895e') in 0.0140975 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Plains/Decoration/plains-sliced_69.png
+  artifactKey: Guid(ec8ccc2cf6da86f4ab9b11f4a2ab3d2d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Plains/Decoration/plains-sliced_69.png using Guid(ec8ccc2cf6da86f4ab9b11f4a2ab3d2d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3cb86b5811de418e76d947c14dac6136') in 0.0127527 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000068 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Flat/snow_center_4.png
+  artifactKey: Guid(15730c75e42a3ae42bcf6c9529519f6a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Flat/snow_center_4.png using Guid(15730c75e42a3ae42bcf6c9529519f6a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7d7df41872a58c45b6bdf61017d8632b') in 0.010695 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Scripts/Combat/AttackVfxDatabase.cs
+  artifactKey: Guid(654a74ea1e37882499cb0ed13e83ffe6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Combat/AttackVfxDatabase.cs using Guid(654a74ea1e37882499cb0ed13e83ffe6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e0d18ae52e8cd391ccdb4fc406afcd82') in 0.004499 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Textures/Circle Fire_albedo.png
+  artifactKey: Guid(21568307615742e19ed9fba224f49f0b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Textures/Circle Fire_albedo.png using Guid(21568307615742e19ed9fba224f49f0b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b58f7037db1f40844193c248876b921b') in 0.0173102 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Model/Slash/Slash .fbx
+  artifactKey: Guid(44e7eb8b5ecd6bc498f00e168e155aa8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Model/Slash/Slash .fbx using Guid(44e7eb8b5ecd6bc498f00e168e155aa8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '305de80d32cab7996784b78e567185d8') in 0.0190572 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 34
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Desert/Decoration/desert-sliced_61.png
+  artifactKey: Guid(3e6f4dd2f9f1d39498413685594f5bac) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Desert/Decoration/desert-sliced_61.png using Guid(3e6f4dd2f9f1d39498413685594f5bac) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f2a0fd3513b5bac9c0e4ca85659fa9bf') in 0.0250005 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Desert/Flat/desert-sliced_10.png
+  artifactKey: Guid(6df307357d7c3aa48980f416b482aef0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Desert/Flat/desert-sliced_10.png using Guid(6df307357d7c3aa48980f416b482aef0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1acf4d657632d1d0ff77187c1ddec094') in 0.0145833 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Model/Rock
+  artifactKey: Guid(35008842c5989ab40b4980f324ebf5f7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Model/Rock using Guid(35008842c5989ab40b4980f324ebf5f7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '01e8c54f66476dc21bb114036b950a4d') in 0.0088275 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Materials/Earth Version 1/Smoke.mat
+  artifactKey: Guid(d1d79424dc027224aa76d6900a7bd504) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Materials/Earth Version 1/Smoke.mat using Guid(d1d79424dc027224aa76d6900a7bd504) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a8d9288795b35db848b24b504853a3cf') in 0.0199275 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Desert/Flat/desert-sliced_14.png
+  artifactKey: Guid(2ee43175fe272a24ba3ef1aa441cae17) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Desert/Flat/desert-sliced_14.png using Guid(2ee43175fe272a24ba3ef1aa441cae17) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7c35db647398fd62aa7d151b59fed40e') in 0.0173543 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Plains/Raised/plains-sliced_49.png
+  artifactKey: Guid(c47c97f5f8772174ea7ce38747f31e6f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Plains/Raised/plains-sliced_49.png using Guid(c47c97f5f8772174ea7ce38747f31e6f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '47240b748e087601642796058db9278f') in 0.0104413 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Raised/elevation_snow_E.png
+  artifactKey: Guid(04a9242d27112364c903f48d2aa91100) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Raised/elevation_snow_E.png using Guid(04a9242d27112364c903f48d2aa91100) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0a32edc0f75b1ae68af65e8f849353fc') in 0.0107382 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Desert/Raised/desert-sliced_41.png
+  artifactKey: Guid(bf7ebbf343cee7c4b9c1a7c3f629ecfe) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Desert/Raised/desert-sliced_41.png using Guid(bf7ebbf343cee7c4b9c1a7c3f629ecfe) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'dc596321984548bacc17c76306e12153') in 0.0161806 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/Scenes/SampleScene.unity
+  artifactKey: Guid(65b0bdb8fcbd31246acbb271cb527c15) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/Scenes/SampleScene.unity using Guid(65b0bdb8fcbd31246acbb271cb527c15) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e64001dd020e9ca98b5258f56c0ed701') in 0.008975 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Basic/Raised/slope1.png
+  artifactKey: Guid(42d5534e8eb3f4841bee8c80a80d05da) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Basic/Raised/slope1.png using Guid(42d5534e8eb3f4841bee8c80a80d05da) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '09119e2887632c43bbaa667582ee2462') in 0.0114808 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Plains/Flat/plains-sliced_09.png
+  artifactKey: Guid(ea939fe16223a0b4ca960c87688fed50) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Plains/Flat/plains-sliced_09.png using Guid(ea939fe16223a0b4ca960c87688fed50) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '90080ca62d2d3c815c83a730a61fd1d2') in 0.0100009 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Temple/Raised/temple-sliced_41.png
+  artifactKey: Guid(3086c7c4fcf42f846b242e2e7b7e007d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Temple/Raised/temple-sliced_41.png using Guid(3086c7c4fcf42f846b242e2e7b7e007d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'bc5238bc95f848784b98508caff2b2d9') in 0.014198 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Textures/Gradient 1.png
+  artifactKey: Guid(312b1980dfdbe1441aec7ee33f9cddf7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Textures/Gradient 1.png using Guid(312b1980dfdbe1441aec7ee33f9cddf7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0611dc73b6110ecd6697049eb509abfb') in 0.0141346 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/Scenes/New Lighting Settings.lighting
+  artifactKey: Guid(c4580fb239b20694f8af741e84fd0e6c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/Scenes/New Lighting Settings.lighting using Guid(c4580fb239b20694f8af741e84fd0e6c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '418bc99572ced0d91442d47b61c766e9') in 0.015643 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/GabrielAguiarProductions/Documentation - Free Quick Effects.pdf
+  artifactKey: Guid(8c8d72e2633fbcd43bf436858a9ff98f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/GabrielAguiarProductions/Documentation - Free Quick Effects.pdf using Guid(8c8d72e2633fbcd43bf436858a9ff98f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6371f5d1630269319046bd4a4efe3cdf') in 0.0053603 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader
+  artifactKey: Guid(a02a7d8c237544f1962732b55a9aebf1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader using Guid(a02a7d8c237544f1962732b55a9aebf1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '02ace40d58cc3448c3c4ed8ffffa3107') in 0.0064361 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/TextMesh Pro/Resources/LineBreaking Leading Characters.txt
+  artifactKey: Guid(d82c1b31c7e74239bff1220585707d2b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/TextMesh Pro/Resources/LineBreaking Leading Characters.txt using Guid(d82c1b31c7e74239bff1220585707d2b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a44cc5e31a9c330daa3fb44560d2338d') in 0.0052643 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenCave/Decoration/cave-sliced_24.png
+  artifactKey: Guid(e6b9a2050dc797d4fad44175541aad9e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenCave/Decoration/cave-sliced_24.png using Guid(e6b9a2050dc797d4fad44175541aad9e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e32da4d273ecf3d9949e7288d6a58dbd') in 0.021684 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/ColliderSprites/tile-border-top.png
+  artifactKey: Guid(6b19fa030e22a4aa7a4ebc2029911cf4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/ColliderSprites/tile-border-top.png using Guid(6b19fa030e22a4aa7a4ebc2029911cf4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '24b4ce2683060015a04d37481e5d89fb') in 0.0159536 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Decoration/tree_spruce_mask.png
+  artifactKey: Guid(eef45f81bcf2e934ca7fb7b99e8af658) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Decoration/tree_spruce_mask.png using Guid(eef45f81bcf2e934ca7fb7b99e8af658) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '515296212063e34d035f15dd3a05fad1') in 0.0177273 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Decoration/decoration_snowcap_rock_2.png
+  artifactKey: Guid(6d1832e65a13ce1488c9984ce2769f54) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Decoration/decoration_snowcap_rock_2.png using Guid(6d1832e65a13ce1488c9984ce2769f54) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '4a70e1ac80fc8a1697a1d2f62624615f') in 0.0123817 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Basic/Raised/cube09.png
+  artifactKey: Guid(fc0a7fdf63214554aa5390957b2ecdf5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Basic/Raised/cube09.png using Guid(fc0a7fdf63214554aa5390957b2ecdf5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5d438bec6efba2e4b90ca0c84427e21f') in 0.0120868 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Desert/Raised/desert-sliced_31.png
+  artifactKey: Guid(29ac072f835dc6945b5e1d0aa71dcc03) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Desert/Raised/desert-sliced_31.png using Guid(29ac072f835dc6945b5e1d0aa71dcc03) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'ab1213d00d8f83988843355afd0a4ab7') in 0.0103621 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Decoration/decoration_snowcap_rock_1_mask.png
+  artifactKey: Guid(8f43fa47947b163498d8bfeca9567190) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Decoration/decoration_snowcap_rock_1_mask.png using Guid(8f43fa47947b163498d8bfeca9567190) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '872d5254586b7363f3626425a7c88fdf') in 0.0111708 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/Model/Sphere.prefab
+  artifactKey: Guid(1411dfe45e0882d40b9a193af3f25e12) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/Model/Sphere.prefab using Guid(1411dfe45e0882d40b9a193af3f25e12) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'eb7b27c367277a078a2900d2da0f69ba') in 0.0088134 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Scripts/State Machine/States/AttackTargetState.cs
+  artifactKey: Guid(1267318f1e3368a47854143f505afe02) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/State Machine/States/AttackTargetState.cs using Guid(1267318f1e3368a47854143f505afe02) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c5edf37df202e87c73d1cf4f9c4d1abd') in 0.0070696 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Basic/Raised/cube11.png
+  artifactKey: Guid(7cb4bbef8a0dd8741a70734bc7d446fc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Basic/Raised/cube11.png using Guid(7cb4bbef8a0dd8741a70734bc7d446fc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e7cda9c9de31c6031d3ca5e9c60578db') in 0.0101959 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Textures/Impact.png
+  artifactKey: Guid(4eff0d2d0da831849a9242f5331f8b64) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Textures/Impact.png using Guid(4eff0d2d0da831849a9242f5331f8b64) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '34e8583b5fbfd2903ab80398677dafa1') in 0.0087403 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Temple/Flat/temple-sliced_05.png
+  artifactKey: Guid(8a053da2df1a71949a479ead0a03f5ac) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Temple/Flat/temple-sliced_05.png using Guid(8a053da2df1a71949a479ead0a03f5ac) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '78cb55a52b25c6d27dd8e92ff368bb73') in 0.0092232 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Raised/elevation_snow_W_inner.png
+  artifactKey: Guid(eee1973c968d71a4aa90efaf63816859) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Raised/elevation_snow_W_inner.png using Guid(eee1973c968d71a4aa90efaf63816859) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '98c216a77727703b28bc1a2eae31d1f5') in 0.0111764 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/Material/Manny Mat.mat
+  artifactKey: Guid(81639f8f6fc18694ab5a15beb2894b8b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/Material/Manny Mat.mat using Guid(81639f8f6fc18694ab5a15beb2894b8b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9779a9283ba4253e187ce08172dc579d') in 0.0157974 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Temple/Decoration/temple-sliced_49.png
+  artifactKey: Guid(b59fe094ae78fec48838c83c48ffa36b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Temple/Decoration/temple-sliced_49.png using Guid(b59fe094ae78fec48838c83c48ffa36b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '60d19749ab0cf4c7f45903fd08f5ec92') in 0.0160734 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Textures/Cut.png
+  artifactKey: Guid(45535a53bfc8286459ab26c77489bda8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Textures/Cut.png using Guid(45535a53bfc8286459ab26c77489bda8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '84ff16f7d1912b7277e8a8c5c44423ab') in 0.0104705 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Flat/snow_corner_E.png
+  artifactKey: Guid(ffe071571dcbb4049a48a72cca7af170) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Flat/snow_corner_E.png using Guid(ffe071571dcbb4049a48a72cca7af170) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'cc4f4e09b0697725772d1b26adfa03eb') in 0.0116044 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Desert/Decoration/desert-sliced_66.png
+  artifactKey: Guid(5dd956ffeab868541a3cf46b1be513c7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Desert/Decoration/desert-sliced_66.png using Guid(5dd956ffeab868541a3cf46b1be513c7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c0f2bd6a25949d85d0bd812f3d977a4e') in 0.0099957 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Desert/Raised/desert-sliced_52.png
+  artifactKey: Guid(21679eee47d160141b453fea1decf53a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Desert/Raised/desert-sliced_52.png using Guid(21679eee47d160141b453fea1decf53a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e991ea19aa4d55a2cb4820a27d592cbc') in 0.010334 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Decoration/decoration_rock_1.png
+  artifactKey: Guid(5f3ef23c2f15bec45831589f2f6a8e38) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Decoration/decoration_rock_1.png using Guid(5f3ef23c2f15bec45831589f2f6a8e38) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e6bef293df3cfc7e33722948f5d89d28') in 0.0241051 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Desert/Flat/desert-sliced_20.png
+  artifactKey: Guid(b7628d1eaae93b04c8394a5e246d5e0a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Desert/Flat/desert-sliced_20.png using Guid(b7628d1eaae93b04c8394a5e246d5e0a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7f4c13fece48188bcfa7c9c869df554f') in 0.0179929 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenCave/Raised/cave-sliced_28.png
+  artifactKey: Guid(51c59536721853745b2d9abde938d517) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenCave/Raised/cave-sliced_28.png using Guid(51c59536721853745b2d9abde938d517) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '568b0920f2c3f2a3e86e6c2f98a03120') in 0.0151173 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Art/Tiles/Tiles_Vi
+  artifactKey: Guid(147234e7ef88c2641b3e70d5e58f2e7e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Tiles/Tiles_Vi using Guid(147234e7ef88c2641b3e70d5e58f2e7e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b55ef0741c24aae38eeb4e65138309b7') in 0.0044012 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Flat/snow_corner_W.png
+  artifactKey: Guid(83663076b5c8dd8419c9e5e9c0f27195) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Flat/snow_corner_W.png using Guid(83663076b5c8dd8419c9e5e9c0f27195) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '4d132a307136ba6287bb613e1e433e8e') in 0.0120579 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenCave/Raised/cave-sliced_02.png
+  artifactKey: Guid(349def5cbbfb987418465220ecc08562) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenCave/Raised/cave-sliced_02.png using Guid(349def5cbbfb987418465220ecc08562) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b078db71f97c775968db060569cc6e66') in 0.0096381 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenCave/Decoration/cave-sliced_25.png
+  artifactKey: Guid(0354dc998282a914084b8c66bfcc461c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenCave/Decoration/cave-sliced_25.png using Guid(0354dc998282a914084b8c66bfcc461c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '8ce050ea0d9265eb20b90438fe481ec1') in 0.0103979 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Basic/Raised/cube05.png
+  artifactKey: Guid(5b6a2587afea824479c9b679a3e23d3e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Basic/Raised/cube05.png using Guid(5b6a2587afea824479c9b679a3e23d3e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3b6ca3c4950e4bead8be08fc211f23fe') in 0.0105929 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Temple/Raised/temple-sliced_30.png
+  artifactKey: Guid(7ae3e74066cc63f4fbb6d1668c742138) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Temple/Raised/temple-sliced_30.png using Guid(7ae3e74066cc63f4fbb6d1668c742138) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6db89d09bbb1888fb21e0c3f2fd2337b') in 0.0108919 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Basic/Raised
+  artifactKey: Guid(cd5770f23c4e3eb428244eab07d8e508) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Basic/Raised using Guid(cd5770f23c4e3eb428244eab07d8e508) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '8684cbc564e0bde760ea0925b52b614b') in 0.0058594 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Flat/snow_W_inner.png
+  artifactKey: Guid(c0c451c42ef93814695969144f5e2a7e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Flat/snow_W_inner.png using Guid(c0c451c42ef93814695969144f5e2a7e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a23e5b7fb48adb7d9d12ffb783852b84') in 0.0120278 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Decoration/decoration_rock_NW.png
+  artifactKey: Guid(e29fc5ac0affeed418adead9dba8eb65) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Decoration/decoration_rock_NW.png using Guid(e29fc5ac0affeed418adead9dba8eb65) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '696c33bd665813ce6067498848af704b') in 0.0099702 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Art/Tiles/Tiles_Vi/plains-sliced_33.asset
+  artifactKey: Guid(e6c86417a92f5ab47b24f6b37b64f117) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Tiles/Tiles_Vi/plains-sliced_33.asset using Guid(e6c86417a92f5ab47b24f6b37b64f117) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c80249f0d30eba7ef8e28795cc33bb42') in 0.0090924 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Model/Smoke
+  artifactKey: Guid(e2b4f28cd40e60749b5be1cca90061eb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Model/Smoke using Guid(e2b4f28cd40e60749b5be1cca90061eb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0cc421fa65a3805cea12fdbf93e5fe7d') in 0.0045869 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/ColliderSprites/tile-wall-2.png
+  artifactKey: Guid(2abfa0b69193b46c4b7848a29c8a3c6f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/ColliderSprites/tile-wall-2.png using Guid(2abfa0b69193b46c4b7848a29c8a3c6f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c9c47638babe051a3a56bdd16db24a6c') in 0.0130964 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Textures/Noise_GrayScale/T_Lu_Noise_29.png
+  artifactKey: Guid(98be8ffaee9a16d46951c44ec47a245b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Textures/Noise_GrayScale/T_Lu_Noise_29.png using Guid(98be8ffaee9a16d46951c44ec47a245b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e9a82842691e40ab1ec1ef7d270fce91') in 0.008985 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Model/Katana/Low-Poly Katana.fbx
+  artifactKey: Guid(6ac8e75d4ce98ec4488b1ac9e752d09c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Model/Katana/Low-Poly Katana.fbx using Guid(6ac8e75d4ce98ec4488b1ac9e752d09c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '22231d84761fcd12867a79e2b263e84d') in 0.0138465 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 15
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Flat/mountain_4.png
+  artifactKey: Guid(9fe6871927449ff4790224027f7cb7a6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Flat/mountain_4.png using Guid(9fe6871927449ff4790224027f7cb7a6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '330bb4df7b7a6225d45478e4346ac9c2') in 0.0118096 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Plains/Flat/plains-sliced_13.png
+  artifactKey: Guid(2870f636fc0c02d45a7499c78eb70cbe) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Plains/Flat/plains-sliced_13.png using Guid(2870f636fc0c02d45a7499c78eb70cbe) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '50df6ec22f46122f970af082923512b7') in 0.010093 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Desert/Decoration/desert-sliced_55.png
+  artifactKey: Guid(ed50c1ae4775eea499022f215889061f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Desert/Decoration/desert-sliced_55.png using Guid(ed50c1ae4775eea499022f215889061f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'efc38f4c2e7479c63bece0566cee4926') in 0.0102299 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Plains/Flat/plains-sliced_27.png
+  artifactKey: Guid(63e7ba8403b31f1479b52913048087c7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Plains/Flat/plains-sliced_27.png using Guid(63e7ba8403b31f1479b52913048087c7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '469302b694f05bbd61b9755f93f53d0f') in 0.0105287 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/TextMesh Pro/Shaders/TMP_SDF-Mobile-2-Pass.shader
+  artifactKey: Guid(0178fcb869bafef4690d177d31d17db8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/TextMesh Pro/Shaders/TMP_SDF-Mobile-2-Pass.shader using Guid(0178fcb869bafef4690d177d31d17db8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c34c581bf26b4fa22a25f35e1a6c0b25') in 0.0088695 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Temple/Flat
+  artifactKey: Guid(23b006a94c5c2804dadfa9af57d4a63c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Temple/Flat using Guid(23b006a94c5c2804dadfa9af57d4a63c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '214d9f549ff7de98951f300c03d48181') in 0.005074 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Flat/snow_S_inner.png
+  artifactKey: Guid(6b1b587da749d4148a675e08358f50a3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Flat/snow_S_inner.png using Guid(6b1b587da749d4148a675e08358f50a3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c5a30c3cd32fa69d809380de657629f3') in 0.0099594 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Decoration/decoration_rock_NW_mask.png
+  artifactKey: Guid(835d558c2a7f6af42a7fdf9c1c4389de) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenMountain/Decoration/decoration_rock_NW_mask.png using Guid(835d558c2a7f6af42a7fdf9c1c4389de) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b39771e3013434596145a9aabcfbc068') in 0.0099186 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Textures/Slash Noise_Slash Noise.png
+  artifactKey: Guid(5f9dc23532aa485498af34ddf39f045b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Textures/Slash Noise_Slash Noise.png using Guid(5f9dc23532aa485498af34ddf39f045b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7d0d14357082f0d92ff3c05f996be039') in 0.0097127 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Plains/Flat/plains-sliced_36.png
+  artifactKey: Guid(f118d6f59c524f14fbb314a1065c65c3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Plains/Flat/plains-sliced_36.png using Guid(f118d6f59c524f14fbb314a1065c65c3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'aa27329394a0b6da7bdc1aeac0e4c7a4') in 0.0091536 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Art/Tiles/Tiles_Vi/plains-sliced_39.asset
+  artifactKey: Guid(688dfa84ae85d8b4a9d5c3ae216a2b95) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Tiles/Tiles_Vi/plains-sliced_39.asset using Guid(688dfa84ae85d8b4a9d5c3ae216a2b95) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3015ffa392b283718731eca1e35acf21') in 0.0060409 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Temple/Decoration/temple-sliced_68.png
+  artifactKey: Guid(5442f6430a2b12c49806499f2de6cc43) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Temple/Decoration/temple-sliced_68.png using Guid(5442f6430a2b12c49806499f2de6cc43) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f974cf5b15bd4d1407fb78e2f1da733d') in 0.0102192 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/TextMesh Pro/Shaders/TMP_SDF-Surface.shader
+  artifactKey: Guid(f7ada0af4f174f0694ca6a487b8f543d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/TextMesh Pro/Shaders/TMP_SDF-Surface.shader using Guid(f7ada0af4f174f0694ca6a487b8f543d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0122a47a6a0edbfb6d127eb54c66241e') in 0.0063996 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Basic/Flat/base13.png
+  artifactKey: Guid(9ec90eb11041ca342b40e5a11007edb2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Basic/Flat/base13.png using Guid(9ec90eb11041ca342b40e5a11007edb2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f893db1b253f4b3c941c16c1ee0c967e') in 0.012622 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Temple/Flat/temple-sliced_04.png
+  artifactKey: Guid(cd35f096a123b0c4193c14be3b4bbfa3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Temple/Flat/temple-sliced_04.png using Guid(cd35f096a123b0c4193c14be3b4bbfa3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'ed53b053676e33dbde1f414a9b78b3bb') in 0.0103273 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Temple/Flat/temple-sliced_11.png
+  artifactKey: Guid(c5e8ad2cccaa2304aa67a7665cef06b4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Temple/Flat/temple-sliced_11.png using Guid(c5e8ad2cccaa2304aa67a7665cef06b4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '81011d823729b8c3b603d8dd87bfcd58') in 0.0094054 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Basic/Flat/base01.png
+  artifactKey: Guid(75bd1d7d230af774fa5ce4561b1d17a3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Basic/Flat/base01.png using Guid(75bd1d7d230af774fa5ce4561b1d17a3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '4825fd8f66d1b361f8207ffe7e106e1a') in 0.0098762 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Temple/Decoration/temple-sliced_46.png
+  artifactKey: Guid(164032f85bcce1d4e8ae7f1a6e4927c1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Temple/Decoration/temple-sliced_46.png using Guid(164032f85bcce1d4e8ae7f1a6e4927c1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1550a29ab7fedcb80b8b8d61b73b32dd') in 0.0140246 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/TextMesh Pro/Sprites
+  artifactKey: Guid(d0603b6d5186471b96c778c3949c7ce2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/TextMesh Pro/Sprites using Guid(d0603b6d5186471b96c778c3949c7ce2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '8cb0f58a60eee567dd48d688aef5c59e') in 0.0042524 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenCave/Raised/cave-sliced_04.png
+  artifactKey: Guid(83079e506618ae24187f11e0f7e41c42) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenCave/Raised/cave-sliced_04.png using Guid(83079e506618ae24187f11e0f7e41c42) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'ca127a205c044725d0213f2d5d6c483f') in 0.0096918 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/TextMesh Pro/Shaders/TMP_SDF-HDRP LIT.shadergraph
+  artifactKey: Guid(ca2ed216f98028c4dae6c5224a952b3c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/TextMesh Pro/Shaders/TMP_SDF-HDRP LIT.shadergraph using Guid(ca2ed216f98028c4dae6c5224a952b3c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6d324463145f453fc2f82f27b57d9b7c') in 0.0084874 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Shaders/Orb Warp Lit.shadergraph
+  artifactKey: Guid(79658e3bd03538747b0982ae4b4039a5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Shaders/Orb Warp Lit.shadergraph using Guid(79658e3bd03538747b0982ae4b4039a5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '644a726d3c68fcaf462c2199b407612f') in 0.0115234 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Scripts/Combat/SkillData.cs
+  artifactKey: Guid(7120c6a1ce320ad439a10f2826fc0308) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts/Combat/SkillData.cs using Guid(7120c6a1ce320ad439a10f2826fc0308) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f0edfad36194c5b53dec344f65902418') in 0.0039745 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Prefabs/Slash Fire VFX.prefab
+  artifactKey: Guid(50f1354827c77ef4b99c4dca0ee3411d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Prefabs/Slash Fire VFX.prefab using Guid(50f1354827c77ef4b99c4dca0ee3411d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'cc3091cde5246d86fddb1475be3781d5') in 0.0422294 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 40
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenCave/Decoration/cave-sliced_27.png
+  artifactKey: Guid(e40a3a4478df6f540ba39f5a858c60d6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenCave/Decoration/cave-sliced_27.png using Guid(e40a3a4478df6f540ba39f5a858c60d6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2faf31b7be74a8bbed704b1adeb4ae5d') in 0.0120841 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Art/Tiles/Tiles_Vi/plains-sliced_08.asset
+  artifactKey: Guid(2df373a5a95a4d04598900afe0fd6850) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Tiles/Tiles_Vi/plains-sliced_08.asset using Guid(2df373a5a95a4d04598900afe0fd6850) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'abdff2752c8927b05d1a8e69d69d2e5d') in 0.0080458 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader
+  artifactKey: Guid(1e3b057af24249748ff873be7fafee47) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader using Guid(1e3b057af24249748ff873be7fafee47) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '92dfed4e1e6d9f44f6197f2fc53afa3a') in 0.0060064 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/TextMesh Pro/Shaders/TMP_SDF SSD.shader
+  artifactKey: Guid(14eb328de4b8eb245bb7cea29e4ac00b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/TextMesh Pro/Shaders/TMP_SDF SSD.shader using Guid(14eb328de4b8eb245bb7cea29e4ac00b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c9b0a7d4c2c5be3ece337e5ed1c43074') in 0.013816 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Tiles/Tiles_Vi/plains-sliced_04.asset
+  artifactKey: Guid(91a4e4a4c50503747af789bb0dae228b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Tiles/Tiles_Vi/plains-sliced_04.asset using Guid(91a4e4a4c50503747af789bb0dae228b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '88477ebc1bffd67f61b1780dc578d3f0') in 0.0062779 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Temple/Raised/temple-sliced_38.png
+  artifactKey: Guid(3dee71ae3d9dc64458491b098ccc6111) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Temple/Raised/temple-sliced_38.png using Guid(3dee71ae3d9dc64458491b098ccc6111) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2ba8d6f0442dca0ede539e3b9e13303b') in 0.0124024 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Textures/Noise_GrayScale/T_Lu_Noise_31.png
+  artifactKey: Guid(ffcd96cc7a991ca4fa8a04b7e8fdaaa7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Textures/Noise_GrayScale/T_Lu_Noise_31.png using Guid(ffcd96cc7a991ca4fa8a04b7e8fdaaa7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '796d3f3e17868daff77e53f425755a73') in 0.0095063 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Plains/Flat/plains-sliced_37.png
+  artifactKey: Guid(c136e63f4d472cb4087d99948c211288) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Plains/Flat/plains-sliced_37.png using Guid(c136e63f4d472cb4087d99948c211288) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '61b93fcc35ae2d9b2a4a9fa5d3ae1b7a') in 0.0103392 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Temple/Decoration/temple-sliced_40.png
+  artifactKey: Guid(0a4bff6f7a8625f4a821081725a5f5da) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Temple/Decoration/temple-sliced_40.png using Guid(0a4bff6f7a8625f4a821081725a5f5da) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a4195266923909a8b34f9bef373890c9') in 0.0099699 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Desert/Flat
+  artifactKey: Guid(400cb2306b6770d489f496746808c03c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Desert/Flat using Guid(400cb2306b6770d489f496746808c03c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '98f430ba068f1d1460a3581ab2b3f9c0') in 0.0042997 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/TextMesh Pro/Shaders/TMP_SDF Overlay.shader
+  artifactKey: Guid(dd89cf5b9246416f84610a006f916af7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/TextMesh Pro/Shaders/TMP_SDF Overlay.shader using Guid(dd89cf5b9246416f84610a006f916af7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'fd5be45f6f3fcbb24b7e049b558aa6d0') in 0.0066407 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/ColliderSprites/tile-border-horizontal.png
+  artifactKey: Guid(b6548471931e44419bb578976f69c7ba) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/ColliderSprites/tile-border-horizontal.png using Guid(b6548471931e44419bb578976f69c7ba) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c31ccd937557609718a3a9db8e08ad40') in 0.0096353 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Desert/Raised/desert-sliced_30.png
+  artifactKey: Guid(2eac3474fe5c2714788e1ecece163387) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Desert/Raised/desert-sliced_30.png using Guid(2eac3474fe5c2714788e1ecece163387) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6ba7d5b29c76a8e7456f584c932c9a5d') in 0.0090603 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/FrozenCave/Wall/cave-sliced_39.png
+  artifactKey: Guid(b7a8fce5db0ccf647af2cf4cf18530ad) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/FrozenCave/Wall/cave-sliced_39.png using Guid(b7a8fce5db0ccf647af2cf4cf18530ad) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a89a56608e385a4e45d161353b4d851e') in 0.0098316 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Temple/MoltenLava_Animation/molten_NE_5.png
+  artifactKey: Guid(a04d9f514a5db364fb050397fa81fe49) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Temple/MoltenLava_Animation/molten_NE_5.png using Guid(a04d9f514a5db364fb050397fa81fe49) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '788d7681a4d8855e8c1de52cce1d74ac') in 0.0096548 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Basic/Raised/cube03.png
+  artifactKey: Guid(f7e71c45e55ea7f45a1b3391a8edac67) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Basic/Raised/cube03.png using Guid(f7e71c45e55ea7f45a1b3391a8edac67) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0bfa7d4321e5fd55bdc128bc27623a8b') in 0.0126455 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Desert/Raised/desert-sliced_35.png
+  artifactKey: Guid(e981f16ce8882f547bb284e9dee4eb58) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Desert/Raised/desert-sliced_35.png using Guid(e981f16ce8882f547bb284e9dee4eb58) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '315b061f52d0e0467d8c6d3663b32f59') in 0.0116494 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Art/Tiles/Tiles_Vi/plains-sliced_26.asset
+  artifactKey: Guid(b008e07f316ea474e886160f99df6866) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Tiles/Tiles_Vi/plains-sliced_26.asset using Guid(b008e07f316ea474e886160f99df6866) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'dd13ea82d3c89b40f0c85705b519244a') in 0.0075651 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Materials
+  artifactKey: Guid(44c246597df47e34b9ba9e8b358fb07e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Materials using Guid(44c246597df47e34b9ba9e8b358fb07e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5b1273dc5e8a0c6e9e79468bfffcafaa') in 0.0060753 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Desert/Flat/desert-sliced_13.png
+  artifactKey: Guid(1fa9a4a9631823f44b33f6ac73e6e1d3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Desert/Flat/desert-sliced_13.png using Guid(1fa9a4a9631823f44b33f6ac73e6e1d3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b74b6b241b9cbd0b2ec8cc495ceb85c8') in 0.0156448 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Materials/Slash.mat
+  artifactKey: Guid(7e2e93e5d515a73449b19b84a9dd6d90) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Materials/Slash.mat using Guid(7e2e93e5d515a73449b19b84a9dd6d90) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3ba4d50391cd732e5af30d7a237776f8') in 0.0264361 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/Art/Elementos_Sena/Sprites/Plains/Flat/plains-sliced_15.png
+  artifactKey: Guid(c3f0b6dec2372bd4394a2827784ac5b0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Art/Elementos_Sena/Sprites/Plains/Flat/plains-sliced_15.png using Guid(c3f0b6dec2372bd4394a2827784ac5b0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f1f914378a38e8bb891feed17680a3d5') in 0.0188459 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
 [Licensing::Client] Successfully resolved entitlement details
 Symbol file LoadedFromMemory is not a mono symbol file
-- Loaded All Assemblies, in  1.529 seconds
-Refreshing native plugins compatible for Editor in 1.74 ms, found 4 plugins.
+- Loaded All Assemblies, in  4.513 seconds
+Refreshing native plugins compatible for Editor in 8.57 ms, found 4 plugins.
 Native extension for Android target not found
 Native extension for WindowsStandalone target not found
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
@@ -420,44 +2041,88 @@ Native extension for WindowsStandalone target not found
 [Licensing::Client] Error: Code 404 while processing request (status: Found 0 entitlement groups and 0 free entitlements matching requested entitlement ids)
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  2.244 seconds
-Domain Reload Profiling: 3771ms
-	BeginReloadAssembly (414ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (24ms)
+- Finished resetting the current domain, in  4.442 seconds
+Domain Reload Profiling: 8977ms
+	BeginReloadAssembly (1795ms)
+		ExecutionOrderSort (3ms)
+		DisableScriptedObjects (190ms)
 		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (147ms)
-	RebuildCommonClasses (47ms)
+		ReleaseScriptingObjects (3ms)
+		CreateAndSetChildDomain (835ms)
+	RebuildCommonClasses (63ms)
 	RebuildNativeTypeToScriptingClass (21ms)
-	initialDomainReloadingComplete (72ms)
-	LoadAllAssembliesAndSetupDomain (973ms)
-		LoadAssemblies (596ms)
+	initialDomainReloadingComplete (117ms)
+	LoadAllAssembliesAndSetupDomain (2538ms)
+		LoadAssemblies (1864ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (523ms)
-			TypeCache.Refresh (20ms)
-				TypeCache.ScanAssembly (3ms)
-			BuildScriptInfoCaches (479ms)
-			ResolveRequiredComponents (17ms)
-	FinalizeReload (2245ms)
+		AnalyzeDomain (961ms)
+			TypeCache.Refresh (55ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (846ms)
+			ResolveRequiredComponents (23ms)
+	FinalizeReload (4444ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1986ms)
+		SetupLoadedEditorAssemblies (3877ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (13ms)
-			SetLoadedEditorAssemblies (9ms)
-			BeforeProcessingInitializeOnLoad (283ms)
-			ProcessInitializeOnLoadAttributes (1073ms)
-			ProcessInitializeOnLoadMethodAttributes (596ms)
-			AfterProcessingInitializeOnLoad (11ms)
-			EditorAssembliesLoaded (1ms)
+			InitializePlatformSupportModulesInManaged (30ms)
+			SetLoadedEditorAssemblies (14ms)
+			BeforeProcessingInitializeOnLoad (473ms)
+			ProcessInitializeOnLoadAttributes (2086ms)
+			ProcessInitializeOnLoadMethodAttributes (1252ms)
+			AfterProcessingInitializeOnLoad (19ms)
+			EditorAssembliesLoaded (2ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (23ms)
-Refreshing native plugins compatible for Editor in 1.70 ms, found 4 plugins.
+		AwakeInstancesAfterBackupRestoration (54ms)
+Refreshing native plugins compatible for Editor in 6.79 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 17 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 9109 unused Assets / (5.2 MB). Loaded Objects now: 9956.
-Memory consumption went from 179.2 MB to 174.1 MB.
-Total: 26.554200 ms (FindLiveObjects: 1.117700 ms CreateObjectMapping: 1.818100 ms MarkObjects: 19.778200 ms  DeleteObjects: 3.838900 ms)
+Unloading 9111 unused Assets / (7.1 MB). Loaded Objects now: 9954.
+Memory consumption went from 172.3 MB to 165.2 MB.
+Total: 83.331900 ms (FindLiveObjects: 5.384400 ms CreateObjectMapping: 10.141300 ms MarkObjects: 47.820200 ms  DeleteObjects: 19.978600 ms)
 
 Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 364.722318 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/Model/Ground Plane.prefab
+  artifactKey: Guid(be389035946ca1145aa0a72fa23e7909) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/Model/Ground Plane.prefab using Guid(be389035946ca1145aa0a72fa23e7909) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4ca20b956de1701887a342334b69a860') in 2.9582617 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000071 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/Model/Manny.prefab
+  artifactKey: Guid(22b86df65cdc00f47be843567204e45c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/Model/Manny.prefab using Guid(22b86df65cdc00f47be843567204e45c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3507408d55fb07f174876772ae46c433') in 0.3069414 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 233
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/Model/Sphere.fbx
+  artifactKey: Guid(c9e72467d1989ca458087dbe742d2e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Demo/Model/Sphere.fbx using Guid(c9e72467d1989ca458087dbe742d2e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2106fb221834daa16180ed6c0600f2d5') in 0.5982984 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.452115 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Prefabs/Multiple Impact.prefab
+  artifactKey: Guid(131ad0e894ecda14eac32155d82d6c3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Prefabs/Multiple Impact.prefab using Guid(131ad0e894ecda14eac32155d82d6c3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '64a9db124f1abb1d611052568103e207') in 1.244817 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 67
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000059 seconds.
+  path: Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Prefabs/Slash Fire VFX.prefab
+  artifactKey: Guid(50f1354827c77ef4b99c4dca0ee3411d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Prefabs/Slash Fire VFX.prefab using Guid(50f1354827c77ef4b99c4dca0ee3411d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1f712c5121c1506aa016ab2e16ae3f5e') in 1.0129644 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 91
+
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
