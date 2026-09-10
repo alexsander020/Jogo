@@ -55,6 +55,9 @@ namespace TacticalBattle.Tests
             // 6. TESTES DO SISTEMA DE APP-LINK
             Test_AppLink_System(); passed++;
 
+            // 7. TESTES DA UI DE BUFFS DO BATTLE HUD
+            Test_BattleHUD_LinkBuffsPanel(); passed++;
+
             Debug.Log("=================================================");
             Debug.Log($"SUCESSO: TODOS OS {passed} TESTES DE APPMON, COMBOS E APP-LINK FORAM APROVADOS!");
             Debug.Log("=================================================");
@@ -444,6 +447,61 @@ namespace TacticalBattle.Tests
             GameObject.DestroyImmediate(go2);
             GameObject.DestroyImmediate(go3);
             GameObject.DestroyImmediate(goSys);
+        }
+
+        public static void Test_BattleHUD_LinkBuffsPanel()
+        {
+            var hudGo = new GameObject("TestBattleHUD");
+            var hud = hudGo.AddComponent<BattleHUD>();
+            Assert(hud != null, "BattleHUD instanciado com sucesso.");
+
+            var unitGo = new GameObject("TestHUDUnit");
+            var unit = unitGo.AddComponent<Unit>();
+            var stats = unitGo.AddComponent<Stats>();
+            stats.InitializeStatsIfEmpty();
+            unit.stats = stats;
+            unit.unitName = "TestAgumon";
+            unit.category = FunctionalCategory.Security;
+            unit.team = Team.Player;
+            stats.SetStat(StatEnum.ATK, 100);
+            stats.SetStat(StatEnum.DEF, 80);
+
+            // 1. Estado sem Link (painel deve estar oculto e botão de Link ativo)
+            hud.UpdateTurnBanner(unit);
+            hud.UpdateLinkBuffsPanel(unit);
+            hud.UpdateActionMenuSelection(0, unit);
+            Assert(!unit.IsLinked, "Unidade inicial não possui Link.");
+            Assert(hud.linkBuffsPanel != null && !hud.linkBuffsPanel.activeSelf, "Painel de Link deve ficar OCULTO quando não há link.");
+            Assert(hud.IsActionAvailable(4), "Botão de Link (ação 4) deve estar ativo quando a unidade não está vinculada e pode agir.");
+
+            // 2. Estado com Link e Sinergia (painel deve ficar ativo e botão de Link desabilitado)
+            var architect = AppmonDatabase.Get("Architectmon"); // Super, Security (Sinergia com Security!)
+            bool linked = AppLinkService.ApplyLink(unit, architect, out string err);
+            Assert(linked, "Link aplicado na unidade para teste de UI.");
+            hud.UpdateTurnBanner(unit);
+            hud.UpdateLinkBuffsPanel(unit);
+            hud.UpdateActionMenuSelection(0, unit);
+            Assert(unit.IsLinked, "Unidade agora está vinculada e o HUD reflete os buffs.");
+            Assert(hud.linkBuffsPanel != null && hud.linkBuffsPanel.activeSelf, "Painel de Link deve ficar ATIVO quando um Link for feito.");
+            Assert(!hud.IsActionAvailable(4), "Botão de Link (ação 4) deve ficar DESABILITADO (interactable = false) após o link ser feito.");
+
+            // 3. Desvincular e verificar que o painel volta a ficar oculto e o botão volta a ficar ativo
+            AppLinkService.RemoveLink(unit);
+            hud.UpdateTurnBanner(unit);
+            hud.UpdateLinkBuffsPanel(unit);
+            hud.UpdateActionMenuSelection(0, unit);
+            Assert(!unit.IsLinked, "Unidade desvinculada com sucesso e HUD atualizado.");
+            Assert(hud.linkBuffsPanel != null && !hud.linkBuffsPanel.activeSelf, "Painel de Link volta a ficar OCULTO após desvincular.");
+            Assert(hud.IsActionAvailable(4), "Botão de Link volta a ficar ativo após o link ser removido.");
+
+            // Limpeza
+            AppLinkService.ResetAllLinks();
+            if (hud.canvas != null && hud.canvas.gameObject != hudGo)
+            {
+                GameObject.DestroyImmediate(hud.canvas.gameObject);
+            }
+            GameObject.DestroyImmediate(hudGo);
+            GameObject.DestroyImmediate(unitGo);
         }
     }
 }

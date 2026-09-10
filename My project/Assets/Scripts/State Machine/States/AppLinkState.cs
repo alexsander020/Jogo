@@ -15,7 +15,21 @@ public class AppLinkState : State
             return;
         }
 
-        if (!currentUnit.CanAct() && !currentUnit.IsLinked)
+        if (currentUnit.IsLinked)
+        {
+            Debug.LogWarning("[AppLinkState] Unidade atual já possui um App-Link ativo!");
+            if (BattleHUD.Instance != null)
+            {
+                BattleHUD.Instance.UpdateControlsPrompt(
+                    "LINK JÁ ATIVO",
+                    "• Esta unidade já realizou um App-Link e não pode linkar novamente."
+                );
+            }
+            machine.ChangeTo<ChooseActionState>();
+            return;
+        }
+
+        if (!currentUnit.CanAct())
         {
             Debug.LogWarning("[AppLinkState] Unidade atual não pode realizar ações neste turno!");
             if (BattleHUD.Instance != null)

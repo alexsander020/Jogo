@@ -50,9 +50,11 @@ public class Unit : MonoBehaviour
     public bool isDefending = false;
 
     [Header("App-Link (Conexão com Reserva)")]
-    public AppmonData linkedBagAppmon;
-    public AppLinkRecord currentAppLink;
-    public bool IsLinked => linkedBagAppmon != null;
+    [System.NonSerialized, HideInInspector]
+    public AppmonData linkedBagAppmon = null;
+    [System.NonSerialized, HideInInspector]
+    public AppLinkRecord currentAppLink = null;
+    public bool IsLinked => linkedBagAppmon != null && !string.IsNullOrEmpty(linkedBagAppmon.id);
 
     [HideInInspector]
     public Stats stats;
@@ -65,6 +67,9 @@ public class Unit : MonoBehaviour
 
     void Awake()
     {
+        linkedBagAppmon = null;
+        currentAppLink = null;
+
         stats = GetComponentInChildren<Stats>();
         if (stats == null) stats = GetComponent<Stats>();
 

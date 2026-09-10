@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TacticalBattle.Core;
+using TacticalBattle.AppLink;
+using TacticalBattle.Appmon;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,9 +29,21 @@ public class BattleHUD : MonoBehaviour
     private Text spValueText;
     private float maxBarWidth = 110f;
 
+    // --- PAINEL DE BUFFS DE APP-LINK (Top-Left - Logo abaixo do Card de Informações) ---
+    public GameObject linkBuffsPanel;
+    private Image linkBuffsBorder;
+    private Image linkBuffsBg;
+    private Image linkBuffsSideIndicator;
+    private Text linkBuffsHeaderLeftText;
+    private Text linkBuffsSynergyText;
+    private Text linkBuffsStatsText;
+    private Text linkBuffsSkillText;
+    private GameObject linkBuffsDivider;
+
     // --- PAINEL DE MENU DE AÇÕES NA VERTICAL (Top-Left - Estilo Digimon Survive Imagem 3) ---
     private GameObject actionMenuContainer;
     private List<ActionMenuItemUI> actionMenuItems = new List<ActionMenuItemUI>();
+    private int currentActionMenuIndex = 0;
     private readonly string[] actionNames = new string[]
     {
         "Move",
@@ -200,6 +214,10 @@ public class BattleHUD : MonoBehaviour
             }
         }
 
+        // Sincronização em tempo real de eventos de App-Link
+        AppLinkService.OnAppLinkCreated += OnAppLinkChanged;
+        AppLinkService.OnAppLinkRemoved += OnAppLinkChanged;
+
         UpdateControlsPrompt("MENU DE AÇÕES", "• [W / S ou SETAS] : Selecionar Ação    [ESPAÇO / ENTER] : Confirmar    [X / ESC] : Modo Livre");
     }
 
@@ -211,6 +229,9 @@ public class BattleHUD : MonoBehaviour
             BattleController.Instance.OnTurnEnd -= OnTurnEnded;
             BattleController.Instance.OnBattleEnd -= OnBattleEnd;
         }
+
+        AppLinkService.OnAppLinkCreated -= OnAppLinkChanged;
+        AppLinkService.OnAppLinkRemoved -= OnAppLinkChanged;
     }
 
     void Update()
@@ -248,6 +269,41 @@ public class BattleHUD : MonoBehaviour
                 turnCounterText.text = roundStr;
             }
         }
+        // Garante visibilidade estrita: o painel de buffs de Link SÓ aparece quando houver um Link feito
+        Unit activeCombatant = cachedCurrentUnit != null ? cachedCurrentUnit : (BattleController.Instance != null ? BattleController.Instance.currentUnit : null);
+        bool hasActiveLink = activeCombatant != null && activeCombatant.gameObject.activeInHierarchy && activeCombatant.IsAlive &&
+                             activeCombatant.IsLinked && activeCombatant.linkedBagAppmon != null &&
+                             !string.IsNullOrEmpty(activeCombatant.linkedBagAppmon.id) &&
+                             (playerInfoCard != null && playerInfoCard.activeSelf);
+
+        if (linkBuffsPanel != null)
+        {
+            if (hasActiveLink)
+            {
+                if (!linkBuffsPanel.activeSelf)
+                {
+                    UpdateLinkBuffsPanel(activeCombatant);
+                }
+            }
+            else
+            {
+                if (linkBuffsPanel.activeSelf)
+                {
+                    linkBuffsPanel.SetActive(false);
+                    if (actionMenuContainer != null)
+                    {
+                        RectTransform menuRt = actionMenuContainer.GetComponent<RectTransform>();
+                        if (menuRt != null) menuRt.anchoredPosition = new Vector2(20, -100);
+                    }
+                }
+            }
+        }
+
+        // Garante que se um link estiver ativo, o botão 4 (Link) do menu de ações seja imediatamente desativado
+        if (hasActiveLink && actionMenuItems.Count > 4 && actionMenuItems[4] != null && actionMenuItems[4].button != null && actionMenuItems[4].button.interactable)
+        {
+            UpdateActionMenuSelection(currentActionMenuIndex, activeCombatant);
+        }
     }
 
     void OnTurnChanged(Unit unit)
@@ -258,6 +314,12 @@ public class BattleHUD : MonoBehaviour
     void OnTurnEnded(Unit unit)
     {
         UpdateTurnTimeline(null);
+        if (linkBuffsPanel != null) linkBuffsPanel.SetActive(false);
+        if (actionMenuContainer != null)
+        {
+            RectTransform menuRt = actionMenuContainer.GetComponent<RectTransform>();
+            if (menuRt != null) menuRt.anchoredPosition = new Vector2(20, -100);
+        }
     }
 
     void HideLegacyScenePanels()
@@ -302,7 +364,10 @@ public class BattleHUD : MonoBehaviour
             // 1. PAINEL DE INFORMAÇÕES DO JOGADOR (Top-Left)
             BuildPlayerInfoCard();
 
-            // 2. PAINEL DE MENU DE AÇÕES NA VERTICAL (Top-Left diretamente abaixo do Card)
+            // 1.1 PAINEL DE BUFFS DO LINK (Top-Left - Logo abaixo do Card)
+            BuildLinkBuffsPanel();
+
+            // 2. PAINEL DE MENU DE AÇÕES NA VERTICAL (Top-Left posicionado abaixo do Card e do Link)
             BuildActionMenu();
 
             // 3. INDICADOR DE RODADA / LINHA DO TEMPO EM LOSANGO (Top-Right - Estilo Digimon Survive Imagem 1)
@@ -427,9 +492,57 @@ public class BattleHUD : MonoBehaviour
             new Vector2(210, -58), new Vector2(48, 12), Color.white, TextAnchor.MiddleRight);
     }
 
+    void BuildLinkBuffsPanel()
+    {
+        if (canvas == null) return;
+
+        // Container compacto e slim posicionado na tela diretamente abaixo do PlayerInfoCard:
+        // Largura: 265px, Altura: 40px, Posição: (20, -98)
+        linkBuffsPanel = CreateUIPanel(canvas.transform, "PlayerLinkBuffsPanel",
+            new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
+            new Vector2(20, -98), new Vector2(265, 40), new Color(0.25f, 0.32f, 0.40f, 0.35f));
+
+        linkBuffsBorder = linkBuffsPanel.GetComponent<Image>();
+
+        // Fundo interno translúcido (Glassmorphism Dark)
+        GameObject innerBg = CreateUIPanel(linkBuffsPanel.transform, "LinkInnerBg",
+            new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0.5f, 0.5f),
+            Vector2.zero, new Vector2(-2, -2), new Color(0.06f, 0.08f, 0.12f, 0.95f));
+
+        linkBuffsBg = innerBg.GetComponent<Image>();
+
+        // Barra indicadora de status neon na esquerda (3px largura)
+        GameObject sideIndicator = CreateUIPanel(innerBg.transform, "SideIndicator",
+            new Vector2(0f, 0f), new Vector2(0f, 1f), new Vector2(0f, 0.5f),
+            new Vector2(2, 0), new Vector2(3, -4), new Color(0.15f, 0.80f, 1f, 0.8f));
+        linkBuffsSideIndicator = sideIndicator.GetComponent<Image>();
+
+        // --- ROW 1: CABEÇALHO (Ícone, Parceiro, Rank e Sinergia) ---
+        linkBuffsHeaderLeftText = CreateUIText(innerBg.transform, "HeaderLeftText", "🔗 APP-LINK", 10, FontStyle.Bold,
+            new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
+            new Vector2(8, -3), new Vector2(165, 14), Color.white, TextAnchor.MiddleLeft);
+
+        linkBuffsSynergyText = CreateUIText(innerBg.transform, "SynergyText", "", 9, FontStyle.Bold,
+            new Vector2(1f, 1f), new Vector2(1f, 1f), new Vector2(1f, 1f),
+            new Vector2(-8, -3), new Vector2(90, 14), new Color(0.0f, 1.0f, 0.65f), TextAnchor.MiddleRight);
+
+        // Divisória sutil de 1px
+        linkBuffsDivider = CreateUIPanel(innerBg.transform, "Divider",
+            new Vector2(0f, 1f), new Vector2(1f, 1f), new Vector2(0f, 1f),
+            new Vector2(8, -17), new Vector2(-16, 1), new Color(0.3f, 0.38f, 0.48f, 0.35f));
+
+        // --- ROW 2: BUFFS DE ATRIBUTOS E SKILL COMPACTADOS ---
+        linkBuffsStatsText = CreateUIText(innerBg.transform, "StatsBuffText", "", 9, FontStyle.Bold,
+            new Vector2(0f, 1f), new Vector2(1f, 1f), new Vector2(0f, 1f),
+            new Vector2(8, -19), new Vector2(-16, 16), new Color(0.55f, 0.65f, 0.75f), TextAnchor.MiddleLeft);
+
+        // Inicia oculto até que um link seja ativado
+        linkBuffsPanel.SetActive(false);
+    }
+
     void BuildActionMenu()
     {
-        // Painel Vertical na Esquerda diretamente abaixo do Card de Informações (Top-Left)
+        // Painel Vertical na Esquerda (posição base em -100; se um Link estiver ativo, ajusta dinamicamente para -144)
         actionMenuContainer = CreateUIPanel(canvas.transform, "ActionMenuPanel",
             new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
             new Vector2(20, -100), new Vector2(145, 175), new Color(0f, 0f, 0f, 0f));
@@ -471,6 +584,8 @@ public class BattleHUD : MonoBehaviour
             itemBtn.targetGraphic = innerItem.GetComponent<Image>();
             itemBtn.onClick.AddListener(() =>
             {
+                if (!IsActionAvailable(actionIdx)) return;
+
                 if (StateMachineController.Instance != null)
                 {
                     var chooseState = StateMachineController.Instance.GetState<ChooseActionState>();
@@ -488,7 +603,8 @@ public class BattleHUD : MonoBehaviour
                 borderImage = borderObj.GetComponent<Image>(),
                 iconBackground = iconBg.GetComponent<Image>(),
                 iconText = iconText,
-                labelText = labelText
+                labelText = labelText,
+                button = itemBtn
             };
 
             actionMenuItems.Add(itemUI);
@@ -929,6 +1045,7 @@ public class BattleHUD : MonoBehaviour
         if (show && forecast.attacker != null && forecast.defender != null)
         {
             if (playerInfoCard != null) playerInfoCard.SetActive(false);
+            if (linkBuffsPanel != null) linkBuffsPanel.SetActive(false);
             combatForecastRoot.SetActive(true);
 
             // Popula Atacante
@@ -1515,11 +1632,150 @@ public class BattleHUD : MonoBehaviour
                     avatarImage.color = unit.spriteRenderer != null ? unit.spriteRenderer.color : Color.white;
                 }
             }
+
+            // Atualiza painel de Buffs de App-Link do combatente
+            UpdateLinkBuffsPanel(unit);
         }
         catch (Exception ex)
         {
             Debug.LogWarning($"[BattleHUD] Aviso ao atualizar banner: {ex.Message}");
         }
+    }
+
+    public void UpdateLinkBuffsPanel(Unit unit)
+    {
+        if (linkBuffsPanel == null) return;
+
+        bool isLinked = unit != null && unit.gameObject.activeInHierarchy && unit.IsAlive &&
+                        unit.IsLinked && unit.linkedBagAppmon != null &&
+                        !string.IsNullOrEmpty(unit.linkedBagAppmon.id);
+
+        // O painel só aparece quando um Link for feito
+        if (!isLinked)
+        {
+            linkBuffsPanel.SetActive(false);
+
+            // Restaura o menu de ações para a posição original abaixo do card
+            if (actionMenuContainer != null)
+            {
+                RectTransform menuRt = actionMenuContainer.GetComponent<RectTransform>();
+                if (menuRt != null) menuRt.anchoredPosition = new Vector2(20, -100);
+            }
+            return;
+        }
+
+        // Exibe o painel compacto de Link
+        linkBuffsPanel.SetActive(true);
+
+        // Desloca o menu de ações para logo abaixo do painel de Link (Y: -144)
+        if (actionMenuContainer != null)
+        {
+            RectTransform menuRt = actionMenuContainer.GetComponent<RectTransform>();
+            if (menuRt != null) menuRt.anchoredPosition = new Vector2(20, -144);
+        }
+
+        AppmonData bagAppmon = unit.linkedBagAppmon;
+        AppLinkRecord record = unit.currentAppLink;
+        AppLinkBonusCalculation calc = record != null ? record.calculation : null;
+        if (calc == null)
+        {
+            calc = AppLinkService.CalculateBonus(unit, bagAppmon);
+        }
+
+        bool hasSynergy = calc != null && calc.hasCompatibility;
+
+        // 1. Cores da borda e indicador lateral
+        if (hasSynergy)
+        {
+            Color synergyColor = new Color(0.0f, 1.0f, 0.65f, 0.85f);
+            if (linkBuffsBorder != null) linkBuffsBorder.color = synergyColor;
+            if (linkBuffsSideIndicator != null) linkBuffsSideIndicator.color = new Color(0.0f, 1.0f, 0.65f, 1f);
+        }
+        else
+        {
+            Color normalColor = new Color(0.18f, 0.65f, 0.95f, 0.70f);
+            if (linkBuffsBorder != null) linkBuffsBorder.color = normalColor;
+            if (linkBuffsSideIndicator != null) linkBuffsSideIndicator.color = new Color(0.18f, 0.75f, 1f, 1f);
+        }
+
+        // 2. Linha 1: Nome do parceiro & Tag de Sinergia
+        string rankStr = bagAppmon.rank == EvolutionRank.Standard ? "ROOKIE" : bagAppmon.rank.ToString().ToUpper();
+        if (linkBuffsHeaderLeftText != null)
+        {
+            linkBuffsHeaderLeftText.text = $"🔗 <b><color=#FFFFFF>{bagAppmon.name}</color></b> <color=#FBBF24>[{rankStr}]</color>";
+        }
+
+        if (linkBuffsSynergyText != null)
+        {
+            if (hasSynergy)
+            {
+                linkBuffsSynergyText.text = "<b><color=#00FFAA>★ SINERGIA +50%</color></b>";
+            }
+            else
+            {
+                linkBuffsSynergyText.text = "<color=#60A5FA>• ESTÁVEL 1.0x</color>";
+            }
+        }
+
+        // 3. Linha 2: Bônus de Atributos + Habilidade/Passiva em linha compacta
+        string skillPart = "";
+        if (calc != null && calc.transferredSkill != null)
+        {
+            skillPart = $"<color=#FDE047>⚡ {calc.transferredSkill.skillName}</color>";
+        }
+        else if (calc != null && (!string.IsNullOrEmpty(calc.transferredPassiveDesc) || !string.IsNullOrEmpty(bagAppmon.passiveName)))
+        {
+            string pName = !string.IsNullOrEmpty(bagAppmon.passiveName) ? bagAppmon.passiveName : "Passiva";
+            skillPart = $"<color=#A78BFA>◈ {pName}</color>";
+        }
+
+        if (linkBuffsStatsText != null)
+        {
+            List<string> bonuses = new List<string>();
+            if (calc != null && calc.statBonuses != null)
+            {
+                foreach (var b in calc.statBonuses)
+                {
+                    string statColor = GetStatColorHex(b.stat);
+                    bonuses.Add($"<b><color={statColor}>▲ {b.stat} +{b.finalPercent:0.#}% (+{b.flatBonusValue})</color></b>");
+                }
+            }
+
+            string line = bonuses.Count > 0 ? string.Join("   ", bonuses) : "<color=#94A3B8>Sem bônus</color>";
+            if (!string.IsNullOrEmpty(skillPart))
+            {
+                line += $"   <color=#475569>|</color>   {skillPart}";
+            }
+
+            linkBuffsStatsText.text = line;
+        }
+    }
+
+    private void OnAppLinkChanged(Unit unit, AppmonData appmon)
+    {
+        if (unit != null) cachedCurrentUnit = unit;
+        UpdateLinkBuffsPanel(cachedCurrentUnit);
+        if (actionMenuContainer != null && actionMenuContainer.activeSelf)
+        {
+            UpdateActionMenuSelection(currentActionMenuIndex, cachedCurrentUnit);
+        }
+    }
+
+    private string GetStatColorHex(StatEnum stat)
+    {
+        return stat switch
+        {
+            StatEnum.ATK => "#38BDF8",                      // Sky Blue
+            StatEnum.DEF => "#FBBF24",                      // Amber / Gold
+            StatEnum.INT => "#C084FC",                      // Purple
+            StatEnum.SPI => "#34D399",                      // Emerald / Mint
+            StatEnum.SPD => "#2DD4BF",                      // Teal
+            StatEnum.MOV => "#A3E635",                      // Lime
+            StatEnum.CRT => "#F472B6",                      // Pink
+            StatEnum.HP or StatEnum.MaxHp => "#4ADE80",     // Green
+            StatEnum.SP or StatEnum.MaxSp => "#F59E0B",     // Orange-Gold
+            _ => "#E2E8F0"                                  // Slate
+        };
     }
 
     public void UpdateTurnTimeline(Unit activeUnit)
@@ -1660,7 +1916,9 @@ public class BattleHUD : MonoBehaviour
 
     public void UpdateActionMenuSelection(int selectedIndex, Unit unit = null)
     {
-        if (unit != null) cachedCurrentUnit = unit;
+        Unit u = unit != null ? unit : (cachedCurrentUnit != null ? cachedCurrentUnit : (BattleController.Instance != null ? BattleController.Instance.currentUnit : null));
+        if (u != null) cachedCurrentUnit = u;
+        currentActionMenuIndex = selectedIndex;
 
         for (int i = 0; i < actionMenuItems.Count; i++)
         {
@@ -1677,43 +1935,93 @@ public class BattleHUD : MonoBehaviour
             {
                 isOptionAvailable = false;
             }
-            else if (i == 4 && cachedCurrentUnit != null && !cachedCurrentUnit.CanAct() && !cachedCurrentUnit.IsLinked)
+            else if (i == 4)
             {
-                isOptionAvailable = false;
+                bool isLinked = (cachedCurrentUnit != null && cachedCurrentUnit.IsLinked) ||
+                                (BattleController.Instance != null && BattleController.Instance.currentUnit != null && BattleController.Instance.currentUnit.IsLinked);
+                bool canAct = cachedCurrentUnit != null ? cachedCurrentUnit.CanAct() : true;
+
+                if (!canAct || isLinked)
+                {
+                    isOptionAvailable = false;
+                }
+
+                if (isLinked)
+                {
+                    item.labelText.text = "Link (Ativo)";
+                    item.iconText.text = "🔒";
+                }
+                else
+                {
+                    item.labelText.text = actionNames[i];
+                    item.iconText.text = actionIcons[i];
+                }
+            }
+
+            if (item.button != null)
+            {
+                item.button.interactable = isOptionAvailable;
             }
 
             if (isSelected)
             {
-                // Destaque DOURADO / AMARELO VIBRANTE com texto preto puro (Estilo Digimon Survive)
-                item.backgroundImage.color = new Color(0.98f, 0.84f, 0.0f, 0.98f); // #FDD835 Amarelo Ouro
-                item.labelText.color = new Color(0.06f, 0.06f, 0.06f, 1f); // Texto Preto em negrito
-                item.labelText.fontStyle = FontStyle.Bold;
-
-                item.iconBackground.color = new Color(0.88f, 0.72f, 0.0f, 0.60f);
-                item.iconText.color = new Color(0.06f, 0.06f, 0.06f, 1f);
-
-                if (item.borderImage != null)
+                if (isOptionAvailable)
                 {
-                    item.borderImage.color = new Color(1f, 0.92f, 0.35f, 0.90f);
+                    // Destaque DOURADO / AMARELO VIBRANTE com texto preto puro (Estilo Digimon Survive)
+                    item.backgroundImage.color = new Color(0.98f, 0.84f, 0.0f, 0.98f); // #FDD835 Amarelo Ouro
+                    item.labelText.color = new Color(0.06f, 0.06f, 0.06f, 1f); // Texto Preto em negrito
+                    item.labelText.fontStyle = FontStyle.Bold;
+
+                    item.iconBackground.color = new Color(0.88f, 0.72f, 0.0f, 0.60f);
+                    item.iconText.color = new Color(0.06f, 0.06f, 0.06f, 1f);
+
+                    if (item.borderImage != null)
+                    {
+                        item.borderImage.color = new Color(1f, 0.92f, 0.35f, 0.90f);
+                    }
+                }
+                else
+                {
+                    // Selecionado mas INDISPONÍVEL / DESABILITADO (Cinza escuro com texto opaco)
+                    item.backgroundImage.color = new Color(0.18f, 0.20f, 0.24f, 0.85f);
+                    item.labelText.color = new Color(0.50f, 0.54f, 0.60f, 0.70f);
+                    item.labelText.fontStyle = FontStyle.Bold;
+
+                    item.iconBackground.color = new Color(0.12f, 0.14f, 0.18f, 0.70f);
+                    item.iconText.color = new Color(0.50f, 0.54f, 0.60f, 0.70f);
+
+                    if (item.borderImage != null)
+                    {
+                        item.borderImage.color = new Color(0.40f, 0.42f, 0.45f, 0.40f);
+                    }
                 }
             }
             else
             {
                 // Não selecionado: Vidro Escuro Translúcido
-                float alpha = isOptionAvailable ? 0.55f : 0.25f;
+                float alpha = isOptionAvailable ? 0.55f : 0.20f;
                 item.backgroundImage.color = new Color(0.04f, 0.07f, 0.11f, alpha);
-                item.labelText.color = isOptionAvailable ? new Color(0.80f, 0.85f, 0.92f, 0.85f) : new Color(0.40f, 0.45f, 0.50f, 0.45f);
+                item.labelText.color = isOptionAvailable ? new Color(0.80f, 0.85f, 0.92f, 0.85f) : new Color(0.35f, 0.40f, 0.45f, 0.35f);
                 item.labelText.fontStyle = FontStyle.Bold;
 
                 item.iconBackground.color = new Color(0.10f, 0.15f, 0.22f, alpha);
-                item.iconText.color = isOptionAvailable ? new Color(0.82f, 0.88f, 0.94f, 0.90f) : new Color(0.40f, 0.45f, 0.50f, 0.45f);
+                item.iconText.color = isOptionAvailable ? new Color(0.82f, 0.88f, 0.94f, 0.90f) : new Color(0.35f, 0.40f, 0.45f, 0.35f);
 
                 if (item.borderImage != null)
                 {
-                    item.borderImage.color = new Color(0.25f, 0.32f, 0.40f, 0.25f);
+                    item.borderImage.color = isOptionAvailable ? new Color(0.25f, 0.32f, 0.40f, 0.25f) : new Color(0.15f, 0.18f, 0.22f, 0.15f);
                 }
             }
         }
+    }
+
+    public bool IsActionAvailable(int actionIndex)
+    {
+        if (actionMenuItems != null && actionIndex >= 0 && actionIndex < actionMenuItems.Count)
+        {
+            return actionMenuItems[actionIndex].button != null ? actionMenuItems[actionIndex].button.interactable : true;
+        }
+        return false;
     }
 
     public void ShowActionMenu(bool show)
@@ -1762,6 +2070,7 @@ public class BattleHUD : MonoBehaviour
         {
             if (actionMenuContainer != null) actionMenuContainer.SetActive(false);
             if (playerInfoCard != null) playerInfoCard.SetActive(false);
+            if (linkBuffsPanel != null) linkBuffsPanel.SetActive(false);
             if (combatForecastRoot != null) combatForecastRoot.SetActive(false);
 
             skillSelectionRoot.SetActive(true);
@@ -1915,6 +2224,7 @@ public class BattleHUD : MonoBehaviour
         {
             if (skillSelectionRoot != null) skillSelectionRoot.SetActive(false);
             if (playerInfoCard != null) playerInfoCard.SetActive(false);
+            if (linkBuffsPanel != null) linkBuffsPanel.SetActive(false);
             itemSelectionRoot.SetActive(true);
             UpdateItemSelectionUI(selectedIndex);
         }
@@ -2074,6 +2384,7 @@ public class BattleHUD : MonoBehaviour
         public Image iconBackground;
         public Text iconText;
         public Text labelText;
+        public Button button;
     }
 
     private class DiamondQueueItemUI

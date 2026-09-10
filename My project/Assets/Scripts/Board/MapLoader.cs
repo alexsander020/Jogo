@@ -118,6 +118,8 @@ public class MapLoader : MonoBehaviour
         unit.category = cat;
         unit.protocol = protocol;
         unit.SetFacing(facing);
+        unit.linkedBagAppmon = null;
+        unit.currentAppLink = null;
 
         // Configuração de Stats
         if (unit.stats == null)

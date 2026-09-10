@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 112}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 2648
+  controlID: 1313
   draggingID: 0
 --- !u!114 &2
 MonoBehaviour:
@@ -64,8 +64,10 @@ MonoBehaviour:
     m_DynamicPanelContainerData: []
     m_OverlaysVisible: 1
     m_DynamicPanelBehavior: 0
-  m_SerializedViewNames: []
-  m_SerializedViewValues: []
+  m_SerializedViewNames:
+  - UnityEditor.DeviceSimulation.SimulatorWindow
+  m_SerializedViewValues:
+  - C:\Users\20010480\Documents\GitHub\Jogo\My project\Library\PlayModeViewStates\0d0e40177cc29694c99fd0de4e0ef2e8
   m_PlayModeViewName: GameView
   m_ShowGizmos: 0
   m_TargetDisplay: 0
@@ -153,7 +155,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 112}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 2649
+  controlID: 1314
   draggingID: 0
 --- !u!114 &4
 MonoBehaviour:
@@ -179,7 +181,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 56}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 2650
+  controlID: 1315
   draggingID: 0
 --- !u!114 &5
 MonoBehaviour:
@@ -191,7 +193,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
+  m_Name: SceneHierarchyWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -200,8 +202,8 @@ MonoBehaviour:
     y: 0
     width: 284
     height: 369
-  m_MinSize: {x: 201, y: 226}
-  m_MaxSize: {x: 4001, y: 4026}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -248,11 +250,13 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: []
+      m_SelectedIDs:
+      - m_Data: -1326
       m_LastClickedID:
-        m_Data: 0
+        m_Data: -1326
       m_ExpandedIDs:
       - m_Data: -10594
+      - m_Data: -1326
       - m_Data: 64196
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -271,7 +275,7 @@ MonoBehaviour:
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_TrimLeadingAndTrailingWhitespace: 0
-        m_ClientGUIView: {fileID: 5}
+        m_ClientGUIView: {fileID: 0}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -298,8 +302,8 @@ MonoBehaviour:
     y: 0
     width: 713
     height: 369
-  m_MinSize: {x: 202, y: 226}
-  m_MaxSize: {x: 4002, y: 4026}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 8}
@@ -1052,7 +1056,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ConsoleWindow
+  m_Name: ProjectBrowser
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -1061,15 +1065,15 @@ MonoBehaviour:
     y: 369
     width: 997
     height: 252
-  m_MinSize: {x: 101, y: 126}
-  m_MaxSize: {x: 4001, y: 4026}
-  m_ActualView: {fileID: 12}
+  m_MinSize: {x: 231, y: 276}
+  m_MaxSize: {x: 10001, y: 10026}
+  m_ActualView: {fileID: 11}
   m_Panes:
   - {fileID: 11}
   - {fileID: 12}
   - {fileID: 13}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1138,18 +1142,18 @@ MonoBehaviour:
   m_FolderTreeState:
     scrollPos: {x: 0, y: 530}
     m_SelectedIDs:
-    - m_Data: 69814
+    - m_Data: 61084
     m_LastClickedID:
-      m_Data: 69814
+      m_Data: 61084
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 56432
-    - m_Data: 65190
-    - m_Data: 65198
-    - m_Data: 65304
-    - m_Data: 65322
-    - m_Data: 65324
-    - m_Data: 69816
+    - m_Data: 56388
+    - m_Data: 60408
+    - m_Data: 60410
+    - m_Data: 60412
+    - m_Data: 60414
+    - m_Data: 61080
+    - m_Data: 61086
     - m_Data: 1000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1183,11 +1187,11 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 56432
-    - m_Data: 65190
-    - m_Data: 65304
-    - m_Data: 65322
-    - m_Data: 65324
+    - m_Data: 56388
+    - m_Data: 60408
+    - m_Data: 60410
+    - m_Data: 60412
+    - m_Data: 60414
     - m_Data: 1000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1215,8 +1219,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: []
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs:
+    - m_Data: -1326
+    m_LastClickedInstanceID: -1326
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs:
     - m_Data: 48698

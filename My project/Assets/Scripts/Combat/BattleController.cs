@@ -45,6 +45,15 @@ public class BattleController : MonoBehaviour
     public void InitBattle()
     {
         roundCount = 1;
+        TacticalBattle.AppLink.AppLinkService.ResetAllLinks();
+        foreach (var u in allUnits)
+        {
+            if (u != null)
+            {
+                u.linkedBagAppmon = null;
+                u.currentAppLink = null;
+            }
+        }
         BuildTurnQueue();
         Debug.Log($"[NetShift Battle] Batalha iniciada. Rodada {roundCount}. Total de unidades: {allUnits.Count}");
     }
