@@ -5057,3 +5057,1047 @@ O sistema não pode encontrar o caminho especificado. | Duration: 21ms
 [INFO ] [Unity Mcp Server] log Connected to Unity and discovered tools
 [2026-09-10T21:56:00.404Z] [INFO] log HTTP request | POST /mcp/server-status
 [2026-09-10T21:56:00.404Z] [INFO] log Server status check | Server: unity-mcp | Running: yes
+[2026-09-13T00:51:14.667Z] [INFO] relay.startup port=9001 mcpClientPort=9002 editorPid=20336
+[2026-09-13T00:51:14.670Z] [INFO] log === RELAY SERVER STARTED === (unity-ai-relay v1.0.12-build.99)
+[2026-09-13T00:51:14.695Z] [INFO] log TLS trust: NODE_USE_SYSTEM_CA=on systemCAs=135 bundledCAs=145
+[2026-09-13T00:51:14.695Z] [INFO] log Starting relay server...
+[2026-09-13T00:51:14.695Z] [INFO] log Command line arguments: ["bun","B:/~BUN/root/relay_win.exe","--relay","--port","9001","--mcp-client-port","9002","--editor-pid","20336","--shutdown-delay","180","--log-dir","C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\Logs"]
+[2026-09-13T00:51:14.696Z] [INFO] log Parsed config: {"port":9001,"mcpClientPort":9002,"editorPid":"20336","shutdownDelaySeconds":180}
+[2026-09-13T00:51:14.697Z] [INFO] log Initializing relay components...
+[2026-09-13T00:51:14.697Z] [INFO] log Creating RelayEditor...
+[2026-09-13T00:51:14.714Z] [INFO] log WebSocket server started
+[2026-09-13T00:51:14.715Z] [INFO] log Relay server initialization completed
+[2026-09-13T00:51:14.722Z] [INFO] log MCP Client initialized at port: 9002
+[2026-09-13T00:51:14.740Z] [WARN] log [shell-env] Shell environment did not contain a PATH variable
+[2026-09-13T00:51:14.756Z] [INFO] log Unity MCP Relay server started | Port: 9002 | Endpoints: /mcp/start-server, /mcp/stop-server, /mcp/server-status, /mcp/call-tool
+[2026-09-13T00:51:14.822Z] [INFO] log Unity client connected with ID: editor-20336-lgzk2i (relay 1.0.12-build.99)
+[2026-09-13T00:51:14.822Z] [INFO] connection.established clientId=editor-20336-lgzk2i port=9001
+[2026-09-13T00:51:15.113Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-09-13T00:51:15.114Z] [INFO] log Server status check | Server: unity-mcp | Running: no
+[2026-09-13T00:51:15.122Z] [INFO] log HTTP request | POST /mcp/start-server
+[2026-09-13T00:51:15.123Z] [INFO] log Starting MCP server | Name: unity-mcp | Transport: stdio | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T00:51:15.124Z] [INFO] log Starting MCP server | Name: unity-mcp | ID: mcp-1
+[2026-09-13T00:51:15.124Z] [INFO] log Creating stdio transport | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T00:51:15.124Z] [INFO] log Stdio transport config | Command: C:\Users\20010480\.unity/relay\relay_win.exe --mcp | Env vars: 1
+[2026-09-13T00:51:15.125Z] [INFO] log Stdio transport ready | Command: C:\Users\20010480\.unity/relay\relay_win.exe | Args: 1 | Env: 43 vars
+[2026-09-13T00:51:15.164Z] [ERROR] log [unity-mcp] stderr: O sistema não pode encontrar o caminho especificado.
+[2026-09-13T00:51:15.167Z] [ERROR] log MCP server error | Name: unity-mcp | Error: spawn C:\Users\20010480\.unity/relay\relay_win.exe ENOENT
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T00:51:15.168Z] [INFO] log MCP server disconnected | Name: unity-mcp
+[2026-09-13T00:51:15.168Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T00:51:15.169Z] [ERROR] log MCP server connection failed | Name: unity-mcp | Error: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T00:51:15.170Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T00:51:15.170Z] [ERROR] log MCP server start failed | Status: failed | Message: Failed to connect to server: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado. | Duration: 47ms
+[2026-09-13T00:51:49.520Z] [INFO] log Domain reload signal received from client editor-20336-lgzk2i
+[2026-09-13T00:51:49.520Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T00:51:49.521Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T00:51:50.226Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T00:51:50.227Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T00:51:50.227Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-09-13T00:51:50.228Z] [WARN] connection.lost clientId=null
+[2026-09-13T00:51:50.229Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-09-13T00:51:50.230Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-09-13T00:52:23.873Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-09-13T00:52:23.874Z] [INFO] log Unity client connected with ID: editor-20336-rq9p6o (relay 1.0.12-build.99)
+[2026-09-13T00:52:23.874Z] [INFO] connection.established clientId=editor-20336-rq9p6o port=9001
+[2026-09-13T00:52:24.000Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-09-13T00:52:24.000Z] [INFO] log Server status check | Server: unity-mcp | Running: no
+[2026-09-13T00:52:24.075Z] [INFO] log HTTP request | POST /mcp/start-server
+[2026-09-13T00:52:24.075Z] [INFO] log Starting MCP server | Name: unity-mcp | Transport: stdio | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T00:52:24.076Z] [INFO] log Starting MCP server | Name: unity-mcp | ID: mcp-2
+[2026-09-13T00:52:24.076Z] [INFO] log Creating stdio transport | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T00:52:24.077Z] [INFO] log Stdio transport config | Command: C:\Users\20010480\.unity/relay\relay_win.exe --mcp | Env vars: 1
+[2026-09-13T00:52:24.077Z] [INFO] log Stdio transport ready | Command: C:\Users\20010480\.unity/relay\relay_win.exe | Args: 1 | Env: 43 vars
+[2026-09-13T00:52:24.098Z] [ERROR] log [unity-mcp] stderr: O sistema não pode encontrar o caminho especificado.
+[2026-09-13T00:52:24.099Z] [ERROR] log MCP server error | Name: unity-mcp | Error: spawn C:\Users\20010480\.unity/relay\relay_win.exe ENOENT
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T00:52:24.100Z] [INFO] log MCP server disconnected | Name: unity-mcp
+[2026-09-13T00:52:24.100Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T00:52:24.101Z] [ERROR] log MCP server connection failed | Name: unity-mcp | Error: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T00:52:24.101Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T00:52:24.101Z] [ERROR] log MCP server start failed | Status: failed | Message: Failed to connect to server: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado. | Duration: 25ms
+[2026-09-13T01:20:23.993Z] [INFO] log Domain reload signal received from client editor-20336-rq9p6o
+[2026-09-13T01:20:23.993Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T01:20:23.994Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T01:20:24.913Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T01:20:24.914Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T01:20:24.915Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-09-13T01:20:24.916Z] [WARN] connection.lost clientId=null
+[2026-09-13T01:20:24.916Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-09-13T01:20:24.917Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-09-13T01:20:30.618Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-09-13T01:20:30.618Z] [INFO] log Unity client connected with ID: editor-20336-dwqxg0 (relay 1.0.12-build.99)
+[2026-09-13T01:20:30.619Z] [INFO] connection.established clientId=editor-20336-dwqxg0 port=9001
+[2026-09-13T01:20:32.191Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-09-13T01:20:32.192Z] [INFO] log Server status check | Server: unity-mcp | Running: no
+[2026-09-13T01:20:32.225Z] [INFO] log HTTP request | POST /mcp/start-server
+[2026-09-13T01:20:32.225Z] [INFO] log Starting MCP server | Name: unity-mcp | Transport: stdio | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T01:20:32.225Z] [INFO] log Starting MCP server | Name: unity-mcp | ID: mcp-3
+[2026-09-13T01:20:32.226Z] [INFO] log Creating stdio transport | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T01:20:32.226Z] [INFO] log Stdio transport config | Command: C:\Users\20010480\.unity/relay\relay_win.exe --mcp | Env vars: 1
+[2026-09-13T01:20:32.227Z] [INFO] log Stdio transport ready | Command: C:\Users\20010480\.unity/relay\relay_win.exe | Args: 1 | Env: 43 vars
+[2026-09-13T01:20:32.239Z] [ERROR] log [unity-mcp] stderr: O sistema não pode encontrar o caminho especificado.
+[2026-09-13T01:20:32.243Z] [ERROR] log MCP server error | Name: unity-mcp | Error: spawn C:\Users\20010480\.unity/relay\relay_win.exe ENOENT
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T01:20:32.244Z] [INFO] log MCP server disconnected | Name: unity-mcp
+[2026-09-13T01:20:32.245Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T01:20:32.245Z] [ERROR] log MCP server connection failed | Name: unity-mcp | Error: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T01:20:32.246Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T01:20:32.246Z] [ERROR] log MCP server start failed | Status: failed | Message: Failed to connect to server: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado. | Duration: 21ms
+[2026-09-13T01:20:47.113Z] [INFO] log Domain reload signal received from client editor-20336-dwqxg0
+[2026-09-13T01:20:47.114Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T01:20:47.114Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T01:20:47.771Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T01:20:47.771Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T01:20:47.772Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-09-13T01:20:47.772Z] [WARN] connection.lost clientId=null
+[2026-09-13T01:20:47.772Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-09-13T01:20:47.773Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-09-13T01:20:55.238Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-09-13T01:20:55.239Z] [INFO] log Unity client connected with ID: editor-20336-o51u97 (relay 1.0.12-build.99)
+[2026-09-13T01:20:55.240Z] [INFO] connection.established clientId=editor-20336-o51u97 port=9001
+[2026-09-13T01:20:55.398Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-09-13T01:20:55.399Z] [INFO] log Server status check | Server: unity-mcp | Running: no
+[2026-09-13T01:20:55.464Z] [INFO] log HTTP request | POST /mcp/start-server
+[2026-09-13T01:20:55.464Z] [INFO] log Starting MCP server | Name: unity-mcp | Transport: stdio | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T01:20:55.465Z] [INFO] log Starting MCP server | Name: unity-mcp | ID: mcp-4
+[2026-09-13T01:20:55.466Z] [INFO] log Creating stdio transport | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T01:20:55.466Z] [INFO] log Stdio transport config | Command: C:\Users\20010480\.unity/relay\relay_win.exe --mcp | Env vars: 1
+[2026-09-13T01:20:55.467Z] [INFO] log Stdio transport ready | Command: C:\Users\20010480\.unity/relay\relay_win.exe | Args: 1 | Env: 43 vars
+[2026-09-13T01:20:55.487Z] [ERROR] log [unity-mcp] stderr: O sistema não pode encontrar o caminho especificado.
+[2026-09-13T01:20:55.492Z] [ERROR] log MCP server error | Name: unity-mcp | Error: spawn C:\Users\20010480\.unity/relay\relay_win.exe ENOENT
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T01:20:55.493Z] [INFO] log MCP server disconnected | Name: unity-mcp
+[2026-09-13T01:20:55.493Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T01:20:55.494Z] [ERROR] log MCP server connection failed | Name: unity-mcp | Error: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T01:20:55.494Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T01:20:55.494Z] [ERROR] log MCP server start failed | Status: failed | Message: Failed to connect to server: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado. | Duration: 30ms
+[2026-09-13T01:42:13.272Z] [INFO] log Domain reload signal received from client editor-20336-o51u97
+[2026-09-13T01:42:13.273Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T01:42:13.273Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T01:42:14.016Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T01:42:14.016Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T01:42:14.017Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-09-13T01:42:14.018Z] [WARN] connection.lost clientId=null
+[2026-09-13T01:42:14.022Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-09-13T01:42:14.024Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-09-13T01:42:19.659Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-09-13T01:42:19.659Z] [INFO] log Unity client connected with ID: editor-20336-phsb9m (relay 1.0.12-build.99)
+[2026-09-13T01:42:19.659Z] [INFO] connection.established clientId=editor-20336-phsb9m port=9001
+[2026-09-13T01:42:21.156Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-09-13T01:42:21.157Z] [INFO] log Server status check | Server: unity-mcp | Running: no
+[2026-09-13T01:42:21.171Z] [INFO] log HTTP request | POST /mcp/start-server
+[2026-09-13T01:42:21.172Z] [INFO] log Starting MCP server | Name: unity-mcp | Transport: stdio | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T01:42:21.172Z] [INFO] log Starting MCP server | Name: unity-mcp | ID: mcp-5
+[2026-09-13T01:42:21.172Z] [INFO] log Creating stdio transport | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T01:42:21.173Z] [INFO] log Stdio transport config | Command: C:\Users\20010480\.unity/relay\relay_win.exe --mcp | Env vars: 1
+[2026-09-13T01:42:21.173Z] [INFO] log Stdio transport ready | Command: C:\Users\20010480\.unity/relay\relay_win.exe | Args: 1 | Env: 43 vars
+[2026-09-13T01:42:21.189Z] [ERROR] log [unity-mcp] stderr: O sistema não pode encontrar o caminho especificado.
+[2026-09-13T01:42:21.190Z] [ERROR] log MCP server error | Name: unity-mcp | Error: spawn C:\Users\20010480\.unity/relay\relay_win.exe ENOENT
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T01:42:21.190Z] [INFO] log MCP server disconnected | Name: unity-mcp
+[2026-09-13T01:42:21.190Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T01:42:21.191Z] [ERROR] log MCP server connection failed | Name: unity-mcp | Error: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T01:42:21.191Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T01:42:21.192Z] [ERROR] log MCP server start failed | Status: failed | Message: Failed to connect to server: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado. | Duration: 20ms
+[2026-09-13T01:43:14.241Z] [INFO] log Domain reload signal received from client editor-20336-phsb9m
+[2026-09-13T01:43:14.241Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T01:43:14.242Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T01:43:14.894Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T01:43:14.894Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T01:43:14.894Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-09-13T01:43:14.895Z] [WARN] connection.lost clientId=null
+[2026-09-13T01:43:14.895Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-09-13T01:43:14.895Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-09-13T01:43:22.002Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-09-13T01:43:22.002Z] [INFO] log Unity client connected with ID: editor-20336-urrrcy (relay 1.0.12-build.99)
+[2026-09-13T01:43:22.002Z] [INFO] connection.established clientId=editor-20336-urrrcy port=9001
+[2026-09-13T01:43:22.119Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-09-13T01:43:22.119Z] [INFO] log Server status check | Server: unity-mcp | Running: no
+[2026-09-13T01:43:22.186Z] [INFO] log HTTP request | POST /mcp/start-server
+[2026-09-13T01:43:22.186Z] [INFO] log Starting MCP server | Name: unity-mcp | Transport: stdio | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T01:43:22.187Z] [INFO] log Starting MCP server | Name: unity-mcp | ID: mcp-6
+[2026-09-13T01:43:22.187Z] [INFO] log Creating stdio transport | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T01:43:22.187Z] [INFO] log Stdio transport config | Command: C:\Users\20010480\.unity/relay\relay_win.exe --mcp | Env vars: 1
+[2026-09-13T01:43:22.188Z] [INFO] log Stdio transport ready | Command: C:\Users\20010480\.unity/relay\relay_win.exe | Args: 1 | Env: 43 vars
+[2026-09-13T01:43:22.203Z] [ERROR] log [unity-mcp] stderr: O sistema não pode encontrar o caminho especificado.
+[2026-09-13T01:43:22.204Z] [ERROR] log MCP server error | Name: unity-mcp | Error: spawn C:\Users\20010480\.unity/relay\relay_win.exe ENOENT
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T01:43:22.204Z] [INFO] log MCP server disconnected | Name: unity-mcp
+[2026-09-13T01:43:22.204Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T01:43:22.205Z] [ERROR] log MCP server connection failed | Name: unity-mcp | Error: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T01:43:22.205Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T01:43:22.206Z] [ERROR] log MCP server start failed | Status: failed | Message: Failed to connect to server: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado. | Duration: 19ms
+[2026-09-13T02:04:34.118Z] [INFO] log Domain reload signal received from client editor-20336-urrrcy
+[2026-09-13T02:04:34.119Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T02:04:34.119Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T02:04:34.971Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T02:04:34.977Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T02:04:34.977Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-09-13T02:04:34.978Z] [WARN] connection.lost clientId=null
+[2026-09-13T02:04:34.978Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-09-13T02:04:34.978Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-09-13T02:04:40.493Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-09-13T02:04:40.493Z] [INFO] log Unity client connected with ID: editor-20336-tsef0a (relay 1.0.12-build.99)
+[2026-09-13T02:04:40.493Z] [INFO] connection.established clientId=editor-20336-tsef0a port=9001
+[2026-09-13T02:04:42.202Z] [INFO] log Shutdown request received from client editor-20336-tsef0a
+[2026-09-13T02:04:42.203Z] [INFO] log Unity client requested immediate shutdown - shutting down now, reason: Shutdown requested by client
+[2026-09-13T02:04:42.204Z] [INFO] log Shutdown: Initiating graceful shutdown: Shutdown requested by client
+[2026-09-13T17:19:17.866Z] [INFO] relay.startup port=9001 mcpClientPort=9002 editorPid=13140
+[2026-09-13T17:19:17.871Z] [INFO] log === RELAY SERVER STARTED === (unity-ai-relay v1.0.12-build.99)
+[2026-09-13T17:19:17.899Z] [INFO] log Starting relay server...
+[2026-09-13T17:19:17.898Z] [INFO] log TLS trust: NODE_USE_SYSTEM_CA=on systemCAs=135 bundledCAs=145
+[2026-09-13T17:19:17.899Z] [INFO] log Command line arguments: ["bun","B:/~BUN/root/relay_win.exe","--relay","--port","9001","--mcp-client-port","9002","--editor-pid","13140","--shutdown-delay","180","--log-dir","C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\Logs"]
+[2026-09-13T17:19:17.900Z] [INFO] log Parsed config: {"port":9001,"mcpClientPort":9002,"editorPid":"13140","shutdownDelaySeconds":180}
+[2026-09-13T17:19:17.901Z] [INFO] log Initializing relay components...
+[2026-09-13T17:19:17.901Z] [INFO] log Creating RelayEditor...
+[2026-09-13T17:19:17.923Z] [INFO] log WebSocket server started
+[2026-09-13T17:19:17.923Z] [INFO] log Relay server initialization completed
+[2026-09-13T17:19:17.924Z] [INFO] log MCP Client initialized at port: 9002
+[2026-09-13T17:19:17.934Z] [WARN] log [shell-env] Shell environment did not contain a PATH variable
+[2026-09-13T17:19:17.957Z] [INFO] log Unity MCP Relay server started | Port: 9002 | Endpoints: /mcp/start-server, /mcp/stop-server, /mcp/server-status, /mcp/call-tool
+[2026-09-13T17:19:18.082Z] [INFO] log Unity client connected with ID: editor-13140-5nnar7 (relay 1.0.12-build.99)
+[2026-09-13T17:19:18.083Z] [INFO] connection.established clientId=editor-13140-5nnar7 port=9001
+[2026-09-13T17:19:22.204Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-09-13T17:19:22.205Z] [INFO] log Server status check | Server: unity-mcp | Running: no
+[2026-09-13T17:19:22.309Z] [INFO] log HTTP request | POST /mcp/start-server
+[2026-09-13T17:19:22.309Z] [INFO] log Starting MCP server | Name: unity-mcp | Transport: stdio | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T17:19:22.310Z] [INFO] log Starting MCP server | Name: unity-mcp | ID: mcp-1
+[2026-09-13T17:19:22.311Z] [INFO] log Creating stdio transport | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T17:19:22.311Z] [INFO] log Stdio transport config | Command: C:\Users\20010480\.unity/relay\relay_win.exe --mcp | Env vars: 1
+[2026-09-13T17:19:22.312Z] [INFO] log Stdio transport ready | Command: C:\Users\20010480\.unity/relay\relay_win.exe | Args: 1 | Env: 43 vars
+[2026-09-13T17:19:22.356Z] [ERROR] log [unity-mcp] stderr: O sistema não pode encontrar o caminho especificado.
+[2026-09-13T17:19:22.360Z] [ERROR] log MCP server error | Name: unity-mcp | Error: spawn C:\Users\20010480\.unity/relay\relay_win.exe ENOENT
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T17:19:22.361Z] [INFO] log MCP server disconnected | Name: unity-mcp
+[2026-09-13T17:19:22.362Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T17:19:22.363Z] [ERROR] log MCP server connection failed | Name: unity-mcp | Error: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T17:19:22.363Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T17:19:22.364Z] [ERROR] log MCP server start failed | Status: failed | Message: Failed to connect to server: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado. | Duration: 54ms
+[2026-09-13T17:24:37.630Z] [INFO] log Domain reload signal received from client editor-13140-5nnar7
+[2026-09-13T17:24:37.631Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T17:24:37.631Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T17:24:38.334Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T17:24:38.335Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T17:24:38.335Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-09-13T17:24:38.336Z] [WARN] connection.lost clientId=null
+[2026-09-13T17:24:38.336Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-09-13T17:24:38.337Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-09-13T17:24:45.787Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-09-13T17:24:45.788Z] [INFO] log Unity client connected with ID: editor-13140-n89gw7 (relay 1.0.12-build.99)
+[2026-09-13T17:24:45.788Z] [INFO] connection.established clientId=editor-13140-n89gw7 port=9001
+[2026-09-13T17:24:45.926Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-09-13T17:24:45.926Z] [INFO] log Server status check | Server: unity-mcp | Running: no
+[2026-09-13T17:24:45.993Z] [INFO] log HTTP request | POST /mcp/start-server
+[2026-09-13T17:24:45.994Z] [INFO] log Starting MCP server | Name: unity-mcp | Transport: stdio | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T17:24:45.994Z] [INFO] log Starting MCP server | Name: unity-mcp | ID: mcp-2
+[2026-09-13T17:24:45.994Z] [INFO] log Creating stdio transport | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T17:24:45.995Z] [INFO] log Stdio transport config | Command: C:\Users\20010480\.unity/relay\relay_win.exe --mcp | Env vars: 1
+[2026-09-13T17:24:45.996Z] [INFO] log Stdio transport ready | Command: C:\Users\20010480\.unity/relay\relay_win.exe | Args: 1 | Env: 43 vars
+[2026-09-13T17:24:46.025Z] [ERROR] log [unity-mcp] stderr: O sistema não pode encontrar o caminho especificado.
+[2026-09-13T17:24:46.029Z] [ERROR] log MCP server error | Name: unity-mcp | Error: spawn C:\Users\20010480\.unity/relay\relay_win.exe ENOENT
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T17:24:46.029Z] [INFO] log MCP server disconnected | Name: unity-mcp
+[2026-09-13T17:24:46.030Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T17:24:46.030Z] [ERROR] log MCP server connection failed | Name: unity-mcp | Error: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T17:24:46.031Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T17:24:46.031Z] [ERROR] log MCP server start failed | Status: failed | Message: Failed to connect to server: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado. | Duration: 37ms
+[2026-09-13T18:07:34.434Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T18:07:34.434Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T18:07:34.433Z] [INFO] log Domain reload signal received from client editor-13140-n89gw7
+[2026-09-13T18:07:35.385Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T18:07:35.386Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T18:07:35.390Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-09-13T18:07:35.398Z] [WARN] connection.lost clientId=null
+[2026-09-13T18:07:35.401Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-09-13T18:07:35.405Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-09-13T18:07:41.733Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-09-13T18:07:41.733Z] [INFO] log Unity client connected with ID: editor-13140-ve8oie (relay 1.0.12-build.99)
+[2026-09-13T18:07:41.734Z] [INFO] connection.established clientId=editor-13140-ve8oie port=9001
+[2026-09-13T18:07:43.321Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-09-13T18:07:43.322Z] [INFO] log Server status check | Server: unity-mcp | Running: no
+[2026-09-13T18:07:43.391Z] [INFO] log HTTP request | POST /mcp/start-server
+[2026-09-13T18:07:43.391Z] [INFO] log Starting MCP server | Name: unity-mcp | Transport: stdio | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T18:07:43.392Z] [INFO] log Starting MCP server | Name: unity-mcp | ID: mcp-3
+[2026-09-13T18:07:43.392Z] [INFO] log Creating stdio transport | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T18:07:43.393Z] [INFO] log Stdio transport config | Command: C:\Users\20010480\.unity/relay\relay_win.exe --mcp | Env vars: 1
+[2026-09-13T18:07:43.394Z] [INFO] log Stdio transport ready | Command: C:\Users\20010480\.unity/relay\relay_win.exe | Args: 1 | Env: 43 vars
+[2026-09-13T18:07:43.412Z] [ERROR] log [unity-mcp] stderr: O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:07:43.414Z] [ERROR] log MCP server error | Name: unity-mcp | Error: spawn C:\Users\20010480\.unity/relay\relay_win.exe ENOENT
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:07:43.415Z] [INFO] log MCP server disconnected | Name: unity-mcp
+[2026-09-13T18:07:43.415Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T18:07:43.416Z] [ERROR] log MCP server connection failed | Name: unity-mcp | Error: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:07:43.416Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T18:07:43.417Z] [ERROR] log MCP server start failed | Status: failed | Message: Failed to connect to server: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado. | Duration: 25ms
+[2026-09-13T18:07:57.241Z] [INFO] log Domain reload signal received from client editor-13140-ve8oie
+[2026-09-13T18:07:57.241Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T18:07:57.242Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T18:07:57.964Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T18:07:57.964Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T18:07:57.964Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-09-13T18:07:57.965Z] [WARN] connection.lost clientId=null
+[2026-09-13T18:07:57.965Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-09-13T18:07:57.966Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-09-13T18:08:05.340Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-09-13T18:08:05.341Z] [INFO] log Unity client connected with ID: editor-13140-pc4eoe (relay 1.0.12-build.99)
+[2026-09-13T18:08:05.341Z] [INFO] connection.established clientId=editor-13140-pc4eoe port=9001
+[2026-09-13T18:08:05.484Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-09-13T18:08:05.484Z] [INFO] log Server status check | Server: unity-mcp | Running: no
+[2026-09-13T18:08:05.584Z] [INFO] log HTTP request | POST /mcp/start-server
+[2026-09-13T18:08:05.584Z] [INFO] log Starting MCP server | Name: unity-mcp | Transport: stdio | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T18:08:05.584Z] [INFO] log Starting MCP server | Name: unity-mcp | ID: mcp-4
+[2026-09-13T18:08:05.585Z] [INFO] log Creating stdio transport | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T18:08:05.585Z] [INFO] log Stdio transport config | Command: C:\Users\20010480\.unity/relay\relay_win.exe --mcp | Env vars: 1
+[2026-09-13T18:08:05.586Z] [INFO] log Stdio transport ready | Command: C:\Users\20010480\.unity/relay\relay_win.exe | Args: 1 | Env: 43 vars
+[2026-09-13T18:08:05.601Z] [ERROR] log [unity-mcp] stderr: O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:08:05.605Z] [ERROR] log MCP server error | Name: unity-mcp | Error: spawn C:\Users\20010480\.unity/relay\relay_win.exe ENOENT
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:08:05.605Z] [INFO] log MCP server disconnected | Name: unity-mcp
+[2026-09-13T18:08:05.606Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T18:08:05.606Z] [ERROR] log MCP server connection failed | Name: unity-mcp | Error: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:08:05.606Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T18:08:05.607Z] [ERROR] log MCP server start failed | Status: failed | Message: Failed to connect to server: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado. | Duration: 23ms
+[2026-09-13T18:10:57.405Z] [INFO] log Domain reload signal received from client editor-13140-pc4eoe
+[2026-09-13T18:10:57.405Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T18:10:57.406Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T18:10:58.043Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T18:10:58.044Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T18:10:58.044Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-09-13T18:10:58.045Z] [WARN] connection.lost clientId=null
+[2026-09-13T18:10:58.045Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-09-13T18:10:58.046Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-09-13T18:11:05.426Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-09-13T18:11:05.427Z] [INFO] log Unity client connected with ID: editor-13140-spjz3r (relay 1.0.12-build.99)
+[2026-09-13T18:11:05.427Z] [INFO] connection.established clientId=editor-13140-spjz3r port=9001
+[2026-09-13T18:11:05.579Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-09-13T18:11:05.580Z] [INFO] log Server status check | Server: unity-mcp | Running: no
+[2026-09-13T18:11:05.647Z] [INFO] log HTTP request | POST /mcp/start-server
+[2026-09-13T18:11:05.648Z] [INFO] log Starting MCP server | Name: unity-mcp | Transport: stdio | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T18:11:05.648Z] [INFO] log Starting MCP server | Name: unity-mcp | ID: mcp-5
+[2026-09-13T18:11:05.649Z] [INFO] log Creating stdio transport | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T18:11:05.649Z] [INFO] log Stdio transport config | Command: C:\Users\20010480\.unity/relay\relay_win.exe --mcp | Env vars: 1
+[2026-09-13T18:11:05.650Z] [INFO] log Stdio transport ready | Command: C:\Users\20010480\.unity/relay\relay_win.exe | Args: 1 | Env: 43 vars
+[2026-09-13T18:11:05.666Z] [ERROR] log [unity-mcp] stderr: O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:11:05.667Z] [ERROR] log MCP server error | Name: unity-mcp | Error: spawn C:\Users\20010480\.unity/relay\relay_win.exe ENOENT
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:11:05.668Z] [INFO] log MCP server disconnected | Name: unity-mcp
+[2026-09-13T18:11:05.668Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T18:11:05.669Z] [ERROR] log MCP server connection failed | Name: unity-mcp | Error: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:11:05.669Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T18:11:05.670Z] [ERROR] log MCP server start failed | Status: failed | Message: Failed to connect to server: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado. | Duration: 22ms
+[2026-09-13T18:24:11.718Z] [INFO] log Domain reload signal received from client editor-13140-spjz3r
+[2026-09-13T18:24:11.719Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T18:24:11.719Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T18:24:12.510Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T18:24:12.511Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T18:24:12.511Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-09-13T18:24:12.512Z] [WARN] connection.lost clientId=null
+[2026-09-13T18:24:12.580Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-09-13T18:24:12.580Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-09-13T18:27:12.592Z] [INFO] log Auto-shutdown timer fired after 180s inactivity, shutting down: Dedicated client disconnected
+[2026-09-13T18:27:12.592Z] [INFO] log Shutdown: Initiating graceful shutdown: Dedicated client disconnected
+[2026-09-13T18:29:03.319Z] [INFO] relay.startup port=9001 mcpClientPort=9002 editorPid=13140
+[2026-09-13T18:29:03.320Z] [INFO] log === RELAY SERVER STARTED === (unity-ai-relay v1.0.12-build.99)
+[2026-09-13T18:29:03.343Z] [INFO] log TLS trust: NODE_USE_SYSTEM_CA=on systemCAs=135 bundledCAs=145
+[2026-09-13T18:29:03.343Z] [INFO] log Starting relay server...
+[2026-09-13T18:29:03.344Z] [INFO] log Command line arguments: ["bun","B:/~BUN/root/relay_win.exe","--relay","--port","9001","--mcp-client-port","9002","--editor-pid","13140","--shutdown-delay","180","--log-dir","C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\Logs"]
+[2026-09-13T18:29:03.344Z] [INFO] log Parsed config: {"port":9001,"mcpClientPort":9002,"editorPid":"13140","shutdownDelaySeconds":180}
+[2026-09-13T18:29:03.345Z] [INFO] log Initializing relay components...
+[2026-09-13T18:29:03.345Z] [INFO] log Creating RelayEditor...
+[2026-09-13T18:29:03.354Z] [INFO] log WebSocket server started
+[2026-09-13T18:29:03.360Z] [INFO] log Relay server initialization completed
+[2026-09-13T18:29:03.360Z] [INFO] log MCP Client initialized at port: 9002
+[2026-09-13T18:29:03.369Z] [WARN] log [shell-env] Shell environment did not contain a PATH variable
+[2026-09-13T18:29:03.391Z] [INFO] log Unity MCP Relay server started | Port: 9002 | Endpoints: /mcp/start-server, /mcp/stop-server, /mcp/server-status, /mcp/call-tool
+[2026-09-13T18:29:03.705Z] [INFO] log Unity client connected with ID: editor-13140-vil28u (relay 1.0.12-build.99)
+[2026-09-13T18:29:03.706Z] [INFO] connection.established clientId=editor-13140-vil28u port=9001
+[2026-09-13T18:29:04.116Z] [INFO] log Domain reload signal received from client editor-13140-vil28u
+[2026-09-13T18:29:04.116Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T18:29:04.117Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T18:29:04.838Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T18:29:04.838Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T18:29:04.839Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-09-13T18:29:04.839Z] [WARN] connection.lost clientId=null
+[2026-09-13T18:29:04.839Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-09-13T18:29:04.840Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-09-13T18:29:12.199Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-09-13T18:29:12.199Z] [INFO] log Unity client connected with ID: editor-13140-s3ku4a (relay 1.0.12-build.99)
+[2026-09-13T18:29:12.200Z] [INFO] connection.established clientId=editor-13140-s3ku4a port=9001
+[2026-09-13T18:29:12.346Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-09-13T18:29:12.347Z] [INFO] log Server status check | Server: unity-mcp | Running: no
+[2026-09-13T18:29:12.405Z] [INFO] log HTTP request | POST /mcp/start-server
+[2026-09-13T18:29:12.406Z] [INFO] log Starting MCP server | Name: unity-mcp | Transport: stdio | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T18:29:12.407Z] [INFO] log Starting MCP server | Name: unity-mcp | ID: mcp-1
+[2026-09-13T18:29:12.407Z] [INFO] log Creating stdio transport | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T18:29:12.408Z] [INFO] log Stdio transport config | Command: C:\Users\20010480\.unity/relay\relay_win.exe --mcp | Env vars: 1
+[2026-09-13T18:29:12.409Z] [INFO] log Stdio transport ready | Command: C:\Users\20010480\.unity/relay\relay_win.exe | Args: 1 | Env: 43 vars
+[2026-09-13T18:29:12.441Z] [ERROR] log [unity-mcp] stderr: O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:29:12.444Z] [ERROR] log MCP server error | Name: unity-mcp | Error: spawn C:\Users\20010480\.unity/relay\relay_win.exe ENOENT
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:29:12.445Z] [INFO] log MCP server disconnected | Name: unity-mcp
+[2026-09-13T18:29:12.445Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T18:29:12.447Z] [ERROR] log MCP server connection failed | Name: unity-mcp | Error: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:29:12.447Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T18:29:12.448Z] [ERROR] log MCP server start failed | Status: failed | Message: Failed to connect to server: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado. | Duration: 42ms
+[2026-09-13T18:30:10.693Z] [INFO] log Domain reload signal received from client editor-13140-s3ku4a
+[2026-09-13T18:30:10.694Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T18:30:10.694Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T18:30:11.325Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T18:30:11.326Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T18:30:11.326Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-09-13T18:30:11.326Z] [WARN] connection.lost clientId=null
+[2026-09-13T18:30:11.327Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-09-13T18:30:11.327Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-09-13T18:30:18.690Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-09-13T18:30:18.690Z] [INFO] log Unity client connected with ID: editor-13140-wge398 (relay 1.0.12-build.99)
+[2026-09-13T18:30:18.691Z] [INFO] connection.established clientId=editor-13140-wge398 port=9001
+[2026-09-13T18:30:18.829Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-09-13T18:30:18.829Z] [INFO] log Server status check | Server: unity-mcp | Running: no
+[2026-09-13T18:30:18.886Z] [INFO] log HTTP request | POST /mcp/start-server
+[2026-09-13T18:30:18.886Z] [INFO] log Starting MCP server | Name: unity-mcp | Transport: stdio | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T18:30:18.887Z] [INFO] log Starting MCP server | Name: unity-mcp | ID: mcp-2
+[2026-09-13T18:30:18.887Z] [INFO] log Creating stdio transport | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T18:30:18.888Z] [INFO] log Stdio transport config | Command: C:\Users\20010480\.unity/relay\relay_win.exe --mcp | Env vars: 1
+[2026-09-13T18:30:18.888Z] [INFO] log Stdio transport ready | Command: C:\Users\20010480\.unity/relay\relay_win.exe | Args: 1 | Env: 43 vars
+[2026-09-13T18:30:18.907Z] [ERROR] log [unity-mcp] stderr: O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:30:18.908Z] [ERROR] log MCP server error | Name: unity-mcp | Error: spawn C:\Users\20010480\.unity/relay\relay_win.exe ENOENT
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:30:18.909Z] [INFO] log MCP server disconnected | Name: unity-mcp
+[2026-09-13T18:30:18.910Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T18:30:18.910Z] [ERROR] log MCP server connection failed | Name: unity-mcp | Error: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:30:18.911Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T18:30:18.911Z] [ERROR] log MCP server start failed | Status: failed | Message: Failed to connect to server: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado. | Duration: 24ms
+[2026-09-13T18:30:56.878Z] [INFO] log Domain reload signal received from client editor-13140-wge398
+[2026-09-13T18:30:56.879Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T18:30:56.879Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T18:30:57.505Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T18:30:57.505Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T18:30:57.506Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-09-13T18:30:57.506Z] [WARN] connection.lost clientId=null
+[2026-09-13T18:30:57.506Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-09-13T18:30:57.507Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-09-13T18:31:04.872Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-09-13T18:31:04.872Z] [INFO] log Unity client connected with ID: editor-13140-i8gail (relay 1.0.12-build.99)
+[2026-09-13T18:31:04.873Z] [INFO] connection.established clientId=editor-13140-i8gail port=9001
+[2026-09-13T18:31:05.026Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-09-13T18:31:05.027Z] [INFO] log Server status check | Server: unity-mcp | Running: no
+[2026-09-13T18:31:05.097Z] [INFO] log HTTP request | POST /mcp/start-server
+[2026-09-13T18:31:05.097Z] [INFO] log Starting MCP server | Name: unity-mcp | Transport: stdio | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T18:31:05.098Z] [INFO] log Starting MCP server | Name: unity-mcp | ID: mcp-3
+[2026-09-13T18:31:05.098Z] [INFO] log Creating stdio transport | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T18:31:05.099Z] [INFO] log Stdio transport config | Command: C:\Users\20010480\.unity/relay\relay_win.exe --mcp | Env vars: 1
+[2026-09-13T18:31:05.099Z] [INFO] log Stdio transport ready | Command: C:\Users\20010480\.unity/relay\relay_win.exe | Args: 1 | Env: 43 vars
+[2026-09-13T18:31:05.112Z] [ERROR] log [unity-mcp] stderr: O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:31:05.116Z] [ERROR] log MCP server error | Name: unity-mcp | Error: spawn C:\Users\20010480\.unity/relay\relay_win.exe ENOENT
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:31:05.116Z] [INFO] log MCP server disconnected | Name: unity-mcp
+[2026-09-13T18:31:05.117Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T18:31:05.117Z] [ERROR] log MCP server connection failed | Name: unity-mcp | Error: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:31:05.117Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T18:31:05.118Z] [ERROR] log MCP server start failed | Status: failed | Message: Failed to connect to server: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado. | Duration: 20ms
+[2026-09-13T18:31:45.982Z] [INFO] log Domain reload signal received from client editor-13140-i8gail
+[2026-09-13T18:31:45.982Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T18:31:45.982Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T18:31:46.593Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T18:31:46.594Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T18:31:46.594Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-09-13T18:31:46.595Z] [WARN] connection.lost clientId=null
+[2026-09-13T18:31:46.595Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-09-13T18:31:46.595Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-09-13T18:31:53.949Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-09-13T18:31:53.950Z] [INFO] connection.established clientId=editor-13140-o423qf port=9001
+[2026-09-13T18:31:53.950Z] [INFO] log Unity client connected with ID: editor-13140-o423qf (relay 1.0.12-build.99)
+[2026-09-13T18:31:54.104Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-09-13T18:31:54.105Z] [INFO] log Server status check | Server: unity-mcp | Running: no
+[2026-09-13T18:31:54.162Z] [INFO] log HTTP request | POST /mcp/start-server
+[2026-09-13T18:31:54.162Z] [INFO] log Starting MCP server | Name: unity-mcp | Transport: stdio | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T18:31:54.163Z] [INFO] log Starting MCP server | Name: unity-mcp | ID: mcp-4
+[2026-09-13T18:31:54.163Z] [INFO] log Creating stdio transport | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T18:31:54.163Z] [INFO] log Stdio transport config | Command: C:\Users\20010480\.unity/relay\relay_win.exe --mcp | Env vars: 1
+[2026-09-13T18:31:54.164Z] [INFO] log Stdio transport ready | Command: C:\Users\20010480\.unity/relay\relay_win.exe | Args: 1 | Env: 43 vars
+[2026-09-13T18:31:54.179Z] [ERROR] log [unity-mcp] stderr: O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:31:54.183Z] [ERROR] log MCP server error | Name: unity-mcp | Error: spawn C:\Users\20010480\.unity/relay\relay_win.exe ENOENT
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:31:54.184Z] [INFO] log MCP server disconnected | Name: unity-mcp
+[2026-09-13T18:31:54.184Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T18:31:54.185Z] [ERROR] log MCP server connection failed | Name: unity-mcp | Error: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:31:54.186Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T18:31:54.186Z] [ERROR] log MCP server start failed | Status: failed | Message: Failed to connect to server: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado. | Duration: 23ms
+[2026-09-13T18:33:26.509Z] [INFO] log Domain reload signal received from client editor-13140-o423qf
+[2026-09-13T18:33:26.509Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T18:33:26.510Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T18:33:27.140Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T18:33:27.141Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T18:33:27.141Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-09-13T18:33:27.142Z] [WARN] connection.lost clientId=null
+[2026-09-13T18:33:27.142Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-09-13T18:33:27.143Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-09-13T18:33:34.708Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-09-13T18:33:34.708Z] [INFO] log Unity client connected with ID: editor-13140-ziz5ok (relay 1.0.12-build.99)
+[2026-09-13T18:33:34.709Z] [INFO] connection.established clientId=editor-13140-ziz5ok port=9001
+[2026-09-13T18:33:34.860Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-09-13T18:33:34.861Z] [INFO] log Server status check | Server: unity-mcp | Running: no
+[2026-09-13T18:33:35.055Z] [INFO] log HTTP request | POST /mcp/start-server
+[2026-09-13T18:33:35.055Z] [INFO] log Starting MCP server | Name: unity-mcp | Transport: stdio | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T18:33:35.055Z] [INFO] log Starting MCP server | Name: unity-mcp | ID: mcp-5
+[2026-09-13T18:33:35.056Z] [INFO] log Creating stdio transport | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T18:33:35.056Z] [INFO] log Stdio transport config | Command: C:\Users\20010480\.unity/relay\relay_win.exe --mcp | Env vars: 1
+[2026-09-13T18:33:35.057Z] [INFO] log Stdio transport ready | Command: C:\Users\20010480\.unity/relay\relay_win.exe | Args: 1 | Env: 43 vars
+[2026-09-13T18:33:35.070Z] [ERROR] log [unity-mcp] stderr: O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:33:35.071Z] [ERROR] log MCP server error | Name: unity-mcp | Error: spawn C:\Users\20010480\.unity/relay\relay_win.exe ENOENT
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:33:35.072Z] [INFO] log MCP server disconnected | Name: unity-mcp
+[2026-09-13T18:33:35.072Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T18:33:35.073Z] [ERROR] log MCP server connection failed | Name: unity-mcp | Error: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:33:35.073Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T18:33:35.074Z] [ERROR] log MCP server start failed | Status: failed | Message: Failed to connect to server: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado. | Duration: 19ms
+[2026-09-13T18:34:02.070Z] [INFO] log Domain reload signal received from client editor-13140-ziz5ok
+[2026-09-13T18:34:02.071Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T18:34:02.072Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T18:34:02.722Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T18:34:02.723Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T18:34:02.723Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-09-13T18:34:02.723Z] [WARN] connection.lost clientId=null
+[2026-09-13T18:34:02.724Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-09-13T18:34:02.724Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-09-13T18:34:10.180Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-09-13T18:34:10.181Z] [INFO] log Unity client connected with ID: editor-13140-yrriyr (relay 1.0.12-build.99)
+[2026-09-13T18:34:10.181Z] [INFO] connection.established clientId=editor-13140-yrriyr port=9001
+[2026-09-13T18:34:10.328Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-09-13T18:34:10.329Z] [INFO] log Server status check | Server: unity-mcp | Running: no
+[2026-09-13T18:34:10.384Z] [INFO] log HTTP request | POST /mcp/start-server
+[2026-09-13T18:34:10.384Z] [INFO] log Starting MCP server | Name: unity-mcp | Transport: stdio | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T18:34:10.385Z] [INFO] log Starting MCP server | Name: unity-mcp | ID: mcp-6
+[2026-09-13T18:34:10.385Z] [INFO] log Creating stdio transport | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T18:34:10.385Z] [INFO] log Stdio transport config | Command: C:\Users\20010480\.unity/relay\relay_win.exe --mcp | Env vars: 1
+[2026-09-13T18:34:10.386Z] [INFO] log Stdio transport ready | Command: C:\Users\20010480\.unity/relay\relay_win.exe | Args: 1 | Env: 43 vars
+[2026-09-13T18:34:10.401Z] [ERROR] log [unity-mcp] stderr: O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:34:10.402Z] [ERROR] log MCP server error | Name: unity-mcp | Error: spawn C:\Users\20010480\.unity/relay\relay_win.exe ENOENT
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:34:10.403Z] [INFO] log MCP server disconnected | Name: unity-mcp
+[2026-09-13T18:34:10.403Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T18:34:10.404Z] [ERROR] log MCP server connection failed | Name: unity-mcp | Error: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:34:10.404Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T18:34:10.404Z] [ERROR] log MCP server start failed | Status: failed | Message: Failed to connect to server: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado. | Duration: 19ms
+[2026-09-13T18:43:43.963Z] [INFO] log Domain reload signal received from client editor-13140-yrriyr
+[2026-09-13T18:43:43.964Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T18:43:43.964Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T18:43:44.778Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T18:43:44.779Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T18:43:44.780Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-09-13T18:43:44.781Z] [WARN] connection.lost clientId=null
+[2026-09-13T18:43:44.786Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-09-13T18:43:44.787Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-09-13T18:43:50.654Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-09-13T18:43:50.655Z] [INFO] log Unity client connected with ID: editor-13140-9zxs6f (relay 1.0.12-build.99)
+[2026-09-13T18:43:50.655Z] [INFO] connection.established clientId=editor-13140-9zxs6f port=9001
+[2026-09-13T18:43:52.238Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-09-13T18:43:52.238Z] [INFO] log Server status check | Server: unity-mcp | Running: no
+[2026-09-13T18:43:52.292Z] [INFO] log HTTP request | POST /mcp/start-server
+[2026-09-13T18:43:52.293Z] [INFO] log Starting MCP server | Name: unity-mcp | Transport: stdio | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T18:43:52.293Z] [INFO] log Starting MCP server | Name: unity-mcp | ID: mcp-7
+[2026-09-13T18:43:52.294Z] [INFO] log Creating stdio transport | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T18:43:52.294Z] [INFO] log Stdio transport config | Command: C:\Users\20010480\.unity/relay\relay_win.exe --mcp | Env vars: 1
+[2026-09-13T18:43:52.295Z] [INFO] log Stdio transport ready | Command: C:\Users\20010480\.unity/relay\relay_win.exe | Args: 1 | Env: 43 vars
+[2026-09-13T18:43:52.308Z] [ERROR] log [unity-mcp] stderr: O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:43:52.311Z] [ERROR] log MCP server error | Name: unity-mcp | Error: spawn C:\Users\20010480\.unity/relay\relay_win.exe ENOENT
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:43:52.311Z] [INFO] log MCP server disconnected | Name: unity-mcp
+[2026-09-13T18:43:52.312Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T18:43:52.313Z] [ERROR] log MCP server connection failed | Name: unity-mcp | Error: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:43:52.313Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T18:43:52.314Z] [ERROR] log MCP server start failed | Status: failed | Message: Failed to connect to server: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado. | Duration: 21ms
+[2026-09-13T18:44:08.870Z] [INFO] log Domain reload signal received from client editor-13140-9zxs6f
+[2026-09-13T18:44:08.870Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T18:44:08.870Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T18:44:09.539Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T18:44:09.540Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T18:44:09.540Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-09-13T18:44:09.541Z] [WARN] connection.lost clientId=null
+[2026-09-13T18:44:09.541Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-09-13T18:44:09.541Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-09-13T18:44:16.874Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-09-13T18:44:16.875Z] [INFO] log Unity client connected with ID: editor-13140-oxwcn8 (relay 1.0.12-build.99)
+[2026-09-13T18:44:16.876Z] [INFO] connection.established clientId=editor-13140-oxwcn8 port=9001
+[2026-09-13T18:44:17.034Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-09-13T18:44:17.035Z] [INFO] log Server status check | Server: unity-mcp | Running: no
+[2026-09-13T18:44:17.091Z] [INFO] log HTTP request | POST /mcp/start-server
+[2026-09-13T18:44:17.092Z] [INFO] log Starting MCP server | Name: unity-mcp | Transport: stdio | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T18:44:17.093Z] [INFO] log Starting MCP server | Name: unity-mcp | ID: mcp-8
+[2026-09-13T18:44:17.093Z] [INFO] log Creating stdio transport | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T18:44:17.093Z] [INFO] log Stdio transport config | Command: C:\Users\20010480\.unity/relay\relay_win.exe --mcp | Env vars: 1
+[2026-09-13T18:44:17.094Z] [INFO] log Stdio transport ready | Command: C:\Users\20010480\.unity/relay\relay_win.exe | Args: 1 | Env: 43 vars
+[2026-09-13T18:44:17.108Z] [ERROR] log [unity-mcp] stderr: O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:44:17.113Z] [ERROR] log MCP server error | Name: unity-mcp | Error: spawn C:\Users\20010480\.unity/relay\relay_win.exe ENOENT
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:44:17.114Z] [INFO] log MCP server disconnected | Name: unity-mcp
+[2026-09-13T18:44:17.114Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T18:44:17.115Z] [ERROR] log MCP server connection failed | Name: unity-mcp | Error: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:44:17.116Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T18:44:17.116Z] [ERROR] log MCP server start failed | Status: failed | Message: Failed to connect to server: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado. | Duration: 24ms
+[2026-09-13T18:44:46.085Z] [INFO] log Domain reload signal received from client editor-13140-oxwcn8
+[2026-09-13T18:44:46.086Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T18:44:46.086Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T18:44:46.682Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T18:44:46.682Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T18:44:46.683Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-09-13T18:44:46.683Z] [WARN] connection.lost clientId=null
+[2026-09-13T18:44:46.684Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-09-13T18:44:46.685Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-09-13T18:44:54.031Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-09-13T18:44:54.031Z] [INFO] log Unity client connected with ID: editor-13140-67b9sm (relay 1.0.12-build.99)
+[2026-09-13T18:44:54.032Z] [INFO] connection.established clientId=editor-13140-67b9sm port=9001
+[2026-09-13T18:44:54.183Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-09-13T18:44:54.183Z] [INFO] log Server status check | Server: unity-mcp | Running: no
+[2026-09-13T18:44:54.239Z] [INFO] log HTTP request | POST /mcp/start-server
+[2026-09-13T18:44:54.239Z] [INFO] log Starting MCP server | Name: unity-mcp | Transport: stdio | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T18:44:54.240Z] [INFO] log Starting MCP server | Name: unity-mcp | ID: mcp-9
+[2026-09-13T18:44:54.240Z] [INFO] log Creating stdio transport | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T18:44:54.241Z] [INFO] log Stdio transport config | Command: C:\Users\20010480\.unity/relay\relay_win.exe --mcp | Env vars: 1
+[2026-09-13T18:44:54.241Z] [INFO] log Stdio transport ready | Command: C:\Users\20010480\.unity/relay\relay_win.exe | Args: 1 | Env: 43 vars
+[2026-09-13T18:44:54.257Z] [ERROR] log [unity-mcp] stderr: O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:44:54.259Z] [ERROR] log MCP server error | Name: unity-mcp | Error: spawn C:\Users\20010480\.unity/relay\relay_win.exe ENOENT
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:44:54.259Z] [INFO] log MCP server disconnected | Name: unity-mcp
+[2026-09-13T18:44:54.260Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T18:44:54.260Z] [ERROR] log MCP server connection failed | Name: unity-mcp | Error: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:44:54.261Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T18:44:54.261Z] [ERROR] log MCP server start failed | Status: failed | Message: Failed to connect to server: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado. | Duration: 21ms
+[2026-09-13T18:46:27.839Z] [INFO] log Domain reload signal received from client editor-13140-67b9sm
+[2026-09-13T18:46:27.839Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T18:46:27.840Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T18:46:28.466Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T18:46:28.466Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T18:46:28.467Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-09-13T18:46:28.467Z] [WARN] connection.lost clientId=null
+[2026-09-13T18:46:28.467Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-09-13T18:46:28.468Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-09-13T18:46:35.897Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-09-13T18:46:35.898Z] [INFO] log Unity client connected with ID: editor-13140-sx06lu (relay 1.0.12-build.99)
+[2026-09-13T18:46:35.898Z] [INFO] connection.established clientId=editor-13140-sx06lu port=9001
+[2026-09-13T18:46:36.062Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-09-13T18:46:36.063Z] [INFO] log Server status check | Server: unity-mcp | Running: no
+[2026-09-13T18:46:36.119Z] [INFO] log HTTP request | POST /mcp/start-server
+[2026-09-13T18:46:36.119Z] [INFO] log Starting MCP server | Name: unity-mcp | Transport: stdio | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T18:46:36.120Z] [INFO] log Starting MCP server | Name: unity-mcp | ID: mcp-10
+[2026-09-13T18:46:36.120Z] [INFO] log Creating stdio transport | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T18:46:36.120Z] [INFO] log Stdio transport config | Command: C:\Users\20010480\.unity/relay\relay_win.exe --mcp | Env vars: 1
+[2026-09-13T18:46:36.121Z] [INFO] log Stdio transport ready | Command: C:\Users\20010480\.unity/relay\relay_win.exe | Args: 1 | Env: 43 vars
+[2026-09-13T18:46:36.137Z] [ERROR] log [unity-mcp] stderr: O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:46:36.138Z] [ERROR] log MCP server error | Name: unity-mcp | Error: spawn C:\Users\20010480\.unity/relay\relay_win.exe ENOENT
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:46:36.138Z] [INFO] log MCP server disconnected | Name: unity-mcp
+[2026-09-13T18:46:36.139Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T18:46:36.139Z] [ERROR] log MCP server connection failed | Name: unity-mcp | Error: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:46:36.140Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T18:46:36.141Z] [ERROR] log MCP server start failed | Status: failed | Message: Failed to connect to server: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado. | Duration: 21ms
+[2026-09-13T18:47:16.246Z] [INFO] log Domain reload signal received from client editor-13140-sx06lu
+[2026-09-13T18:47:16.246Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T18:47:16.247Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T18:47:16.859Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T18:47:16.859Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T18:47:16.860Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-09-13T18:47:16.860Z] [WARN] connection.lost clientId=null
+[2026-09-13T18:47:16.861Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-09-13T18:47:16.861Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-09-13T18:47:24.247Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-09-13T18:47:24.247Z] [INFO] log Unity client connected with ID: editor-13140-qybdib (relay 1.0.12-build.99)
+[2026-09-13T18:47:24.248Z] [INFO] connection.established clientId=editor-13140-qybdib port=9001
+[2026-09-13T18:47:24.413Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-09-13T18:47:24.413Z] [INFO] log Server status check | Server: unity-mcp | Running: no
+[2026-09-13T18:47:24.468Z] [INFO] log HTTP request | POST /mcp/start-server
+[2026-09-13T18:47:24.469Z] [INFO] log Starting MCP server | Name: unity-mcp | Transport: stdio | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T18:47:24.469Z] [INFO] log Starting MCP server | Name: unity-mcp | ID: mcp-11
+[2026-09-13T18:47:24.470Z] [INFO] log Creating stdio transport | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T18:47:24.470Z] [INFO] log Stdio transport config | Command: C:\Users\20010480\.unity/relay\relay_win.exe --mcp | Env vars: 1
+[2026-09-13T18:47:24.471Z] [INFO] log Stdio transport ready | Command: C:\Users\20010480\.unity/relay\relay_win.exe | Args: 1 | Env: 43 vars
+[2026-09-13T18:47:24.483Z] [ERROR] log [unity-mcp] stderr: O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:47:24.488Z] [ERROR] log MCP server error | Name: unity-mcp | Error: spawn C:\Users\20010480\.unity/relay\relay_win.exe ENOENT
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:47:24.488Z] [INFO] log MCP server disconnected | Name: unity-mcp
+[2026-09-13T18:47:24.489Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T18:47:24.489Z] [ERROR] log MCP server connection failed | Name: unity-mcp | Error: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:47:24.490Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T18:47:24.490Z] [ERROR] log MCP server start failed | Status: failed | Message: Failed to connect to server: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado. | Duration: 21ms
+[2026-09-13T18:53:33.440Z] [INFO] log Domain reload signal received from client editor-13140-qybdib
+[2026-09-13T18:53:33.441Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T18:53:33.441Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T18:53:34.366Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T18:53:34.367Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T18:53:34.367Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-09-13T18:53:34.369Z] [WARN] connection.lost clientId=null
+[2026-09-13T18:53:34.371Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-09-13T18:53:34.376Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-09-13T18:53:40.221Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-09-13T18:53:40.221Z] [INFO] log Unity client connected with ID: editor-13140-rvvgx4 (relay 1.0.12-build.99)
+[2026-09-13T18:53:40.221Z] [INFO] connection.established clientId=editor-13140-rvvgx4 port=9001
+[2026-09-13T18:53:41.854Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-09-13T18:53:41.855Z] [INFO] log Server status check | Server: unity-mcp | Running: no
+[2026-09-13T18:53:41.893Z] [INFO] log HTTP request | POST /mcp/start-server
+[2026-09-13T18:53:41.894Z] [INFO] log Starting MCP server | Name: unity-mcp | Transport: stdio | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T18:53:41.894Z] [INFO] log Starting MCP server | Name: unity-mcp | ID: mcp-12
+[2026-09-13T18:53:41.895Z] [INFO] log Creating stdio transport | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T18:53:41.895Z] [INFO] log Stdio transport config | Command: C:\Users\20010480\.unity/relay\relay_win.exe --mcp | Env vars: 1
+[2026-09-13T18:53:41.896Z] [INFO] log Stdio transport ready | Command: C:\Users\20010480\.unity/relay\relay_win.exe | Args: 1 | Env: 43 vars
+[2026-09-13T18:53:41.911Z] [ERROR] log [unity-mcp] stderr: O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:53:41.912Z] [ERROR] log MCP server error | Name: unity-mcp | Error: spawn C:\Users\20010480\.unity/relay\relay_win.exe ENOENT
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:53:41.912Z] [INFO] log MCP server disconnected | Name: unity-mcp
+[2026-09-13T18:53:41.913Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T18:53:41.913Z] [ERROR] log MCP server connection failed | Name: unity-mcp | Error: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:53:41.914Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T18:53:41.914Z] [ERROR] log MCP server start failed | Status: failed | Message: Failed to connect to server: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado. | Duration: 20ms
+[2026-09-13T18:53:44.934Z] [INFO] log Domain reload signal received from client editor-13140-rvvgx4
+[2026-09-13T18:53:44.935Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T18:53:44.935Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T18:53:45.591Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T18:53:45.591Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T18:53:45.592Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-09-13T18:53:45.592Z] [WARN] connection.lost clientId=null
+[2026-09-13T18:53:45.592Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-09-13T18:53:45.593Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-09-13T18:53:52.950Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-09-13T18:53:52.951Z] [INFO] log Unity client connected with ID: editor-13140-p3wshl (relay 1.0.12-build.99)
+[2026-09-13T18:53:52.951Z] [INFO] connection.established clientId=editor-13140-p3wshl port=9001
+[2026-09-13T18:53:53.101Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-09-13T18:53:53.102Z] [INFO] log Server status check | Server: unity-mcp | Running: no
+[2026-09-13T18:53:53.160Z] [INFO] log HTTP request | POST /mcp/start-server
+[2026-09-13T18:53:53.161Z] [INFO] log Starting MCP server | Name: unity-mcp | Transport: stdio | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T18:53:53.161Z] [INFO] log Starting MCP server | Name: unity-mcp | ID: mcp-13
+[2026-09-13T18:53:53.161Z] [INFO] log Creating stdio transport | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T18:53:53.162Z] [INFO] log Stdio transport config | Command: C:\Users\20010480\.unity/relay\relay_win.exe --mcp | Env vars: 1
+[2026-09-13T18:53:53.162Z] [INFO] log Stdio transport ready | Command: C:\Users\20010480\.unity/relay\relay_win.exe | Args: 1 | Env: 43 vars
+[2026-09-13T18:53:53.175Z] [ERROR] log [unity-mcp] stderr: O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:53:53.179Z] [ERROR] log MCP server error | Name: unity-mcp | Error: spawn C:\Users\20010480\.unity/relay\relay_win.exe ENOENT
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:53:53.180Z] [INFO] log MCP server disconnected | Name: unity-mcp
+[2026-09-13T18:53:53.180Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T18:53:53.180Z] [ERROR] log MCP server connection failed | Name: unity-mcp | Error: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T18:53:53.181Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T18:53:53.181Z] [ERROR] log MCP server start failed | Status: failed | Message: Failed to connect to server: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado. | Duration: 20ms
+[2026-09-13T19:03:04.104Z] [INFO] log Domain reload signal received from client editor-13140-p3wshl
+[2026-09-13T19:03:04.105Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T19:03:04.105Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T19:03:05.040Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T19:03:05.041Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T19:03:05.042Z] [WARN] connection.lost clientId=null
+[2026-09-13T19:03:05.041Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-09-13T19:03:05.042Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-09-13T19:03:05.042Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-09-13T19:03:11.212Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-09-13T19:03:11.213Z] [INFO] log Unity client connected with ID: editor-13140-kk3hiu (relay 1.0.12-build.99)
+[2026-09-13T19:03:11.213Z] [INFO] connection.established clientId=editor-13140-kk3hiu port=9001
+[2026-09-13T19:03:12.938Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-09-13T19:03:12.938Z] [INFO] log Server status check | Server: unity-mcp | Running: no
+[2026-09-13T19:03:12.990Z] [INFO] log HTTP request | POST /mcp/start-server
+[2026-09-13T19:03:12.991Z] [INFO] log Starting MCP server | Name: unity-mcp | Transport: stdio | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T19:03:12.991Z] [INFO] log Starting MCP server | Name: unity-mcp | ID: mcp-14
+[2026-09-13T19:03:12.992Z] [INFO] log Creating stdio transport | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T19:03:12.992Z] [INFO] log Stdio transport config | Command: C:\Users\20010480\.unity/relay\relay_win.exe --mcp | Env vars: 1
+[2026-09-13T19:03:12.993Z] [INFO] log Stdio transport ready | Command: C:\Users\20010480\.unity/relay\relay_win.exe | Args: 1 | Env: 43 vars
+[2026-09-13T19:03:13.007Z] [ERROR] log [unity-mcp] stderr: O sistema não pode encontrar o caminho especificado.
+[2026-09-13T19:03:13.008Z] [ERROR] log MCP server error | Name: unity-mcp | Error: spawn C:\Users\20010480\.unity/relay\relay_win.exe ENOENT
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T19:03:13.008Z] [INFO] log MCP server disconnected | Name: unity-mcp
+[2026-09-13T19:03:13.009Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T19:03:13.010Z] [ERROR] log MCP server connection failed | Name: unity-mcp | Error: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T19:03:13.010Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T19:03:13.010Z] [ERROR] log MCP server start failed | Status: failed | Message: Failed to connect to server: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado. | Duration: 19ms
+[2026-09-13T19:05:09.209Z] [INFO] log Domain reload signal received from client editor-13140-kk3hiu
+[2026-09-13T19:05:09.209Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T19:05:09.209Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T19:05:09.877Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T19:05:09.878Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T19:05:09.878Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-09-13T19:05:09.878Z] [WARN] connection.lost clientId=null
+[2026-09-13T19:05:09.879Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-09-13T19:05:09.879Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-09-13T19:05:17.376Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-09-13T19:05:17.377Z] [INFO] log Unity client connected with ID: editor-13140-y7obhi (relay 1.0.12-build.99)
+[2026-09-13T19:05:17.377Z] [INFO] connection.established clientId=editor-13140-y7obhi port=9001
+[2026-09-13T19:05:17.532Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-09-13T19:05:17.532Z] [INFO] log Server status check | Server: unity-mcp | Running: no
+[2026-09-13T19:05:17.608Z] [INFO] log HTTP request | POST /mcp/start-server
+[2026-09-13T19:05:17.609Z] [INFO] log Starting MCP server | Name: unity-mcp | Transport: stdio | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T19:05:17.609Z] [INFO] log Starting MCP server | Name: unity-mcp | ID: mcp-15
+[2026-09-13T19:05:17.610Z] [INFO] log Creating stdio transport | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T19:05:17.610Z] [INFO] log Stdio transport config | Command: C:\Users\20010480\.unity/relay\relay_win.exe --mcp | Env vars: 1
+[2026-09-13T19:05:17.611Z] [INFO] log Stdio transport ready | Command: C:\Users\20010480\.unity/relay\relay_win.exe | Args: 1 | Env: 43 vars
+[2026-09-13T19:05:17.624Z] [ERROR] log [unity-mcp] stderr: O sistema não pode encontrar o caminho especificado.
+[2026-09-13T19:05:17.626Z] [ERROR] log MCP server error | Name: unity-mcp | Error: spawn C:\Users\20010480\.unity/relay\relay_win.exe ENOENT
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T19:05:17.626Z] [INFO] log MCP server disconnected | Name: unity-mcp
+[2026-09-13T19:05:17.627Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T19:05:17.627Z] [ERROR] log MCP server connection failed | Name: unity-mcp | Error: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T19:05:17.628Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T19:05:17.628Z] [ERROR] log MCP server start failed | Status: failed | Message: Failed to connect to server: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado. | Duration: 19ms
+[2026-09-13T19:16:26.170Z] [INFO] log Domain reload signal received from client editor-13140-y7obhi
+[2026-09-13T19:16:26.171Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T19:16:26.171Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T19:16:27.395Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T19:16:27.396Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T19:16:27.396Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-09-13T19:16:27.396Z] [WARN] connection.lost clientId=null
+[2026-09-13T19:16:27.397Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-09-13T19:16:27.397Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-09-13T19:19:27.411Z] [INFO] log Auto-shutdown timer fired after 180s inactivity, shutting down: Dedicated client disconnected
+[2026-09-13T19:19:27.413Z] [INFO] log Shutdown: Initiating graceful shutdown: Dedicated client disconnected
+[2026-09-13T19:22:01.646Z] [INFO] relay.startup port=9001 mcpClientPort=9002 editorPid=13140
+[2026-09-13T19:22:01.648Z] [INFO] log === RELAY SERVER STARTED === (unity-ai-relay v1.0.12-build.99)
+[2026-09-13T19:22:01.671Z] [INFO] log TLS trust: NODE_USE_SYSTEM_CA=on systemCAs=135 bundledCAs=145
+[2026-09-13T19:22:01.671Z] [INFO] log Starting relay server...
+[2026-09-13T19:22:01.672Z] [INFO] log Command line arguments: ["bun","B:/~BUN/root/relay_win.exe","--relay","--port","9001","--mcp-client-port","9002","--editor-pid","13140","--shutdown-delay","180","--log-dir","C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\Logs"]
+[2026-09-13T19:22:01.672Z] [INFO] log Parsed config: {"port":9001,"mcpClientPort":9002,"editorPid":"13140","shutdownDelaySeconds":180}
+[2026-09-13T19:22:01.673Z] [INFO] log Initializing relay components...
+[2026-09-13T19:22:01.673Z] [INFO] log Creating RelayEditor...
+[2026-09-13T19:22:01.683Z] [INFO] log WebSocket server started
+[2026-09-13T19:22:01.684Z] [INFO] log Relay server initialization completed
+[2026-09-13T19:22:01.684Z] [INFO] log MCP Client initialized at port: 9002
+[2026-09-13T19:22:01.698Z] [WARN] log [shell-env] Shell environment did not contain a PATH variable
+[2026-09-13T19:22:01.721Z] [INFO] log Unity MCP Relay server started | Port: 9002 | Endpoints: /mcp/start-server, /mcp/stop-server, /mcp/server-status, /mcp/call-tool
+[2026-09-13T19:22:02.021Z] [INFO] log Unity client connected with ID: editor-13140-tko27l (relay 1.0.12-build.99)
+[2026-09-13T19:22:02.021Z] [INFO] connection.established clientId=editor-13140-tko27l port=9001
+[2026-09-13T19:22:02.428Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-09-13T19:22:02.430Z] [INFO] log Server status check | Server: unity-mcp | Running: no
+[2026-09-13T19:22:02.536Z] [INFO] log HTTP request | POST /mcp/start-server
+[2026-09-13T19:22:02.537Z] [INFO] log Starting MCP server | Name: unity-mcp | Transport: stdio | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T19:22:02.538Z] [INFO] log Starting MCP server | Name: unity-mcp | ID: mcp-1
+[2026-09-13T19:22:02.539Z] [INFO] log Creating stdio transport | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T19:22:02.539Z] [INFO] log Stdio transport config | Command: C:\Users\20010480\.unity/relay\relay_win.exe --mcp | Env vars: 1
+[2026-09-13T19:22:02.540Z] [INFO] log Stdio transport ready | Command: C:\Users\20010480\.unity/relay\relay_win.exe | Args: 1 | Env: 43 vars
+[2026-09-13T19:22:02.567Z] [ERROR] log [unity-mcp] stderr: O sistema não pode encontrar o caminho especificado.
+[2026-09-13T19:22:02.570Z] [ERROR] log MCP server error | Name: unity-mcp | Error: spawn C:\Users\20010480\.unity/relay\relay_win.exe ENOENT
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T19:22:02.570Z] [INFO] log MCP server disconnected | Name: unity-mcp
+[2026-09-13T19:22:02.571Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T19:22:02.572Z] [ERROR] log MCP server connection failed | Name: unity-mcp | Error: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T19:22:02.572Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T19:22:02.573Z] [ERROR] log MCP server start failed | Status: failed | Message: Failed to connect to server: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado. | Duration: 36ms
+[2026-09-13T19:22:10.723Z] [INFO] log Domain reload signal received from client editor-13140-tko27l
+[2026-09-13T19:22:10.723Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T19:22:10.724Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T19:22:11.717Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T19:22:11.718Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T19:22:11.718Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-09-13T19:22:11.719Z] [WARN] connection.lost clientId=null
+[2026-09-13T19:22:11.720Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-09-13T19:22:11.721Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-09-13T19:22:17.633Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-09-13T19:22:17.633Z] [INFO] log Unity client connected with ID: editor-13140-fdv8qr (relay 1.0.12-build.99)
+[2026-09-13T19:22:17.634Z] [INFO] connection.established clientId=editor-13140-fdv8qr port=9001
+[2026-09-13T19:22:19.371Z] [INFO] log Domain reload signal received from client editor-13140-fdv8qr
+[2026-09-13T19:22:19.371Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T19:22:19.371Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T19:22:20.123Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T19:22:20.124Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T19:22:20.124Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-09-13T19:22:20.124Z] [WARN] connection.lost clientId=null
+[2026-09-13T19:22:20.125Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-09-13T19:22:20.125Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-09-13T19:22:27.764Z] [DEBUG] log Relay->Editor communication is unblocked
+[2026-09-13T19:22:27.764Z] [INFO] log Unity client connected with ID: editor-13140-p8b0ka (relay 1.0.12-build.99)
+[2026-09-13T19:22:27.765Z] [INFO] connection.established clientId=editor-13140-p8b0ka port=9001
+[2026-09-13T19:22:27.913Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-09-13T19:22:27.914Z] [INFO] log Server status check | Server: unity-mcp | Running: no
+[2026-09-13T19:22:27.979Z] [INFO] log HTTP request | POST /mcp/start-server
+[2026-09-13T19:22:27.980Z] [INFO] log Starting MCP server | Name: unity-mcp | Transport: stdio | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T19:22:27.981Z] [INFO] log Stdio transport config | Command: C:\Users\20010480\.unity/relay\relay_win.exe --mcp | Env vars: 1
+[2026-09-13T19:22:27.981Z] [INFO] log Creating stdio transport | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T19:22:27.980Z] [INFO] log Starting MCP server | Name: unity-mcp | ID: mcp-2
+[2026-09-13T19:22:27.982Z] [INFO] log Stdio transport ready | Command: C:\Users\20010480\.unity/relay\relay_win.exe | Args: 1 | Env: 43 vars
+[2026-09-13T19:22:28.003Z] [ERROR] log [unity-mcp] stderr: O sistema não pode encontrar o caminho especificado.
+[2026-09-13T19:22:28.004Z] [ERROR] log MCP server error | Name: unity-mcp | Error: spawn C:\Users\20010480\.unity/relay\relay_win.exe ENOENT
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T19:22:28.005Z] [INFO] log MCP server disconnected | Name: unity-mcp
+[2026-09-13T19:22:28.005Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T19:22:28.006Z] [ERROR] log MCP server connection failed | Name: unity-mcp | Error: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T19:22:28.006Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T19:22:28.007Z] [ERROR] log MCP server start failed | Status: failed | Message: Failed to connect to server: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado. | Duration: 27ms
+[2026-09-13T19:25:39.590Z] [INFO] log Domain reload signal received from client editor-13140-p8b0ka
+[2026-09-13T19:25:39.591Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T19:25:39.591Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T19:25:40.521Z] [DEBUG] log Relay->Editor communication is blocked
+[2026-09-13T19:25:40.521Z] [DEBUG] acp.queue.pause depth=0
+[2026-09-13T19:25:40.522Z] [INFO] log Client disconnected - blocking and caching for recovery
+[2026-09-13T19:25:40.524Z] [WARN] connection.lost clientId=null
+[2026-09-13T19:25:40.525Z] [WARN] log Client disconnected - sessions will persist until auto-shutdown, reason: Client disconnected
+[2026-09-13T19:25:40.525Z] [INFO] log Auto-shutdown timer started due to client disconnection
+[2026-09-13T19:28:40.540Z] [INFO] log Auto-shutdown timer fired after 180s inactivity, shutting down: Dedicated client disconnected
+[2026-09-13T19:28:40.541Z] [INFO] log Shutdown: Initiating graceful shutdown: Dedicated client disconnected
+[2026-09-13T19:29:37.916Z] [INFO] relay.startup port=9001 mcpClientPort=9002 editorPid=13140
+[2026-09-13T19:29:37.917Z] [INFO] log === RELAY SERVER STARTED === (unity-ai-relay v1.0.12-build.99)
+[2026-09-13T19:29:37.940Z] [INFO] log TLS trust: NODE_USE_SYSTEM_CA=on systemCAs=135 bundledCAs=145
+[2026-09-13T19:29:37.940Z] [INFO] log Starting relay server...
+[2026-09-13T19:29:37.940Z] [INFO] log Command line arguments: ["bun","B:/~BUN/root/relay_win.exe","--relay","--port","9001","--mcp-client-port","9002","--editor-pid","13140","--shutdown-delay","180","--log-dir","C:\\Users\\LordDrakkon\\Documents\\GitHub\\Jogo\\My project\\Logs"]
+[2026-09-13T19:29:37.941Z] [INFO] log Parsed config: {"port":9001,"mcpClientPort":9002,"editorPid":"13140","shutdownDelaySeconds":180}
+[2026-09-13T19:29:37.942Z] [INFO] log Initializing relay components...
+[2026-09-13T19:29:37.942Z] [INFO] log Creating RelayEditor...
+[2026-09-13T19:29:37.955Z] [INFO] log WebSocket server started
+[2026-09-13T19:29:37.956Z] [INFO] log Relay server initialization completed
+[2026-09-13T19:29:37.956Z] [INFO] log MCP Client initialized at port: 9002
+[2026-09-13T19:29:37.966Z] [WARN] log [shell-env] Shell environment did not contain a PATH variable
+[2026-09-13T19:29:37.990Z] [INFO] log Unity MCP Relay server started | Port: 9002 | Endpoints: /mcp/start-server, /mcp/stop-server, /mcp/server-status, /mcp/call-tool
+[2026-09-13T19:29:46.224Z] [INFO] log Unity client connected with ID: editor-13140-xcny8f (relay 1.0.12-build.99)
+[2026-09-13T19:29:46.225Z] [INFO] connection.established clientId=editor-13140-xcny8f port=9001
+[2026-09-13T19:29:46.381Z] [INFO] log HTTP request | POST /mcp/server-status
+[2026-09-13T19:29:46.382Z] [INFO] log Server status check | Server: unity-mcp | Running: no
+[2026-09-13T19:29:46.441Z] [INFO] log HTTP request | POST /mcp/start-server
+[2026-09-13T19:29:46.442Z] [INFO] log Starting MCP server | Name: unity-mcp | Transport: stdio | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T19:29:46.443Z] [INFO] log Starting MCP server | Name: unity-mcp | ID: mcp-1
+[2026-09-13T19:29:46.444Z] [INFO] log Creating stdio transport | Command: C:\Users\20010480\.unity/relay\relay_win.exe
+[2026-09-13T19:29:46.444Z] [INFO] log Stdio transport config | Command: C:\Users\20010480\.unity/relay\relay_win.exe --mcp | Env vars: 1
+[2026-09-13T19:29:46.445Z] [INFO] log Stdio transport ready | Command: C:\Users\20010480\.unity/relay\relay_win.exe | Args: 1 | Env: 43 vars
+[2026-09-13T19:29:46.475Z] [ERROR] log [unity-mcp] stderr: O sistema não pode encontrar o caminho especificado.
+[2026-09-13T19:29:46.478Z] [ERROR] log MCP server error | Name: unity-mcp | Error: spawn C:\Users\20010480\.unity/relay\relay_win.exe ENOENT
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T19:29:46.479Z] [INFO] log MCP server disconnected | Name: unity-mcp
+[2026-09-13T19:29:46.480Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T19:29:46.481Z] [ERROR] log MCP server connection failed | Name: unity-mcp | Error: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado.
+[2026-09-13T19:29:46.481Z] [INFO] log Cleaning up server | Name: unity-mcp
+[2026-09-13T19:29:46.482Z] [ERROR] log MCP server start failed | Status: failed | Message: Failed to connect to server: MCP error -32000: Connection closed
+Server stderr:
+O sistema não pode encontrar o caminho especificado. | Duration: 40ms

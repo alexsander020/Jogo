@@ -183,8 +183,23 @@ public class ChooseActionState : State
                 }
                 break;
 
-            case 3: // Evolução
-                Debug.Log("[Ação] Opção Evolução / NetFusion selecionada.");
+            case 3: // Evolução / NetFusion / App Gappai
+                if (currentUnit != null && currentUnit.CanAct())
+                {
+                    Debug.Log("[Ação] Opção Evolução / App Gappai selecionada. Abrindo painel de Fusão...");
+                    machine.ChangeTo<AppGappaiState>();
+                }
+                else
+                {
+                    Debug.LogWarning("[Ação] Esta unidade já realizou sua ação neste turno!");
+                    if (BattleHUD.Instance != null)
+                    {
+                        BattleHUD.Instance.UpdateControlsPrompt(
+                            "AÇÃO JÁ REALIZADA", 
+                            "• A unidade atual já agiu neste turno. Escolha Mover ou Encerrar Turno."
+                        );
+                    }
+                }
                 break;
 
             case 4: // Link (Applink / Conexão com reserva)

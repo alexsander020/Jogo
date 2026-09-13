@@ -58,8 +58,14 @@ namespace TacticalBattle.Tests
             // 7. TESTES DA UI DE BUFFS DO BATTLE HUD
             Test_BattleHUD_LinkBuffsPanel(); passed++;
 
+            // 8. TESTES DO SISTEMA DE FUSÃO EM BATALHA (APP GAPPAI)
+            Test_AppGappai_CompatibilityTable(); passed++;
+            Test_AppGappai_TemporaryFusionExecution(); passed++;
+            Test_AppGappai_BattleEndRestoration(); passed++;
+            Test_AppGappai_FieldLinkSimpleBonus(); passed++;
+
             Debug.Log("=================================================");
-            Debug.Log($"SUCESSO: TODOS OS {passed} TESTES DE APPMON, COMBOS E APP-LINK FORAM APROVADOS!");
+            Debug.Log($"SUCESSO: TODOS OS {passed} TESTES DE APPMON, COMBOS, APP-LINK E APP GAPPAI FORAM APROVADOS!");
             Debug.Log("=================================================");
 
             return passed;
@@ -485,6 +491,42 @@ namespace TacticalBattle.Tests
             Assert(hud.linkBuffsPanel != null && hud.linkBuffsPanel.activeSelf, "Painel de Link deve ficar ATIVO quando um Link for feito.");
             Assert(!hud.IsActionAvailable(4), "Botão de Link (ação 4) deve ficar DESABILITADO (interactable = false) após o link ser feito.");
 
+            // 2.5 Teste de Isolamento Estrito: O link de unit1 NÃO pode ser duplicado para unit2
+            var unit2Go = new GameObject("TestHUDUnit2");
+            var unit2 = unit2Go.AddComponent<Unit>();
+            var stats2 = unit2Go.AddComponent<Stats>();
+            stats2.InitializeStatsIfEmpty();
+            unit2.stats = stats2;
+            unit2.unitName = "TestCreature2";
+            unit2.category = FunctionalCategory.Social;
+            unit2.team = Team.Player;
+
+            hud.UpdateTurnBanner(unit2);
+            hud.UpdateLinkBuffsPanel(unit2);
+            hud.UpdateActionMenuSelection(0, unit2);
+            Assert(!unit2.IsLinked, "Segunda criatura NÃO possui Link.");
+            Assert(hud.linkBuffsPanel != null && !hud.linkBuffsPanel.activeSelf, "Painel de Link da segunda criatura DEVE ficar OCULTO (o link da primeira não pode vazar).");
+            Assert(hud.IsActionAvailable(4), "Botão de Link da segunda criatura DEVE estar ATIVO e liberado para fazer seu próprio link único.");
+
+            // Validação de Reserva (Bag): O parceiro de unit1 (Architectmon) NÃO pode estar na Bag de unit2!
+            var bagForUnit2 = AppLinkService.GetBagAppmons(unit2);
+            Assert(!bagForUnit2.Exists(a => a.name == "Architectmon" || a.id == "Architectmon"), "Architectmon NÃO deve constar na reserva (Bag) de unit2 pois já está em uso por unit1.");
+
+            // Validação de Bloqueio 1-para-1: unit2 não pode linkar ao mesmo parceiro
+            bool canLinkSame = AppLinkService.CanLink(unit2, architect, out string blockReason);
+            Assert(!canLinkSame, "unit2 NÃO pode conectar ao mesmo parceiro de unit1.");
+
+            // Validação de Link Diferente: unit2 conecta ao seu próprio parceiro exclusivo (ex: Glitch-Hound)
+            var glitchHound = AppmonDatabase.Get("Glitch-Hound");
+            bool linked2 = AppLinkService.ApplyLink(unit2, glitchHound, out string err2);
+            Assert(linked2, "unit2 conecta com sucesso ao Glitch-Hound como seu parceiro próprio.");
+            Assert(unit.linkedBagAppmon.name == "Architectmon", "unit1 mantém Architectmon como parceiro exclusivo.");
+            Assert(unit2.linkedBagAppmon.name == "Glitch-Hound", "unit2 possui Glitch-Hound como parceiro exclusivo.");
+            Assert(unit.linkedBagAppmon != unit2.linkedBagAppmon, "Os parceiros de unit1 e unit2 são obrigatoriamente DIFERENTES!");
+
+            AppLinkService.RemoveLink(unit2);
+            GameObject.DestroyImmediate(unit2Go);
+
             // 3. Desvincular e verificar que o painel volta a ficar oculto e o botão volta a ficar ativo
             AppLinkService.RemoveLink(unit);
             hud.UpdateTurnBanner(unit);
@@ -502,6 +544,174 @@ namespace TacticalBattle.Tests
             }
             GameObject.DestroyImmediate(hudGo);
             GameObject.DestroyImmediate(unitGo);
+        }
+
+        // =========================================================================
+        // 8. TESTES DE FUSÃO EM BATALHA (APP GAPPAI)
+        // =========================================================================
+
+        public static void Test_AppGappai_CompatibilityTable()
+        {
+            var viper = AppmonDatabase.Get("Data-Viper");
+            var shitaku = AppmonDatabase.Get("Shitakumon");
+            var glitch = AppmonDatabase.Get("Glitch-Hound");
+            var sound = AppmonDatabase.Get("Sound-Beat");
+
+            // 1. Validação de pares compatíveis
+            bool ok1 = AppGappaiService.CheckCompatibility(viper, shitaku, out AppmonData res1, out string reason1);
+            Assert(ok1 && res1 != null && res1.name == "Hydro-Vipermon" && res1.rank == EvolutionRank.Super,
+                "Data-Viper + Shitakumon é COMPATÍVEL para Fusão em Hydro-Vipermon (Super).");
+
+            bool ok2 = AppGappaiService.CheckCompatibility(glitch, sound, out AppmonData res2, out string reason2);
+            Assert(ok2 && res2 != null && res2.name == "Sonic-Debugger" && res2.rank == EvolutionRank.Super,
+                "Glitch-Hound + Sound-Beat é COMPATÍVEL para Fusão em Sonic-Debugger (Super).");
+
+            // Ordem inversa dos pais também deve ser compatível
+            bool okReverse = AppGappaiService.CheckCompatibility(shitaku, viper, out AppmonData resRev, out _);
+            Assert(okReverse && resRev != null && resRev.name == "Hydro-Vipermon",
+                "Ordem inversa (Shitakumon + Data-Viper) resulta identicamente em Hydro-Vipermon.");
+
+            // Validação de par Magnet-Core + Sound-Beat (Incompatível pois não existe no Compêndio de Personagens)
+            var magnet = AppmonDatabase.Get("Magnet-Core");
+            bool okMagnetSound = AppGappaiService.CheckCompatibility(magnet, sound, out AppmonData resMag, out _);
+            Assert(!okMagnetSound && resMag == null,
+                "Magnet-Core + Sound-Beat é INCOMPATÍVEL para Fusão (segue estritamente o compêndio).");
+
+            // Validação de fusão canônica de Magnet-Core: Magnet-Core + Bio-Patch = Bio-Magnetmon
+            var bioPatch = AppmonDatabase.Get("Bio-Patch");
+            bool okBioMag = AppGappaiService.CheckCompatibility(magnet, bioPatch, out AppmonData resBioMag, out _);
+            Assert(okBioMag && resBioMag != null && resBioMag.name == "Bio-Magnetmon",
+                "Magnet-Core + Bio-Patch é COMPATÍVEL para Fusão em Bio-Magnetmon (Super).");
+
+            // Validação de fusão Ultimate canônica: Hydro-Vipermon + Architectmon = Poseidon-Vipermon
+            var hydro = AppmonDatabase.Get("Hydro-Vipermon");
+            var architect = AppmonDatabase.Get("Architectmon");
+            bool okUltimate = AppGappaiService.CheckCompatibility(hydro, architect, out AppmonData resUlt, out _);
+            Assert(okUltimate && resUlt != null && resUlt.name == "Poseidon-Vipermon" && resUlt.rank == EvolutionRank.Ultimate,
+                "Hydro-Vipermon + Architectmon é COMPATÍVEL para Fusão em Poseidon-Vipermon (Ultimate).");
+
+            // 2. Validação de pares incompatíveis (nada pode acontecer)
+            bool okIncompat = AppGappaiService.CheckCompatibility(viper, glitch, out AppmonData resInc, out string reasonInc);
+            Assert(!okIncompat && resInc == null,
+                "Data-Viper + Glitch-Hound é INCOMPATÍVEL para fusão direta (nenhuma ação permitida).");
+
+            // 3. Validação de mesmice (mesmo monstro não pode fundir consigo mesmo)
+            bool okSame = AppGappaiService.CheckCompatibility(viper, viper, out _, out _);
+            Assert(!okSame, "Mesmo Appmon não pode fundir consigo mesmo.");
+        }
+
+        public static void Test_AppGappai_TemporaryFusionExecution()
+        {
+            // Cria GameObjects de teste simulando a batalha
+            GameObject bGo = new GameObject("BattleController_Test", typeof(BattleController));
+            BattleController bCtrl = bGo.GetComponent<BattleController>();
+            BattleController.Instance = bCtrl;
+
+            GameObject u1Go = new GameObject("UnitA", typeof(Unit), typeof(Stats), typeof(AppmonCharacter));
+            Unit u1 = u1Go.GetComponent<Unit>();
+            u1.ApplyAppmon("Data-Viper");
+            TileLogic tileA = new TileLogic(new Vector3Int(2, 2, 0), Vector3.zero, null, TerrainType.Standard);
+            u1.PlaceAtTile(tileA);
+
+            GameObject u2Go = new GameObject("UnitB", typeof(Unit), typeof(Stats), typeof(AppmonCharacter));
+            Unit u2 = u2Go.GetComponent<Unit>();
+            u2.ApplyAppmon("Shitakumon");
+            TileLogic tileB = new TileLogic(new Vector3Int(3, 2, 0), new Vector3(1, 0, 0), null, TerrainType.Standard);
+            u2.PlaceAtTile(tileB);
+
+            bCtrl.RegisterUnit(u1);
+            bCtrl.RegisterUnit(u2);
+            bCtrl.currentUnit = u1;
+
+            var hydroData = AppmonDatabase.Get("Hydro-Vipermon");
+            Assert(hydroData != null, "Hydro-Vipermon deve existir no banco.");
+
+            // Executa Fusão Temporária
+            Unit fusedUnit = AppGappaiService.ExecuteFusion(u1, u2, hydroData);
+
+            // Asserções
+            Assert(fusedUnit != null, "Unidade fundida foi criada com sucesso.");
+            Assert(fusedUnit.IsTemporaryFusion, "Flag IsTemporaryFusion DEVE ser verdadeira na criatura fundida.");
+            Assert(fusedUnit.unitName == "Hydro-Vipermon", "Nome da unidade fundida corresponde ao Appmon resultante.");
+            Assert(fusedUnit.rank == EvolutionRank.Super, "Rank da unidade fundida é Super.");
+            Assert(!u1Go.activeSelf, "Monstro original A (Data-Viper) foi removido do campo.");
+            Assert(!u2Go.activeSelf, "Monstro original B (Shitakumon) foi removido do campo.");
+            Assert(tileA.content == fusedUnit.gameObject, "A unidade fundida ocupa o tile original da unidade A.");
+            Assert(tileB.content == null, "O tile da unidade B foi devidamente desocupado.");
+
+            // Limpeza
+            AppGappaiService.RevertAllFusions();
+            GameObject.DestroyImmediate(u1Go);
+            GameObject.DestroyImmediate(u2Go);
+            GameObject.DestroyImmediate(bGo);
+        }
+
+        public static void Test_AppGappai_BattleEndRestoration()
+        {
+            GameObject bGo = new GameObject("BattleController_Test2", typeof(BattleController));
+            BattleController bCtrl = bGo.GetComponent<BattleController>();
+            BattleController.Instance = bCtrl;
+
+            GameObject u1Go = new GameObject("UnitA", typeof(Unit), typeof(Stats), typeof(AppmonCharacter));
+            Unit u1 = u1Go.GetComponent<Unit>();
+            u1.ApplyAppmon("Glitch-Hound");
+            u1.stats.SetStat(StatEnum.HP, 80); // HP modificado antes da fusão
+            TileLogic tileA = new TileLogic(new Vector3Int(1, 1, 0), Vector3.zero, null, TerrainType.Standard);
+            u1.PlaceAtTile(tileA);
+
+            GameObject u2Go = new GameObject("UnitB", typeof(Unit), typeof(Stats), typeof(AppmonCharacter));
+            Unit u2 = u2Go.GetComponent<Unit>();
+            u2.ApplyAppmon("Sound-Beat");
+            u2.stats.SetStat(StatEnum.HP, 65);
+            TileLogic tileB = new TileLogic(new Vector3Int(1, 2, 0), new Vector3(0, 1, 0), null, TerrainType.Standard);
+            u2.PlaceAtTile(tileB);
+
+            bCtrl.RegisterUnit(u1);
+            bCtrl.RegisterUnit(u2);
+            bCtrl.currentUnit = u1;
+
+            var sonicData = AppmonDatabase.Get("Sonic-Debugger");
+            Unit fusedUnit = AppGappaiService.ExecuteFusion(u1, u2, sonicData);
+
+            Assert(AppGappaiService.ActiveFusions.Count == 1, "Existe 1 fusão ativa em combate.");
+            Assert(fusedUnit != null && fusedUnit.IsTemporaryFusion, "Unidade fundida ativa.");
+
+            // Simula fim de combate (RevertAllFusions)
+            AppGappaiService.HandleBattleEnd(Team.Player);
+
+            // Validações pós-batalha
+            Assert(AppGappaiService.ActiveFusions.Count == 0, "Lista de fusões ativas foi esvaziada.");
+            Assert(u1Go.activeSelf, "Monstro original A (Glitch-Hound) foi reativado no campo.");
+            Assert(u2Go.activeSelf, "Monstro original B (Sound-Beat) foi reativado no campo.");
+            Assert(u1.stats.GetStat(StatEnum.HP) == 80, "HP do monstro original A foi restaurado com exatidão.");
+            Assert(u2.stats.GetStat(StatEnum.HP) == 65, "HP do monstro original B foi restaurado com exatidão.");
+            Assert(u1.currentTile == tileA, "Monstro original A restaurado no seu tile correspondente.");
+            Assert(u2.currentTile == tileB, "Monstro original B restaurado no seu tile correspondente.");
+
+            // Limpeza
+            GameObject.DestroyImmediate(u1Go);
+            GameObject.DestroyImmediate(u2Go);
+            GameObject.DestroyImmediate(bGo);
+        }
+
+        public static void Test_AppGappai_FieldLinkSimpleBonus()
+        {
+            GameObject u1Go = new GameObject("UnitA", typeof(Unit), typeof(Stats), typeof(AppmonCharacter));
+            Unit u1 = u1Go.GetComponent<Unit>();
+            u1.ApplyAppmon("Data-Viper");
+            int initialAtk = u1.stats.GetStat(StatEnum.ATK);
+
+            GameObject u2Go = new GameObject("UnitB", typeof(Unit), typeof(Stats), typeof(AppmonCharacter));
+            Unit u2 = u2Go.GetComponent<Unit>();
+            u2.ApplyAppmon("Glitch-Hound"); // Incompatível para fusão direta
+
+            bool okLink = AppGappaiService.ExecuteFieldLink(u1, u2, out string summary);
+            Assert(okLink, "Executou com sucesso o App-Link simples de campo.");
+            Assert(u1.stats.GetStat(StatEnum.ATK) > initialAtk, "ATK de Unit A aumentou com o bônus temporário de App-Link.");
+            Assert(u1.hasActed, "Unit A consumiu a ação do turno após receber o App-Link.");
+
+            GameObject.DestroyImmediate(u1Go);
+            GameObject.DestroyImmediate(u2Go);
         }
     }
 }

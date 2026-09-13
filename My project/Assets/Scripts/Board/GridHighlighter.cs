@@ -6,7 +6,8 @@ public enum GridHighlightMode
     Movement,
     Attack,
     Skill,
-    Deploy
+    Deploy,
+    Gappai
 }
 
 public class GridHighlighter : MonoBehaviour
@@ -84,6 +85,14 @@ public class GridHighlighter : MonoBehaviour
         ShowRange(deployCoords, GridHighlightMode.Deploy, currentHovered);
     }
 
+    /// <summary>
+    /// Exibe a grade de alcance de Fusão (App Gappai) em Ciano / Verde-Água Elétrico ao redor do Appmon ativo.
+    /// </summary>
+    public void ShowGappaiRange(HashSet<Vector3Int> gappaiCoords, Vector3Int? currentHovered = null)
+    {
+        ShowRange(gappaiCoords, GridHighlightMode.Gappai, currentHovered);
+    }
+
     private void ShowRange(HashSet<Vector3Int> coords, GridHighlightMode mode, Vector3Int? currentHovered)
     {
         ClearHighlights();
@@ -95,6 +104,7 @@ public class GridHighlighter : MonoBehaviour
             GridHighlightMode.Attack => ProceduralGridTileFactory.AttackTile,
             GridHighlightMode.Skill => ProceduralGridTileFactory.SkillTile,
             GridHighlightMode.Deploy => ProceduralGridTileFactory.DeployTile,
+            GridHighlightMode.Gappai => ProceduralGridTileFactory.GappaiTile,
             _ => ProceduralGridTileFactory.MovementTile
         };
 

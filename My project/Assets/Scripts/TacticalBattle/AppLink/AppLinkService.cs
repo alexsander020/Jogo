@@ -104,7 +104,14 @@ namespace TacticalBattle.AppLink
             List<Unit> deadKeys = new List<Unit>();
             foreach (var kvp in activeLinks)
             {
-                if (kvp.Key == null || !kvp.Key.gameObject || !kvp.Key.gameObject.activeInHierarchy || !kvp.Key.IsAlive)
+                try
+                {
+                    if (kvp.Key == null || kvp.Key.gameObject == null || !kvp.Key.gameObject.activeInHierarchy || !kvp.Key.IsAlive)
+                    {
+                        deadKeys.Add(kvp.Key);
+                    }
+                }
+                catch
                 {
                     deadKeys.Add(kvp.Key);
                 }
@@ -121,37 +128,47 @@ namespace TacticalBattle.AppLink
         public static bool IsAppmonLinked(AppmonData appmon)
         {
             if (appmon == null) return false;
-            CleanStaleLinks();
-            foreach (var kvp in activeLinks)
-            {
-                if (kvp.Value != null && kvp.Value.bagAppmon != null)
-                {
-                    if (kvp.Value.bagAppmon.id.Equals(appmon.id, StringComparison.OrdinalIgnoreCase))
-                    {
-                        return true;
-                    }
-                }
-            }
-            return false;
+            return GetLinkedFieldUnit(appmon) != null;
         }
 
         /// <summary>
         /// Retorna a unidade de campo que está linkada ao Appmon da Bag, ou null se livre.
+        /// Inspeciona tanto o registro activeLinks quanto as unidades em combate no BattleController.
         /// </summary>
         public static Unit GetLinkedFieldUnit(AppmonData appmon)
         {
             if (appmon == null) return null;
             CleanStaleLinks();
+
+            // 1. Inspeciona o dicionário de links ativos
             foreach (var kvp in activeLinks)
             {
-                if (kvp.Value != null && kvp.Value.bagAppmon != null)
+                if (kvp.Key != null && kvp.Value != null && kvp.Value.bagAppmon != null)
                 {
-                    if (kvp.Value.bagAppmon.id.Equals(appmon.id, StringComparison.OrdinalIgnoreCase))
+                    if ((!string.IsNullOrEmpty(appmon.id) && kvp.Value.bagAppmon.id.Equals(appmon.id, StringComparison.OrdinalIgnoreCase)) ||
+                        (!string.IsNullOrEmpty(appmon.name) && kvp.Value.bagAppmon.name.Equals(appmon.name, StringComparison.OrdinalIgnoreCase)))
                     {
                         return kvp.Key;
                     }
                 }
             }
+
+            // 2. Fallback robusto: inspeciona diretamente todas as unidades de combate ativas
+            if (BattleController.Instance != null && BattleController.Instance.allUnits != null)
+            {
+                foreach (var u in BattleController.Instance.allUnits)
+                {
+                    if (u != null && u.gameObject != null && u.gameObject.activeInHierarchy && u.IsAlive && u.IsLinked && u.linkedBagAppmon != null)
+                    {
+                        if ((!string.IsNullOrEmpty(appmon.id) && u.linkedBagAppmon.id.Equals(appmon.id, StringComparison.OrdinalIgnoreCase)) ||
+                            (!string.IsNullOrEmpty(appmon.name) && u.linkedBagAppmon.name.Equals(appmon.name, StringComparison.OrdinalIgnoreCase)))
+                        {
+                            return u;
+                        }
+                    }
+                }
+            }
+
             return null;
         }
 
@@ -164,7 +181,7 @@ namespace TacticalBattle.AppLink
 
             foreach (var u in BattleController.Instance.allUnits)
             {
-                if (u != null && u.gameObject.activeInHierarchy)
+                if (u != null && u.gameObject != null && u.gameObject.activeInHierarchy)
                 {
                     var comp = u.GetComponent<AppmonCharacter>();
                     if (comp != null && comp.appmonData != null && comp.appmonData.id.Equals(appmon.id, StringComparison.OrdinalIgnoreCase))
@@ -182,19 +199,31 @@ namespace TacticalBattle.AppLink
 
         /// <summary>
         /// Retorna a lista de Appmons da reserva (Bag) do jogador que não estão em campo.
+        /// Se for informado forUnit, exclui completamente Appmons vinculados a OUTROS combatentes,
+        /// preservando o parceiro atual da própria unidade (caso ela já possua um).
         /// </summary>
-        public static List<AppmonData> GetBagAppmons()
+        public static List<AppmonData> GetBagAppmons(Unit forUnit = null)
         {
+            CleanStaleLinks();
             List<AppmonData> all = new List<AppmonData>(AppmonDatabase.GetAll());
             List<AppmonData> bag = new List<AppmonData>();
 
             foreach (var app in all)
             {
-                // Appmon em campo não conta como Bag
-                if (!IsAppmonDeployed(app))
+                if (app == null) continue;
+
+                // 1. Appmon em combate no campo não conta como Bag
+                if (IsAppmonDeployed(app)) continue;
+
+                // 2. Exclusividade Absoluta 1-para-1: Se já estiver vinculado a outro personagem aliado,
+                // este Appmon NÃO aparece na Bag desta unidade
+                Unit linkedHolder = GetLinkedFieldUnit(app);
+                if (linkedHolder != null && (forUnit == null || linkedHolder != forUnit))
                 {
-                    bag.Add(app);
+                    continue;
                 }
+
+                bag.Add(app);
             }
             return bag;
         }

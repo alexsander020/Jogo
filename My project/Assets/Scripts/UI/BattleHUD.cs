@@ -167,6 +167,8 @@ public class BattleHUD : MonoBehaviour
 
     private Font hudFont;
     private Unit cachedCurrentUnit;
+    private Unit lastRenderedLinkUnit;
+    private AppmonData lastRenderedBagAppmon;
 
     void Awake()
     {
@@ -180,12 +182,15 @@ public class BattleHUD : MonoBehaviour
                 GameObject canvasObj = new GameObject("BattleCanvas");
                 canvas = canvasObj.AddComponent<Canvas>();
                 canvas.renderMode = RenderMode.ScreenSpaceOverlay;
-                var scaler = canvasObj.AddComponent<CanvasScaler>();
-                scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
-                scaler.referenceResolution = new Vector2(1920, 1080);
                 canvasObj.AddComponent<GraphicRaycaster>();
             }
         }
+
+        CanvasScaler scaler = canvas.GetComponent<CanvasScaler>();
+        if (scaler == null) scaler = canvas.gameObject.AddComponent<CanvasScaler>();
+        scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
+        scaler.referenceResolution = new Vector2(800, 600);
+        scaler.matchWidthOrHeight = 0f;
 
         HideLegacyScenePanels();
 
@@ -238,11 +243,16 @@ public class BattleHUD : MonoBehaviour
     {
         HideLegacyScenePanels();
 
-        if (cachedCurrentUnit == null && BattleController.Instance != null)
+        Unit activeTurnUnit = BattleController.Instance != null ? BattleController.Instance.currentUnit : null;
+        if (activeTurnUnit != null && activeTurnUnit != cachedCurrentUnit)
         {
-            if (BattleController.Instance.currentUnit != null)
+            UpdateTurnBanner(activeTurnUnit);
+        }
+        else if (cachedCurrentUnit == null && BattleController.Instance != null)
+        {
+            if (activeTurnUnit != null)
             {
-                UpdateTurnBanner(BattleController.Instance.currentUnit);
+                UpdateTurnBanner(activeTurnUnit);
             }
             else
             {
@@ -269,8 +279,11 @@ public class BattleHUD : MonoBehaviour
                 turnCounterText.text = roundStr;
             }
         }
-        // Garante visibilidade estrita: o painel de buffs de Link SÓ aparece quando houver um Link feito
-        Unit activeCombatant = cachedCurrentUnit != null ? cachedCurrentUnit : (BattleController.Instance != null ? BattleController.Instance.currentUnit : null);
+        // Garante visibilidade estrita: o painel de buffs de Link SÓ aparece para a criatura ativa quando ela mesma possuir um Link
+        Unit activeCombatant = (BattleController.Instance != null && BattleController.Instance.currentUnit != null)
+            ? BattleController.Instance.currentUnit
+            : cachedCurrentUnit;
+
         bool hasActiveLink = activeCombatant != null && activeCombatant.gameObject.activeInHierarchy && activeCombatant.IsAlive &&
                              activeCombatant.IsLinked && activeCombatant.linkedBagAppmon != null &&
                              !string.IsNullOrEmpty(activeCombatant.linkedBagAppmon.id) &&
@@ -280,7 +293,8 @@ public class BattleHUD : MonoBehaviour
         {
             if (hasActiveLink)
             {
-                if (!linkBuffsPanel.activeSelf)
+                // Atualiza se o painel estiver fechado OU se mudou de unidade / parceiro de link
+                if (!linkBuffsPanel.activeSelf || lastRenderedLinkUnit != activeCombatant || lastRenderedBagAppmon != activeCombatant.linkedBagAppmon)
                 {
                     UpdateLinkBuffsPanel(activeCombatant);
                 }
@@ -290,6 +304,8 @@ public class BattleHUD : MonoBehaviour
                 if (linkBuffsPanel.activeSelf)
                 {
                     linkBuffsPanel.SetActive(false);
+                    lastRenderedLinkUnit = null;
+                    lastRenderedBagAppmon = null;
                     if (actionMenuContainer != null)
                     {
                         RectTransform menuRt = actionMenuContainer.GetComponent<RectTransform>();
@@ -315,6 +331,8 @@ public class BattleHUD : MonoBehaviour
     {
         UpdateTurnTimeline(null);
         if (linkBuffsPanel != null) linkBuffsPanel.SetActive(false);
+        lastRenderedLinkUnit = null;
+        lastRenderedBagAppmon = null;
         if (actionMenuContainer != null)
         {
             RectTransform menuRt = actionMenuContainer.GetComponent<RectTransform>();
@@ -1161,25 +1179,25 @@ public class BattleHUD : MonoBehaviour
         // Container principal da tela de seleção de habilidades (Centralizado na tela)
         skillSelectionRoot = CreateUIPanel(canvas.transform, "SkillSelectionRoot",
             new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f),
-            new Vector2(0, 10), new Vector2(920, 275), new Color(0, 0, 0, 0));
+            new Vector2(0, 10), new Vector2(730, 285), new Color(0, 0, 0, 0));
 
-        // 1. ABA ATACAR (Destaque Amarelo na Esquerda)
+        // 1. ABA ATACAR (Destaque Amarelo / Dourado no Topo da Lista)
         skillActionTab = CreateUIPanel(skillSelectionRoot.transform, "ActionTab_Atacar",
             new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
-            new Vector2(0, 0), new Vector2(145, 42), new Color(0.98f, 0.84f, 0.0f, 0.98f));
+            new Vector2(0, 0), new Vector2(115, 28), new Color(0.98f, 0.84f, 0.0f, 0.98f));
 
         CreateUIPanel(skillActionTab.transform, "TabBorder",
             new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0.5f, 0.5f),
             Vector2.zero, Vector2.zero, new Color(1f, 0.95f, 0.45f, 0.95f));
 
-        skillActionTabText = CreateUIText(skillActionTab.transform, "TabText", "Atacar", 16, FontStyle.Bold,
+        skillActionTabText = CreateUIText(skillActionTab.transform, "TabText", "Atacar", 13, FontStyle.Bold,
             new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0.5f, 0.5f),
             Vector2.zero, Vector2.zero, new Color(0.06f, 0.06f, 0.06f, 1f), TextAnchor.MiddleCenter);
 
-        // 2. JANELA "LISTA HABILIDADES" (Coluna Esquerda, ao lado da aba Atacar)
+        // 2. JANELA "LISTA HABILIDADES" (Coluna Esquerda, diretamente abaixo da aba Atacar)
         skillListPanel = CreateUIPanel(skillSelectionRoot.transform, "SkillListPanel",
             new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
-            new Vector2(155, 0), new Vector2(305, 160), new Color(0.08f, 0.11f, 0.15f, 0.90f));
+            new Vector2(0, -28), new Vector2(280, 155), new Color(0.08f, 0.11f, 0.15f, 0.92f));
 
         CreateUIPanel(skillListPanel.transform, "ListBorder",
             new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0.5f, 0.5f),
@@ -1193,13 +1211,13 @@ public class BattleHUD : MonoBehaviour
             new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0f, 0.5f),
             new Vector2(10, 0), Vector2.zero, new Color(0.85f, 0.90f, 0.95f), TextAnchor.MiddleLeft);
 
-        CreateUIDivider(skillListPanel.transform, new Vector2(0, -24), new Vector2(305, 1), new Color(0.3f, 0.38f, 0.48f, 0.40f));
+        CreateUIDivider(skillListPanel.transform, new Vector2(0, -24), new Vector2(280, 1), new Color(0.3f, 0.38f, 0.48f, 0.40f));
 
         // Slots de Habilidades na Lista
         skillListItems.Clear();
         for (int i = 0; i < 4; i++)
         {
-            float yPos = -29 - (i * 31f);
+            float yPos = -27 - (i * 31f);
             GameObject itemObj = CreateUIPanel(skillListPanel.transform, $"SkillItem_{i}",
                 new Vector2(0f, 1f), new Vector2(1f, 1f), new Vector2(0f, 1f),
                 new Vector2(6, yPos), new Vector2(-12, 28), new Color(0.04f, 0.07f, 0.11f, 0.70f));
@@ -1211,17 +1229,17 @@ public class BattleHUD : MonoBehaviour
             // Ícone do Golpe (Battle_Elements)
             GameObject iconObj = CreateUIPanel(itemObj.transform, "Icon",
                 new Vector2(0f, 0.5f), new Vector2(0f, 0.5f), new Vector2(0f, 0.5f),
-                new Vector2(6, 0), new Vector2(22, 22), Color.white);
+                new Vector2(6, 0), new Vector2(20, 20), Color.white);
             Image iconImg = iconObj.GetComponent<Image>();
             iconImg.preserveAspect = true;
 
-            Text nameTxt = CreateUIText(itemObj.transform, "Name", "// Atacar", 12, FontStyle.Bold,
-                new Vector2(0f, 0f), new Vector2(0.72f, 1f), new Vector2(0f, 0.5f),
-                new Vector2(32, 0), new Vector2(-32, 0), Color.white, TextAnchor.MiddleLeft);
+            Text nameTxt = CreateUIText(itemObj.transform, "Name", "// Atacar", 11, FontStyle.Bold,
+                new Vector2(0f, 0f), new Vector2(0.70f, 1f), new Vector2(0f, 0.5f),
+                new Vector2(30, 0), new Vector2(-30, 0), Color.white, TextAnchor.MiddleLeft);
 
-            Text spTxt = CreateUIText(itemObj.transform, "SP", "SP    0", 11, FontStyle.Bold,
-                new Vector2(0.72f, 0f), new Vector2(1f, 1f), new Vector2(1f, 0.5f),
-                new Vector2(-10, 0), Vector2.zero, new Color(0.95f, 0.75f, 0.2f), TextAnchor.MiddleRight);
+            Text spTxt = CreateUIText(itemObj.transform, "SP", "SP    0", 10, FontStyle.Bold,
+                new Vector2(0.70f, 0f), new Vector2(1f, 1f), new Vector2(1f, 0.5f),
+                new Vector2(-8, 0), Vector2.zero, new Color(0.95f, 0.75f, 0.2f), TextAnchor.MiddleRight);
 
             skillListItems.Add(new SkillListItemUI
             {
@@ -1237,7 +1255,7 @@ public class BattleHUD : MonoBehaviour
         // 3. JANELA "HABIL. PASSIVA" (Coluna Esquerda, abaixo da Lista de Habilidades)
         passivePanel = CreateUIPanel(skillSelectionRoot.transform, "PassivePanel",
             new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
-            new Vector2(155, -170), new Vector2(305, 95), new Color(0.08f, 0.11f, 0.15f, 0.90f));
+            new Vector2(0, -188), new Vector2(280, 95), new Color(0.08f, 0.11f, 0.15f, 0.92f));
 
         CreateUIPanel(passivePanel.transform, "PassiveBorder",
             new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0.5f, 0.5f),
@@ -1245,26 +1263,28 @@ public class BattleHUD : MonoBehaviour
 
         GameObject passiveHeader = CreateUIPanel(passivePanel.transform, "PassiveHeader",
             new Vector2(0f, 1f), new Vector2(1f, 1f), new Vector2(0f, 1f),
-            Vector2.zero, new Vector2(0, 24), new Color(0.05f, 0.07f, 0.10f, 0.95f));
+            Vector2.zero, new Vector2(0, 22), new Color(0.05f, 0.07f, 0.10f, 0.95f));
 
-        passiveTitleText = CreateUIText(passiveHeader.transform, "Title", "Habil. Passiva", 11, FontStyle.Bold,
+        passiveTitleText = CreateUIText(passiveHeader.transform, "Title", "Habil. Passiva", 10, FontStyle.Bold,
             new Vector2(0f, 0f), new Vector2(0.48f, 1f), new Vector2(0f, 0.5f),
-            new Vector2(10, 0), Vector2.zero, new Color(0.85f, 0.90f, 0.95f), TextAnchor.MiddleLeft);
+            new Vector2(8, 0), Vector2.zero, new Color(0.85f, 0.90f, 0.95f), TextAnchor.MiddleLeft);
 
-        passiveNameText = CreateUIText(passiveHeader.transform, "PassiveName", "Pernas Poderosas", 11, FontStyle.Bold,
+        passiveNameText = CreateUIText(passiveHeader.transform, "PassiveName", "Pernas Poderosas", 10, FontStyle.Bold,
             new Vector2(0.48f, 0f), new Vector2(1f, 1f), new Vector2(1f, 0.5f),
-            new Vector2(-10, 0), Vector2.zero, Color.white, TextAnchor.MiddleRight);
+            new Vector2(-8, 0), Vector2.zero, Color.white, TextAnchor.MiddleRight);
 
-        CreateUIDivider(passivePanel.transform, new Vector2(0, -24), new Vector2(305, 1), new Color(0.3f, 0.38f, 0.48f, 0.40f));
+        CreateUIDivider(passivePanel.transform, new Vector2(0, -22), new Vector2(280, 1), new Color(0.3f, 0.38f, 0.48f, 0.40f));
 
-        passiveDescText = CreateUIText(passivePanel.transform, "PassiveDesc", "Aumenta VELOC em um nível.", 11, FontStyle.Normal,
+        passiveDescText = CreateUIText(passivePanel.transform, "PassiveDesc", "Aumenta VELOC em um nível.", 10, FontStyle.Normal,
             new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0f, 0.5f),
-            new Vector2(10, -12), new Vector2(-20, -32), new Color(0.80f, 0.86f, 0.92f), TextAnchor.UpperLeft);
+            new Vector2(8, -10), new Vector2(-16, -30), new Color(0.80f, 0.86f, 0.92f), TextAnchor.UpperLeft);
+        passiveDescText.horizontalOverflow = HorizontalWrapMode.Wrap;
+        passiveDescText.verticalOverflow = VerticalWrapMode.Truncate;
 
         // 4. JANELA "INFORMAÇÕES SOBRE HABILIDADE" (Coluna Direita, Topo)
         skillInfoPanel = CreateUIPanel(skillSelectionRoot.transform, "SkillInfoPanel",
             new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
-            new Vector2(475, 0), new Vector2(440, 125), new Color(0.08f, 0.11f, 0.15f, 0.90f));
+            new Vector2(295, -28), new Vector2(435, 120), new Color(0.08f, 0.11f, 0.15f, 0.92f));
 
         CreateUIPanel(skillInfoPanel.transform, "InfoBorder",
             new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0.5f, 0.5f),
@@ -1278,46 +1298,46 @@ public class BattleHUD : MonoBehaviour
             new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0f, 0.5f),
             new Vector2(10, 0), Vector2.zero, new Color(0.85f, 0.90f, 0.95f), TextAnchor.MiddleLeft);
 
-        CreateUIDivider(skillInfoPanel.transform, new Vector2(0, -24), new Vector2(440, 1), new Color(0.3f, 0.38f, 0.48f, 0.40f));
+        CreateUIDivider(skillInfoPanel.transform, new Vector2(0, -24), new Vector2(435, 1), new Color(0.3f, 0.38f, 0.48f, 0.40f));
 
         // Nome da Habilidade e Traço decorativo
-        CreateUIDivider(skillInfoPanel.transform, new Vector2(14, -40), new Vector2(25, 2), new Color(0.4f, 0.50f, 0.65f));
+        CreateUIDivider(skillInfoPanel.transform, new Vector2(12, -38), new Vector2(22, 2), new Color(0.4f, 0.50f, 0.65f));
 
         skillInfoNameText = CreateUIText(skillInfoPanel.transform, "SkillName", "Atacar", 13, FontStyle.Bold,
             new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
-            new Vector2(50, -31), new Vector2(200, 20), Color.white, TextAnchor.MiddleLeft);
+            new Vector2(44, -30), new Vector2(220, 20), Color.white, TextAnchor.MiddleLeft);
 
         // Tabela de EFEITO & SP & Ícone
         GameObject statsTable = CreateUIPanel(skillInfoPanel.transform, "StatsTable",
             new Vector2(0f, 1f), new Vector2(1f, 1f), new Vector2(0f, 1f),
-            new Vector2(50, -52), new Vector2(-60, 42), new Color(0.04f, 0.07f, 0.11f, 0.75f));
+            new Vector2(44, -50), new Vector2(-54, 38), new Color(0.04f, 0.07f, 0.11f, 0.75f));
 
         CreateUIPanel(statsTable.transform, "TableBorder",
             new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0.5f, 0.5f),
             Vector2.zero, Vector2.zero, new Color(0.25f, 0.32f, 0.40f, 0.35f));
 
         // Linha 1 da Tabela: EFEITO
-        CreateUIText(statsTable.transform, "EfeitoLabel", "EFEITO", 10, FontStyle.Bold,
+        CreateUIText(statsTable.transform, "EfeitoLabel", "EFEITO", 9, FontStyle.Bold,
             new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
-            new Vector2(10, -3), new Vector2(65, 16), new Color(0.75f, 0.82f, 0.90f), TextAnchor.MiddleLeft);
+            new Vector2(8, -2), new Vector2(60, 16), new Color(0.75f, 0.82f, 0.90f), TextAnchor.MiddleLeft);
 
-        skillInfoPowerText = CreateUIText(statsTable.transform, "EfeitoVal", "85", 12, FontStyle.Bold,
+        skillInfoPowerText = CreateUIText(statsTable.transform, "EfeitoVal", "85", 11, FontStyle.Bold,
             new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
-            new Vector2(85, -3), new Vector2(50, 16), Color.white, TextAnchor.MiddleLeft);
+            new Vector2(75, -2), new Vector2(50, 16), Color.white, TextAnchor.MiddleLeft);
 
         // Linha 2 da Tabela: SP
-        CreateUIText(statsTable.transform, "SpLabel", "SP", 10, FontStyle.Bold,
+        CreateUIText(statsTable.transform, "SpLabel", "SP", 9, FontStyle.Bold,
             new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
-            new Vector2(10, -22), new Vector2(65, 16), new Color(0.75f, 0.82f, 0.90f), TextAnchor.MiddleLeft);
+            new Vector2(8, -20), new Vector2(60, 16), new Color(0.75f, 0.82f, 0.90f), TextAnchor.MiddleLeft);
 
-        skillInfoSpText = CreateUIText(statsTable.transform, "SpVal", "0", 12, FontStyle.Bold,
+        skillInfoSpText = CreateUIText(statsTable.transform, "SpVal", "0", 11, FontStyle.Bold,
             new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
-            new Vector2(85, -22), new Vector2(50, 16), Color.white, TextAnchor.MiddleLeft);
+            new Vector2(75, -20), new Vector2(50, 16), Color.white, TextAnchor.MiddleLeft);
 
         // Ícone Grande do Golpe (Battle_Elements) no lado direito da tabela
         GameObject bigIconBox = CreateUIPanel(statsTable.transform, "BigIconBox",
             new Vector2(1f, 0.5f), new Vector2(1f, 0.5f), new Vector2(1f, 0.5f),
-            new Vector2(-8, 0), new Vector2(34, 34), new Color(0.10f, 0.14f, 0.20f, 0.95f));
+            new Vector2(-6, 0), new Vector2(30, 30), new Color(0.10f, 0.14f, 0.20f, 0.95f));
 
         CreateUIPanel(bigIconBox.transform, "Border",
             new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0.5f, 0.5f),
@@ -1329,22 +1349,24 @@ public class BattleHUD : MonoBehaviour
         skillInfoIconImage = bigIconImgObj.GetComponent<Image>();
         skillInfoIconImage.preserveAspect = true;
 
-        skillInfoCategoryIcon = CreateUIText(statsTable.transform, "CategoryIcon", "///", 18, FontStyle.Bold,
+        skillInfoCategoryIcon = CreateUIText(statsTable.transform, "CategoryIcon", "///", 16, FontStyle.Bold,
             new Vector2(1f, 0.5f), new Vector2(1f, 0.5f), new Vector2(1f, 0.5f),
-            new Vector2(-15, 0), new Vector2(40, 30), new Color(0.85f, 0.95f, 0.2f), TextAnchor.MiddleCenter);
+            new Vector2(-12, 0), new Vector2(36, 28), new Color(0.85f, 0.95f, 0.2f), TextAnchor.MiddleCenter);
         skillInfoCategoryIcon.gameObject.SetActive(false);
 
-        // Descrição da Habilidade
-        skillInfoDescText = CreateUIText(skillInfoPanel.transform, "SkillDesc", "Causa dano de Vento aos alvos.", 11, FontStyle.Normal,
+        // Descrição da Habilidade (com quebra de linha Wrap)
+        skillInfoDescText = CreateUIText(skillInfoPanel.transform, "SkillDesc", "Causa dano aos alvos.", 10, FontStyle.Normal,
             new Vector2(0f, 0f), new Vector2(1f, 0f), new Vector2(0f, 0f),
-            new Vector2(12, 6), new Vector2(-24, 22), new Color(0.80f, 0.86f, 0.92f), TextAnchor.MiddleLeft);
+            new Vector2(12, 6), new Vector2(-24, 24), new Color(0.80f, 0.86f, 0.92f), TextAnchor.MiddleLeft);
+        skillInfoDescText.horizontalOverflow = HorizontalWrapMode.Wrap;
+        skillInfoDescText.verticalOverflow = VerticalWrapMode.Truncate;
 
         // 5. GRIDS TÁTICOS (ALCANCE e ÁREA - Coluna Direita, Abaixo das Informações)
         reachGridUI = BuildMiniGrid(skillSelectionRoot.transform, "ReachGridBox",
-            new Vector2(475, -135), new Vector2(215, 130), "ALCANCE", new Color(0.95f, 0.42f, 0.05f, 0.95f));
+            new Vector2(295, -154), new Vector2(212, 129), "ALCANCE", new Color(0.95f, 0.42f, 0.05f, 0.95f));
 
         aoeGridUI = BuildMiniGrid(skillSelectionRoot.transform, "AoeGridBox",
-            new Vector2(700, -135), new Vector2(215, 130), "ÁREA", new Color(0.80f, 0.05f, 0.85f, 0.95f));
+            new Vector2(518, -154), new Vector2(212, 129), "ÁREA", new Color(0.80f, 0.05f, 0.85f, 0.95f));
 
         skillSelectionRoot.SetActive(false);
     }
@@ -1434,25 +1456,25 @@ public class BattleHUD : MonoBehaviour
         // Container principal da tela de seleção de itens (Centralizado na tela)
         itemSelectionRoot = CreateUIPanel(canvas.transform, "ItemSelectionRoot",
             new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f),
-            new Vector2(0, 10), new Vector2(920, 275), new Color(0, 0, 0, 0));
+            new Vector2(0, 10), new Vector2(730, 285), new Color(0, 0, 0, 0));
 
-        // 1. ABA ITEM (Destaque Amarelo na Esquerda)
+        // 1. ABA ITEM (Destaque Amarelo / Dourado no Topo da Lista)
         itemActionTab = CreateUIPanel(itemSelectionRoot.transform, "ActionTab_Item",
             new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
-            new Vector2(0, 0), new Vector2(145, 42), new Color(0.98f, 0.84f, 0.0f, 0.98f));
+            new Vector2(0, 0), new Vector2(115, 28), new Color(0.98f, 0.84f, 0.0f, 0.98f));
 
         CreateUIPanel(itemActionTab.transform, "TabBorder",
             new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0.5f, 0.5f),
             Vector2.zero, Vector2.zero, new Color(1f, 0.95f, 0.45f, 0.95f));
 
-        itemActionTabText = CreateUIText(itemActionTab.transform, "TabText", "Item", 16, FontStyle.Bold,
+        itemActionTabText = CreateUIText(itemActionTab.transform, "TabText", "Item", 13, FontStyle.Bold,
             new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0.5f, 0.5f),
             Vector2.zero, Vector2.zero, new Color(0.06f, 0.06f, 0.06f, 1f), TextAnchor.MiddleCenter);
 
-        // 2. JANELA "LISTA DE ITENS" (Coluna Esquerda, ao lado da aba Item)
+        // 2. JANELA "LISTA DE ITENS" (Coluna Esquerda, diretamente abaixo da aba Item)
         itemListPanel = CreateUIPanel(itemSelectionRoot.transform, "ItemListPanel",
             new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
-            new Vector2(155, 0), new Vector2(305, 175), new Color(0.08f, 0.11f, 0.15f, 0.90f));
+            new Vector2(0, -28), new Vector2(280, 255), new Color(0.08f, 0.11f, 0.15f, 0.92f));
 
         CreateUIPanel(itemListPanel.transform, "ListBorder",
             new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0.5f, 0.5f),
@@ -1466,32 +1488,32 @@ public class BattleHUD : MonoBehaviour
             new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0f, 0.5f),
             new Vector2(10, 0), Vector2.zero, new Color(0.85f, 0.90f, 0.95f), TextAnchor.MiddleLeft);
 
-        CreateUIDivider(itemListPanel.transform, new Vector2(0, -24), new Vector2(305, 1), new Color(0.3f, 0.38f, 0.48f, 0.40f));
+        CreateUIDivider(itemListPanel.transform, new Vector2(0, -24), new Vector2(280, 1), new Color(0.3f, 0.38f, 0.48f, 0.40f));
 
-        // Slots de Itens na Lista
+        // Slots de Itens na Lista (5 slots confortáveis)
         itemListItems.Clear();
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 5; i++)
         {
-            float yPos = -29 - (i * 32f);
+            float yPos = -27 - (i * 35f);
             GameObject itemObj = CreateUIPanel(itemListPanel.transform, $"ItemSlot_{i}",
                 new Vector2(0f, 1f), new Vector2(1f, 1f), new Vector2(0f, 1f),
-                new Vector2(6, yPos), new Vector2(-12, 29), new Color(0.04f, 0.07f, 0.11f, 0.70f));
+                new Vector2(6, yPos), new Vector2(-12, 32), new Color(0.04f, 0.07f, 0.11f, 0.70f));
 
             GameObject borderObj = CreateUIPanel(itemObj.transform, "Border",
                 new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0.5f, 0.5f),
                 Vector2.zero, Vector2.zero, new Color(0.25f, 0.32f, 0.40f, 0.30f));
 
-            Text nameTxt = CreateUIText(itemObj.transform, "Name", "Curativo", 12, FontStyle.Bold,
-                new Vector2(0f, 0f), new Vector2(0.78f, 1f), new Vector2(0f, 0.5f),
-                new Vector2(10, 0), Vector2.zero, Color.white, TextAnchor.MiddleLeft);
+            Text nameTxt = CreateUIText(itemObj.transform, "Name", "Curativo", 11, FontStyle.Bold,
+                new Vector2(0f, 0f), new Vector2(0.76f, 1f), new Vector2(0f, 0.5f),
+                new Vector2(8, 0), Vector2.zero, Color.white, TextAnchor.MiddleLeft);
 
-            Text qtyTxt = CreateUIText(itemObj.transform, "Qty", "7", 12, FontStyle.Bold,
-                new Vector2(0.78f, 0f), new Vector2(1f, 1f), new Vector2(1f, 0.5f),
-                new Vector2(-10, 0), Vector2.zero, Color.white, TextAnchor.MiddleRight);
+            Text qtyTxt = CreateUIText(itemObj.transform, "Qty", "7", 11, FontStyle.Bold,
+                new Vector2(0.76f, 0f), new Vector2(1f, 1f), new Vector2(1f, 0.5f),
+                new Vector2(-8, 0), Vector2.zero, Color.white, TextAnchor.MiddleRight);
 
             // Linha divisória vertical interna entre nome e quantidade
             CreateUIPanel(itemObj.transform, "SlotDivider",
-                new Vector2(0.78f, 0.1f), new Vector2(0.78f, 0.9f), new Vector2(0.5f, 0.5f),
+                new Vector2(0.76f, 0.1f), new Vector2(0.76f, 0.9f), new Vector2(0.5f, 0.5f),
                 Vector2.zero, new Vector2(1, 0), new Color(0.35f, 0.42f, 0.50f, 0.35f));
 
             itemListItems.Add(new ItemListItemUI
@@ -1504,15 +1526,21 @@ public class BattleHUD : MonoBehaviour
             });
         }
 
-        // Barra decorativa amarela vertical ao lado da lista de itens (como na imagem de referência)
+        // Rodapé informativo da lista
+        CreateUIDivider(itemListPanel.transform, new Vector2(0, -226), new Vector2(280, 1), new Color(0.25f, 0.32f, 0.40f, 0.35f));
+        CreateUIText(itemListPanel.transform, "ListFooter", "✦ [ESPAÇO] : Mirar / Usar", 9, FontStyle.Normal,
+            new Vector2(0f, 0f), new Vector2(1f, 0f), new Vector2(0.5f, 0f),
+            new Vector2(0, 6), new Vector2(0, 20), new Color(0.55f, 0.65f, 0.78f), TextAnchor.MiddleCenter);
+
+        // Barra decorativa amarela vertical ao lado da lista de itens
         CreateUIPanel(itemListPanel.transform, "YellowScrollIndicator",
-            new Vector2(1f, 0f), new Vector2(1f, 1f), new Vector2(0f, 0.5f),
-            new Vector2(8, 0), new Vector2(3, 0), new Color(0.98f, 0.84f, 0.0f, 0.95f));
+            new Vector2(1f, 0f), new Vector2(1f, 1f), new Vector2(1f, 0.5f),
+            new Vector2(-2, -12), new Vector2(3, -50), new Color(0.98f, 0.84f, 0.0f, 0.95f));
 
         // 3. JANELA "DETALHES DO ITEM" (Coluna Direita, Topo)
         itemDetailPanel = CreateUIPanel(itemSelectionRoot.transform, "ItemDetailPanel",
             new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
-            new Vector2(475, 0), new Vector2(440, 130), new Color(0.08f, 0.11f, 0.15f, 0.90f));
+            new Vector2(295, -28), new Vector2(435, 120), new Color(0.08f, 0.11f, 0.15f, 0.92f));
 
         CreateUIPanel(itemDetailPanel.transform, "InfoBorder",
             new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0.5f, 0.5f),
@@ -1526,12 +1554,12 @@ public class BattleHUD : MonoBehaviour
             new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0f, 0.5f),
             new Vector2(10, 0), Vector2.zero, new Color(0.85f, 0.90f, 0.95f), TextAnchor.MiddleLeft);
 
-        CreateUIDivider(itemDetailPanel.transform, new Vector2(0, -24), new Vector2(440, 1), new Color(0.3f, 0.38f, 0.48f, 0.40f));
+        CreateUIDivider(itemDetailPanel.transform, new Vector2(0, -24), new Vector2(435, 1), new Color(0.3f, 0.38f, 0.48f, 0.40f));
 
         // Caixa e Ícone Ilustrado do Item
         GameObject iconBox = CreateUIPanel(itemDetailPanel.transform, "ItemIconBox",
             new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
-            new Vector2(12, -30), new Vector2(48, 48), new Color(0.04f, 0.07f, 0.11f, 0.75f));
+            new Vector2(10, -28), new Vector2(44, 44), new Color(0.04f, 0.07f, 0.11f, 0.75f));
 
         CreateUIPanel(iconBox.transform, "Border",
             new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0.5f, 0.5f),
@@ -1546,28 +1574,30 @@ public class BattleHUD : MonoBehaviour
         // Nome do Item
         itemDetailNameText = CreateUIText(itemDetailPanel.transform, "ItemName", "Curativo", 13, FontStyle.Bold,
             new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
-            new Vector2(70, -32), new Vector2(250, 20), Color.white, TextAnchor.MiddleLeft);
+            new Vector2(62, -28), new Vector2(240, 20), Color.white, TextAnchor.MiddleLeft);
 
         // Ícone de Efeito / Estrela no canto superior direito
-        itemDetailEffectIcon = CreateUIText(itemDetailPanel.transform, "EffectIcon", "✦", 16, FontStyle.Bold,
+        itemDetailEffectIcon = CreateUIText(itemDetailPanel.transform, "EffectIcon", "✦", 15, FontStyle.Bold,
             new Vector2(1f, 1f), new Vector2(1f, 1f), new Vector2(1f, 1f),
-            new Vector2(-15, -32), new Vector2(30, 20), new Color(0.95f, 0.95f, 0.95f), TextAnchor.MiddleCenter);
+            new Vector2(-10, -28), new Vector2(24, 20), new Color(0.95f, 0.95f, 0.95f), TextAnchor.MiddleCenter);
 
-        CreateUIDivider(itemDetailPanel.transform, new Vector2(70, -56), new Vector2(350, 1), new Color(0.3f, 0.38f, 0.48f, 0.30f));
+        CreateUIDivider(itemDetailPanel.transform, new Vector2(62, -50), new Vector2(365, 1), new Color(0.3f, 0.38f, 0.48f, 0.30f));
 
-        // Descrição do Item
+        // Descrição do Item (com quebra de linha Wrap e altura adequada)
         itemDetailDescText = CreateUIText(itemDetailPanel.transform, "ItemDesc", 
             "Restaura levemente o HP do alvo. Uma bandagem de velha escola, pra ser correto. Alguém deixou cair aqui?", 
-            11, FontStyle.Normal,
+            10, FontStyle.Normal,
             new Vector2(0f, 0f), new Vector2(1f, 0f), new Vector2(0f, 0f),
-            new Vector2(12, 8), new Vector2(-24, 42), new Color(0.80f, 0.86f, 0.92f), TextAnchor.UpperLeft);
+            new Vector2(10, 6), new Vector2(-20, 42), new Color(0.80f, 0.86f, 0.92f), TextAnchor.UpperLeft);
+        itemDetailDescText.horizontalOverflow = HorizontalWrapMode.Wrap;
+        itemDetailDescText.verticalOverflow = VerticalWrapMode.Truncate;
 
         // 4. GRIDS TÁTICOS DO ITEM (ALCANCE e ÁREA - Coluna Direita, Abaixo dos Detalhes)
         itemReachGridUI = BuildMiniGrid(itemSelectionRoot.transform, "ItemReachGridBox",
-            new Vector2(475, -140), new Vector2(215, 130), "ALCANCE", new Color(0.95f, 0.42f, 0.05f, 0.95f));
+            new Vector2(295, -154), new Vector2(212, 129), "ALCANCE", new Color(0.95f, 0.42f, 0.05f, 0.95f));
 
         itemAoeGridUI = BuildMiniGrid(itemSelectionRoot.transform, "ItemAoeGridBox",
-            new Vector2(700, -140), new Vector2(215, 130), "ÁREA", new Color(0.80f, 0.05f, 0.85f, 0.95f));
+            new Vector2(518, -154), new Vector2(212, 129), "ÁREA", new Color(0.80f, 0.05f, 0.85f, 0.95f));
 
         itemSelectionRoot.SetActive(false);
     }
@@ -1654,6 +1684,8 @@ public class BattleHUD : MonoBehaviour
         if (!isLinked)
         {
             linkBuffsPanel.SetActive(false);
+            lastRenderedLinkUnit = null;
+            lastRenderedBagAppmon = null;
 
             // Restaura o menu de ações para a posição original abaixo do card
             if (actionMenuContainer != null)
@@ -1663,6 +1695,9 @@ public class BattleHUD : MonoBehaviour
             }
             return;
         }
+
+        lastRenderedLinkUnit = unit;
+        lastRenderedBagAppmon = unit.linkedBagAppmon;
 
         // Exibe o painel compacto de Link
         linkBuffsPanel.SetActive(true);
@@ -1916,7 +1951,7 @@ public class BattleHUD : MonoBehaviour
 
     public void UpdateActionMenuSelection(int selectedIndex, Unit unit = null)
     {
-        Unit u = unit != null ? unit : (cachedCurrentUnit != null ? cachedCurrentUnit : (BattleController.Instance != null ? BattleController.Instance.currentUnit : null));
+        Unit u = unit != null ? unit : ((BattleController.Instance != null && BattleController.Instance.currentUnit != null) ? BattleController.Instance.currentUnit : cachedCurrentUnit);
         if (u != null) cachedCurrentUnit = u;
         currentActionMenuIndex = selectedIndex;
 
@@ -1927,19 +1962,23 @@ public class BattleHUD : MonoBehaviour
             if (item.container == null) continue;
 
             bool isOptionAvailable = true;
-            if (i == 0 && cachedCurrentUnit != null && !cachedCurrentUnit.CanMove())
+            if (i == 0 && u != null && !u.CanMove())
             {
                 isOptionAvailable = false;
             }
-            else if ((i == 1 || i == 2) && cachedCurrentUnit != null && !cachedCurrentUnit.CanAct())
+            else if ((i == 1 || i == 2 || i == 3) && u != null && !u.CanAct())
+            {
+                isOptionAvailable = false;
+            }
+            else if (i == 3 && u != null && u.IsTemporaryFusion)
             {
                 isOptionAvailable = false;
             }
             else if (i == 4)
             {
-                bool isLinked = (cachedCurrentUnit != null && cachedCurrentUnit.IsLinked) ||
-                                (BattleController.Instance != null && BattleController.Instance.currentUnit != null && BattleController.Instance.currentUnit.IsLinked);
-                bool canAct = cachedCurrentUnit != null ? cachedCurrentUnit.CanAct() : true;
+                // Validação estrita: cada criatura possui seu próprio status de Link
+                bool isLinked = u != null && u.IsLinked;
+                bool canAct = u != null ? u.CanAct() : true;
 
                 if (!canAct || isLinked)
                 {
@@ -2276,7 +2315,13 @@ public class BattleHUD : MonoBehaviour
             }
             else
             {
-                itemSlot.container.SetActive(false);
+                itemSlot.container.SetActive(true);
+                itemSlot.bgImage.color = new Color(0.04f, 0.06f, 0.09f, 0.45f);
+                itemSlot.nameText.text = "— Vazio —";
+                itemSlot.nameText.color = new Color(0.35f, 0.42f, 0.50f, 0.45f);
+                itemSlot.qtyText.text = "-";
+                itemSlot.qtyText.color = new Color(0.35f, 0.42f, 0.50f, 0.35f);
+                if (itemSlot.borderImage != null) itemSlot.borderImage.color = new Color(0.20f, 0.25f, 0.32f, 0.20f);
             }
         }
 

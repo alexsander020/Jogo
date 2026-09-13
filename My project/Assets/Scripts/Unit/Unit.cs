@@ -56,6 +56,9 @@ public class Unit : MonoBehaviour
     public AppLinkRecord currentAppLink = null;
     public bool IsLinked => linkedBagAppmon != null && !string.IsNullOrEmpty(linkedBagAppmon.id);
 
+    [Header("Fusão Temporária (App Gappai)")]
+    public bool IsTemporaryFusion = false;
+
     [HideInInspector]
     public Stats stats;
     [HideInInspector]

@@ -57,7 +57,7 @@ public class AppLinkMenuUI : MonoBehaviour
     private Button prevPageBtn;
     private Button nextPageBtn;
 
-    // Elementos do Rodapé (Botão 決定 e Comandos)
+    // Elementos do Rodapé (Botão Confirmar e Comandos)
     private Button confirmLinkButton;
     private Text confirmButtonMainText;
     private Text confirmButtonSubText;
@@ -79,7 +79,7 @@ public class AppLinkMenuUI : MonoBehaviour
         public Image categoryBadgeImage;
         public Text categoryBadgeText;
         public Text nameText;
-        public GameObject mainStampObj; // Carimbo diagonal vermelho "メイン"
+        public GameObject mainStampObj; // Carimbo diagonal vermelho "PRINCIPAL"
         public GameObject linkedTagObj;
         public Text linkedTagText;
         public GameObject cursorHighlightObj;
@@ -158,8 +158,9 @@ public class AppLinkMenuUI : MonoBehaviour
         // Limpa referências órfãs antes de abrir a Bag
         AppLinkService.CleanStaleLinks();
 
-        // Coleta Appmons da reserva (Bag)
-        bagAppmons = AppLinkService.GetBagAppmons();
+        // Coleta Appmons da reserva (Bag) estritamente filtrados para esta unidade:
+        // Appmons já vinculados a outros combatentes NÃO aparecem nesta lista!
+        bagAppmons = AppLinkService.GetBagAppmons(currentFieldUnit);
 
         // Localiza dados do Appmon de campo (seja por componente ou nome na base)
         AppmonData fieldData = currentFieldUnit != null ? currentFieldUnit.GetComponent<AppmonCharacter>()?.appmonData : null;
@@ -168,34 +169,27 @@ public class AppLinkMenuUI : MonoBehaviour
             fieldData = AppmonDatabase.Get(currentFieldUnit.unitName);
         }
 
-        // Se o Appmon de campo estiver na lista, garante que ele apareça no primeiro slot como "メイン"
+        // Se o Appmon de campo estiver na lista, garante que ele apareça no primeiro slot como "PRINCIPAL"
         if (fieldData != null && !bagAppmons.Exists(a => a.id.Equals(fieldData.id, StringComparison.OrdinalIgnoreCase)))
         {
             bagAppmons.Insert(0, fieldData);
         }
 
         // Se a unidade já possui um parceiro vinculado, seleciona-o por padrão
-        selectedIndex = 0;
         if (currentFieldUnit != null && currentFieldUnit.IsLinked && currentFieldUnit.linkedBagAppmon != null)
         {
-            int foundIdx = bagAppmons.FindIndex(a => a.id.Equals(currentFieldUnit.linkedBagAppmon.id, StringComparison.OrdinalIgnoreCase));
-            if (foundIdx >= 0) selectedIndex = foundIdx;
+            int foundIdx = bagAppmons.FindIndex(a => a.id.Equals(currentFieldUnit.linkedBagAppmon.id, StringComparison.OrdinalIgnoreCase) ||
+                                                     a.name.Equals(currentFieldUnit.linkedBagAppmon.name, StringComparison.OrdinalIgnoreCase));
+            selectedIndex = (foundIdx >= 0) ? foundIdx : 0;
         }
         else
         {
-            // Se o primeiro slot for o próprio combatente ativo em campo (Main), posiciona no primeiro Appmon livre
-            bool firstIsMain = bagAppmons.Count > 0 && (
-                (fieldData != null && bagAppmons[0].id.Equals(fieldData.id, StringComparison.OrdinalIgnoreCase)) ||
-                (currentFieldUnit != null && bagAppmons[0].name.Equals(currentFieldUnit.unitName, StringComparison.OrdinalIgnoreCase))
-            );
-
-            if (firstIsMain && bagAppmons.Count > 1)
-            {
-                selectedIndex = 1;
-            }
+            // Unidade SEM vínculo prévio: começa sem seleção automática (-1)
+            // O TargetSlot começará com o visual padrão vazio até que o jogador escolha intencionalmente um Appmon.
+            selectedIndex = -1;
         }
 
-        currentPage = selectedIndex / SLOTS_PER_PAGE;
+        currentPage = (selectedIndex >= 0) ? (selectedIndex / SLOTS_PER_PAGE) : 0;
 
         EnsureCanvas();
         if (rootContainer == null) BuildUI();
@@ -227,6 +221,17 @@ public class AppLinkMenuUI : MonoBehaviour
 
     public void Navigate(int dirX, int dirY)
     {
+        if (bagAppmons.Count == 0) return;
+
+        // Se ainda não havia seleção (abriu vazio), a primeira navegação foca no primeiro parceiro disponível
+        if (selectedIndex < 0)
+        {
+            selectedIndex = (bagAppmons.Count > 1) ? 1 : 0;
+            currentPage = selectedIndex / SLOTS_PER_PAGE;
+            RefreshUI();
+            return;
+        }
+
         int totalOnPage = Mathf.Min(SLOTS_PER_PAGE, bagAppmons.Count - (currentPage * SLOTS_PER_PAGE));
         if (totalOnPage <= 0) return;
 
@@ -402,15 +407,27 @@ public class AppLinkMenuUI : MonoBehaviour
                     slot.backgroundImage.color = new Color(0.06f, 0.10f, 0.16f, 0.95f);
                 }
 
-                // Marcação [LINKADO]
+                // Marcação [LINKADO] / [VINCULADO]
                 bool isLinked = AppLinkService.IsAppmonLinked(app);
-                bool isLinkedToThisUnit = currentFieldUnit.linkedBagAppmon != null && currentFieldUnit.linkedBagAppmon.id == app.id;
+                bool isLinkedToThisUnit = currentFieldUnit.linkedBagAppmon != null &&
+                                          currentFieldUnit.linkedBagAppmon.id.Equals(app.id, StringComparison.OrdinalIgnoreCase);
 
                 if (isLinked)
                 {
                     slot.linkedTagObj.SetActive(true);
-                    slot.linkedTagText.text = isLinkedToThisUnit ? "[VINCULADO]" : "[LINKADO]";
-                    slot.linkedTagText.color = isLinkedToThisUnit ? new Color(0.0f, 0.95f, 1f) : new Color(1f, 0.75f, 0.15f);
+                    if (isLinkedToThisUnit)
+                    {
+                        slot.linkedTagText.text = "[VINCULADO]";
+                        slot.linkedTagText.color = new Color(0.0f, 0.95f, 1f);
+                    }
+                    else
+                    {
+                        Unit otherHolder = AppLinkService.GetLinkedFieldUnit(app);
+                        string holderName = otherHolder != null ? otherHolder.unitName.ToUpper() : "OUTRO";
+                        slot.linkedTagText.text = $"[{holderName}]";
+                        slot.linkedTagText.color = new Color(1f, 0.40f, 0.40f);
+                        slot.backgroundImage.color = new Color(0.09f, 0.04f, 0.05f, 0.95f);
+                    }
                 }
                 else
                 {
@@ -497,7 +514,7 @@ public class AppLinkMenuUI : MonoBehaviour
             instructionSubtitleText.text = $"<color=#00FFAA>● PARCEIRO ATUAL VINCULADO! (Clique para Desvincular)</color>";
             confirmLinkButton.interactable = true;
             confirmButtonMainText.text = "✕  DESVINCULAR";
-            if (confirmButtonSubText != null) confirmButtonSubText.text = "かいじょ";
+            if (confirmButtonSubText != null) confirmButtonSubText.text = "DESVINCULAR";
             unlinkButton.gameObject.SetActive(true);
             return;
         }
@@ -506,9 +523,9 @@ public class AppLinkMenuUI : MonoBehaviour
         Unit otherHolder = AppLinkService.GetLinkedFieldUnit(selectedApp);
         if (otherHolder != null && otherHolder != currentFieldUnit)
         {
-            instructionSubtitleText.text = $"<color=#FF5555>Este Appmon já está [LINKADO] a {otherHolder.unitName}!</color>";
+            instructionSubtitleText.text = $"<color=#FF5555>Este Appmon já está [LINKADO] a {otherHolder.unitName}! Cada criatura deve ter um link diferente.</color>";
             confirmLinkButton.interactable = false;
-            confirmButtonMainText.text = "INDISPONÍVEL";
+            confirmButtonMainText.text = "EM USO";
             if (confirmButtonSubText != null) confirmButtonSubText.text = "";
             unlinkButton.gameObject.SetActive(currentFieldUnit.IsLinked);
             return;
@@ -529,8 +546,8 @@ public class AppLinkMenuUI : MonoBehaviour
         if (currentFieldUnit.IsLinked)
         {
             confirmLinkButton.interactable = true;
-            confirmButtonMainText.text = "決定  TROCAR LINK";
-            if (confirmButtonSubText != null) confirmButtonSubText.text = "けってい";
+            confirmButtonMainText.text = "TROCAR LINK";
+            if (confirmButtonSubText != null) confirmButtonSubText.text = "CONFIRMAR";
 
             string swapNotice = $"Substituirá {currentFieldUnit.linkedBagAppmon.name} por {selectedApp.name}.";
             if (calc.hasCompatibility)
@@ -549,8 +566,8 @@ public class AppLinkMenuUI : MonoBehaviour
         if (canLink)
         {
             confirmLinkButton.interactable = true;
-            confirmButtonMainText.text = "決定  VINCULAR";
-            if (confirmButtonSubText != null) confirmButtonSubText.text = "けってい";
+            confirmButtonMainText.text = "VINCULAR LINK";
+            if (confirmButtonSubText != null) confirmButtonSubText.text = "CONFIRMAR";
             unlinkButton.gameObject.SetActive(false);
         }
         else
@@ -584,9 +601,9 @@ public class AppLinkMenuUI : MonoBehaviour
         targetSlotPortrait.gameObject.SetActive(false);
         targetSlotCatBadge.gameObject.SetActive(false);
         targetSlotRankText.text = "APPLINK";
-        instructionSubtitleText.text = "アプリリンクをセットしてください (Selecione um Appmon na grade abaixo)";
+        instructionSubtitleText.text = "Selecione um Appmon na grade abaixo para vincular";
         confirmLinkButton.interactable = false;
-        confirmButtonMainText.text = "決定";
+        confirmButtonMainText.text = "VINCULAR";
         unlinkButton.gameObject.SetActive(false);
     }
 
@@ -601,6 +618,22 @@ public class AppLinkMenuUI : MonoBehaviour
             currentFieldUnit.linkedBagAppmon.id.Equals(selectedApp.id, StringComparison.OrdinalIgnoreCase))
         {
             ExecuteUnlinkAction();
+            return;
+        }
+
+        // SEGURANÇA: Bloqueia se o botão estiver desativado ou indisponível
+        if (confirmLinkButton != null && !confirmLinkButton.interactable)
+        {
+            Debug.LogWarning($"[AppLinkUI] Conexão bloqueada: o Appmon {selectedApp.name} não está disponível.");
+            return;
+        }
+
+        // Validação estrita de exclusividade 1-para-1
+        Unit otherHolder = AppLinkService.GetLinkedFieldUnit(selectedApp);
+        if (otherHolder != null && otherHolder != currentFieldUnit)
+        {
+            Debug.LogWarning($"[AppLinkUI] Tentativa de link duplicado bloqueada: {selectedApp.name} já pertence a {otherHolder.unitName}.");
+            RefreshUI();
             return;
         }
 
@@ -683,7 +716,7 @@ public class AppLinkMenuUI : MonoBehaviour
         // 6. Monitor Central Verde CRT Matrix (Grade 5x3)
         BuildMatrixGreenMonitor(consoleFrame.transform);
 
-        // 7. Barra Inferior com Botão 決定
+        // 7. Barra Inferior com Botão Confirmar
         BuildBottomControls(consoleFrame.transform);
     }
 
@@ -694,13 +727,13 @@ public class AppLinkMenuUI : MonoBehaviour
             new Vector2(10f, 0f), new Vector2(75f, -20f), new Color(0.92f, 0.94f, 0.96f, 1f));
         leftBar.GetComponent<Image>().sprite = GetRoundedRectSprite(75, 880, 14f, new Color(0.92f, 0.94f, 0.96f, 1f), new Color(0.70f, 0.75f, 0.80f, 0.8f), 1.5f);
 
-        // Título Vertical / Tipografia: アプモン (Appmon)
-        Text titleTxt = CreateUIText(leftBar.transform, "TitleTxt", "ア\nプ\nモ\nン", 16, FontStyle.Bold,
+        // Título Vertical / Tipografia: APPMON
+        Text titleTxt = CreateUIText(leftBar.transform, "TitleTxt", "A\nP\nP\nM\nO\nN", 16, FontStyle.Bold,
             new Vector2(0.5f, 1f), new Vector2(0.5f, 1f), new Vector2(0.5f, 1f),
             new Vector2(0f, -25f), new Vector2(50f, 130f), new Color(0.10f, 0.20f, 0.35f), TextAnchor.UpperCenter);
 
-        // Sub-rótulo: こうかん / 交換 (Trade / Bag)
-        Text subTxt = CreateUIText(leftBar.transform, "SubTxt", "こうかん\n交換", 11, FontStyle.Bold,
+        // Sub-rótulo: RESERVA
+        Text subTxt = CreateUIText(leftBar.transform, "SubTxt", "RESERVA\nMOCHILA", 10, FontStyle.Bold,
             new Vector2(0.5f, 1f), new Vector2(0.5f, 1f), new Vector2(0.5f, 1f),
             new Vector2(0f, -165f), new Vector2(70f, 40f), new Color(0.25f, 0.35f, 0.45f), TextAnchor.UpperCenter);
 
@@ -720,7 +753,7 @@ public class AppLinkMenuUI : MonoBehaviour
             new Vector2(-10f, 0f), new Vector2(75f, -20f), new Color(0.12f, 0.16f, 0.22f, 1f));
         rightBar.GetComponent<Image>().sprite = GetRoundedRectSprite(75, 880, 14f, new Color(0.12f, 0.16f, 0.22f, 1f), new Color(0.04f, 0.06f, 0.08f, 0.9f), 2f);
 
-        // Botão [X] ステータス OFF (Como no canto superior direito da screenshot!)
+        // Botão [X] STATUS OFF (Como no canto superior direito da screenshot!)
         GameObject statusBox = CreateUIPanel(rightBar.transform, "StatusToggleBox",
             new Vector2(0.5f, 1f), new Vector2(0.5f, 1f), new Vector2(0.5f, 1f),
             new Vector2(0f, -25f), new Vector2(65f, 75f), new Color(0.08f, 0.12f, 0.18f));
@@ -730,7 +763,7 @@ public class AppLinkMenuUI : MonoBehaviour
             new Vector2(0.5f, 1f), new Vector2(0.5f, 1f), new Vector2(0.5f, 1f),
             new Vector2(0f, -6f), new Vector2(40f, 20f), new Color(1f, 0.9f, 0.2f), TextAnchor.MiddleCenter);
 
-        CreateUIText(statusBox.transform, "LblTxt", "ステータス", 9, FontStyle.Bold,
+        CreateUIText(statusBox.transform, "LblTxt", "STATUS", 9, FontStyle.Bold,
             new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f),
             new Vector2(0f, -3f), new Vector2(60f, 18f), Color.white, TextAnchor.MiddleCenter);
 
@@ -765,14 +798,14 @@ public class AppLinkMenuUI : MonoBehaviour
             new Vector2(0f, -10f), new Vector2(1090f, 175f), new Color(0.0f, 0.48f, 0.88f, 1f));
         topBar.GetComponent<Image>().sprite = GetRoundedRectSprite(1090, 175, 16f, new Color(0.0f, 0.48f, 0.88f, 1f), new Color(0.0f, 0.95f, 1f, 0.8f), 2f);
 
-        // --- SLOT ESQUERDO: メイン (MAIN) ---
+        // --- SLOT ESQUERDO: PRINCIPAL (MAIN) ---
         GameObject mainSlotRoot = CreateUIPanel(topBar.transform, "MainSlot",
             new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f),
             new Vector2(-150f, 10f), new Vector2(115f, 115f), new Color(0.02f, 0.15f, 0.30f, 0.95f));
         mainSlotRoot.GetComponent<Image>().sprite = GetRoundedRectSprite(115, 115, 16f, new Color(0.02f, 0.15f, 0.30f, 0.95f), new Color(0.0f, 0.90f, 1f, 1f), 3.5f);
 
-        // Rótulo "メイン" acima do slot esquerdo
-        CreateUIText(topBar.transform, "MainLabel", "メイン", 15, FontStyle.Bold,
+        // Rótulo "PRINCIPAL" acima do slot esquerdo
+        CreateUIText(topBar.transform, "MainLabel", "PRINCIPAL", 13, FontStyle.Bold,
             new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f),
             new Vector2(-150f, 78f), new Vector2(100f, 24f), Color.white, TextAnchor.MiddleCenter);
 
@@ -798,13 +831,13 @@ public class AppLinkMenuUI : MonoBehaviour
         mainSlotRankText = CreateUIText(mainSlotRoot.transform, "Rank", "", 8, FontStyle.Normal,
             Vector2.zero, Vector2.zero, Vector2.zero, Vector2.zero, Vector2.zero, Color.clear, TextAnchor.MiddleCenter);
 
-        // --- CONECTOR CENTRAL: OVAL "アプリリンク" ---
+        // --- CONECTOR CENTRAL: OVAL "APP-LINK" ---
         GameObject connector = CreateUIPanel(topBar.transform, "ConnectorBadge",
             new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f),
             new Vector2(0f, 10f), new Vector2(130f, 42f), new Color(0.0f, 0.85f, 1.0f, 0.95f));
         connector.GetComponent<Image>().sprite = GetRoundedRectSprite(130, 42, 20f, new Color(0.0f, 0.85f, 1.0f, 0.95f), Color.white, 2f);
 
-        CreateUIText(connector.transform, "Txt", "アプリリンク", 13, FontStyle.Bold,
+        CreateUIText(connector.transform, "Txt", "APP-LINK", 13, FontStyle.Bold,
             new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f),
             Vector2.zero, Vector2.zero, new Color(0.02f, 0.15f, 0.35f), TextAnchor.MiddleCenter);
 
@@ -816,7 +849,7 @@ public class AppLinkMenuUI : MonoBehaviour
         targetSlotBorder.sprite = GetRoundedRectSprite(115, 115, 16f, new Color(0.01f, 0.10f, 0.22f, 0.95f), new Color(0.0f, 0.90f, 1f, 1f), 3.5f);
 
         // Rótulo superior do slot direito
-        targetSlotRankText = CreateUIText(topBar.transform, "TargetLabel", "アプリンク", 15, FontStyle.Bold,
+        targetSlotRankText = CreateUIText(topBar.transform, "TargetLabel", "VÍNCULO", 13, FontStyle.Bold,
             new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f),
             new Vector2(150f, 78f), new Vector2(100f, 24f), Color.white, TextAnchor.MiddleCenter);
 
@@ -843,8 +876,8 @@ public class AppLinkMenuUI : MonoBehaviour
             Vector2.zero, Vector2.zero, Color.white, TextAnchor.MiddleCenter);
         targetSlotCatBadge.gameObject.SetActive(false);
 
-        // --- SUBTÍTULO: アプリリンクをセットしてください ---
-        instructionSubtitleText = CreateUIText(topBar.transform, "InstructionTxt", "アプリリンクをセットしてください", 15, FontStyle.Bold,
+        // --- SUBTÍTULO: Selecione um Appmon para conectar ---
+        instructionSubtitleText = CreateUIText(topBar.transform, "InstructionTxt", "Selecione um Appmon na grade abaixo para conectar", 14, FontStyle.Bold,
             new Vector2(0.5f, 0f), new Vector2(0.5f, 0f), new Vector2(0.5f, 0f),
             new Vector2(0f, 8f), new Vector2(850f, 26f), Color.white, TextAnchor.MiddleCenter);
     }
@@ -917,14 +950,14 @@ public class AppLinkMenuUI : MonoBehaviour
                 new Vector2(0f, 0f), new Vector2(1f, 0f), new Vector2(0.5f, 0f),
                 new Vector2(0f, 6f), new Vector2(-10f, 22f), Color.white, TextAnchor.MiddleCenter);
 
-            // Carimbo Diagonal Vermelho "メイン" (Para o Appmon ativo em campo!)
+            // Carimbo Diagonal Vermelho "PRINCIPAL" (Para o Appmon ativo em campo!)
             GameObject mainStamp = CreateUIPanel(chipRoot.transform, "MainStamp",
                 new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f),
                 Vector2.zero, new Vector2(130f, 38f), new Color(0.90f, 0.15f, 0.15f, 0.95f));
             mainStamp.GetComponent<Image>().sprite = GetRoundedRectSprite(130, 38, 8f, new Color(0.90f, 0.15f, 0.15f, 0.95f), Color.white, 2f);
-            mainStamp.transform.localRotation = Quaternion.Euler(0f, 0f, -22f); // Inclinação diagonal como no 3DS!
+            mainStamp.transform.localRotation = Quaternion.Euler(0f, 0f, -22f); // Inclinação diagonal
 
-            CreateUIText(mainStamp.transform, "Txt", "メイン", 16, FontStyle.Bold,
+            CreateUIText(mainStamp.transform, "Txt", "PRINCIPAL", 13, FontStyle.Bold,
                 new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f),
                 Vector2.zero, Vector2.zero, Color.white, TextAnchor.MiddleCenter);
             mainStamp.SetActive(false);
@@ -987,20 +1020,20 @@ public class AppLinkMenuUI : MonoBehaviour
             new Vector2(0.5f, 0f), new Vector2(0.5f, 0f), new Vector2(0.5f, 0f),
             new Vector2(0f, 18f), new Vector2(1090f, 70f), Color.clear);
 
-        // --- BOTÃO CENTRAL 決定 (GLOSSY GREEN PILL - IGUAL AO 3DS!) ---
+        // --- BOTÃO CENTRAL CONFIRMAR (GLOSSY GREEN PILL - IGUAL AO 3DS!) ---
         confirmLinkButton = CreateButton(bottomBar.transform, "KetteiBtn", "", 0,
             new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f),
             new Vector2(0f, 0f), new Vector2(250f, 62f), () => ExecuteLinkAction());
 
         confirmLinkButton.GetComponent<Image>().sprite = GetGlossyPillSprite(250, 62, new Color(0.12f, 0.85f, 0.30f), new Color(0.04f, 0.55f, 0.18f), Color.white);
 
-        // Furigana acima: けってい
-        confirmButtonSubText = CreateUIText(confirmLinkButton.transform, "Furigana", "けってい", 11, FontStyle.Bold,
+        // Legenda superior
+        confirmButtonSubText = CreateUIText(confirmLinkButton.transform, "SubTxt", "CONFIRMAR", 11, FontStyle.Bold,
             new Vector2(0.5f, 1f), new Vector2(0.5f, 1f), new Vector2(0.5f, 1f),
             new Vector2(0f, -8f), new Vector2(120f, 16f), Color.white, TextAnchor.MiddleCenter);
 
-        // Kanji central: 決定
-        confirmButtonMainText = CreateUIText(confirmLinkButton.transform, "MainKanji", "決定  VINCULAR", 21, FontStyle.Bold,
+        // Texto central
+        confirmButtonMainText = CreateUIText(confirmLinkButton.transform, "MainTxt", "VINCULAR LINK", 17, FontStyle.Bold,
             new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f),
             new Vector2(0f, -6f), new Vector2(220f, 32f), Color.white, TextAnchor.MiddleCenter);
 

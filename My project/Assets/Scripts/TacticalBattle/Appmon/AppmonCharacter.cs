@@ -34,27 +34,28 @@ namespace TacticalBattle.Appmon
         public int teamDamageImmunityTurns = 0; // Para Black Tortoise Citadel / Celestial Harmony
 
         private Unit unit;
+        public Unit UnitComponent => unit != null ? unit : (unit = GetComponent<Unit>());
 
         void Awake()
         {
-            unit = GetComponent<Unit>();
+            if (unit == null) unit = GetComponent<Unit>();
         }
 
         public void InitializeFromAppmon(string appmonNameOrId)
         {
             appmonData = AppmonDatabase.Get(appmonNameOrId);
-            if (appmonData != null && unit != null)
+            if (appmonData != null && UnitComponent != null)
             {
-                appmonData.ApplyToUnit(unit);
+                appmonData.ApplyToUnit(UnitComponent);
             }
         }
 
         public void InitializeFromData(AppmonData data)
         {
             appmonData = data;
-            if (appmonData != null && unit != null)
+            if (appmonData != null && UnitComponent != null)
             {
-                appmonData.ApplyToUnit(unit);
+                appmonData.ApplyToUnit(UnitComponent);
             }
         }
 
@@ -70,34 +71,36 @@ namespace TacticalBattle.Appmon
         {
             if (type == StatusEffectType.None) return;
 
+            string uName = UnitComponent != null ? UnitComponent.unitName : gameObject.name;
+
             // Verificação de Imunidades de Passivas
             if (appmonData != null)
             {
                 // Cancelamento de Ruído (Sonic-Debugger): Imune a debuffs
                 if (appmonData.passiveId == "noise_cancellation" && IsDebuff(type))
                 {
-                    Debug.Log($"[Passiva] {unit.unitName} (Cancelamento de Ruído) é imune ao debuff {type}!");
+                    Debug.Log($"[Passiva] {uName} (Cancelamento de Ruído) é imune ao debuff {type}!");
                     return;
                 }
 
                 // Soberano dos Mares (Poseidon-Vipermon): Imune a status em Água
                 if (appmonData.passiveId == "sovereign_of_seas" && IsOnWaterTile() && IsDebuff(type))
                 {
-                    Debug.Log($"[Passiva] {unit.unitName} (Soberano dos Mares) é imune ao debuff {type} em águas digitais!");
+                    Debug.Log($"[Passiva] {uName} (Soberano dos Mares) é imune ao debuff {type} em águas digitais!");
                     return;
                 }
 
                 // Bastião Inabalável (Dreadnoughtmon): Imune a Immobilized e Stun
                 if (appmonData.passiveId == "unshakable_bastion" && (type == StatusEffectType.Immobilized || type == StatusEffectType.Stun))
                 {
-                    Debug.Log($"[Passiva] {unit.unitName} (Bastião Inabalável) é imune a {type}!");
+                    Debug.Log($"[Passiva] {uName} (Bastião Inabalável) é imune a {type}!");
                     return;
                 }
 
                 // Casco Inabalável (Genbu-Architectmon): Imune a Paralysis
                 if (appmonData.passiveId == "unshakable_shell" && type == StatusEffectType.Paralysis)
                 {
-                    Debug.Log($"[Passiva] {unit.unitName} (Casco Inabalável) é imune a Paralisia!");
+                    Debug.Log($"[Passiva] {uName} (Casco Inabalável) é imune a Paralisia!");
                     return;
                 }
             }
@@ -113,7 +116,7 @@ namespace TacticalBattle.Appmon
                 activeStatuses.Add(new StatusEffectInstance(type, turns, value));
             }
 
-            Debug.Log($"[Status] {unit.unitName} recebeu status: {type} por {turns} turnos.");
+            Debug.Log($"[Status] {uName} recebeu status: {type} por {turns} turnos.");
         }
 
         public void RemoveStatus(StatusEffectType type)

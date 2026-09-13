@@ -15,6 +15,13 @@ public static class ProceduralGridTileFactory
     private static Sprite s_invalidSprite;
     private static Sprite s_chevronSprite;
     private static Sprite s_deploySprite;
+    private static Sprite s_gappaiSprite;
+
+    public static Sprite GappaiTile => s_gappaiSprite ??= CreateIsometricTile(
+        coreColor: new Color(0.0f, 0.95f, 0.85f, 1.0f),     // Ciano / Verde-Água Elétrico Neon (App Gappai)
+        glowColor: new Color(0.0f, 0.80f, 1.0f, 0.85f),
+        innerFillColor: new Color(0.0f, 0.85f, 0.70f, 0.22f)
+    );
 
     public static Sprite DeployTile => s_deploySprite ??= CreateIsometricTile(
         coreColor: new Color(0.98f, 0.95f, 0.20f, 1.0f),     // Amarelo Dourado / Neon (Digimon Survive Spawn Tile)

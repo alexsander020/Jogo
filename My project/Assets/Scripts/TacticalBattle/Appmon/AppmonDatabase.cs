@@ -562,7 +562,7 @@ namespace TacticalBattle.Appmon
                 lore: "Entidade soberana dos oceanos de dados. Domina completamente a navegação, defesa e segurança da rede global.",
                 protocol: ProtocolTrinity.Firewall, mov: 4
             );
-            poseidonVipermon.recipeIngredients.Add("Hydro-Vipermon");
+            poseidonVipermon.recipeIngredients.AddRange(new[] { "Hydro-Vipermon", "Architectmon" });
             poseidonVipermon.inheritedSkillNames.AddRange(new[] {
                 "Quarantine Lock", "Neon Shield", "Jato de Água", "Parede de Água",
                 "Hydro Quarantine", "Tsunami Barrier", "Sonar Press", "Depth Cleanse"
@@ -588,7 +588,7 @@ namespace TacticalBattle.Appmon
                 lore: "O ápice da otimização de sistemas. Capaz de reescrever o mapa e purificar o código de qualquer anomalia instantaneamente.",
                 protocol: ProtocolTrinity.Ping, mov: 5
             );
-            omegaDebugger.recipeIngredients.Add("Sonic-Debugger");
+            omegaDebugger.recipeIngredients.AddRange(new[] { "Sonic-Debugger", "Electro-Cammon" });
             omegaDebugger.inheritedSkillNames.AddRange(new[] {
                 "Frame Skip", "Error Bite", "Sonic Pulse", "Tempo Up",
                 "Echolocation Blast", "Glitched Frequency", "Sonic Sprint", "Debugger Bark"
@@ -614,7 +614,7 @@ namespace TacticalBattle.Appmon
                 lore: "Uma fortaleza ambulante de titânio digital, criada para redefinir a topografia do mapa e proteger o núcleo do sistema.",
                 protocol: ProtocolTrinity.Firewall, mov: 3
             );
-            dreadnoughtmon.recipeIngredients.Add("Architectmon");
+            dreadnoughtmon.recipeIngredients.AddRange(new[] { "Architectmon", "Magma-Logmon" });
             dreadnoughtmon.inheritedSkillNames.AddRange(new[] {
                 "Polygon Wall", "Tool Strike", "Quarantine Lock", "Neon Shield",
                 "Encrypted Fortress", "Polygon Trap", "Reinforce Protocol", "Structural Blast"

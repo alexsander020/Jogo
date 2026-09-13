@@ -37,6 +37,17 @@ public class DamagePopupService : MonoBehaviour
         Instance.SpawnHealPopup(worldPos, amount);
     }
 
+    public static void ShowMessage(Vector3 worldPos, string message, Color color)
+    {
+        if (Instance == null)
+        {
+            GameObject go = new GameObject("DamagePopupService");
+            Instance = go.AddComponent<DamagePopupService>();
+        }
+
+        Instance.SpawnMessagePopup(worldPos, message, color);
+    }
+
     private void SpawnPopup(Vector3 worldPos, int damage, AttackOrientation orientation, bool isCritical, bool hasAdvantage)
     {
         GameObject popupObj = new GameObject("DamagePopup", typeof(RectTransform), typeof(Canvas));
@@ -126,6 +137,41 @@ public class DamagePopupService : MonoBehaviour
         Outline outline = textObj.GetComponent<Outline>();
         outline.effectColor = new Color(0.02f, 0.1f, 0.04f, 0.95f);
         outline.effectDistance = new Vector2(1.5f, -1.5f);
+
+        StartCoroutine(AnimateAndDestroy(popupObj, txt));
+    }
+
+    private void SpawnMessagePopup(Vector3 worldPos, string message, Color color)
+    {
+        GameObject popupObj = new GameObject("MessagePopup", typeof(RectTransform), typeof(Canvas));
+        popupObj.transform.position = worldPos + Vector3.up * 0.8f;
+
+        Canvas canvas = popupObj.GetComponent<Canvas>();
+        canvas.renderMode = RenderMode.WorldSpace;
+        canvas.sortingOrder = 550;
+
+        RectTransform rt = popupObj.GetComponent<RectTransform>();
+        rt.sizeDelta = new Vector2(350, 70);
+        rt.localScale = Vector3.one * 0.012f;
+
+        GameObject textObj = new GameObject("Text", typeof(RectTransform), typeof(Text), typeof(Outline), typeof(Shadow));
+        textObj.transform.SetParent(popupObj.transform, false);
+
+        Text txt = textObj.GetComponent<Text>();
+        txt.font = popupFont;
+        txt.fontStyle = FontStyle.Bold;
+        txt.fontSize = 24;
+        txt.alignment = TextAnchor.MiddleCenter;
+        txt.text = message;
+        txt.color = color;
+
+        Outline outline = textObj.GetComponent<Outline>();
+        outline.effectColor = new Color(0.01f, 0.02f, 0.05f, 0.95f);
+        outline.effectDistance = new Vector2(1.8f, -1.8f);
+
+        Shadow shadow = textObj.GetComponent<Shadow>();
+        shadow.effectColor = new Color(0f, 0f, 0f, 0.8f);
+        shadow.effectDistance = new Vector2(2f, -2f);
 
         StartCoroutine(AnimateAndDestroy(popupObj, txt));
     }

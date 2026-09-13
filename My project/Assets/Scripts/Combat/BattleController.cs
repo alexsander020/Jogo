@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using TacticalBattle.AppLink;
+using TacticalBattle.Appmon;
 using TacticalBattle.Core;
 using TacticalBattle.Evolution;
 using TacticalBattle.Integration;
@@ -26,6 +27,7 @@ public class BattleController : MonoBehaviour
         Instance = this;
         tacticalController = new TacticalBattleController();
         AppLinkService.ResetAllLinks();
+        AppGappaiService.EnsureBattleEndHook();
     }
 
     public void RegisterUnit(Unit unit)
@@ -46,6 +48,7 @@ public class BattleController : MonoBehaviour
     {
         roundCount = 1;
         TacticalBattle.AppLink.AppLinkService.ResetAllLinks();
+        AppGappaiService.RevertAllFusions();
         foreach (var u in allUnits)
         {
             if (u != null)

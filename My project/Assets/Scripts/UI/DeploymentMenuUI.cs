@@ -821,34 +821,49 @@ public class DeploymentMenuUI : MonoBehaviour
         // Retrato / Ícone do Appmon (Centralizado)
         GameObject iconObj = CreateUIPanel(slot.root.transform, "AvatarIcon",
             new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f),
-            new Vector2(0f, 4f), new Vector2(58f, 58f), Color.white);
+            new Vector2(0f, 4f), new Vector2(56f, 56f), Color.white);
         slot.avatarImage = iconObj.GetComponent<Image>();
         slot.avatarImage.preserveAspect = true;
 
         // Badge de Rank (Canto Superior Esquerdo)
-        GameObject badgeObj = CreateUIPanel(slot.root.transform, "RankBadge",
+        slot.badgeObj = CreateUIPanel(slot.root.transform, "RankBadge",
             new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
-            new Vector2(4f, -4f), new Vector2(24f, 18f), Color.white);
-        badgeObj.GetComponent<Image>().sprite = GetRoundedRectSprite(24, 18, 5f, new Color(0.04f, 0.07f, 0.12f, 0.90f), colCyanNeon, 1f);
-        slot.badgeText = CreateUIText(badgeObj.transform, "BadgeTxt", "★", 12, FontStyle.Bold,
+            new Vector2(4f, -4f), new Vector2(26f, 18f), Color.white);
+        slot.badgeObj.GetComponent<Image>().sprite = GetRoundedRectSprite(26, 18, 5f, new Color(0.04f, 0.07f, 0.12f, 0.90f), colCyanNeon, 1f);
+        slot.badgeText = CreateUIText(slot.badgeObj.transform, "BadgeTxt", "★", 11, FontStyle.Bold,
             new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0.5f, 0.5f),
             Vector2.zero, Vector2.zero, colAmberGold, TextAnchor.MiddleCenter);
 
-        // Etiqueta de Nível "LV 25" (Canto Inferior Direito)
-        slot.levelText = CreateUIText(slot.root.transform, "LevelText", "LV 25", 13, FontStyle.Bold,
-            new Vector2(1f, 0f), new Vector2(1f, 0f), new Vector2(1f, 0f),
-            new Vector2(-5f, 3f), new Vector2(54f, 18f), Color.white, TextAnchor.MiddleRight);
-
-        // Nome curto no rodapé
-        slot.nameText = CreateUIText(slot.root.transform, "ShortName", "Appmon", 11, FontStyle.Bold,
-            new Vector2(0f, 0f), new Vector2(0f, 0f), new Vector2(0f, 0f),
-            new Vector2(5f, 3f), new Vector2(60f, 18f), new Color(0.85f, 0.92f, 1.0f), TextAnchor.MiddleLeft);
-
-        // Overlay do Checkmark Verde Vibrante ("✓") quando selecionado
-        slot.checkmarkOverlay = CreateUIPanel(slot.root.transform, "CheckmarkOverlay",
+        // Badge de Nível "LV 25" (Canto Superior Direito - Espaço exclusivo sem conflito com o nome)
+        slot.levelBadgeObj = CreateUIPanel(slot.root.transform, "LevelBadge",
             new Vector2(1f, 1f), new Vector2(1f, 1f), new Vector2(1f, 1f),
-            new Vector2(-4f, -4f), new Vector2(28f, 28f), Color.white);
-        slot.checkmarkOverlay.GetComponent<Image>().sprite = GetCheckmarkBadgeSprite(28);
+            new Vector2(-4f, -4f), new Vector2(44f, 18f), Color.white);
+        slot.levelBadgeObj.GetComponent<Image>().sprite = GetRoundedRectSprite(44, 18, 5f, new Color(0.04f, 0.07f, 0.12f, 0.90f), new Color(0.25f, 0.40f, 0.60f, 0.70f), 1f);
+        slot.levelText = CreateUIText(slot.levelBadgeObj.transform, "LevelText", "LV 25", 11, FontStyle.Bold,
+            new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0.5f, 0.5f),
+            Vector2.zero, Vector2.zero, Color.white, TextAnchor.MiddleCenter);
+
+        // Faixa com Fundo Escuro para Nome no Rodapé (Completamente Desobstruída para Alta Legibilidade)
+        slot.nameBarObj = CreateUIPanel(slot.root.transform, "NameBar",
+            new Vector2(0.5f, 0f), new Vector2(0.5f, 0f), new Vector2(0.5f, 0f),
+            new Vector2(0f, 4f), new Vector2(98f, 20f), Color.white);
+        slot.nameBarObj.GetComponent<Image>().sprite = GetRoundedRectSprite(98, 20, 5f, new Color(0.03f, 0.06f, 0.10f, 0.92f), new Color(0.18f, 0.28f, 0.42f, 0.70f), 1f);
+
+        slot.nameText = CreateUIText(slot.nameBarObj.transform, "ShortName", "Appmon", 11, FontStyle.Bold,
+            new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0.5f, 0.5f),
+            Vector2.zero, new Vector2(-6f, 0f), new Color(0.92f, 0.96f, 1.0f), TextAnchor.MiddleCenter);
+        slot.nameText.resizeTextForBestFit = true;
+        slot.nameText.resizeTextMinSize = 8;
+        slot.nameText.resizeTextMaxSize = 11;
+        slot.nameText.horizontalOverflow = HorizontalWrapMode.Wrap;
+        slot.nameText.verticalOverflow = VerticalWrapMode.Truncate;
+        slot.nameText.lineSpacing = 0.9f;
+
+        // Overlay do Checkmark Verde Vibrante ("✓") quando selecionado (Centralizado no Avatar)
+        slot.checkmarkOverlay = CreateUIPanel(slot.root.transform, "CheckmarkOverlay",
+            new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f),
+            new Vector2(0f, 4f), new Vector2(36f, 36f), Color.white);
+        slot.checkmarkOverlay.GetComponent<Image>().sprite = GetCheckmarkBadgeSprite(36);
         slot.checkmarkOverlay.SetActive(false);
 
         // Interação de Mouse: Hover e Clique via Listener Dedicado
@@ -862,22 +877,22 @@ public class DeploymentMenuUI : MonoBehaviour
 
     private void BuildDetailCard(Transform parent)
     {
-        // Card de Informações Detalhadas (Base do Smartphone - 600x280px)
+        // Card de Informações Detalhadas (Base do Smartphone - 600x290px perfeitamente contido)
         GameObject card = CreateUIPanel(parent, "DetailCard",
             new Vector2(0.5f, 0f), new Vector2(0.5f, 0f), new Vector2(0.5f, 0f),
-            new Vector2(0f, 16f), new Vector2(600f, 280f), Color.white);
+            new Vector2(0f, 16f), new Vector2(600f, 290f), Color.white);
 
-        card.GetComponent<Image>().sprite = GetRoundedRectSprite(600, 280, 14f, new Color(0.04f, 0.08f, 0.14f, 0.98f), new Color(0.0f, 0.85f, 1.0f, 0.65f), 2f);
+        card.GetComponent<Image>().sprite = GetRoundedRectSprite(600, 290, 14f, new Color(0.04f, 0.08f, 0.14f, 0.98f), new Color(0.0f, 0.85f, 1.0f, 0.65f), 2f);
 
-        // --- RETRATO DO APPMON (Esquerda - 140x205px) ---
+        // --- RETRATO DO APPMON (Esquerda - 136x220px) ---
         GameObject avatarBox = CreateUIPanel(card.transform, "AvatarFrame",
             new Vector2(0f, 0.5f), new Vector2(0f, 0.5f), new Vector2(0f, 0.5f),
-            new Vector2(18f, 0f), new Vector2(140f, 210f), Color.white);
-        avatarBox.GetComponent<Image>().sprite = GetRoundedRectSprite(140, 210, 12f, new Color(0.02f, 0.05f, 0.10f, 0.98f), colCyanNeon, 2f);
+            new Vector2(16f, 0f), new Vector2(136f, 220f), Color.white);
+        avatarBox.GetComponent<Image>().sprite = GetRoundedRectSprite(136, 220, 12f, new Color(0.02f, 0.05f, 0.10f, 0.98f), colCyanNeon, 2f);
 
         GameObject innerAvatar = CreateUIPanel(avatarBox.transform, "AvatarImage",
             new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f),
-            Vector2.zero, new Vector2(118f, 118f), Color.white);
+            Vector2.zero, new Vector2(120f, 120f), Color.white);
         detailAvatarImage = innerAvatar.GetComponent<Image>();
         detailAvatarImage.preserveAspect = true;
 
@@ -888,93 +903,108 @@ public class DeploymentMenuUI : MonoBehaviour
         detailCatDiamondImage = diamondObj.GetComponent<Image>();
         detailCatDiamondImage.sprite = GetCategoryDiamondSprite(32, colCyanNeon);
 
-        // --- DADOS TEXTUAIS (Direita - infoLeft = 175f) ---
-        float infoLeft = 175f;
+        // --- DADOS TEXTUAIS (Direita - infoLeft = 168f, infoWidth = 416f) ---
+        // Garante margens idênticas de 16px à esquerda e à direita (168 + 416 = 584f de um total de 600f)
+        float infoLeft = 168f;
+        float infoWidth = 416f;
 
         // Linha 1: Nome e Nível (GRANDES, NÍTIDOS E COM ALTO CONTRASTE)
-        detailNameText = CreateUIText(card.transform, "DetailName", "Data-Viper", 26, FontStyle.Bold,
+        detailNameText = CreateUIText(card.transform, "DetailName", "Data-Viper", 24, FontStyle.Bold,
             new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
-            new Vector2(infoLeft, -14f), new Vector2(280f, 32f), Color.white, TextAnchor.MiddleLeft);
+            new Vector2(infoLeft, -12f), new Vector2(310f, 30f), Color.white, TextAnchor.MiddleLeft);
+        detailNameText.resizeTextForBestFit = true;
+        detailNameText.resizeTextMinSize = 18;
+        detailNameText.resizeTextMaxSize = 24;
+        detailNameText.horizontalOverflow = HorizontalWrapMode.Overflow;
 
         detailLevelText = CreateUIText(card.transform, "DetailLevel", "LV 25", 22, FontStyle.Bold,
-            new Vector2(1f, 1f), new Vector2(1f, 1f), new Vector2(1f, 1f),
-            new Vector2(-20f, -14f), new Vector2(110f, 32f), colAmberGold, TextAnchor.MiddleRight);
+            new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(1f, 1f),
+            new Vector2(infoLeft + infoWidth, -12f), new Vector2(100f, 30f), colAmberGold, TextAnchor.MiddleRight);
+        detailLevelText.horizontalOverflow = HorizontalWrapMode.Overflow;
 
-        // Linha 2: Estágio, Categoria e Mobilidade
-        detailStageText = CreateUIText(card.transform, "DetailStage", "Common / Nami", 14, FontStyle.Bold,
+        // Linha 2: Estágio, Categoria e Mobilidade (Lado a Lado sem sobreposição nem quebra feia)
+        detailStageText = CreateUIText(card.transform, "DetailStage", "Common / Nami", 13, FontStyle.Bold,
             new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
-            new Vector2(infoLeft, -46f), new Vector2(180f, 20f), new Color(0.85f, 0.92f, 1.0f), TextAnchor.MiddleLeft);
+            new Vector2(infoLeft, -42f), new Vector2(130f, 22f), new Color(0.85f, 0.92f, 1.0f), TextAnchor.MiddleLeft);
+        detailStageText.horizontalOverflow = HorizontalWrapMode.Overflow;
 
-        detailCategoryText = CreateUIText(card.transform, "DetailCategory", "[Security / Vacina]", 14, FontStyle.Bold,
+        detailCategoryText = CreateUIText(card.transform, "DetailCategory", "[Security / Vacina]  ⛨ Protocol", 13, FontStyle.Bold,
             new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
-            new Vector2(infoLeft + 185f, -46f), new Vector2(180f, 20f), colCyanNeon, TextAnchor.MiddleLeft);
+            new Vector2(infoLeft + 130f, -42f), new Vector2(220f, 22f), colCyanNeon, TextAnchor.MiddleLeft);
+        detailCategoryText.horizontalOverflow = HorizontalWrapMode.Overflow;
 
-        detailMobilityText = CreateUIText(card.transform, "DetailMobility", "MOV: 3", 14, FontStyle.Bold,
-            new Vector2(1f, 1f), new Vector2(1f, 1f), new Vector2(1f, 1f),
-            new Vector2(-20f, -46f), new Vector2(90f, 20f), colEmeraldGreen, TextAnchor.MiddleRight);
+        detailMobilityText = CreateUIText(card.transform, "DetailMobility", "MOV: 3", 13, FontStyle.Bold,
+            new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(1f, 1f),
+            new Vector2(infoLeft + infoWidth, -42f), new Vector2(66f, 22f), colEmeraldGreen, TextAnchor.MiddleRight);
+        detailMobilityText.horizontalOverflow = HorizontalWrapMode.Overflow;
 
         // --- BARRA DE HP ---
-        float barWidth = 240f;
-        CreateUIText(card.transform, "HpLabel", "HP", 15, FontStyle.Bold,
+        float barWidth = 260f;
+        CreateUIText(card.transform, "HpLabel", "HP", 14, FontStyle.Bold,
             new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
-            new Vector2(infoLeft, -74f), new Vector2(32f, 18f), colCyanNeon, TextAnchor.MiddleLeft);
+            new Vector2(infoLeft, -68f), new Vector2(28f, 18f), colCyanNeon, TextAnchor.MiddleLeft);
 
         GameObject hpBg = CreateUIPanel(card.transform, "HpBg",
             new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
-            new Vector2(infoLeft + 36f, -76f), new Vector2(barWidth, 15f), Color.white);
-        hpBg.GetComponent<Image>().sprite = GetRoundedRectSprite((int)barWidth, 15, 5f, new Color(0.02f, 0.05f, 0.08f, 0.95f), new Color(0.2f, 0.35f, 0.5f, 0.6f), 1f);
+            new Vector2(infoLeft + 32f, -69f), new Vector2(barWidth, 16f), Color.white);
+        hpBg.GetComponent<Image>().sprite = GetRoundedRectSprite((int)barWidth, 16, 5f, new Color(0.02f, 0.05f, 0.08f, 0.95f), new Color(0.2f, 0.35f, 0.5f, 0.6f), 1f);
 
         GameObject hpFill = CreateUIPanel(hpBg.transform, "HpFill",
             new Vector2(0f, 0f), new Vector2(0f, 1f), new Vector2(0f, 0.5f),
             Vector2.zero, new Vector2(barWidth, 0f), Color.white);
         detailHpBarFill = hpFill.GetComponent<RectTransform>();
-        hpFill.GetComponent<Image>().sprite = GetBarFillSprite((int)barWidth, 15, new Color(0.0f, 0.85f, 1.0f), new Color(0.1f, 1.0f, 0.6f));
+        hpFill.GetComponent<Image>().sprite = GetBarFillSprite((int)barWidth, 16, new Color(0.0f, 0.85f, 1.0f), new Color(0.1f, 1.0f, 0.6f));
 
-        detailHpValText = CreateUIText(card.transform, "HpVal", "120 / 120", 14, FontStyle.Bold,
-            new Vector2(1f, 1f), new Vector2(1f, 1f), new Vector2(1f, 1f),
-            new Vector2(-20f, -74f), new Vector2(100f, 18f), Color.white, TextAnchor.MiddleRight);
+        detailHpValText = CreateUIText(card.transform, "HpVal", "120 / 120", 13, FontStyle.Bold,
+            new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(1f, 1f),
+            new Vector2(infoLeft + infoWidth, -68f), new Vector2(118f, 18f), Color.white, TextAnchor.MiddleRight);
+        detailHpValText.horizontalOverflow = HorizontalWrapMode.Overflow;
 
         // --- BARRA DE SP / MP ---
-        CreateUIText(card.transform, "SpLabel", "SP", 15, FontStyle.Bold,
+        CreateUIText(card.transform, "SpLabel", "SP", 14, FontStyle.Bold,
             new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
-            new Vector2(infoLeft, -98f), new Vector2(32f, 18f), colAmberGold, TextAnchor.MiddleLeft);
+            new Vector2(infoLeft, -90f), new Vector2(28f, 18f), colAmberGold, TextAnchor.MiddleLeft);
 
         GameObject spBg = CreateUIPanel(card.transform, "SpBg",
             new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
-            new Vector2(infoLeft + 36f, -100f), new Vector2(barWidth, 15f), Color.white);
-        spBg.GetComponent<Image>().sprite = GetRoundedRectSprite((int)barWidth, 15, 5f, new Color(0.02f, 0.05f, 0.08f, 0.95f), new Color(0.35f, 0.3f, 0.15f, 0.6f), 1f);
+            new Vector2(infoLeft + 32f, -91f), new Vector2(barWidth, 16f), Color.white);
+        spBg.GetComponent<Image>().sprite = GetRoundedRectSprite((int)barWidth, 16, 5f, new Color(0.02f, 0.05f, 0.08f, 0.95f), new Color(0.35f, 0.3f, 0.15f, 0.6f), 1f);
 
         GameObject spFill = CreateUIPanel(spBg.transform, "SpFill",
             new Vector2(0f, 0f), new Vector2(0f, 1f), new Vector2(0f, 0.5f),
             Vector2.zero, new Vector2(barWidth, 0f), Color.white);
         detailSpBarFill = spFill.GetComponent<RectTransform>();
-        spFill.GetComponent<Image>().sprite = GetBarFillSprite((int)barWidth, 15, new Color(1.0f, 0.65f, 0.0f), new Color(1.0f, 0.90f, 0.2f));
+        spFill.GetComponent<Image>().sprite = GetBarFillSprite((int)barWidth, 16, new Color(1.0f, 0.65f, 0.0f), new Color(1.0f, 0.90f, 0.2f));
 
-        detailSpValText = CreateUIText(card.transform, "SpVal", "60 / 60", 14, FontStyle.Bold,
-            new Vector2(1f, 1f), new Vector2(1f, 1f), new Vector2(1f, 1f),
-            new Vector2(-20f, -98f), new Vector2(100f, 18f), Color.white, TextAnchor.MiddleRight);
+        detailSpValText = CreateUIText(card.transform, "SpVal", "60 / 60", 13, FontStyle.Bold,
+            new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(1f, 1f),
+            new Vector2(infoLeft + infoWidth, -90f), new Vector2(118f, 18f), Color.white, TextAnchor.MiddleRight);
+        detailSpValText.horizontalOverflow = HorizontalWrapMode.Overflow;
 
         // --- GRID DE ESTATÍSTICAS RPG COMPLETAS (ATK, DEF, INT, SPI, SPD, CRT) ---
+        // Exatamente contido na largura disponível (sem vazar para fora da borda do card!)
         GameObject statsPill = CreateUIPanel(card.transform, "StatsPillBox",
-            new Vector2(0f, 1f), new Vector2(1f, 1f), new Vector2(0f, 1f),
-            new Vector2(infoLeft, -124f), new Vector2(-20f, 26f), Color.white);
-        statsPill.GetComponent<Image>().sprite = GetRoundedRectSprite(400, 26, 6f, new Color(0.02f, 0.05f, 0.09f, 0.95f), new Color(0.18f, 0.28f, 0.42f, 0.70f), 1f);
+            new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
+            new Vector2(infoLeft, -114f), new Vector2(infoWidth, 28f), Color.white);
+        statsPill.GetComponent<Image>().sprite = GetRoundedRectSprite((int)infoWidth, 28, 6f, new Color(0.02f, 0.05f, 0.09f, 0.95f), new Color(0.18f, 0.30f, 0.46f, 0.80f), 1f);
 
-        detailStatsGridText = CreateUIText(statsPill.transform, "StatsText", "ATK: 45  DEF: 55  INT: 40  SPI: 50  SPD: 52  CRT: 5%", 13, FontStyle.Bold,
+        detailStatsGridText = CreateUIText(statsPill.transform, "StatsText", "ATK: 45  DEF: 55  INT: 40  SPI: 50  SPD: 52  CRT: 5%", 12, FontStyle.Bold,
             new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0.5f, 0.5f),
-            Vector2.zero, Vector2.zero, new Color(0.88f, 0.94f, 1.0f), TextAnchor.MiddleCenter);
+            Vector2.zero, Vector2.zero, Color.white, TextAnchor.MiddleCenter);
 
-        // --- HABILIDADE PASSIVA EXCLUSIVA (CONTAINER PRÓPRIO DE ALTO DESTAQUE) ---
+        // --- HABILIDADE PASSIVA EXCLUSIVA (CONTAINER PRÓPRIO DENTRO DOS LIMITES) ---
+        // Inicia em -148f com altura 126f -> base termina em -274f (16px antes do final do card em -290f!)
         GameObject passBox = CreateUIPanel(card.transform, "PassiveBox",
-            new Vector2(0f, 1f), new Vector2(1f, 1f), new Vector2(0f, 1f),
-            new Vector2(infoLeft, -156f), new Vector2(-20f, 108f), Color.white);
-        passBox.GetComponent<Image>().sprite = GetRoundedRectSprite(400, 108, 8f, new Color(0.02f, 0.04f, 0.08f, 0.90f), new Color(0.0f, 0.85f, 1.0f, 0.40f), 1f);
+            new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
+            new Vector2(infoLeft, -148f), new Vector2(infoWidth, 126f), Color.white);
+        passBox.GetComponent<Image>().sprite = GetRoundedRectSprite((int)infoWidth, 126, 8f, new Color(0.02f, 0.04f, 0.08f, 0.94f), new Color(0.0f, 0.85f, 1.0f, 0.50f), 1.5f);
 
-        detailPassiveText = CreateUIText(passBox.transform, "DetailPassive", "Passiva: [Cód. Defensivo] Reduz dano à distância em 15%.", 14, FontStyle.Normal,
+        detailPassiveText = CreateUIText(passBox.transform, "DetailPassive", "Passiva: [Cód. Defensivo] Reduz dano à distância em 15%.", 13, FontStyle.Normal,
             new Vector2(0f, 0f), new Vector2(1f, 1f), new Vector2(0.5f, 0.5f),
-            new Vector2(12f, -8f), new Vector2(-24f, -16f), new Color(0.92f, 0.96f, 1.0f, 0.95f), TextAnchor.UpperLeft);
+            Vector2.zero, new Vector2(-24f, -16f), new Color(0.92f, 0.96f, 1.0f, 0.95f), TextAnchor.UpperLeft);
         detailPassiveText.horizontalOverflow = HorizontalWrapMode.Wrap;
-        detailPassiveText.lineSpacing = 1.15f;
+        detailPassiveText.verticalOverflow = VerticalWrapMode.Truncate;
+        detailPassiveText.lineSpacing = 1.2f;
     }
 
     private void BuildBottomControlsBar(Transform parent)
@@ -1121,6 +1151,10 @@ public class DeploymentMenuUI : MonoBehaviour
                         slot.baseBorderImg.sprite = GetRoundedRectSprite(106, 96, 10f, colSlotCardBg, colSlotBorderNormal, 1.5f);
                     }
 
+                    if (slot.badgeObj != null) slot.badgeObj.SetActive(true);
+                    if (slot.levelBadgeObj != null) slot.levelBadgeObj.SetActive(true);
+                    if (slot.nameBarObj != null) slot.nameBarObj.SetActive(true);
+
                     // Moldura de Foco do Cursor
                     slot.focusHighlight.SetActive(isHovered);
                 }
@@ -1136,6 +1170,10 @@ public class DeploymentMenuUI : MonoBehaviour
                     slot.checkmarkOverlay.SetActive(false);
                     slot.focusHighlight.SetActive(isHovered);
                     slot.baseBorderImg.sprite = GetRoundedRectSprite(106, 96, 10f, new Color(0.04f, 0.07f, 0.11f, 0.45f), new Color(0.15f, 0.22f, 0.32f, 0.35f), 1f);
+
+                    if (slot.badgeObj != null) slot.badgeObj.SetActive(false);
+                    if (slot.levelBadgeObj != null) slot.levelBadgeObj.SetActive(false);
+                    if (slot.nameBarObj != null) slot.nameBarObj.SetActive(false);
                 }
             }
         }
@@ -1180,6 +1218,8 @@ public class DeploymentMenuUI : MonoBehaviour
         if (detailSpValText != null) detailSpValText.text = "";
         if (detailAvatarImage != null) detailAvatarImage.color = Color.clear;
         if (detailCatDiamondImage != null) detailCatDiamondImage.color = Color.clear;
+        if (detailHpBarFill != null) detailHpBarFill.sizeDelta = new Vector2(0f, 0f);
+        if (detailSpBarFill != null) detailSpBarFill.sizeDelta = new Vector2(0f, 0f);
     }
 
     private void UpdateDetailCard(AppmonData app)
@@ -1217,19 +1257,19 @@ public class DeploymentMenuUI : MonoBehaviour
         if (detailHpValText != null) detailHpValText.text = $"{app.hp} / {app.hp}";
         if (detailSpValText != null) detailSpValText.text = $"{app.mp} / {app.mp}";
 
-        if (detailHpBarFill != null) detailHpBarFill.sizeDelta = new Vector2(240f, 0f);
-        if (detailSpBarFill != null) detailSpBarFill.sizeDelta = new Vector2(240f, 0f);
+        if (detailHpBarFill != null) detailHpBarFill.sizeDelta = new Vector2(260f, 0f);
+        if (detailSpBarFill != null) detailSpBarFill.sizeDelta = new Vector2(260f, 0f);
 
-        // Painel de Estatísticas RPG completas
+        // Painel de Estatísticas RPG completas com contraste vibrante e separação clara
         if (detailStatsGridText != null)
         {
-            detailStatsGridText.text = $"ATK <color=#FF8888>{app.atk}</color>  DEF <color=#88FF88>{app.def}</color>  INT <color=#88CCFF>{app.intStat}</color>  SPI <color=#DDAAFF>{app.spi}</color>  SPD <color=#FFEE88>{app.spd}</color>  CRT <color=#FFBB44>{app.crt}%</color>";
+            detailStatsGridText.text = $"ATK <color=#FF6B6B><b>{app.atk}</b></color>   DEF <color=#4EFA8A><b>{app.def}</b></color>   INT <color=#45D6FF><b>{app.intStat}</b></color>   SPI <color=#D688FF><b>{app.spi}</b></color>   SPD <color=#FFE642><b>{app.spd}</b></color>   CRT <color=#FFB03A><b>{app.crt}%</b></color>";
         }
 
-        // Habilidade Passiva Exclusiva
+        // Habilidade Passiva Exclusiva formatada com título em destaque e descrição nítida
         if (detailPassiveText != null)
         {
-            detailPassiveText.text = $"<color=#00F5FF><b>⚡ PASSIVA: [{app.passiveName}]</b></color>\n{app.passiveDescription}";
+            detailPassiveText.text = $"<color=#00F5FF><b>⚡ PASSIVA: [{app.passiveName}]</b></color>\n<size=13><color=#E6F3FF>{app.passiveDescription}</color></size>";
         }
     }
 
@@ -1705,8 +1745,11 @@ public class DeploymentMenuUI : MonoBehaviour
         public Image focusHighlightImg;
         public Image categoryStripeImg;
         public Image avatarImage;
+        public GameObject badgeObj;
         public Text badgeText;
+        public GameObject levelBadgeObj;
         public Text levelText;
+        public GameObject nameBarObj;
         public Text nameText;
         public GameObject checkmarkOverlay;
     }
