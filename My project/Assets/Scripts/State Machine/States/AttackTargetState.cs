@@ -75,12 +75,14 @@ public class AttackTargetState : State
 
             int range = selectedSkill != null ? selectedSkill.maxRange : (currentUnit != null ? currentUnit.attackRange : 2);
             string skillName = selectedSkill != null ? selectedSkill.skillName : "Ataque";
+            bool isSupportSkill = selectedSkill != null && (selectedSkill.healsTarget || selectedSkill.effectPower == 0);
             if (BattleHUD.Instance != null)
             {
-                BattleHUD.Instance.UpdateControlsPrompt(
-                    "NENHUM INIMIGO NO ALCANCE",
-                    $"• Não há inimigos no alcance de {skillName} ({range} tiles).\n• Pressione [X / ESC] para voltar e selecionar outra habilidade ou mover-se."
-                );
+                string header = isSupportSkill ? "NENHUM ALIADO NO ALCANCE" : "NENHUM INIMIGO NO ALCANCE";
+                string prompt = isSupportSkill
+                    ? $"• Não há aliados no alcance de {skillName} ({range} tiles).\n• Pressione [X / ESC] para voltar e selecionar outra habilidade ou mover-se."
+                    : $"• Não há inimigos no alcance de {skillName} ({range} tiles).\n• Pressione [X / ESC] para voltar e selecionar outra habilidade ou mover-se.";
+                BattleHUD.Instance.UpdateControlsPrompt(header, prompt);
             }
         }
     }
@@ -145,18 +147,21 @@ public class AttackTargetState : State
         enemiesInRange.Clear();
         if (currentUnit == null || battle == null) return;
 
+        bool isSupportSkill = selectedSkill != null && (selectedSkill.healsTarget || selectedSkill.effectPower == 0);
+
         foreach (var u in battle.allUnits)
         {
-            if (u != null && u.team != currentUnit.team && u.IsAlive && u.currentTile != null)
+            if (u != null && u.IsAlive && u.currentTile != null)
             {
-                if (attackableTiles.Contains(u.gridPosition))
+                bool isEligible = isSupportSkill ? (u.team == currentUnit.team) : (u.team != currentUnit.team);
+                if (isEligible && attackableTiles.Contains(u.gridPosition))
                 {
                     enemiesInRange.Add(u);
                 }
             }
         }
 
-        // Ordena inimigos: mais próximos primeiro ou da esquerda para direita
+        // Ordena alvos: mais próximos primeiro ou da esquerda para direita
         Vector3Int origin = currentUnit.gridPosition;
         enemiesInRange.Sort((a, b) =>
         {
@@ -166,7 +171,7 @@ public class AttackTargetState : State
             return a.gridPosition.x.CompareTo(b.gridPosition.x);
         });
 
-        Debug.Log($"[AttackTargetState] Inimigos encontrados no alcance: {enemiesInRange.Count}");
+        Debug.Log($"[AttackTargetState] Alvos encontrados no alcance ({ (isSupportSkill ? "Aliados" : "Inimigos") }): {enemiesInRange.Count}");
     }
 
     void SelectEnemyByIndex(int index)
@@ -181,19 +186,22 @@ public class AttackTargetState : State
             machine.MoveSelectorTo(targetedEnemy.currentTile);
         }
 
-        // Calcula a previsão completa de combate usando a habilidade selecionada
+        bool isSupportSkill = selectedSkill != null && (selectedSkill.healsTarget || selectedSkill.effectPower == 0);
+
+        // Calcula a previsão de combate se for ataque; se for suporte, não exibe dano contra aliados
         CombatForecast forecast = CombatService.CalculateForecast(currentUnit, targetedEnemy, selectedSkill);
 
         // Exibe o Banner Elegante de Previsão de Combate (Estilo Digimon Survive)
         if (BattleHUD.Instance != null)
         {
-            BattleHUD.Instance.ShowCombatForecastBanner(true, forecast);
+            BattleHUD.Instance.ShowCombatForecastBanner(!isSupportSkill, forecast);
 
             string targetIndexHeader = enemiesInRange.Count > 1 
-                ? $"PREVISÃO: {selectedSkill?.skillName?.ToUpper() ?? "ATAQUE"} [ALVO {currentTargetIndex + 1}/{enemiesInRange.Count}]" 
-                : $"PREVISÃO: {selectedSkill?.skillName?.ToUpper() ?? "ATAQUE"}";
+                ? $"ALVO: {selectedSkill?.skillName?.ToUpper() ?? "HABILIDADE"} [{currentTargetIndex + 1}/{enemiesInRange.Count}]" 
+                : $"ALVO: {selectedSkill?.skillName?.ToUpper() ?? "HABILIDADE"}";
 
-            string promptControls = "• [ESPAÇO / ENTER / Z] : Executar Ataque    [X / ESC] : Cancelar";
+            string actionName = isSupportSkill ? "Aplicar Habilidade" : "Executar Ataque";
+            string promptControls = $"• [ESPAÇO / ENTER / Z] : {actionName}    [X / ESC] : Cancelar";
             if (enemiesInRange.Count > 1)
             {
                 promptControls = "• [SETAS / A-D] : Alternar Alvos    " + promptControls;
@@ -302,22 +310,58 @@ public class AttackTargetState : State
             Debug.Log($"[Combate] {currentUnit.unitName} gastou {selectedSkill.spCost} SP. SP Restante: {newSp}");
         }
 
+        bool isSupportSkill = selectedSkill != null && (selectedSkill.healsTarget || selectedSkill.effectPower == 0);
+
         if (BattleHUD.Instance != null)
         {
             BattleHUD.Instance.ShowCombatForecastBanner(false);
             BattleHUD.Instance.UpdateControlsPrompt(
-                "EXECUTANDO ATAQUE!",
+                isSupportSkill ? "EXECUTANDO HABILIDADE DE SUPORTE!" : "EXECUTANDO ATAQUE!",
                 $"• {currentUnit.unitName} usou {skillName} em {target.unitName}!"
             );
         }
 
-        // 4. Dispara o efeito visual correspondente da pasta Free Slash VFX e animação de lunge
+        // 4. Dispara o efeito visual correspondente e animação de lunge
         AttackVfxDatabase.PlaySkillVfx(currentUnit, target, selectedSkill);
         yield return StartCoroutine(currentUnit.PlayAttackAnimation(target.transform.position));
 
-        // 5. Aplica o dano no defensor
-        target.TakeDamage(forecast.finalDamage, forecast.orientation, forecast.isCritical, forecast.hasCategoryAdvantage);
-        CombatService.ApplyCombatEffects(currentUnit, target, selectedSkill, forecast.finalDamage);
+        if (isSupportSkill)
+        {
+            // Aplica cura se a habilidade restaurar HP
+            if (selectedSkill != null && selectedSkill.healsTarget && selectedSkill.effectPower > 0 && target.stats != null)
+            {
+                int curHp = target.stats.GetStat(StatEnum.HP);
+                int maxHp = target.stats.GetStat(StatEnum.MaxHp);
+                int healAmount = selectedSkill.effectPower;
+                int newHp = Mathf.Min(maxHp, curHp + healAmount);
+                target.stats.SetStat(StatEnum.HP, newHp);
+                DamagePopupService.ShowDamage(target.transform.position, healAmount, AttackOrientation.Frontal, false, false);
+            }
+
+            // Remove todos os status negativos se for habilidade de purificação
+            if (selectedSkill != null && selectedSkill.healsTarget)
+            {
+                var targetAppmon = target.GetComponent<TacticalBattle.Appmon.AppmonCharacter>();
+                if (targetAppmon != null)
+                {
+                    targetAppmon.ClearAllNegativeStatuses();
+                }
+            }
+
+            // Habilidade de escudo defensivo como Neon Shield
+            if (selectedSkill != null && selectedSkill.id == "neon_shield")
+            {
+                target.SetDefenseStance(target.facing);
+            }
+
+            CombatService.ApplyCombatEffects(currentUnit, target, selectedSkill, 0);
+        }
+        else
+        {
+            // 5. Aplica o dano no defensor inimigo
+            target.TakeDamage(forecast.finalDamage, forecast.orientation, forecast.isCritical, forecast.hasCategoryAdvantage);
+            CombatService.ApplyCombatEffects(currentUnit, target, selectedSkill, forecast.finalDamage);
+        }
 
         // Atualiza o banner do turno e stats no HUD
         if (BattleHUD.Instance != null)

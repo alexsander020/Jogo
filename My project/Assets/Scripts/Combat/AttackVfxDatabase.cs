@@ -13,6 +13,7 @@ public static class AttackVfxDatabase
 
     private const string PREFABS_BASE_PATH = "Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Prefabs/";
     private const string PROJECTILES_BASE_PATH = "Assets/Art/Battle_Elements/Attack_Animation/Free Slash VFX/Prefabs/Projectiles/";
+    private const string WATER_SPELL_BASE_PATH = "Assets/Art/Battle_Elements/Attack_Animation/FlexUnit/WaterSpell/Prefabs/";
 
     // Mapeamento canônico de IDs de Habilidade -> Nome do Prefab
     private static readonly Dictionary<string, string> skillIdToVfxMap = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
@@ -33,7 +34,18 @@ public static class AttackVfxDatabase
         { "overheat_carnage", "Slash Fire VFX" },
 
         // 3. Água / Marinho
-        { "water_jet", "Slash Projectile VFX Water" },
+        { "water_jet", "Slash Water VFX" },
+        { "water jet", "Slash Water VFX" },
+        { "waterjet", "Slash Water VFX" },
+        { "jato_de_agua", "Slash Water VFX" },
+        { "jato de água", "Slash Water VFX" },
+        { "jato de agua", "Slash Water VFX" },
+        { "water_wall", "WaterSpell2" },
+        { "water wall", "WaterSpell2" },
+        { "waterwall", "WaterSpell2" },
+        { "parede_de_agua", "WaterSpell2" },
+        { "parede de água", "WaterSpell2" },
+        { "parede de agua", "WaterSpell2" },
         { "hydro_quarantine", "Slash Water VFX" },
         { "tsunami_barrier", "Slash Water VFX" },
         { "abyssal_dominion", "Slash Water VFX" },
@@ -67,6 +79,9 @@ public static class AttackVfxDatabase
         { "Corte Fogo", "Slash Fire VFX" },
         { "Corte Chama", "Slash Fire VFX" },
         { "Corte Agua", "Slash Water VFX" },
+        { "Water Jet", "Slash Water VFX" },
+        { "Jato de Agua", "Slash Water VFX" },
+        { "Jato de Água", "Slash Water VFX" },
         { "Corte Eletrico", "Slash Eletric VFX" },
         { "Corte Raio", "Slash Eletric VFX" },
         { "Corte Terra", "Slash Earth VFX" },
@@ -83,7 +98,15 @@ public static class AttackVfxDatabase
         // Impactos
         { "Impacto", "Impact" },
         { "Impacto Multiplo", "Multiple Impact" },
-        { "Impacto Pesado", "Multiple Impact" }
+        { "Impacto Pesado", "Multiple Impact" },
+
+        // Feitiços e Magias Aquáticas (FlexUnit WaterSpell)
+        { "WaterSpell2", "WaterSpell2" },
+        { "Water Spell 2", "WaterSpell2" },
+        { "WaterSpell", "WaterSpell2" },
+        { "Water Wall", "WaterSpell2" },
+        { "Parede de Agua", "WaterSpell2" },
+        { "Parede de Água", "WaterSpell2" }
     };
 
     /// <summary>
@@ -123,9 +146,28 @@ public static class AttackVfxDatabase
             return mappedName;
         }
 
+        // 2b. Mapeamento direto pelo Nome da habilidade
+        if (!string.IsNullOrEmpty(skill.skillName) && skillIdToVfxMap.TryGetValue(skill.skillName, out string mappedByName))
+        {
+            return mappedByName;
+        }
+
         bool isRanged = skill.maxRange > 1;
-        string nameLower = (skill.skillName ?? "").ToLowerInvariant();
-        string descLower = (skill.description ?? "").ToLowerInvariant();
+        string nameLower = (skill.skillName ?? "").ToLowerInvariant().Trim();
+        string descLower = (skill.description ?? "").ToLowerInvariant().Trim();
+        string idLower = (skill.id ?? "").ToLowerInvariant().Trim();
+
+        // 2c. Regra explícita para Water Jet / Jato de Água
+        if (idLower == "water_jet" || idLower == "waterjet" || nameLower == "water jet" || nameLower == "jato de água" || nameLower == "jato de agua")
+        {
+            return "Slash Water VFX";
+        }
+
+        // 2d. Regra explícita para Water Wall / Parede de Água
+        if (idLower == "water_wall" || idLower == "waterwall" || nameLower == "water wall" || nameLower == "parede de água" || nameLower == "parede de agua")
+        {
+            return "WaterSpell2";
+        }
 
         // 3. Fallback inteligente por palavras-chave (Nome e Descrição)
         // Fogo / Chamas
@@ -204,18 +246,22 @@ public static class AttackVfxDatabase
             prefab = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>(projPath);
         }
 
-        // 3. Busca genérica se o nome não bater exatamente
+        // 3. Tenta na pasta FlexUnit/WaterSpell se não encontrou
+        if (prefab == null)
+        {
+            string waterSpellPath = $"{WATER_SPELL_BASE_PATH}{prefabName}.prefab";
+            prefab = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>(waterSpellPath);
+        }
+
+        // 4. Busca genérica se o nome não bater exatamente
         if (prefab == null)
         {
             string[] guids = UnityEditor.AssetDatabase.FindAssets($"{prefabName} t:Prefab");
             foreach (var guid in guids)
             {
                 string path = UnityEditor.AssetDatabase.GUIDToAssetPath(guid);
-                if (path.Contains("Free Slash VFX"))
-                {
-                    prefab = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>(path);
-                    if (prefab != null) break;
-                }
+                prefab = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>(path);
+                if (prefab != null) break;
             }
         }
 #endif
@@ -224,6 +270,10 @@ public static class AttackVfxDatabase
         if (prefab == null)
         {
             prefab = Resources.Load<GameObject>($"FreeSlashVFX/{prefabName}");
+        }
+        if (prefab == null)
+        {
+            prefab = Resources.Load<GameObject>($"WaterSpell/{prefabName}");
         }
         if (prefab == null)
         {
@@ -261,6 +311,15 @@ public static class AttackVfxDatabase
         Vector3 direction = (targetPos - attackerPos).normalized;
         if (direction == Vector3.zero) direction = Vector3.forward;
 
+        // Regra especial: Parede de Água / Water Wall cria barreira em loop de 4 turnos ao redor do personagem no centro
+        if (WaterWallService.IsWaterWallSkill(skill))
+        {
+            int turns = skill != null && skill.statusDurationTurns > 0 ? skill.statusDurationTurns : 4;
+            WaterWallService.CreateWaterWallBarrier(attacker, target, skill, turns);
+            onHitCallback?.Invoke();
+            return;
+        }
+
         bool isProjectile = prefab.name.Contains("Projectile");
 
         if (isProjectile && attacker != null && attacker != target)
@@ -270,7 +329,7 @@ public static class AttackVfxDatabase
         }
         else
         {
-            // Executa corte direto no alvo
+            // Executa corte direto ou magia no alvo
             SpawnDirectSlash(prefab, targetPos, direction);
             onHitCallback?.Invoke();
         }
@@ -278,11 +337,13 @@ public static class AttackVfxDatabase
 
     private static void SpawnDirectSlash(GameObject prefab, Vector3 targetPos, Vector3 direction)
     {
-        // Centraliza o corte levemente elevado sobre o defensor
-        Vector3 spawnPos = targetPos + new Vector3(0, 0.45f, 0);
+        bool isGroundSpell = prefab.name.IndexOf("WaterSpell", StringComparison.OrdinalIgnoreCase) >= 0;
 
-        // Orienta a rotação na direção do atacante para o defensor com ângulo isométrico agradável
-        Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
+        // Centraliza o corte: feitiços de solo (como WaterSpell) se erguem a partir do chão do alvo
+        Vector3 spawnPos = isGroundSpell ? new Vector3(targetPos.x, targetPos.y + 0.1f, targetPos.z) : targetPos + new Vector3(0, 0.45f, 0);
+
+        // Orienta a rotação: feitiços de solo usam inclinação isométrica (-30 graus no eixo X), outros alinham com atacante
+        Quaternion rotation = isGroundSpell ? Quaternion.Euler(-30f, 0f, 0f) : Quaternion.LookRotation(direction, Vector3.up);
 
         GameObject instance = GameObject.Instantiate(prefab, spawnPos, rotation);
         instance.transform.localScale = Vector3.one;
@@ -294,8 +355,17 @@ public static class AttackVfxDatabase
             ps.Play(true);
         }
 
+        // Aciona Animators filhos se existirem (ex: WaterSpellAnimator)
+        var animators = instance.GetComponentsInChildren<Animator>();
+        foreach (var anim in animators)
+        {
+            anim.enabled = true;
+            anim.Play(0, -1, 0f);
+        }
+
         // Auto-destruição limpa após conclusão do efeito
-        GameObject.Destroy(instance, 1.6f);
+        float destroyDelay = isGroundSpell ? 2.5f : 1.6f;
+        GameObject.Destroy(instance, destroyDelay);
     }
 
     private static IEnumerator RunProjectileRoutine(GameObject prefab, Vector3 startPos, Vector3 targetPos, Vector3 direction, Action onHitCallback)

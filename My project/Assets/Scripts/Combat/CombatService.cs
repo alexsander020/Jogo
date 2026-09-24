@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using TacticalBattle.Core;
 
 public struct CombatForecast
 {
@@ -324,7 +325,11 @@ public static class CombatService
                     {
                         if (tile != null)
                         {
-                            int d = Mathf.Abs(tile.pos.x - targetTile.pos.x) + Mathf.Abs(tile.pos.y - targetTile.pos.y);
+                            bool isSquareArea = skill.aoeType == AttackShapeType.Area;
+                            int d = isSquareArea
+                                ? Mathf.Max(Mathf.Abs(tile.pos.x - targetTile.pos.x), Mathf.Abs(tile.pos.y - targetTile.pos.y))
+                                : (Mathf.Abs(tile.pos.x - targetTile.pos.x) + Mathf.Abs(tile.pos.y - targetTile.pos.y));
+
                             if (d <= skill.terrainRadius)
                             {
                                 tile.terrainType = skill.createsTerrain;

@@ -140,18 +140,18 @@ namespace TacticalBattle.Appmon
             );
             shitakumon.skills.Add(new SkillData
             {
-                id = "water_jet", skillName = "Jato de Água",
-                category = FunctionalCategory.Security, attackVfxName = "Slash Projectile VFX Water", effectPower = 95, mpCost = 20, isMagic = true,
+                id = "water_jet", skillName = "Water Jet",
+                category = FunctionalCategory.Security, attackVfxName = "Slash Water VFX", effectPower = 95, mpCost = 20, isMagic = true,
                 rangeType = AttackShapeType.Line, minRange = 1, maxRange = 3, pushDistance = 1,
                 description = "Dano mágico em linha reta de 3 Tiles, empurrando o alvo 1 Tile para trás."
             });
             shitakumon.skills.Add(new SkillData
             {
-                id = "water_wall", skillName = "Parede de Água",
-                category = FunctionalCategory.Security, effectPower = 0, mpCost = 25, isMagic = true,
-                minRange = 1, maxRange = 3, aoeType = AttackShapeType.Area, aoeRadius = 1,
+                id = "water_wall", skillName = "Water Wall",
+                category = FunctionalCategory.Security, attackVfxName = "WaterSpell2", effectPower = 0, mpCost = 25, isMagic = true,
+                minRange = 0, maxRange = 3, aoeType = AttackShapeType.Area, aoeRadius = 1, statusDurationTurns = 4,
                 hasTerrainCreation = true, createsTerrain = TerrainType.Flooded, terrainRadius = 1,
-                description = "Transforma uma área de 3x3 Tiles em [Terreno Alagado]. Ataques não-Água têm dano reduzido em 30%."
+                description = "Ergue uma Barreira de Água em loop com o personagem no centro por 4 turnos. Cria [Terreno Alagado] e reduz dano não-Água em 30%."
             });
             Register(shitakumon);
 
@@ -564,7 +564,7 @@ namespace TacticalBattle.Appmon
             );
             poseidonVipermon.recipeIngredients.AddRange(new[] { "Hydro-Vipermon", "Architectmon" });
             poseidonVipermon.inheritedSkillNames.AddRange(new[] {
-                "Quarantine Lock", "Neon Shield", "Jato de Água", "Parede de Água",
+                "Quarantine Lock", "Neon Shield", "Water Jet", "Jato de Água", "Water Wall", "Parede de Água",
                 "Hydro Quarantine", "Tsunami Barrier", "Sonar Press", "Depth Cleanse"
             });
             poseidonVipermon.skills.Add(new SkillData
@@ -993,7 +993,13 @@ namespace TacticalBattle.Appmon
         {
             foreach (var appmon in registry.Values)
             {
-                var s = appmon.skills.Find(sk => sk.skillName.Equals(skillName, StringComparison.OrdinalIgnoreCase));
+                var s = appmon.skills.Find(sk =>
+                    sk.skillName.Equals(skillName, StringComparison.OrdinalIgnoreCase) ||
+                    sk.id.Equals(skillName, StringComparison.OrdinalIgnoreCase) ||
+                    (skillName.Equals("Jato de Água", StringComparison.OrdinalIgnoreCase) && sk.id == "water_jet") ||
+                    (skillName.Equals("Water Jet", StringComparison.OrdinalIgnoreCase) && sk.id == "water_jet") ||
+                    (skillName.Equals("Parede de Água", StringComparison.OrdinalIgnoreCase) && sk.id == "water_wall") ||
+                    (skillName.Equals("Water Wall", StringComparison.OrdinalIgnoreCase) && sk.id == "water_wall"));
                 if (s != null) return s;
             }
             return null;

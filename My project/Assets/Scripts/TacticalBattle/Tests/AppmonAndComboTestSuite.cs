@@ -49,8 +49,9 @@ namespace TacticalBattle.Tests
             Test_CombinedAttacks_CelestialHarmonyArray(); passed++;
             Test_CombinedAttacks_CataclysmicPandemonium(); passed++;
 
-            // 5. TESTES DE MAPEAMENTO DOS EFEITOS VISUAIS (FREE SLASH VFX)
+            // 5. TESTES DE MAPEAMENTO DOS EFEITOS VISUAIS (FREE SLASH VFX E WATER SPELL)
             Test_AttackVfx_DatabaseMapping(); passed++;
+            Test_WaterWall_PersistentLoopingBarrier5Turns(); passed++;
 
             // 6. TESTES DO SISTEMA DE APP-LINK
             Test_AppLink_System(); passed++;
@@ -125,7 +126,8 @@ namespace TacticalBattle.Tests
             Assert(poseidon != null, "Poseidon-Vipermon existe no banco.");
             Assert(poseidon.skills.Exists(s => s.skillName == "Abyssal Dominion"), "Possui a nova habilidade Abyssal Dominion.");
             Assert(poseidon.skills.Exists(s => s.skillName == "Quarantine Lock"), "Herda Quarantine Lock.");
-            Assert(poseidon.skills.Exists(s => s.skillName == "Jato de Água"), "Herda Jato de Água.");
+            Assert(poseidon.skills.Exists(s => s.skillName == "Water Jet" || s.skillName == "Jato de Água"), "Herda Water Jet / Jato de Água.");
+            Assert(poseidon.skills.Exists(s => s.skillName == "Water Wall" || s.skillName == "Parede de Água"), "Herda Water Wall / Parede de Água.");
             Assert(poseidon.skills.Exists(s => s.skillName == "Hydro Quarantine"), "Herda Hydro Quarantine.");
         }
 
@@ -282,8 +284,17 @@ namespace TacticalBattle.Tests
             var fireSkill = new SkillData { id = "firewall_flare", skillName = "Firewall Flare", maxRange = 3 };
             Assert(AttackVfxDatabase.ResolveVfxName(fireSkill) == "Slash Projectile VFX Fire", "Firewall Flare mapeia para Slash Projectile VFX Fire.");
 
-            var waterSkill = new SkillData { id = "water_jet", skillName = "Jato de Água", maxRange = 3 };
-            Assert(AttackVfxDatabase.ResolveVfxName(waterSkill) == "Slash Projectile VFX Water", "Jato de Água mapeia para Slash Projectile VFX Water.");
+            var waterSkill = new SkillData { id = "water_jet", skillName = "Water Jet", maxRange = 3 };
+            Assert(AttackVfxDatabase.ResolveVfxName(waterSkill) == "Slash Water VFX", "Water Jet mapeia para Slash Water VFX.");
+
+            var waterSkillPt = new SkillData { id = "water_jet", skillName = "Jato de Água", maxRange = 3 };
+            Assert(AttackVfxDatabase.ResolveVfxName(waterSkillPt) == "Slash Water VFX", "Jato de Água também mapeia para Slash Water VFX.");
+
+            var waterWallSkill = new SkillData { id = "water_wall", skillName = "Water Wall", maxRange = 3 };
+            Assert(AttackVfxDatabase.ResolveVfxName(waterWallSkill) == "WaterSpell2", "Water Wall mapeia para WaterSpell2.");
+
+            var waterWallSkillPt = new SkillData { id = "water_wall", skillName = "Parede de Água", maxRange = 3 };
+            Assert(AttackVfxDatabase.ResolveVfxName(waterWallSkillPt) == "WaterSpell2", "Parede de Água também mapeia para WaterSpell2.");
 
             var elecSkill = new SkillData { id = "spark_zap", skillName = "Spark Zap", maxRange = 3 };
             Assert(AttackVfxDatabase.ResolveVfxName(elecSkill) == "Slash Projectile VFX Eletric", "Spark Zap mapeia para Slash Projectile VFX Eletric.");
@@ -712,6 +723,58 @@ namespace TacticalBattle.Tests
 
             GameObject.DestroyImmediate(u1Go);
             GameObject.DestroyImmediate(u2Go);
+        }
+
+        public static void Test_WaterWall_PersistentLoopingBarrier5Turns()
+        {
+            // 1. Identificação de Habilidade Water Wall e Parede de Água
+            var sk1 = new SkillData { id = "water_wall", skillName = "Water Wall" };
+            var sk2 = new SkillData { id = "water_wall", skillName = "Parede de Água" };
+            var sk3 = new SkillData { id = "water_wall", skillName = "Parede de Agua" };
+            var skOther = new SkillData { id = "water_jet", skillName = "Water Jet" };
+
+            Assert(WaterWallService.IsWaterWallSkill(sk1), "WaterWallService identifica 'Water Wall'.");
+            Assert(WaterWallService.IsWaterWallSkill(sk2), "WaterWallService identifica 'Parede de Água'.");
+            Assert(WaterWallService.IsWaterWallSkill(sk3), "WaterWallService identifica 'Parede de Agua'.");
+            Assert(!WaterWallService.IsWaterWallSkill(skOther), "WaterWallService não confunde Water Jet com Water Wall.");
+
+            // 2. Validação dos dados da habilidade no compêndio de Shitakumon
+            var shitakumon = AppmonDatabase.Get("Shitakumon");
+            Assert(shitakumon != null, "Shitakumon está registrado no banco de dados.");
+            var wallSkill = shitakumon.skills.Find(s => s.id == "water_wall");
+            Assert(wallSkill != null, "Shitakumon possui a habilidade water_wall.");
+            Assert(wallSkill.minRange == 0, "Water Wall tem minRange = 0 para permitir conjuração em volta do próprio personagem.");
+            Assert(wallSkill.statusDurationTurns == 4, "Water Wall está configurado para 4 turnos de duração.");
+            Assert(wallSkill.aoeRadius == 1, "Water Wall possui raio de área 1 (cobre 3x3 tiles).");
+            Assert(wallSkill.hasTerrainCreation, "Water Wall cria terreno.");
+            Assert(wallSkill.createsTerrain == TerrainType.Flooded, "Water Wall transforma em Terreno Alagado (Flooded).");
+            Assert(wallSkill.attackVfxName == "WaterSpell2", "Water Wall mapeia para WaterSpell2.");
+
+            // 3. Validação do ciclo de vida da Barreira de Água (4 turnos e desaparecimento)
+            GameObject uGo = new GameObject("CasterUnit", typeof(Unit), typeof(Stats));
+            Unit u = uGo.GetComponent<Unit>();
+            u.unitName = "Shitakumon";
+
+            WaterWallBarrier barrier = WaterWallService.CreateWaterWallBarrier(u, u, wallSkill, 4);
+            Assert(barrier != null, "Barreira de Água instanciada com sucesso.");
+            Assert(barrier.remainingTurns == 4, "Barreira inicia com exatamente 4 turnos ativos.");
+            Assert(!barrier.isExpiring, "Barreira não está em estado de expiração no início.");
+
+            // Simula contagem regressiva de 4 turnos
+            barrier.Renew(4);
+            for (int i = 4; i > 1; i--)
+            {
+                barrier.remainingTurns--;
+                Assert(barrier.remainingTurns == i - 1, $"Turno consumido: restam {barrier.remainingTurns} turnos.");
+            }
+            barrier.remainingTurns--;
+            Assert(barrier.remainingTurns == 0, "Após 4 turnos consumidos, o contador chega a 0.");
+            barrier.Expire();
+            Assert(barrier.isExpiring, "Ao zerar os 4 turnos, a barreira entra no modo de expiração e desaparece.");
+
+            // Limpeza
+            WaterWallService.ClearAllBarriers();
+            GameObject.DestroyImmediate(uGo);
         }
     }
 }

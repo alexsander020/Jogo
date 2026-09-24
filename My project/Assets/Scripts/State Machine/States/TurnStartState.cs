@@ -215,9 +215,10 @@ public class TurnStartState : State
                 AttackVfxDatabase.PlaySkillVfx(enemy, closestPlayer, enemySkill);
                 yield return StartCoroutine(enemy.PlayAttackAnimation(closestPlayer.transform.position));
 
-                // Calcula e aplica o dano
+                // Calcula e aplica o dano e efeitos de combate/status
                 CombatForecast forecast = CombatService.CalculateForecast(enemy, closestPlayer);
                 closestPlayer.TakeDamage(forecast.finalDamage, forecast.orientation, forecast.isCritical, forecast.hasCategoryAdvantage);
+                CombatService.ApplyCombatEffects(enemy, closestPlayer, enemySkill, forecast.finalDamage);
 
                 yield return new WaitForSeconds(0.45f);
             }
